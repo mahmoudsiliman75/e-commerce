@@ -1,0 +1,79 @@
+// ==== GOOGLE FONT
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700&display=swap');
+
+// ==== VARIABLES
+@import "varibles/_variables.scss";
+
+// ==== MIXINS
+@import "mixins/mixins.scss";
+
+// ==== FONTS
+@import "fonts/fonts.scss";
+
+// ==== LOADER
+@import "components/loader";
+
+// ==== ANIMATION
+@import "components/_animation.scss";
+
+// ==== HEADER
+@import "components/header.scss";
+
+// ==== HOME STYLES
+@import "components/home.scss";
+
+// ==== FOOTER STYLES
+@import "components/footer";
+
+
+// ==== Global Style
+* {
+  outline: none;
+  &:focus {
+    box-shadow: none;
+  } 
+}
+
+html {
+  overflow-y: auto !important;
+}
+
+body {
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: $lighterGrey;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: $mainColor;
+    border-radius: 0px;
+    transition: 0.5s;
+  }
+}
+
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $darkGrey;
+  transition: all 0.5s ease-in-out !important;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.main_content_wraper {
+  min-height: calc(100vh - (72px + 238px));
+}
