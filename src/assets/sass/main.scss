@@ -28,11 +28,9 @@
 
 // ==== Global Style
 * {
+  @include boxSizing;
   font-family: $regular_font;
   outline: none;
-  &:focus {
-    box-shadow: none;
-  } 
 }
 
 html {
@@ -40,6 +38,7 @@ html {
 }
 
 body {
+  height: 5000px;
   overflow-x: hidden;
 
   &::-webkit-scrollbar {
@@ -56,7 +55,6 @@ body {
     transition: 0.5s;
   }
 }
-
 
 p {
   margin: 0;

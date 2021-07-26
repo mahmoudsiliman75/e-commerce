@@ -1,26 +1,203 @@
-// header {
-//   @include flexSpaceBetweenAlignment;
-//   padding-inline: 15px;
-//   padding-block: 10px;
-//   border-bottom: 2px solid $mainColor;
-//   @include midShadow;
+header {
+  @include transitioning(0.4s);
+  border-bottom: 1px solid $lighterGrey;
+  &.sticky {
+    animation: fixedAnimation 0.5s forwards;
 
-//   .logo_wraper {
-//     width: 120px;
-//     height: 50px;
-//     img[alt="Site Logo"] {
-//       width: 120px;
-//       height: 50px;
-//     }
-//   }
+    .upper_bar,
+    .navbar_wraper {
+      display: none;
+    }
+  }
 
-//   .menu_wraper {
-//     ul {
-//       list-style: none;
-//       @include flexSpaceBetweenAlignment;
-//       li {
-//         @include menuHoverEffect;
-//       }
-//     }
-//   }
-// }
+  .upper_bar {
+    padding-block: 4px;
+    border-bottom: 1px solid $lighterGrey;
+    .wraper {
+      @include flexSpaceBetweenAlignment;
+      .header_message_wraper {
+        font-size: 0.9rem;
+        font-family: $light_font;
+        color: $darkGrey;
+      }
+  
+      .action_btns_wraper {
+        @include flexCenterAlignment;
+        ul {
+          @include flexCenterAlignment;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          li {
+            img {
+              width: 20px;
+            }
+            button,
+            a {
+              @include flexCenterAlignment;
+              font-size: 14px;
+              font-family: $light_font;
+              color: $darkGrey;
+              text-decoration: none;
+              &:focus {
+                box-shadow: none;
+              }
+            }
+
+            &.language_wraper {
+              button {
+                img {
+                  width: 27px;
+                }
+              }
+            }
+
+            &:nth-child(2) {
+              padding-inline: 8px;
+              margin-inline: 8px;
+              border-left: 1px solid $lighterGrey;
+              border-right: 1px solid $lighterGrey;
+            }
+          }
+        }
+
+        .language_wraper {
+          button {
+            img {
+              width: 27px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .main_bar {
+    padding-block: 12px;
+    .logo_wraper {
+      width: 190px;
+      height: 60px;
+      img[alt="Site Logo"] {
+        width: 190px;
+        height: 60px;
+      }
+    }
+  
+    .search_bar {
+      .group {
+        @include flexCenterAlignment;
+        flex-wrap: nowrap;
+        border: 2px solid $mainColor;
+        @include borderRadius(6px);
+        input[type="text"] {
+          border: none;
+          color: $midGrey;
+          &:focus {
+            box-shadow: none;
+          }
+        }
+        button {
+          &:focus {
+            box-shadow: none;
+          }
+          img {
+            width: 25px;
+          }
+        }
+      }
+    }
+  
+    .action_btns_wraper {
+      @include flexCenterAlignment;
+      img {
+        width: 25px;
+      }
+      ul {
+        @include flexCenterAlignment;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+          button,
+          a {
+            color: $midGrey;
+            text-decoration: none;
+            font-size: 12px;
+            &:focus {
+              box-shadow: none;
+            }
+            .text {
+              text-align: start;
+              span {
+                display: block;
+                &:last-child {
+                  font-family: $bold_font;
+                }
+              }
+            }
+          }
+  
+          button {
+            &.cart {
+              position: relative;
+              .badge {
+                padding: 0;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-color: $mainColor;
+                width: 20px;
+                height: 20px;
+                font-size: 10px;
+                @include borderRadius(50%);
+                @include flexCenterAlignment;
+              }
+            }
+          }
+
+          &:nth-child(2) {
+            padding-inline: 12px;
+            margin-inline: 6px;
+            border-left: 1px solid $lighterGrey;
+            border-right: 1px solid $lighterGrey;
+          }
+        }
+      }
+    }
+  }
+
+  .navbar_wraper {
+    padding: 20px 0 25px 0;
+    @include flexStartAlignment;
+
+    ul {
+      padding: 0;
+      margin: 0;
+      @include flexStartAlignment;
+      li {  
+        @include menuHoverEffect;
+      }
+    }
+  }
+}
+
+// START:: ANIMATIONS KEYFRAMES
+@keyframes fixedAnimation {
+  0% {
+    position: fixed;
+    top: -100%;
+    right: 0;
+    left: 0;
+  }
+
+  100% {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: $white;
+    @include midShadow;
+    border-bottom: none;
+  }
+}
+// END:: ANIMATIONS KEYFRAMES

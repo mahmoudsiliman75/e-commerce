@@ -41,12 +41,14 @@ import VueMeta from 'vue-meta';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-
-
-// let dashboard_lang = localStorage.getItem("dashboard_lang");
-// if (dashboard_lang == "ar") {
-//   require("../src/assets/sass/rtl.scss");
-// }
+// START:: HANDLING SITE DIRECTION
+let dashboard_lang = localStorage.getItem("dashboard_lang");
+if (dashboard_lang == "ar") {
+  document.querySelector('body').setAttribute("dir", "rtl");
+} else {
+  document.querySelector('body').setAttribute("dir", "ltr");
+}
+// END:: HANDLING SITE DIRECTION
 
 AOS.init();
 Vue.use(iziToast);

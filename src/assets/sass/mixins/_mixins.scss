@@ -1,3 +1,10 @@
+@mixin boxSizing {
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 @mixin transitioning($t) {
   -moz-transition: all $t ease-in-out;
   -webkit-transition: all $t ease-in-out;
@@ -22,46 +29,23 @@
 @mixin menuHoverEffect {
   overflow: hidden;
   margin: 0 10px;
-  padding-bottom: 5px;
   position: relative;
-  font-size: 18px;
+  font-size: 15px;
+  button,
   a {
     text-decoration: none;
     color: $darkGrey;
-    @include transitioning(0.4s);
+    @include transitioning(0.2s);
+    font-family: $bold_font;
     &.router-link-exact-active {
-      color: $mainColor;
-      font-weight: 600;
-      &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        display: block;
-        width: 100%;
-        border-bottom: 2px dotted $mainColor;
-        @include transitioning(0.4s);
-      }
+      color: $secondaryColor;
     }
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: -100%;
-    bottom: 0;
-    display: block;
-    width: 100%;
-    border-bottom: 2px dotted $mainColor;
-    @include transitioning(0.4s);
   }
   &:hover {
-    a{
-      color: $mainColor;
+    button,
+    a {
+      color: $secondaryColor;
     }
-  }
-  &:hover::before {
-    left: 0;
   }
 }
 
