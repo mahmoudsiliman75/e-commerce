@@ -19,11 +19,14 @@ import TheFooter from "./components/layouts/TheFooter.vue";
 export default {
   name: "App",
 
+  // START:: COMPONENTS DECLERATION
   components: {
     TheHeader,
     TheFooter,
   },
+  // END:: COMPONENTS DECLERATION
 
+  // START:: VUE-META
   metaInfo: {
     title: 'E-Commerce',
     meta: [
@@ -33,5 +36,6 @@ export default {
       }
     ],
   }
+  // END:: VUE-META
 };
 </script>

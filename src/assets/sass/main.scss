@@ -5,29 +5,30 @@
 @import "varibles/_variables.scss";
 
 // ==== MIXINS
-@import "mixins/mixins.scss";
+@import "mixins/_mixins.scss";
 
 // ==== FONTS
-@import "fonts/fonts.scss";
+@import "fonts/_fonts.scss";
 
 // ==== LOADER
-@import "components/loader";
+@import "components/_loader";
 
 // ==== ANIMATION
 @import "components/_animation.scss";
 
 // ==== HEADER
-@import "components/header.scss";
+@import "components/_header.scss";
 
 // ==== HOME STYLES
-@import "components/home.scss";
+@import "components/_home.scss";
 
 // ==== FOOTER STYLES
-@import "components/footer";
+@import "components/_footer";
 
 
 // ==== Global Style
 * {
+  font-family: $regular_font;
   outline: none;
   &:focus {
     box-shadow: none;
