@@ -28,14 +28,26 @@ export default {
 
   // START:: VUE-META
   metaInfo: {
-    title: 'E-Commerce',
+    title: "E-Commerce",
     meta: [
       {
-      name: 'description',
-      content: "E-Commerce Description Will Go Here",
-      }
+        name: "description",
+        content: "E-Commerce Description Will Go Here",
+      },
     ],
-  }
+  },
   // END:: VUE-META
+
+  // START:: MOUNTED LIFE HOOK
+  mounted() {
+    let dashboard_lang = localStorage.getItem("dashboard_lang");
+    if (!dashboard_lang) {
+      localStorage.setItem("dashboard_lang", "en");
+      this.$i18n.locale = "en";
+    } else {
+      this.$i18n.locale = localStorage.getItem("dashboard_lang");
+    }
+  },
+  // END:: MOUNTED LIFE HOOK
 };
 </script>
