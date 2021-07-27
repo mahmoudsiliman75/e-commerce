@@ -40,10 +40,15 @@ header {
               @include flexCenterAlignment;
               font-size: 14px;
               font-family: $light_font;
-              color: $darkGrey;
+              color: $midGrey;
               text-decoration: none;
               &:focus {
                 box-shadow: none;
+              }
+
+              svg {
+                margin-inline-end: 5px;
+                color: $lightGrey;
               }
             }
 

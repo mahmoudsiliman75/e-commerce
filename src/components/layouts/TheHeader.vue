@@ -12,14 +12,14 @@
             <ul>
               <li>
                 <router-link to="/" v-b-tooltip.hover title="Contact Us">
-                  <img src="../../assets/media/icons/header/location.png">
+                  <MapPinIcon size="1.3x" class="map_pin_icon"/>
                   <span> Contact </span>
                 </router-link>
               </li>
 
               <li>
                 <router-link to="/" v-b-tooltip.hover title="Sign In">
-                  <img src="../../assets/media/icons/header/user.png">
+                  <UserIcon size="1.3x" class="user_icon"/>
                   <span> Sign In </span>
                 </router-link>
               </li>
@@ -69,8 +69,12 @@
             <div class="action_btns_wraper">
               <ul>
                 <li>
-                  <a href="tel:01001010101010" class="btn d-flex align-items-center" v-b-tooltip.hover title="Call Us">
-                    <img src="../../assets/media/icons/header/phone.png" class="me-3">
+                  <a href="tel:01001010101010" 
+                    class="btn d-flex align-items-center" 
+                    v-b-tooltip.hover 
+                    title="Call Us"
+                  >
+                    <PhoneCallIcon size="2.3x" class="phone_icon me-3"/>
                     <div class="text">
                       <span> Call Us Now: </span>
                       <span> 01001010101 </span>
@@ -79,8 +83,11 @@
                 </li>
 
                 <li>
-                  <router-link to="/" v-b-tooltip.hover title="Wishlist">
-                    <img src="../../assets/media/icons/header/heart.png">
+                  <router-link 
+                    to="/" v-b-tooltip.hover 
+                    title="Wishlist"
+                  >
+                    <HeartIcon size="2.3x" class="heart_icon"/>
                   </router-link>
                 </li>
 
@@ -96,7 +103,7 @@
                       <span> 0 EGP </span>
                     </div>
 
-                    <img src="../../assets/media/icons/header/cart.png">
+                    <ShoppingCartIcon size="2.3x" class="cart_icon"/>
                     <span class="badge"> 0 </span>
                   </button>
                 </li>
@@ -109,22 +116,20 @@
     <!-- END:: MAIN BAR -->
 
     <!-- START:: CART MENU -->
-    <transition name="fade" mode="out-in">
-      <div class="cart_menu_wraper" :class="{show: cartMenuIsOpen}" @click="closeCartMenu">
-        <div class="cart_menu">
-          <div class="menu_header">
-            <h6 class="m-0"> Shopping Cart </h6>
-            <button 
-              class="btn" 
-              @click="closeCartMenu"
-            >
-              <XIcon size="1.3x"/> 
-              Close 
-            </button>
-          </div>
+    <div class="cart_menu_wraper" :class="{show: cartMenuIsOpen}" @click="closeCartMenu">
+      <div class="cart_menu">
+        <div class="menu_header">
+          <h6 class="m-0"> Shopping Cart </h6>
+          <button 
+            class="btn" 
+            @click="closeCartMenu"
+          >
+            <XIcon size="1.3x"/> 
+            Close 
+          </button>
         </div>
       </div>
-    </transition>
+    </div>
     <!-- END:: CART MENU -->
 
     <!-- START:: NAVBAR -->
@@ -174,13 +179,18 @@
 </template>
 
 <script>
-import { XIcon } from 'vue-feather-icons';
+import { XIcon, MapPinIcon, UserIcon, PhoneCallIcon, HeartIcon, ShoppingCartIcon } from 'vue-feather-icons';
 
 export default {
   name: "Header",
 
   components: {
     XIcon,
+    MapPinIcon,
+    UserIcon,
+    PhoneCallIcon,
+    HeartIcon,
+    ShoppingCartIcon
   },
 
   data() {
