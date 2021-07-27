@@ -2,6 +2,7 @@ header {
   @include transitioning(0.4s);
   border-bottom: 1px solid $lighterGrey;
   &.sticky {
+    z-index: 10;
     animation: fixedAnimation 0.5s forwards;
 
     .upper_bar,

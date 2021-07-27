@@ -1,0 +1,56 @@
+.v-carousel {
+  height: 650px !important;
+  min-height: 650px !important;
+  max-height: 650px !important;
+
+  .v-image {
+    height: 650px !important;
+    min-height: 650px !important;
+    max-height: 650px !important;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .section_wave {
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      z-index: 8;
+      svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 45px;
+        .shape-fill {
+          fill: $white;
+      }
+    }
+  }
+
+  @media ( max-width: 767px ) {
+    height: 350px !important;
+    min-height: 350px !important;
+    max-height: 350px !important;
+
+    .v-image {
+      height: 350px !important;
+      min-height: 350px !important;
+      max-height: 350px !important;
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .section_wave {
+      display: none;
+    }
+  }
+}

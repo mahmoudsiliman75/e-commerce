@@ -159,11 +159,12 @@ export default {
       let header = document.querySelector("header");
       let headerHeight = header.clientHeight;
       window.addEventListener("scroll", () => {
-        console.log( headerHeight );
         if(  window.scrollY > headerHeight ) {
           header.classList.add("sticky");
+          document.querySelector("body").style.paddingTop = headerHeight+"px";
         } else {
           header.classList.remove("sticky");
+          document.querySelector("body").style.paddingTop = 0;
         }
       })
     }
