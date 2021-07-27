@@ -1,6 +1,8 @@
 header {
   @include transitioning(0.4s);
   border-bottom: 1px solid $lighterGrey;
+  position: relative;
+
   &.sticky {
     z-index: 10;
     animation: fixedAnimation 0.5s forwards;
@@ -163,6 +165,62 @@ header {
             border-right: 1px solid $lighterGrey;
           }
         }
+      }
+    }
+  }
+
+  .cart_menu_wraper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 9;
+    transform: scale(0);
+    opacity: 0;
+    transition-delay: 0.3s;
+    &.show {
+      transform: scale(1);
+      opacity: 1;
+      .cart_menu {
+        right: 0;
+      }
+    }
+
+    .cart_menu {
+      padding: 25px 20px;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 400px;
+      background-color: $white;
+      z-index: 9;
+      @include transitioning(0.4s);
+      @include midShadow;
+
+      .menu_header {
+        padding-bottom: 6px;
+        @include flexSpaceBetweenAlignment;
+        border-bottom: 1px solid $lighterGrey;
+        h6, 
+        button {
+          font-family: $medium_font;
+        }
+  
+        button {
+          color: $lightGrey;
+          &:focus {
+            box-shadow: none;
+          }
+        }
+      }
+    }
+
+    @media ( max-width: 600px ) {
+      .cart_menu {
+        width: 100%;
       }
     }
   }

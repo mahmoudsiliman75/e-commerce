@@ -85,7 +85,12 @@
                 </li>
 
                 <li>
-                  <button class="btn cart d-flex align-items-center" v-b-tooltip.hover title="Cart">
+                  <button 
+                    class="btn cart d-flex align-items-center" 
+                    v-b-tooltip.hover 
+                    title="Cart" 
+                    @click="openCartMenu"
+                  >
                     <div class="text pe-1">
                       <span> Shopping Cart: </span>
                       <span> 0 EGP </span>
@@ -102,6 +107,25 @@
       </div>
     </div>
     <!-- END:: MAIN BAR -->
+
+    <!-- START:: CART MENU -->
+    <transition name="fade" mode="out-in">
+      <div class="cart_menu_wraper" :class="{show: cartMenuIsOpen}" @click="closeCartMenu">
+        <div class="cart_menu">
+          <div class="menu_header">
+            <h6 class="m-0"> Shopping Cart </h6>
+            <button 
+              class="btn" 
+              @click="closeCartMenu"
+            >
+              <XIcon size="1.3x"/> 
+              Close 
+            </button>
+          </div>
+        </div>
+      </div>
+    </transition>
+    <!-- END:: CART MENU -->
 
     <!-- START:: NAVBAR -->
     <div class="navbar_wraper">
@@ -150,8 +174,22 @@
 </template>
 
 <script>
+import { XIcon } from 'vue-feather-icons';
+
 export default {
   name: "Header",
+
+  components: {
+    XIcon,
+  },
+
+  data() {
+    return {
+      // START:: CART MENU HANDLING DATA
+      cartMenuIsOpen: false,
+      // END:: CART MENU HANDLING DATA
+    }
+  },
 
   methods: {
     // START:: HANDILLING STICKY HEADER
@@ -167,8 +205,20 @@ export default {
           document.querySelector("body").style.paddingTop = 0;
         }
       })
-    }
-    // END:: HANDILLING STICKY HEADER 
+    },
+    // END:: HANDILLING STICKY HEADER
+    
+    // START:: OPEN CART MENU
+    openCartMenu() {
+      this.cartMenuIsOpen = true;
+    },
+    // END:: OPEN CART MENU
+
+    // START:: CLOSE CART MENU
+    closeCartMenu() {
+      this.cartMenuIsOpen = false;
+    },
+    // END:: CLOSE CART MENU
   },
 
   mounted() {
