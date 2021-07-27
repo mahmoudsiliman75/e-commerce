@@ -41,7 +41,6 @@ html {
 }
 
 body {
-  height: 5000px;
   overflow-x: hidden;
 
   &::-webkit-scrollbar {
@@ -76,6 +75,6 @@ li {
   list-style: none;
 }
 
-.main_content_wraper {
-  min-height: calc(100vh - (72px + 238px));
-}
+// .main_content_wraper {
+//   min-height: calc(100vh - (202px + 238px));
+// }

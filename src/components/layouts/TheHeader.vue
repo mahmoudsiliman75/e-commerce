@@ -73,7 +73,8 @@
                     placeholder="Search...."
                   />
                   <button class="btn">
-                    <img src="../../assets/media/icons/header/search.png" />
+                    <!-- <img src="../../assets/media/icons/header/search.png" /> -->
+                    <SearchIcon size="1.6x" class="search_icon"/>
                   </button>
                 </div>
               </form>
@@ -188,6 +189,7 @@ import {
   PhoneCallIcon,
   HeartIcon,
   ShoppingCartIcon,
+  SearchIcon
 } from "vue-feather-icons";
 
 export default {
@@ -200,6 +202,7 @@ export default {
     PhoneCallIcon,
     HeartIcon,
     ShoppingCartIcon,
+    SearchIcon
   },
 
   data() {
