@@ -1,0 +1,48 @@
+a {
+  &.category_link {
+    text-decoration: none;
+    .category_card_wraper {
+      position: relative;
+      @include borderRadius(6px);
+      overflow: hidden;
+      margin-block: 15px;
+      img {
+        width: 100%;
+        height: 280px;
+        @include transitioning(0.3s);
+      }
+    
+      .overlay {
+        position: absolute;
+        inset: 0;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        button {
+          color: $midGrey;
+          font-family: $bold_font;
+          background-color: $white;
+          padding: 10px;
+          width: 100%;
+          @include borderRadius(6px);
+          @include transitioning(0.3s);
+        }
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+
+        .overlay {
+          button {
+            background-color: $mainColor;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

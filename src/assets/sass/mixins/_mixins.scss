@@ -82,30 +82,23 @@
 }
 
 @mixin mainHeaderStyle {
-  padding: 8px 15px;
+  @include flexCenterAlignment;
   position: relative;
-  background: linear-gradient(to right, $secondaryColor, $mainColor);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  &::before,
-  &::after {
-    content: "";
+  margin-bottom: 25px;
+  h2 {
+    color: $midGrey;
+    font-family: $bold_font;
+    z-index: 2;
+  }
+
+  .title_backdrop {
     position: absolute;
-    top: 0;
-    display: block;
-    height: 100%;
-    width: 20px;
-    border: 2px solid $secondaryColor;
-  }
-  &::before {
-    left: 0;
-    border-right: none; 
-    border-radius: 5px 0 0 5px;
-  }
-  &::after{
-    right: 0;
-    border-left: none; 
-    border-radius: 0 5px 5px 0;
+    top: -125%;
+    font-size: 3.5rem;
+    font-family: $bold_font;
+    color: rgba(225, 225, 225, 0.2);
+    text-shadow: 0 0 6px rgb(225, 225, 225, 0.9);
+    z-index: 1;
   }
 }
 
