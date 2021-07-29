@@ -1,5 +1,5 @@
 <template>
-  <div class="wraper">
+  <div class="wraper d-flex justify-content-center align-items-center">
     <div class="product_card_wraper">
       <div class="product_image_wraper">
         <div class="badges_wraper">
@@ -22,7 +22,7 @@
               <HeartIcon size="1.2x" class="heart_icon"/>
             </button>
 
-            <button class="add_to_wish" v-b-tooltip.hover title="Add To Cart">
+            <button class="add_to_wish" v-b-tooltip.hover title="Add To Cart" @click="addToCart(productData)">
               <ShoppingCartIcon size="1.2x" class="cart_icon"/>
             </button>
           </div>
@@ -84,9 +84,11 @@ export default {
   },
 
   props: ["productData"],
-
-  computed() {
-    
-  }
+  
+  methods: {
+    addToCart(item) {
+      console.log(item);
+    }
+  },
 }
 </script>

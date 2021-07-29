@@ -51,23 +51,6 @@
             :productData=" product "
           />
           <!-- END:: PRODUCT CARD -->
-
-          <!-- START:: PRODUCT CARD -->
-          <!-- <ProductCard/> -->
-          <!-- END:: PRODUCT CARD -->
-
-          <!-- START:: PRODUCT CARD -->
-          <!-- <ProductCard/> -->
-          <!-- END:: PRODUCT CARD -->
-
-          <!-- START:: PRODUCT CARD -->
-          <!-- <ProductCard/> -->
-          <!-- END:: PRODUCT CARD -->
-
-          <!-- START:: PRODUCT CARD -->
-          <!-- <ProductCard/> -->
-          <!-- END:: PRODUCT CARD -->
-          
         </VueSlickCarousel>
       </div>
     </div>
@@ -214,7 +197,30 @@ export default {
         infinite: false,
         speed: 500,
         slidesToShow: 4,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 1,
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
       }
     };
   },
