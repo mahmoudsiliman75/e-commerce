@@ -114,10 +114,23 @@
   justify-content: flex-start;
 }
 
+@mixin verticalFlexStartAlignment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
 @mixin flexSpaceBetweenAlignment {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@mixin flexSpaceAroundAlignment {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 @mixin flexEndAlignment {

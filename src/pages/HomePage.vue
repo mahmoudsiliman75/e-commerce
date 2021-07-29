@@ -55,6 +55,69 @@
       </div>
     </div>
     <!-- END:: BEST SELLERS -->
+
+    <!-- START:: FEATURED CATEGORIES -->
+    <div class="featured_categories">
+      <div class="container">
+        <div class="row">
+          <!-- START:: FEATURED CATEGORY CARD -->
+          <div class="col-11 col-md-4 my-4 my-md-0">
+            <div class="featured_category_card_wrap">
+              <div class="overlay">
+                <div class="wraper">
+                  <h2> For Men's </h2>
+                  <p> STARTING AT $29 </p> 
+                  <router-link to="/"> 
+                    <span>SHOP NOW</span>
+                    <span> <ArrowRightIcon size="1.2x"/> </span> 
+                  </router-link>
+                </div>
+              </div>
+              <img src="https://d-themes.com/vue/riode/demo-1/images/home/banners/banner1.jpg">
+            </div>
+          </div>
+          <!-- END:: FEATURED CATEGORY CARD -->
+
+          <!-- START:: FEATURED CATEGORY CARD -->
+          <div class="col-11 col-md-4 my-4 my-md-0">
+            <div class="featured_category_card_wrap middle">
+              <div class="overlay">
+                <div class="wraper">
+                  <p> Up To 20% Off </p>
+                  <p> Black Friday </p> 
+                  <h2> Sale </h2>
+                </div>
+                <router-link to="/"> 
+                  <span>SHOP NOW</span>
+                  <span> <ArrowRightIcon size="1.2x"/> </span> 
+                </router-link>
+              </div>
+              <img src="https://d-themes.com/vue/riode/demo-1/images/home/banners/banner2.jpg">
+            </div>
+          </div>
+          <!-- END:: FEATURED CATEGORY CARD -->
+
+          <!-- START:: FEATURED CATEGORY CARD -->
+          <div class="col-11 col-md-4 my-4 my-md-0">
+            <div class="featured_category_card_wrap">
+              <div class="overlay">
+                <div class="wraper">
+                  <h2> Fashions </h2>
+                  <p> 30% OFF </p> 
+                  <router-link to="/"> 
+                    <span>SHOP NOW</span>
+                    <span> <ArrowRightIcon size="1.2x"/> </span> 
+                  </router-link>
+                </div>
+              </div>
+              <img src="https://d-themes.com/vue/riode/demo-1/images/home/banners/banner3.jpg">
+            </div>
+          </div>
+          <!-- END:: FEATURED CATEGORY CARD -->
+        </div>
+      </div>
+    </div>
+    <!-- END:: FEATURED CATEGORIES -->
   </div>
 </template>
 
@@ -69,6 +132,8 @@ import TheSlider from "../components/layouts/TheSlider.vue";
 import CategoryCard from "../components/basics/CategoryCard.vue";
 import ProductCard from "../components/basics/ProductCard.vue";
 
+import {ArrowRightIcon} from "vue-feather-icons"; 
+
 export default {
   name: "Home",
 
@@ -77,6 +142,7 @@ export default {
     TheSlider,
     CategoryCard,
     ProductCard,
+    ArrowRightIcon,
   },
 
   data() {

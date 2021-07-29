@@ -13,9 +13,5 @@
 <script>
 export default {
   props: ["categoryType", "categoryImg", "categoryTxet"],
-
-  mounted() {
-    console.log(this.categoryType);
-  }
 }
 </script>

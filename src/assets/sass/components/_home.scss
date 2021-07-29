@@ -23,3 +23,184 @@
   @import "../components/productCard.scss";
 }
 // END:: BEST SELLERS STYLES
+
+// START:: FEATURED CATEGORIES STYLES
+.featured_categories {
+  padding-block: $sectionPadding * 1.5;
+  .row {
+    & > div {
+      .featured_category_card_wrap {
+        position: relative;
+        width: 100%;
+        min-height: 220px;
+        max-height: 220px;
+        overflow: hidden;
+        @include borderRadius(6px);
+        img {
+          width: 100%;
+          min-height: 220px;
+          max-height: 220px;
+          @include transitioning(0.4s);
+        }
+    
+        .overlay {
+          padding: 20px;
+          position: absolute;
+          inset: 0;
+          color: $white;
+          background-color: transparent;
+          z-index: 5;
+          @include verticalFlexStartAlignment;
+    
+          h2 {
+            font-weight: 600;
+          }
+    
+          p {
+            font-size: 0.9rem;
+            position: relative;
+            padding-bottom: 20px;
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              display: block;
+              height: 4px;
+              width: 50px;
+              background-color: $white;
+            }
+          }
+    
+          a {
+            font-size: 0.8rem;
+            text-decoration: none;
+            color: $white;
+            position: relative;
+            overflow: hidden;
+            padding-bottom: 5px;
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              height: 2px;
+              background-color: $white;
+              transform: scale(0);
+              @include transitioning(0.4s);
+            }
+            &:hover {
+              &::after {
+                transform-origin: center;
+                transform: scale(1);
+              }
+            }
+          }
+        }
+    
+        &:hover {
+          img {
+            transform: scale(1.05);
+          }
+        }
+        
+
+        &.middle {
+          .overlay {
+            padding: 20px;
+            position: absolute;
+            inset: 0;
+            color: $white;
+            background-color: transparent;
+            z-index: 5;
+            @include flexSpaceAroundAlignment;
+            flex-direction: row;
+
+            .wraper {
+              h2 {
+                margin-top: 15px;
+                font-size: 3rem;
+                font-weight: 900;
+                color: $secondaryColor;
+              }
+        
+              p {
+                font-size: 1rem;
+                position: relative;
+                margin-bottom: 6px;
+                padding-bottom: 0;
+                &::after {
+                  display: none;
+                }
+              }
+            }
+      
+            a {
+              @include flexCenterAlignment;
+              font-size: 0.8rem;
+              text-decoration: none;
+              color: $secondaryColor;
+              border: 2px solid $secondaryColor;
+              padding: 15px;
+              @include transitioning(0.4s);
+              &::after {
+                display: none;
+              }
+              &:hover {
+                color: $white;
+                background-color: $secondaryColor;
+              }
+            }
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to right, rgba(225, 225, 225, 0.02), rgba(225, 225, 225, 0.2));
+            z-index: 5;
+            @include transitioning(0.8s);
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -100%;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to left, rgba(225, 225, 225, 0.02), rgba(225, 225, 225, 0.2));
+            z-index: 5;
+            @include transitioning(0.8s);
+          }
+
+          &:hover {
+            &::before {
+              left: 100%;
+              opacity: 0;
+            }
+            &::after {
+              right: 100%;
+              opacity: 0;
+            }
+          }
+        }
+      }
+
+      &:last-of-type {
+        .featured_category_card_wrap {
+          .overlay {
+            align-items: flex-end;
+          }
+        }
+      }
+    }
+  }
+}
+// END:: FEATURED CATEGORIES STYLES
