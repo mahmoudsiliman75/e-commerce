@@ -72,6 +72,30 @@ li {
   list-style: none;
 }
 
+// .slick-dots li button:before {
+//   font-size: 12px;
+// }
+
+.slick-dots {
+  li {
+    button {
+      &::before {
+        font-size: 12px !important;
+        @include transitioning(0.3s);
+        color: $mainColor !important;
+      }
+    }
+    &.slick-active {
+      button {
+        &::before {
+          color: $mainColor !important;
+          font-size: 12px !important;
+        }
+      }
+    }
+  }
+}
+
 .modal {
   .modal-dialog {
     .modal-content {

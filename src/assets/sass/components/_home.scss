@@ -204,3 +204,14 @@
   }
 }
 // END:: FEATURED CATEGORIES STYLES
+
+// START:: FEATURED PRODUCTS STYLES
+.featured_products {
+  padding-block: $sectionPadding;
+  .header_wraper {
+    @include mainHeaderStyle;
+  }
+
+  @import "../components/productCard.scss";
+}
+// END:: FEATURED PRODUCTS STYLES

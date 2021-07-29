@@ -17,7 +17,7 @@
         <div class="row justify-content-center align-items-center">
           <!-- START:: CATEGORY CAR -->
           <div
-            class="col-10 col-md-3"
+            class="col-11 col-md-3"
             v-for="category in Categories"
             :key="category.id"
           >
@@ -43,7 +43,7 @@
         </div>
         <!-- START:: TITLE -->
 
-        <VueSlickCarousel v-bind="settings">
+        <VueSlickCarousel v-bind="slickSliderSettings">
           <!-- START:: PRODUCT CARD -->
           <ProductCard
             v-for="product in bestSellers"
@@ -59,7 +59,7 @@
     <!-- START:: FEATURED CATEGORIES -->
     <div class="featured_categories">
       <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
           <!-- START:: FEATURED CATEGORY CARD -->
           <div class="col-11 col-md-4 my-4 my-md-0">
             <div class="featured_category_card_wrap">
@@ -118,6 +118,29 @@
       </div>
     </div>
     <!-- END:: FEATURED CATEGORIES -->
+
+    <!-- START:: FEATURED PRODUCTS -->
+    <div class="featured_products">
+      <div class="container">
+        <!-- START:: TITLE -->
+        <div class="header_wraper">
+          <h2>Featured Items</h2>
+          <span class="title_backdrop"> Featured Items </span>
+        </div>
+        <!-- START:: TITLE -->
+
+        <div class="row justify-content-center">
+          <div 
+            class="col-11 col-md-3 my-4 my-md-0"
+            v-for=" item in featuredItems "
+            :key=" item.id "
+          >
+            <ProductCard :productData=" item "/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END:: FEATURED PRODUCTS -->
   </div>
 </template>
 
@@ -255,7 +278,61 @@ export default {
       ],
       // END:: BEST SELLERS DATA
 
-      settings: {
+      // START:: FEATURED ITEMS DATA
+      featuredItems: [
+        {
+          id: 1,
+          img_1: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_7_1_98644502e2.jpg",
+          img_2: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_7_2_49cc0be0ad.jpg",
+          badges: ["TOP", "SALE"],
+          categoryName: "For Men's",
+          productName: "Beyond Riode Original T-Shirt",
+          price: "500",
+          descount: "250",
+          rate: 4,
+          reviws: 2,
+        },
+        {
+          id: 2,
+          img_1: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_2_1_9ae072548f.jpg",
+          img_2: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_2_2_7f087d1140.jpg",
+          badges: ["NEW"],
+          categoryName: "Accessories",
+          productName: " Mackintosh Poket backpack ",
+          price: "500",
+          descount: "",
+          rate: 2.5,
+          reviws: 4,
+        },
+        {
+          id: 3,
+          img_1: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_1_2_f77ebc3ad7.jpg",
+          img_2: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_1_1_67ca70354d.jpg",
+          badges: ["SALE"],
+          categoryName: "Fashionable Women's",
+          productName: " Solid pattern in fashion summer dress ",
+          price: "700",
+          descount: "400",
+          rate: 3.5,
+          reviws: 10,
+        },
+        {
+          id: 4,
+          img_1: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_12_1_8812a927b7.jpg",
+          img_2: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_12_2_b8a6d64d23.jpg",
+          badges: ["NEW"],
+          categoryName: "For Men's",
+          productName: " Converse blue training shoes ",
+          price: "600",
+          descount: "",
+          rate: 0,
+          reviws: 0,
+        },
+      ],
+      // END:: FEATURED ITEMS DATA
+
+      // START:: SLICK SLIDER SETTINDS
+      slickSliderSettings: {
         dots: true,
         arrows: true,
         dotsClass: "slick-dots custom-dot-class",
@@ -282,12 +359,15 @@ export default {
             {
               breakpoint: 480,
               settings: {
+                dots: false,
+                arrows: true,
                 slidesToShow: 1,
                 slidesToScroll: 1
               }
             }
           ]
       }
+      // END:: SLICK SLIDER SETTINDS
     };
   },
 };
