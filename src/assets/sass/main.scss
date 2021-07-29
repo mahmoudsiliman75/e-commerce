@@ -72,6 +72,18 @@ li {
   list-style: none;
 }
 
+.modal {
+  .modal-dialog {
+    .modal-content {
+      .modal-body {
+        h1 {
+          color: red;
+        }
+      }
+    }
+  }
+}
+
 // .main_content_wraper {
 //   min-height: calc(100vh - (202px + 238px));
 // }

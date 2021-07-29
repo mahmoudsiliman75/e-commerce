@@ -1,0 +1,152 @@
+.product_card_wraper {
+  width: 250px;
+  @include transitioning(0.4s);
+  .product_image_wraper {
+    position: relative;
+
+    .badges_wraper {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      @include flexStartAlignment;
+      align-items: flex-start;
+      flex-direction: column;
+      z-index: 5;
+      .badge {
+        margin-bottom: 4px;
+        background-color: $mainColor;
+      }
+    }
+
+    .overlay {
+      min-width: 250px;
+      max-width: 250px;
+      padding: 10px;
+      position: absolute;
+      inset: 0;
+      @include flexEndAlignment;
+      align-items: flex-start;
+      background-color: transparent;
+      opacity: 0;
+      z-index: 5;
+      @include transitioning(0.3s);
+
+      .actions_btns_wraper {
+        @include flexCenterAlignment;
+        flex-direction: column;
+        button,
+        a {
+          color: $lightGrey;
+          margin-block: 5px;
+          @include flexCenterAlignment;
+          background-color: $white;
+          width: 35px;
+          height: 35px;
+          border: 1px solid $lightGrey;
+          @include borderRadius(50%);
+          @include transitioning(0.4s);
+          &:focus {
+            box-shadow: none;
+          }
+          &:hover {
+            color: $white;
+            background-color: $secondaryColor;
+            border-color: $secondaryColor;
+          }
+        }
+      } 
+
+      .bottom_button {
+        button {
+          padding: 15px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          text-align: center;
+          color: $white;
+          background-color: $mainColor;
+          opacity: 0.7;
+          border: none;
+          @include borderRadius(0);
+          @include transitioning(0.3s);
+          &:focus {
+            box-shadow: none;
+          }
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    img {
+      min-width: 250px;
+      max-width: 250px;
+      min-height: 315px;
+      max-height: 315px;
+      // width: 100%;
+      @include transitioning(0.4s);
+      &:first-of-type {
+        opacity: 1;
+        z-index: 2;
+      }
+      &:last-of-type {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        z-index: 3;
+      }
+    }
+
+    &:hover {
+      .overlay {
+        opacity: 1;
+      }
+
+      img {
+        &:first-of-type {
+          opacity: 0;
+          
+        }
+        &:last-of-type {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .product_card_body {
+    width: 250px;
+    padding-top: 10px;
+    text-align: center;
+    .category {
+      margin-bottom: 5px;
+      color: $lightGrey;
+      font-size: 0.8rem;
+    }
+    .product_name {
+      margin-bottom: 8px;
+      color: $midGrey;
+      font-size: 0.9rem;
+    }
+    .product_price {
+      font-size: 1rem;
+      font-weight: 600;
+      .previous_price {
+        margin-inline-end: 6px;
+        text-decoration: line-through;
+        color: $lightRed
+      }
+    }
+    .rating {
+      @include flexCenterAlignment;
+      .reviews {
+        margin-inline-start: 5px;
+        color: $lightGrey;
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
