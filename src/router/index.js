@@ -1,24 +1,19 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-
+import Home from "../pages/HomePage.vue";
+import AllCategories from "../pages/AllCategories.vue";
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
     name: "Home",
-    component: () =>
-      import(/* webpackChunkName: "home" */ "../pages/HomePage.vue"),
-    // children: [
-    //   {
-    //     path: "/",
-    //     name: "landing",
-    //     component: () =>
-    //       import(
-    //         /* webpackChunkName: "LandingPage" */ "../pages/HomeSite/LandingPage.vue"
-    //       ),
-    //   },
-    // ],
+    component: Home,
+  },
+  {
+    path: "/all-categories",
+    name: "AllCategories",
+    component: AllCategories,
   },
 ];
 
