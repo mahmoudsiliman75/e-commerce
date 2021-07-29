@@ -4,7 +4,7 @@
     <TheHeader />
     <!-- END:: HEADER -->
 
-    <router-view /> 
+    <router-view />
 
     <!-- START:: FOOTER -->
     <TheFooter />

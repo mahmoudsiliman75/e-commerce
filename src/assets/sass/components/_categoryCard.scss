@@ -11,7 +11,7 @@ a {
         height: 280px;
         @include transitioning(0.3s);
       }
-    
+
       .overlay {
         position: absolute;
         inset: 0;

@@ -54,7 +54,7 @@
             border-color: $secondaryColor;
           }
         }
-      } 
+      }
 
       .bottom_button {
         button {
@@ -108,7 +108,6 @@
       img {
         &:first-of-type {
           opacity: 0;
-          
         }
         &:last-of-type {
           opacity: 1;
@@ -137,7 +136,7 @@
       .previous_price {
         margin-inline-end: 6px;
         text-decoration: line-through;
-        color: $lightRed
+        color: $lightRed;
       }
     }
     .rating {
@@ -148,5 +147,5 @@
         font-size: 0.7rem;
       }
     }
-  } 
+  }
 }

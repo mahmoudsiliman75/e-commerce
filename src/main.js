@@ -35,18 +35,19 @@ import i18n from "./i18n";
 import vuetify from "./plugins/vuetify";
 
 // ======== Vue Meta
-import VueMeta from 'vue-meta';
+import VueMeta from "vue-meta";
 
 // ======== AOS
 import AOS from "aos";
 import "aos/dist/aos.css";
+import store from "./store";
 
 // START:: HANDLING SITE DIRECTION
 let dashboard_lang = localStorage.getItem("dashboard_lang");
 if (dashboard_lang == "ar") {
-  document.querySelector('body').setAttribute("dir", "rtl");
+  document.querySelector("body").setAttribute("dir", "rtl");
 } else {
-  document.querySelector('body').setAttribute("dir", "ltr");
+  document.querySelector("body").setAttribute("dir", "ltr");
 }
 // END:: HANDLING SITE DIRECTION
 
@@ -66,5 +67,6 @@ new Vue({
   router,
   i18n,
   vuetify,
+  store,
   render: (h) => h(App),
 }).$mount("#app");

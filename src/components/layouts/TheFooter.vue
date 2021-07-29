@@ -12,10 +12,12 @@
             </div>
           </div>
 
-          <div class="col-12 col-md-4 d-flex justify-content-center my-4 my-md-0">
+          <div
+            class="col-12 col-md-4 d-flex justify-content-center my-4 my-md-0"
+          >
             <div class="subscribe_text_wraper">
-              <h5> Subscribe To Our Newsletter </h5>
-              <p> Get All The Latest Information, Sales And Offers. </p>
+              <h5>Subscribe To Our Newsletter</h5>
+              <p>Get All The Latest Information, Sales And Offers.</p>
             </div>
           </div>
 
@@ -23,8 +25,12 @@
             <div class="subscribe_form_wraper">
               <form>
                 <div class="group">
-                  <input type="email" class="form-control" id="subscribe_email">
-                  <button> SUBSCRIBE </button>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="subscribe_email"
+                  />
+                  <button>SUBSCRIBE</button>
                 </div>
               </form>
             </div>
@@ -37,7 +43,7 @@
       <div class="middle_footer">
         <div class="row justify-content-lg-between align-items-center">
           <div class="col-12 col-md-3 my-4 mb-md-0">
-            <h6> Contact Info </h6>
+            <h6>Contact Info</h6>
             <ul>
               <li>
                 <span> PHONE: </span>
@@ -55,7 +61,7 @@
           </div>
 
           <div class="col-12 col-md-3 my-4 mb-md-0">
-            <h6> Useful Links </h6>
+            <h6>Useful Links</h6>
             <ul>
               <li>
                 <router-link to="/"> Home </router-link>
@@ -88,7 +94,7 @@
           </div>
 
           <div class="col-12 col-md-3 my-4 mb-md-0">
-            <h6> Categories </h6>
+            <h6>Categories</h6>
             <ul>
               <li>
                 <router-link to="/"> Cosmetia Services </router-link>

@@ -47,8 +47,8 @@
           <!-- START:: PRODUCT CARD -->
           <ProductCard
             v-for="product in bestSellers"
-            :key=" product.id "
-            :productData=" product "
+            :key="product.id"
+            :productData="product"
           />
           <!-- END:: PRODUCT CARD -->
         </VueSlickCarousel>
@@ -65,15 +65,17 @@
             <div class="featured_category_card_wrap">
               <div class="overlay">
                 <div class="wraper">
-                  <h2> For Men's </h2>
-                  <p> STARTING AT $29 </p> 
-                  <router-link to="/"> 
+                  <h2>For Men's</h2>
+                  <p>STARTING AT $29</p>
+                  <router-link to="/">
                     <span>SHOP NOW</span>
-                    <span> <ArrowRightIcon size="1.2x"/> </span> 
+                    <span> <ArrowRightIcon size="1.2x" /> </span>
                   </router-link>
                 </div>
               </div>
-              <img src="https://d-themes.com/vue/riode/demo-1/images/home/banners/banner1.jpg">
+              <img
+                src="https://d-themes.com/vue/riode/demo-1/images/home/banners/banner1.jpg"
+              />
             </div>
           </div>
           <!-- END:: FEATURED CATEGORY CARD -->
@@ -83,16 +85,18 @@
             <div class="featured_category_card_wrap middle">
               <div class="overlay">
                 <div class="wraper">
-                  <p> Up To 20% Off </p>
-                  <p> Black Friday </p> 
-                  <h2> Sale </h2>
+                  <p>Up To 20% Off</p>
+                  <p>Black Friday</p>
+                  <h2>Sale</h2>
                 </div>
-                <router-link to="/"> 
+                <router-link to="/">
                   <span>SHOP NOW</span>
-                  <span> <ArrowRightIcon size="1.2x"/> </span> 
+                  <span> <ArrowRightIcon size="1.2x" /> </span>
                 </router-link>
               </div>
-              <img src="https://d-themes.com/vue/riode/demo-1/images/home/banners/banner2.jpg">
+              <img
+                src="https://d-themes.com/vue/riode/demo-1/images/home/banners/banner2.jpg"
+              />
             </div>
           </div>
           <!-- END:: FEATURED CATEGORY CARD -->
@@ -102,15 +106,17 @@
             <div class="featured_category_card_wrap">
               <div class="overlay">
                 <div class="wraper">
-                  <h2> Fashions </h2>
-                  <p> 30% OFF </p> 
-                  <router-link to="/"> 
+                  <h2>Fashions</h2>
+                  <p>30% OFF</p>
+                  <router-link to="/">
                     <span>SHOP NOW</span>
-                    <span> <ArrowRightIcon size="1.2x"/> </span> 
+                    <span> <ArrowRightIcon size="1.2x" /> </span>
                   </router-link>
                 </div>
               </div>
-              <img src="https://d-themes.com/vue/riode/demo-1/images/home/banners/banner3.jpg">
+              <img
+                src="https://d-themes.com/vue/riode/demo-1/images/home/banners/banner3.jpg"
+              />
             </div>
           </div>
           <!-- END:: FEATURED CATEGORY CARD -->
@@ -130,12 +136,12 @@
         <!-- START:: TITLE -->
 
         <div class="row justify-content-center">
-          <div 
+          <div
             class="col-11 col-md-3 my-4 my-md-0"
-            v-for=" item in featuredItems "
-            :key=" item.id "
+            v-for="item in featuredItems"
+            :key="item.id"
           >
-            <ProductCard :productData=" item "/>
+            <ProductCard :productData="item" />
           </div>
         </div>
       </div>
@@ -146,16 +152,16 @@
 
 <script>
 // START:: IMPORTING SLICK CAOUSIL
-import VueSlickCarousel from 'vue-slick-carousel';
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
+import VueSlickCarousel from "vue-slick-carousel";
+import "vue-slick-carousel/dist/vue-slick-carousel.css";
+import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 // END:: IMPORTING SLICK CAOUSIL
 
 import TheSlider from "../components/layouts/TheSlider.vue";
 import CategoryCard from "../components/basics/CategoryCard.vue";
 import ProductCard from "../components/basics/ProductCard.vue";
 
-import {ArrowRightIcon} from "vue-feather-icons"; 
+import { ArrowRightIcon } from "vue-feather-icons";
 
 export default {
   name: "Home",
@@ -217,8 +223,10 @@ export default {
       bestSellers: [
         {
           id: 1,
-          img_1: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_7_1_98644502e2.jpg",
-          img_2: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_7_2_49cc0be0ad.jpg",
+          img_1:
+            "https://d-themes.com/vue/riode/server/uploads/demo_1_product_7_1_98644502e2.jpg",
+          img_2:
+            "https://d-themes.com/vue/riode/server/uploads/demo_1_product_7_2_49cc0be0ad.jpg",
           badges: ["TOP", "SALE"],
           categoryName: "For Men's",
           productName: "Beyond Riode Original T-Shirt",
@@ -229,8 +237,10 @@ export default {
         },
         {
           id: 2,
-          img_1: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_2_1_9ae072548f.jpg",
-          img_2: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_2_2_7f087d1140.jpg",
+          img_1:
+            "https://d-themes.com/vue/riode/server/uploads/demo_1_product_2_1_9ae072548f.jpg",
+          img_2:
+            "https://d-themes.com/vue/riode/server/uploads/demo_1_product_2_2_7f087d1140.jpg",
           badges: ["NEW"],
           categoryName: "Accessories",
           productName: " Mackintosh Poket backpack ",
@@ -241,8 +251,10 @@ export default {
         },
         {
           id: 3,
-          img_1: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_1_2_f77ebc3ad7.jpg",
-          img_2: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_1_1_67ca70354d.jpg",
+          img_1:
+            "https://d-themes.com/vue/riode/server/uploads/demo_1_product_1_2_f77ebc3ad7.jpg",
+          img_2:
+            "https://d-themes.com/vue/riode/server/uploads/demo_1_product_1_1_67ca70354d.jpg",
           badges: ["SALE"],
           categoryName: "Fashionable Women's",
           productName: " Solid pattern in fashion summer dress ",
@@ -253,8 +265,10 @@ export default {
         },
         {
           id: 4,
-          img_1: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_12_1_8812a927b7.jpg",
-          img_2: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_12_2_b8a6d64d23.jpg",
+          img_1:
+            "https://d-themes.com/vue/riode/server/uploads/demo_1_product_12_1_8812a927b7.jpg",
+          img_2:
+            "https://d-themes.com/vue/riode/server/uploads/demo_1_product_12_2_b8a6d64d23.jpg",
           badges: ["NEW"],
           categoryName: "For Men's",
           productName: " Converse blue training shoes ",
@@ -265,8 +279,10 @@ export default {
         },
         {
           id: 5,
-          img_1: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_17_1_7d420d81e9.jpg",
-          img_2: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_17_2_829e54f8cc.jpg",
+          img_1:
+            "https://d-themes.com/vue/riode/server/uploads/demo_1_product_17_1_7d420d81e9.jpg",
+          img_2:
+            "https://d-themes.com/vue/riode/server/uploads/demo_1_product_17_2_829e54f8cc.jpg",
           badges: ["TOP", "NEW"],
           categoryName: "Accessories",
           productName: " Fashionable Overnight Bag ",
@@ -282,8 +298,10 @@ export default {
       featuredItems: [
         {
           id: 1,
-          img_1: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_7_1_98644502e2.jpg",
-          img_2: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_7_2_49cc0be0ad.jpg",
+          img_1:
+            "https://d-themes.com/vue/riode/server/uploads/demo_1_product_7_1_98644502e2.jpg",
+          img_2:
+            "https://d-themes.com/vue/riode/server/uploads/demo_1_product_7_2_49cc0be0ad.jpg",
           badges: ["TOP", "SALE"],
           categoryName: "For Men's",
           productName: "Beyond Riode Original T-Shirt",
@@ -294,8 +312,10 @@ export default {
         },
         {
           id: 2,
-          img_1: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_2_1_9ae072548f.jpg",
-          img_2: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_2_2_7f087d1140.jpg",
+          img_1:
+            "https://d-themes.com/vue/riode/server/uploads/demo_1_product_2_1_9ae072548f.jpg",
+          img_2:
+            "https://d-themes.com/vue/riode/server/uploads/demo_1_product_2_2_7f087d1140.jpg",
           badges: ["NEW"],
           categoryName: "Accessories",
           productName: " Mackintosh Poket backpack ",
@@ -306,8 +326,10 @@ export default {
         },
         {
           id: 3,
-          img_1: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_1_2_f77ebc3ad7.jpg",
-          img_2: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_1_1_67ca70354d.jpg",
+          img_1:
+            "https://d-themes.com/vue/riode/server/uploads/demo_1_product_1_2_f77ebc3ad7.jpg",
+          img_2:
+            "https://d-themes.com/vue/riode/server/uploads/demo_1_product_1_1_67ca70354d.jpg",
           badges: ["SALE"],
           categoryName: "Fashionable Women's",
           productName: " Solid pattern in fashion summer dress ",
@@ -318,8 +340,10 @@ export default {
         },
         {
           id: 4,
-          img_1: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_12_1_8812a927b7.jpg",
-          img_2: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_12_2_b8a6d64d23.jpg",
+          img_1:
+            "https://d-themes.com/vue/riode/server/uploads/demo_1_product_12_1_8812a927b7.jpg",
+          img_2:
+            "https://d-themes.com/vue/riode/server/uploads/demo_1_product_12_2_b8a6d64d23.jpg",
           badges: ["NEW"],
           categoryName: "For Men's",
           productName: " Converse blue training shoes ",
@@ -342,31 +366,31 @@ export default {
         slidesToShow: 4,
         slidesToScroll: 1,
         responsive: [
-            {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 4,
-                slidesToScroll: 1,
-              }
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 1,
             },
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-              }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
             },
-            {
-              breakpoint: 480,
-              settings: {
-                dots: false,
-                arrows: true,
-                slidesToShow: 1,
-                slidesToScroll: 1
-              }
-            }
-          ]
-      }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              dots: false,
+              arrows: true,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+      },
       // END:: SLICK SLIDER SETTINDS
     };
   },

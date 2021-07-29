@@ -25,7 +25,6 @@
 // ==== FOOTER STYLES
 @import "components/_footer";
 
-
 // ==== Global Style
 * {
   @include boxSizing;
@@ -43,11 +42,11 @@ body {
   &::-webkit-scrollbar {
     width: 5px;
   }
-  
+
   &::-webkit-scrollbar-track {
     background: $lighterGrey;
   }
-  
+
   &::-webkit-scrollbar-thumb {
     background: $mainColor;
     border-radius: 0px;
@@ -71,10 +70,6 @@ li {
   margin: 0;
   list-style: none;
 }
-
-// .slick-dots li button:before {
-//   font-size: 12px;
-// }
 
 .slick-dots {
   li {

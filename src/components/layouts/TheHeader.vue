@@ -74,7 +74,7 @@
                   />
                   <button class="btn">
                     <!-- <img src="../../assets/media/icons/header/search.png" /> -->
-                    <SearchIcon size="1.6x" class="search_icon"/>
+                    <SearchIcon size="1.6x" class="search_icon" />
                   </button>
                 </div>
               </form>
@@ -189,7 +189,7 @@ import {
   PhoneCallIcon,
   HeartIcon,
   ShoppingCartIcon,
-  SearchIcon
+  SearchIcon,
 } from "vue-feather-icons";
 
 export default {
@@ -202,7 +202,7 @@ export default {
     PhoneCallIcon,
     HeartIcon,
     ShoppingCartIcon,
-    SearchIcon
+    SearchIcon,
   },
 
   data() {
