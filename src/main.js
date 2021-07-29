@@ -25,6 +25,9 @@ import axios from "axios";
 import "./assets/css/iziToast.min.css";
 import "./assets/sass/main.scss";
 
+// ======== Vuex
+import store from "./store";
+
 // ======== Router File
 import router from "./router/index.js";
 
@@ -40,7 +43,7 @@ import VueMeta from "vue-meta";
 // ======== AOS
 import AOS from "aos";
 import "aos/dist/aos.css";
-import store from "./store";
+
 
 // START:: HANDLING SITE DIRECTION
 let dashboard_lang = localStorage.getItem("dashboard_lang");

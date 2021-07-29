@@ -147,6 +147,12 @@
       </div>
     </div>
     <!-- END:: FEATURED PRODUCTS -->
+
+    <!-- START:: ADVERTISING PANEL -->
+    <div class="ads_panel">
+      <AdvertisingPanel/>
+    </div>
+    <!-- END:: ADVERTISING PANEL -->
   </div>
 </template>
 
@@ -157,20 +163,31 @@ import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 // END:: IMPORTING SLICK CAOUSIL
 
+// START:: IMPORTING HOME COMPS
 import TheSlider from "../components/layouts/TheSlider.vue";
 import CategoryCard from "../components/basics/CategoryCard.vue";
 import ProductCard from "../components/basics/ProductCard.vue";
+import AdvertisingPanel from "../components/basics/AdvertisingPanel.vue";
+// END:: IMPORTING HOME COMPS
 
+// START:: IMPORTING FEATHER ICONS
 import { ArrowRightIcon } from "vue-feather-icons";
+// END:: IMPORTING FEATHER ICONS
 
 export default {
   name: "Home",
 
   components: {
+    // SLICK CAROUSEL COMP
     VueSlickCarousel,
+
+    // HOME COMPS
     TheSlider,
     CategoryCard,
     ProductCard,
+    AdvertisingPanel,
+
+    // FEATHER ICONS
     ArrowRightIcon,
   },
 
