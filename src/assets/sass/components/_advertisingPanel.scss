@@ -1,4 +1,54 @@
 .ads_panel_wraper {
+  position: relative;
   padding: $sectionPadding;
   height: 435px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .overlay {
+    position: absolute;
+    inset: 0;
+    color: $white;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9;
+    @include flexCenterAlignment;
+    flex-direction: column;
+    h4 {
+      &:first-of-type {
+        color: $mainColor;
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.5);
+        .star {
+          svg {
+            animation: rotateStars 4s ease-in-out infinite;
+            animation-direction: alternate;
+            color: $secondaryColor;
+          }
+        }
+      }
+
+      &:last-of-type {
+        font-size: 1rem;
+        font-family: $bold_font;
+      }
+    }
+
+    h2 {
+      font-size: 2.8rem;
+      font-family: $bold_font;
+      margin-block: 15px;
+    }
+  }
 }
+
+// START:: KEYFRAMES 
+@keyframes rotateStars {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
+// END:: KEYFRAMES 

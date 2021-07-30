@@ -149,8 +149,8 @@
     <!-- END:: FEATURED PRODUCTS -->
 
     <!-- START:: ADVERTISING PANEL -->
-    <div class="ads_panel">
-      <AdvertisingPanel/>
+    <div class="ads_panel" :style="{ background: `url( ${advertisingPanelData.img} )` }">
+      <AdvertisingPanel :adData="advertisingPanelData"/>
     </div>
     <!-- END:: ADVERTISING PANEL -->
   </div>
@@ -196,12 +196,15 @@ export default {
       // START:: SLIDER DATA
       sliderItems: [
         {
+          id: "1",
           src: "https://d-themes.com/vue/riode/demo-1/images/home/slides/slide1.jpg",
         },
         {
+          id: "2",
           src: "https://d-themes.com/vue/riode/demo-1/images/home/slides/slide2.jpg",
         },
         {
+          id: "3",
           src: "https://d-themes.com/vue/riode/demo-diamart/images/home/slides/1.jpg",
         },
       ],
@@ -371,6 +374,15 @@ export default {
         },
       ],
       // END:: FEATURED ITEMS DATA
+
+      // START:: ADVERTISING PANEL DATA
+      advertisingPanelData: {
+        img: "https://d-themes.com/vue/riode/demo-1/images/home/parallax.jpg",
+        mainTitle: "Summer Season Sale",
+        subTitle_1: " Extra 30% Off Online ",
+        subTitle_2: "Free shipping on orders over 99 EGP",
+      },
+      // END:: ADVERTISING PANEL DATA
 
       // START:: SLICK SLIDER SETTINDS
       slickSliderSettings: {
