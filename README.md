@@ -1,4 +1,4 @@
-# nabet
+# e-commerce
 
 ## Project setup
 ```
