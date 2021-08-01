@@ -4,6 +4,58 @@
     <TheSlider :sliderItems="sliderItems" />
     <!-- END:: SLIDER -->
 
+    <!-- START:: FEATURES -->
+    <div class="features">
+      <div class="cards_wraper">
+        <div class="container">
+          <VueSlickCarousel v-bind="featuresSliderSettings">
+            <div class="featured_card">
+              <div class="icon_wraper">
+                <ZapIcon size="2.5x"/>
+              </div>
+
+              <div class="title">
+                <h4> Free Shipping & Return</h4>
+              </div>
+
+              <div class="text">
+                Free shipping on orders over 99 EGP
+              </div>
+            </div>
+
+            <div class="featured_card">
+              <div class="icon_wraper">
+                <ClockIcon size="2.5x"/>
+              </div>
+
+              <div class="title">
+                <h4> Customer Support 24/7 </h4>
+              </div>
+
+              <div class="text">
+                Instant access to perfect support
+              </div>
+            </div>
+
+            <div class="featured_card">
+              <div class="icon_wraper">
+                <LockIcon size="2.5x"/>
+              </div>
+
+              <div class="title">
+                <h4> 100% Secure Payment </h4>
+              </div>
+
+              <div class="text">
+                We ensure secure payment!
+              </div>
+            </div>
+          </VueSlickCarousel> 
+        </div>
+      </div>
+    </div>
+    <!-- END:: FEATURES -->
+
     <!-- START:: CATEGORIES -->
     <div class="categories">
       <div class="container">
@@ -43,7 +95,7 @@
         </div>
         <!-- START:: TITLE -->
 
-        <VueSlickCarousel v-bind="slickSliderSettings">
+        <VueSlickCarousel v-bind="productsSliderSettings">
           <!-- START:: PRODUCT CARD -->
           <ProductCard
             v-for="product in bestSellers"
@@ -149,10 +201,28 @@
     <!-- END:: FEATURED PRODUCTS -->
 
     <!-- START:: ADVERTISING PANEL -->
-    <div class="ads_panel">
-      <AdvertisingPanel/>
+    <div class="ads_panel" :style="{ background: `url( ${advertisingPanelData.img} )` }">
+      <AdvertisingPanel :adData="advertisingPanelData"/>
     </div>
     <!-- END:: ADVERTISING PANEL -->
+
+    <!-- START:: PARTNERS -->
+    <div class="partners">
+      <div class="container">
+        <div class="wraper">
+          <VueSlickCarousel v-bind="partnersSliderSettings">
+            <div 
+              class="logo_wraper"
+              v-for=" item in partnersData "
+              :key=" item.id "
+            >
+              <img :src="item.logo" alt="Logo">
+            </div>
+          </VueSlickCarousel>
+        </div>
+      </div>
+    </div>
+    <!-- END:: PARTNERS -->
   </div>
 </template>
 
@@ -171,7 +241,7 @@ import AdvertisingPanel from "../components/basics/AdvertisingPanel.vue";
 // END:: IMPORTING HOME COMPS
 
 // START:: IMPORTING FEATHER ICONS
-import { ArrowRightIcon } from "vue-feather-icons";
+import { ZapIcon, ClockIcon, LockIcon, ArrowRightIcon } from "vue-feather-icons";  
 // END:: IMPORTING FEATHER ICONS
 
 export default {
@@ -188,6 +258,9 @@ export default {
     AdvertisingPanel,
 
     // FEATHER ICONS
+    ZapIcon,
+    ClockIcon,
+    LockIcon,
     ArrowRightIcon,
   },
 
@@ -196,12 +269,15 @@ export default {
       // START:: SLIDER DATA
       sliderItems: [
         {
+          id: "1",
           src: "https://d-themes.com/vue/riode/demo-1/images/home/slides/slide1.jpg",
         },
         {
+          id: "2",
           src: "https://d-themes.com/vue/riode/demo-1/images/home/slides/slide2.jpg",
         },
         {
+          id: "3",
           src: "https://d-themes.com/vue/riode/demo-diamart/images/home/slides/1.jpg",
         },
       ],
@@ -248,9 +324,9 @@ export default {
           categoryName: "For Men's",
           productName: "Beyond Riode Original T-Shirt",
           price: "500",
-          descount: "250",
+          discount: "250",
           rate: 4,
-          reviws: 2,
+          reviews: 2,
         },
         {
           id: 2,
@@ -262,9 +338,9 @@ export default {
           categoryName: "Accessories",
           productName: " Mackintosh Poket backpack ",
           price: "500",
-          descount: "",
+          discount: "",
           rate: 2.5,
-          reviws: 4,
+          reviews: 4,
         },
         {
           id: 3,
@@ -276,9 +352,9 @@ export default {
           categoryName: "Fashionable Women's",
           productName: " Solid pattern in fashion summer dress ",
           price: "700",
-          descount: "400",
+          discount: "400",
           rate: 3.5,
-          reviws: 10,
+          reviews: 10,
         },
         {
           id: 4,
@@ -290,9 +366,9 @@ export default {
           categoryName: "For Men's",
           productName: " Converse blue training shoes ",
           price: "600",
-          descount: "",
+          discount: "",
           rate: 0,
-          reviws: 0,
+          reviews: 0,
         },
         {
           id: 5,
@@ -304,9 +380,9 @@ export default {
           categoryName: "Accessories",
           productName: " Fashionable Overnight Bag ",
           price: "1100",
-          descount: "",
+          discount: "",
           rate: 4.5,
-          reviws: 23,
+          reviews: 23,
         },
       ],
       // END:: BEST SELLERS DATA
@@ -323,9 +399,9 @@ export default {
           categoryName: "For Men's",
           productName: "Beyond Riode Original T-Shirt",
           price: "500",
-          descount: "250",
+          discount: "250",
           rate: 4,
-          reviws: 2,
+          reviews: 2,
         },
         {
           id: 2,
@@ -337,9 +413,9 @@ export default {
           categoryName: "Accessories",
           productName: " Mackintosh Poket backpack ",
           price: "500",
-          descount: "",
+          discount: "",
           rate: 2.5,
-          reviws: 4,
+          reviews: 4,
         },
         {
           id: 3,
@@ -351,9 +427,9 @@ export default {
           categoryName: "Fashionable Women's",
           productName: " Solid pattern in fashion summer dress ",
           price: "700",
-          descount: "400",
+          discount: "400",
           rate: 3.5,
-          reviws: 10,
+          reviews: 10,
         },
         {
           id: 4,
@@ -365,15 +441,89 @@ export default {
           categoryName: "For Men's",
           productName: " Converse blue training shoes ",
           price: "600",
-          descount: "",
+          discount: "",
           rate: 0,
-          reviws: 0,
+          reviews: 0,
         },
       ],
       // END:: FEATURED ITEMS DATA
 
+      // START:: ADVERTISING PANEL DATA
+      advertisingPanelData: {
+        img: "https://d-themes.com/vue/riode/demo-1/images/home/parallax.jpg",
+        mainTitle: "Summer Season Sale",
+        subTitle_1: " Extra 30% Off Online ",
+        subTitle_2: "Free shipping on orders over 99 EGP",
+      },
+      // END:: ADVERTISING PANEL DATA
+
+      // START:: PARTNERS 
+      partnersData: [
+        {
+          id: 1,
+          logo: "https://d-themes.com/vue/riode/demo-1/images/brands/1.png",
+        },
+        {
+          id: 2,
+          logo: "https://d-themes.com/vue/riode/demo-1/images/brands/2.png",
+        },
+        {
+          id: 3,
+          logo: "https://d-themes.com/vue/riode/demo-1/images/brands/3.png",
+        },
+        {
+          id: 4,
+          logo: "https://d-themes.com/vue/riode/demo-1/images/brands/4.png",
+        },
+        {
+          id: 5,
+          logo: "https://d-themes.com/vue/riode/demo-1/images/brands/5.png",
+        },
+        {
+          id: 6,
+          logo: "https://d-themes.com/vue/riode/demo-1/images/brands/6.png",
+        },
+      ],
+      // END:: PARTNERS
+
       // START:: SLICK SLIDER SETTINDS
-      slickSliderSettings: {
+      featuresSliderSettings: {
+        dots: false,
+        arrows: false,
+        dotsClass: "slick-dots custom-dot-class",
+        edgeFriction: 0.35,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              dots: false,
+              arrows: true,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+      },
+
+      productsSliderSettings: {
         dots: true,
         arrows: true,
         dotsClass: "slick-dots custom-dot-class",
@@ -403,6 +553,42 @@ export default {
               dots: false,
               arrows: true,
               slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+      },
+
+      partnersSliderSettings: {
+        dots: false,
+        arrows: false,
+        dotsClass: "slick-dots custom-dot-class",
+        edgeFriction: 0.35,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 6,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              dots: false,
+              arrows: true,
+              slidesToShow: 2,
               slidesToScroll: 1,
             },
           },
