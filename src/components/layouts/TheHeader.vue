@@ -114,11 +114,13 @@
                   >
                     <div class="text pe-1">
                       <span> Shopping Cart: </span>
-                      <span> 0 EGP </span>
+                      <span> {{ this.$store.state.subtotal }} EGP </span>
                     </div>
 
                     <ShoppingCartIcon size="2.3x" class="cart_icon" />
-                    <span class="badge"> 0 </span>
+                    <span class="badge">
+                      {{ this.$store.state.shoppingCart.length }}
+                    </span>
                   </button>
                 </li>
               </ul>
@@ -134,15 +136,84 @@
       class="cart_menu_wraper"
       :class="{ show: cartMenuIsOpen }"
       @click="closeCartMenu"
-    >
-      <div class="cart_menu">
-        <div class="menu_header">
-          <h6 class="m-0">Shopping Cart</h6>
-          <button class="btn" @click="closeCartMenu">
-            <XIcon size="1.3x" />
-            Close
-          </button>
+    ></div>
+    <div class="cart_menu">
+      <div class="menu_header mb-3">
+        <h6 class="m-0">Shopping Cart</h6>
+        <button class="btn" @click="closeCartMenu">
+          <XIcon size="1.3x" />
+          Close
+        </button>
+      </div>
+
+      <h5
+        class="my-5 text-center"
+        v-if="this.$store.state.shoppingCart.length == 0"
+      >
+        No Items Added To The Cart
+      </h5>
+
+      <div class="cart_body" v-else>
+        <!-- START:: CART ITEM -->
+        <div
+          class="item my-4"
+          v-for="item in this.$store.state.shoppingCart"
+          :key="item.id"
+        >
+          <div class="row">
+            <div class="col-3">
+              <div class="img_wraper">
+                <img :src="item.img_1" alt="Product Image" />
+              </div>
+            </div>
+
+            <div
+              class="
+                col-9
+                d-flex
+                flex-column
+                justify-content-between
+                align-items-start
+              "
+            >
+              <div class="title">
+                <h5>
+                  <router-link to="/">
+                    {{ item.productName }}
+                  </router-link>
+                </h5>
+                <button @click="removeFromCart(item)">
+                  <XIcon size="1.1x" />
+                </button>
+              </div>
+              <h5>
+                <span class="count"> 1 X </span>
+                <span class="price" v-if="item.discount.length == 0">
+                  {{ item.price }} EGP
+                </span>
+                <span class="price" v-else> {{ item.discount }} EGP </span>
+              </h5>
+            </div>
+          </div>
         </div>
+        <!-- END:: CART ITEM -->
+
+        <!-- START:: SUBTOTAL -->
+        <div class="subtotal_wraper">
+          <h5>Subtotal:</h5>
+          <h5>{{ this.$store.state.subtotal }} EGP</h5>
+        </div>
+        <!-- END:: SUBTOTAL -->
+
+        <!-- START:: GO TO MAIN CART ROUTE -->
+        <div class="wraper">
+          <router-link to="/main-cart"> View Cart </router-link>
+        </div>
+        <!-- END:: GO TO MAIN CART ROUTE -->
+
+        <!-- START:: CHECKOUT ROUTE -->
+        <router-link to="/" class="checkout"> GO TO CHECKOUT </router-link>
+        <!-- END:: CHECKOUT ROUTE -->
       </div>
     </div>
     <!-- END:: CART MENU -->
@@ -265,12 +336,28 @@ export default {
       this.cartMenuIsOpen = false;
     },
     // END:: CLOSE CART MENU
+
+    // START:: GETSUBTOTAL
+    cartSubtotal() {
+      this.$store.commit("getSubtotal");
+    },
+    // END:: GETSUBTOTAL
+
+    // START:: REMOVE ITEM FROM CART
+    removeFromCart(item) {
+      this.$store.dispatch("removeItemFromCart", { item });
+    },
+    // END:: REMOVE ITEM FROM CART
   },
 
   mounted() {
     // START:: HANDILLING STICKY HEADER
     this.stickyHeader();
     // END:: HANDILLING STICKY HEADER
+
+    // START:: GET CART SUBTOTAL
+    this.cartSubtotal();
+    // END:: GET CART SUBTOTAL
   },
 };
 </script>

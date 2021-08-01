@@ -51,14 +51,14 @@
               : productData.productName
           }}
         </h5>
-        <h4 class="product_price" v-if="productData.descount.length != 0">
+        <h4 class="product_price" v-if="productData.discount.length != 0">
           <span class="previous_price">
             <span>{{ productData.price }}</span>
             <span>EGP</span>
           </span>
 
           <span class="current_price">
-            <span>{{ productData.descount }}</span>
+            <span>{{ productData.discount }}</span>
             <span>EGP</span>
           </span>
         </h4>
@@ -71,7 +71,7 @@
         </h4>
         <div class="rating">
           <RatingStars :rate="productData.rate" />
-          <div class="reviews">( {{ productData.reviws }} Reviews )</div>
+          <div class="reviews">( {{ productData.reviews }} Reviews )</div>
         </div>
       </div>
     </div>
@@ -117,7 +117,7 @@ export default {
 
   methods: {
     addToCart(item) {
-      console.log(item);
+      this.$store.dispatch("addItemToCart", { item });
     },
   },
 };
