@@ -49,6 +49,7 @@
             v-for="product in bestSellers"
             :key="product.id"
             :productData="product"
+            :type="'best'"
           />
           <!-- END:: PRODUCT CARD -->
         </VueSlickCarousel>
@@ -141,7 +142,7 @@
             v-for="item in featuredItems"
             :key="item.id"
           >
-            <ProductCard :productData="item" />
+            <ProductCard :productData="item" :type="'featured'" />
           </div>
         </div>
       </div>
@@ -150,7 +151,7 @@
 
     <!-- START:: ADVERTISING PANEL -->
     <div class="ads_panel">
-      <AdvertisingPanel/>
+      <AdvertisingPanel />
     </div>
     <!-- END:: ADVERTISING PANEL -->
   </div>
