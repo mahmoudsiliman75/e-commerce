@@ -33,7 +33,9 @@
           </div>
 
           <div class="bottom_button">
-            <b-button v-b-modal="'product_modal'">QUICK VIEW</b-button>
+            <b-button v-b-modal="'modal-' + type + '-' + productData.id"
+              >QUICK VIEW</b-button
+            >
           </div>
         </div>
         <img :src="productData.img_1" alt="Product Image" />
@@ -75,7 +77,7 @@
     </div>
 
     <b-modal
-      id="product_modal"
+      :id="'modal-' + type + '-' + productData.id"
       class="product_modal"
       size="xl"
       hide-header
@@ -86,9 +88,9 @@
         variant="outline-danger"
         block
         @click="$bvModal.hide('product_modal')"
-        >Close Me</b-button
-      >
-      <h1>Test</h1>
+        ><XIcon />
+      </b-button>
+      <h1>{{ productData.productName }}</h1>
     </b-modal>
   </div>
 </template>
@@ -111,11 +113,11 @@ export default {
     XIcon,
   },
 
-  props: ["productData"],
+  props: ["productData", "type"],
 
   methods: {
     addToCart(item) {
-      this.$store.dispatch("addItemToCart", {item});
+      this.$store.dispatch("addItemToCart", { item });
     },
   },
 };

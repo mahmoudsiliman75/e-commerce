@@ -1,0 +1,51 @@
+.BreadCrumb {
+  padding: $sectionPadding;
+  background-size: cover;
+  height: 250px;
+  @include flexCenterAlignment;
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    background-color: $mainColor;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.7;
+  }
+  .container{
+    z-index: 2;
+  }
+  .head-breadcrumb {
+      h1 {
+      font-family: $bold_font;
+      text-align: center;
+      color: $white;
+      font-size: 2rem;
+      margin-bottom: 25px;
+    }
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    @include flexCenterAlignment;
+    li {
+        font-size: 0.9rem;
+      &:nth-child(even) {
+        font-weight: bold;
+        margin-inline: 5px;
+        color: $lighterGrey;
+    }
+    color: $white;
+    span {
+        svg {
+         color: $lighterGrey;
+          margin-top: -5px;
+        }
+      }
+      a {
+        color: $lightOrange;
+      }
+    }
+  }
+}

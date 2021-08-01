@@ -3,9 +3,9 @@
     <!-- START:: HEADER -->
     <TheHeader />
     <!-- END:: HEADER -->
-
-    <router-view />
-
+    <transition name="fade" mode="out-in">
+      <router-view />
+    </transition>
     <!-- START:: FOOTER -->
     <TheFooter />
     <!-- END:: FOOTER -->

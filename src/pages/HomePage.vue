@@ -11,46 +11,40 @@
           <VueSlickCarousel v-bind="featuresSliderSettings">
             <div class="featured_card">
               <div class="icon_wraper">
-                <ZapIcon size="2.5x"/>
+                <ZapIcon size="2.5x" />
               </div>
 
               <div class="title">
-                <h4> Free Shipping & Return</h4>
+                <h4>Free Shipping & Return</h4>
               </div>
 
-              <div class="text">
-                Free shipping on orders over 99 EGP
-              </div>
+              <div class="text">Free shipping on orders over 99 EGP</div>
             </div>
 
             <div class="featured_card">
               <div class="icon_wraper">
-                <ClockIcon size="2.5x"/>
+                <ClockIcon size="2.5x" />
               </div>
 
               <div class="title">
-                <h4> Customer Support 24/7 </h4>
+                <h4>Customer Support 24/7</h4>
               </div>
 
-              <div class="text">
-                Instant access to perfect support
-              </div>
+              <div class="text">Instant access to perfect support</div>
             </div>
 
             <div class="featured_card">
               <div class="icon_wraper">
-                <LockIcon size="2.5x"/>
+                <LockIcon size="2.5x" />
               </div>
 
               <div class="title">
-                <h4> 100% Secure Payment </h4>
+                <h4>100% Secure Payment</h4>
               </div>
 
-              <div class="text">
-                We ensure secure payment!
-              </div>
+              <div class="text">We ensure secure payment!</div>
             </div>
-          </VueSlickCarousel> 
+          </VueSlickCarousel>
         </div>
       </div>
     </div>
@@ -101,6 +95,7 @@
             v-for="product in bestSellers"
             :key="product.id"
             :productData="product"
+            :type="'best'"
           />
           <!-- END:: PRODUCT CARD -->
         </VueSlickCarousel>
@@ -193,7 +188,7 @@
             v-for="item in featuredItems"
             :key="item.id"
           >
-            <ProductCard :productData="item" />
+            <ProductCard :productData="item" :type="'featured'" />
           </div>
         </div>
       </div>
@@ -201,8 +196,11 @@
     <!-- END:: FEATURED PRODUCTS -->
 
     <!-- START:: ADVERTISING PANEL -->
-    <div class="ads_panel" :style="{ background: `url( ${advertisingPanelData.img} )` }">
-      <AdvertisingPanel :adData="advertisingPanelData"/>
+    <div
+      class="ads_panel"
+      :style="{ background: `url( ${advertisingPanelData.img} )` }"
+    >
+      <AdvertisingPanel :adData="advertisingPanelData" />
     </div>
     <!-- END:: ADVERTISING PANEL -->
 
@@ -211,12 +209,12 @@
       <div class="container">
         <div class="wraper">
           <VueSlickCarousel v-bind="partnersSliderSettings">
-            <div 
+            <div
               class="logo_wraper"
-              v-for=" item in partnersData "
-              :key=" item.id "
+              v-for="item in partnersData"
+              :key="item.id"
             >
-              <img :src="item.logo" alt="Logo">
+              <img :src="item.logo" alt="Logo" />
             </div>
           </VueSlickCarousel>
         </div>
@@ -241,7 +239,12 @@ import AdvertisingPanel from "../components/basics/AdvertisingPanel.vue";
 // END:: IMPORTING HOME COMPS
 
 // START:: IMPORTING FEATHER ICONS
-import { ZapIcon, ClockIcon, LockIcon, ArrowRightIcon } from "vue-feather-icons";  
+import {
+  ZapIcon,
+  ClockIcon,
+  LockIcon,
+  ArrowRightIcon,
+} from "vue-feather-icons";
 // END:: IMPORTING FEATHER ICONS
 
 export default {
@@ -457,7 +460,7 @@ export default {
       },
       // END:: ADVERTISING PANEL DATA
 
-      // START:: PARTNERS 
+      // START:: PARTNERS
       partnersData: [
         {
           id: 1,

@@ -118,7 +118,9 @@
                     </div>
 
                     <ShoppingCartIcon size="2.3x" class="cart_icon" />
-                    <span class="badge"> {{ this.$store.state.shoppingCart.length }} </span>
+                    <span class="badge">
+                      {{ this.$store.state.shoppingCart.length }}
+                    </span>
                   </button>
                 </li>
               </ul>
@@ -134,8 +136,7 @@
       class="cart_menu_wraper"
       :class="{ show: cartMenuIsOpen }"
       @click="closeCartMenu"
-    >
-    </div>
+    ></div>
     <div class="cart_menu">
       <div class="menu_header mb-3">
         <h6 class="m-0">Shopping Cart</h6>
@@ -145,38 +146,51 @@
         </button>
       </div>
 
-      <h5 class="my-5 text-center" v-if=" this.$store.state.shoppingCart.length == 0 "> No Items Added To The Cart  </h5>
+      <h5
+        class="my-5 text-center"
+        v-if="this.$store.state.shoppingCart.length == 0"
+      >
+        No Items Added To The Cart
+      </h5>
 
       <div class="cart_body" v-else>
         <!-- START:: CART ITEM -->
-        <div 
+        <div
           class="item my-4"
-          v-for=" item in this.$store.state.shoppingCart "
-          :key=" item.id "
+          v-for="item in this.$store.state.shoppingCart"
+          :key="item.id"
         >
           <div class="row">
             <div class="col-3">
               <div class="img_wraper">
-                <img :src="item.img_1" alt="Product Image">
+                <img :src="item.img_1" alt="Product Image" />
               </div>
             </div>
 
-            <div class="col-9 d-flex flex-column justify-content-between align-items-start">
+            <div
+              class="
+                col-9
+                d-flex
+                flex-column
+                justify-content-between
+                align-items-start
+              "
+            >
               <div class="title">
-                <h5> 
+                <h5>
                   <router-link to="/">
-                    {{ item.productName }} 
-                  </router-link> 
+                    {{ item.productName }}
+                  </router-link>
                 </h5>
-                <button
-                  @click="removeFromCart(item)"
-                >
-                  <XIcon size="1.1x"/>
+                <button @click="removeFromCart(item)">
+                  <XIcon size="1.1x" />
                 </button>
               </div>
-              <h5> 
+              <h5>
                 <span class="count"> 1 X </span>
-                <span class="price" v-if=" item.discount.length == 0 "> {{ item.price }} EGP </span>
+                <span class="price" v-if="item.discount.length == 0">
+                  {{ item.price }} EGP
+                </span>
                 <span class="price" v-else> {{ item.discount }} EGP </span>
               </h5>
             </div>
@@ -186,8 +200,8 @@
 
         <!-- START:: SUBTOTAL -->
         <div class="subtotal_wraper">
-          <h5> Subtotal: </h5>
-          <h5> {{ this.$store.state.subtotal }} EGP </h5>
+          <h5>Subtotal:</h5>
+          <h5>{{ this.$store.state.subtotal }} EGP</h5>
         </div>
         <!-- END:: SUBTOTAL -->
 
@@ -210,6 +224,10 @@
         <ul>
           <li>
             <router-link to="/"> Home </router-link>
+          </li>
+
+          <li>
+            <router-link to="/all-categories"> All Categories </router-link>
           </li>
 
           <li>
@@ -321,13 +339,13 @@ export default {
 
     // START:: GETSUBTOTAL
     cartSubtotal() {
-      this.$store.commit('getSubtotal');
+      this.$store.commit("getSubtotal");
     },
     // END:: GETSUBTOTAL
 
     // START:: REMOVE ITEM FROM CART
     removeFromCart(item) {
-      this.$store.dispatch('removeItemFromCart', {item});
+      this.$store.dispatch("removeItemFromCart", { item });
     },
     // END:: REMOVE ITEM FROM CART
   },
