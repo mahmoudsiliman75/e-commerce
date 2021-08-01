@@ -241,7 +241,7 @@ import AdvertisingPanel from "../components/basics/AdvertisingPanel.vue";
 // END:: IMPORTING HOME COMPS
 
 // START:: IMPORTING FEATHER ICONS
-import { ZapIcon, ClockIcon, LockIcon, ArrowRightIcon } from "vue-feather-icons";
+import { ZapIcon, ClockIcon, LockIcon, ArrowRightIcon } from "vue-feather-icons";  
 // END:: IMPORTING FEATHER ICONS
 
 export default {
