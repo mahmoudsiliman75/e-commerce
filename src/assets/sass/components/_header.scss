@@ -191,15 +191,8 @@ header {
     transform: scale(0);
     opacity: 0;
     transition-delay: 0.3s;
-    &.show {
-      transform: scale(1);
-      opacity: 1;
-      .cart_menu {
-        right: 0;
-      }
-    }
-
-    .cart_menu {
+    & + .cart_menu {
+      overflow: auto;
       padding: 25px 20px;
       position: fixed;
       top: 0;
@@ -210,6 +203,19 @@ header {
       z-index: 10;
       @include transitioning(0.4s);
       @include midShadow;
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+    
+      &::-webkit-scrollbar-track {
+        background: $lighterGrey;
+      }
+    
+      &::-webkit-scrollbar-thumb {
+        background: $mainColor;
+        border-radius: 0px;
+        transition: 0.5s;
+      }
 
       .menu_header {
         padding-bottom: 6px;
@@ -227,11 +233,106 @@ header {
           }
         }
       }
+
+      .cart_body {
+        .item {
+          .img_wraper {
+            img {
+              min-width: 80px;
+              max-width: 80px;
+              min-height: 90px;
+              max-height: 90px;
+            }
+          }
+
+          .title {
+            @include flexSpaceBetweenAlignment;
+            align-items: flex-start;
+            h5 {
+              padding-inline: 5px;
+              font-size: 1.15rem;
+              a {
+                color: $midGrey;
+                @include transitioning(0.3s);
+                &:hover {
+                  color: $mainColor;
+                }
+              }
+            }
+          }
+
+          h5 {
+            font-size: 1.15rem !important;
+            span {
+              &.price {
+                margin-inline-start: 8px;
+                font-family: $medium_font;
+                color: $darkGrey;
+              }
+            }
+          }
+        }
+
+        .subtotal_wraper {
+          margin-block: 25px;
+          padding-block: 15px;
+          border-top: 1px solid $lighterGrey;
+          border-bottom: 1px solid $lighterGrey;
+          @include flexSpaceBetweenAlignment;
+          h5 {
+            margin: 0;
+            &:first-child {
+              color: $lightGrey;
+            }
+            &:last-child {
+              color: $midGrey;
+              font-family: $medium_font;
+            }
+          }
+        }
+
+        .wraper {
+          margin-bottom: 20px;
+          @include flexCenterAlignment;
+          a {
+            color: $midGrey;
+            font-family: $bold_font;
+            border-bottom: 2px solid $mainColor;
+            @include transitioning(0.3s);
+            &:hover {
+              color: $mainColor;
+            }
+          }
+        }
+
+        a {
+          &.checkout {
+            @include flexCenterAlignment;
+            color: $white;
+            background-color: $midGrey;
+            padding: 15px;
+            @include borderRadius(6px);
+            @include transitioning(0.3s);
+
+            &:hover {
+              opacity: 0.9;
+            }
+          }
+        }
+      }
     }
 
     @media (max-width: 600px) {
-      .cart_menu {
+      & + .cart_menu {
         width: 100%;
+      }
+    }
+
+    &.show {
+      transform: scale(1);
+      opacity: 1;
+      & + .cart_menu {
+        right: 0;
       }
     }
   }
