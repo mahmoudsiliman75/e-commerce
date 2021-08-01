@@ -4,6 +4,58 @@
     <TheSlider :sliderItems="sliderItems" />
     <!-- END:: SLIDER -->
 
+    <!-- START:: FEATURES -->
+    <div class="features">
+      <div class="cards_wraper">
+        <div class="container">
+          <VueSlickCarousel v-bind="featuresSliderSettings">
+            <div class="featured_card">
+              <div class="icon_wraper">
+                <ZapIcon size="2.5x"/>
+              </div>
+
+              <div class="title">
+                <h4> Free Shipping & Return</h4>
+              </div>
+
+              <div class="text">
+                Free shipping on orders over 99 EGP
+              </div>
+            </div>
+
+            <div class="featured_card">
+              <div class="icon_wraper">
+                <ClockIcon size="2.5x"/>
+              </div>
+
+              <div class="title">
+                <h4> Customer Support 24/7 </h4>
+              </div>
+
+              <div class="text">
+                Instant access to perfect support
+              </div>
+            </div>
+
+            <div class="featured_card">
+              <div class="icon_wraper">
+                <LockIcon size="2.5x"/>
+              </div>
+
+              <div class="title">
+                <h4> 100% Secure Payment </h4>
+              </div>
+
+              <div class="text">
+                We ensure secure payment!
+              </div>
+            </div>
+          </VueSlickCarousel> 
+        </div>
+      </div>
+    </div>
+    <!-- END:: FEATURES -->
+
     <!-- START:: CATEGORIES -->
     <div class="categories">
       <div class="container">
@@ -189,7 +241,7 @@ import AdvertisingPanel from "../components/basics/AdvertisingPanel.vue";
 // END:: IMPORTING HOME COMPS
 
 // START:: IMPORTING FEATHER ICONS
-import { ArrowRightIcon } from "vue-feather-icons";
+import { ZapIcon, ClockIcon, LockIcon, ArrowRightIcon } from "vue-feather-icons";
 // END:: IMPORTING FEATHER ICONS
 
 export default {
@@ -206,6 +258,9 @@ export default {
     AdvertisingPanel,
 
     // FEATHER ICONS
+    ZapIcon,
+    ClockIcon,
+    LockIcon,
     ArrowRightIcon,
   },
 
@@ -432,6 +487,42 @@ export default {
       // END:: PARTNERS
 
       // START:: SLICK SLIDER SETTINDS
+      featuresSliderSettings: {
+        dots: false,
+        arrows: false,
+        dotsClass: "slick-dots custom-dot-class",
+        edgeFriction: 0.35,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              dots: false,
+              arrows: true,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+      },
+
       productsSliderSettings: {
         dots: true,
         arrows: true,

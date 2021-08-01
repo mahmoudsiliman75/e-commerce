@@ -2,6 +2,49 @@
   position: relative;
 }
 
+// START:: FEATURES STYLES
+.features {
+  padding-block: $sectionPadding*2;
+  position: relative;
+  .cards_wraper {
+    position: absolute;
+    top: -50%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    @media ( max-width: 700px ) {
+      top: -30%;
+    }
+    .slick-list {
+      padding-inline: 15px !important;
+    }
+    .featured_card {
+      width: auto !important;
+      padding: 30px;
+      margin-block: 20px;
+      background-color: $white;
+      @include flexCenterAlignment;
+      @include borderRadius(6px);
+      @include midShadow;
+      .icon_wraper {
+        text-align: center;
+        margin-bottom: 15px;
+        svg {
+          color: $secondaryColor;
+        }
+      }
+      .title,
+      .text {
+        text-align: center;
+      } 
+      .text {
+        color: $lightGrey;
+      }
+    }
+  }
+}
+// END:: FEATURES STYLES
+
 // START:: CATEGORIES STYLES
 .categories {
   padding-block: $sectionPadding;
