@@ -223,9 +223,27 @@
 }
 // END:: FEATURED PRODUCTS STYLES
 
-
 // START:: ADVERTISING PANEL STYLES
 .ads_panel {
   @import "advertisingPanel.scss";
 }
 // END:: ADVERTISING PANEL STYLES
+
+// START:: PARTNERS STYLES
+.partners {
+  padding-block: $sectionPadding;
+  .wraper {
+    padding-block: 20px;
+    border-top: 1px solid $lighterGrey;
+    border-bottom: 1px solid $lighterGrey;
+    .logo_wraper {
+      width: 100%;
+      @include flexCenterAlignment;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+// END:: PARTNERS STYLES

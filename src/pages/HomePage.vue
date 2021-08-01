@@ -43,7 +43,7 @@
         </div>
         <!-- START:: TITLE -->
 
-        <VueSlickCarousel v-bind="slickSliderSettings">
+        <VueSlickCarousel v-bind="productsSliderSettings">
           <!-- START:: PRODUCT CARD -->
           <ProductCard
             v-for="product in bestSellers"
@@ -153,6 +153,24 @@
       <AdvertisingPanel :adData="advertisingPanelData"/>
     </div>
     <!-- END:: ADVERTISING PANEL -->
+
+    <!-- START:: PARTNERS -->
+    <div class="partners">
+      <div class="container">
+        <div class="wraper">
+          <VueSlickCarousel v-bind="partnersSliderSettings">
+            <div 
+              class="logo_wraper"
+              v-for=" item in partnersData "
+              :key=" item.id "
+            >
+              <img :src="item.logo" alt="Logo">
+            </div>
+          </VueSlickCarousel>
+        </div>
+      </div>
+    </div>
+    <!-- END:: PARTNERS -->
   </div>
 </template>
 
@@ -384,8 +402,37 @@ export default {
       },
       // END:: ADVERTISING PANEL DATA
 
+      // START:: PARTNERS 
+      partnersData: [
+        {
+          id: 1,
+          logo: "https://d-themes.com/vue/riode/demo-1/images/brands/1.png",
+        },
+        {
+          id: 2,
+          logo: "https://d-themes.com/vue/riode/demo-1/images/brands/2.png",
+        },
+        {
+          id: 3,
+          logo: "https://d-themes.com/vue/riode/demo-1/images/brands/3.png",
+        },
+        {
+          id: 4,
+          logo: "https://d-themes.com/vue/riode/demo-1/images/brands/4.png",
+        },
+        {
+          id: 5,
+          logo: "https://d-themes.com/vue/riode/demo-1/images/brands/5.png",
+        },
+        {
+          id: 6,
+          logo: "https://d-themes.com/vue/riode/demo-1/images/brands/6.png",
+        },
+      ],
+      // END:: PARTNERS
+
       // START:: SLICK SLIDER SETTINDS
-      slickSliderSettings: {
+      productsSliderSettings: {
         dots: true,
         arrows: true,
         dotsClass: "slick-dots custom-dot-class",
@@ -415,6 +462,42 @@ export default {
               dots: false,
               arrows: true,
               slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+      },
+
+      partnersSliderSettings: {
+        dots: false,
+        arrows: false,
+        dotsClass: "slick-dots custom-dot-class",
+        edgeFriction: 0.35,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 6,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              dots: false,
+              arrows: true,
+              slidesToShow: 2,
               slidesToScroll: 1,
             },
           },

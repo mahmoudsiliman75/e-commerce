@@ -202,7 +202,6 @@ header {
       background-color: $white;
       z-index: 10;
       @include transitioning(0.4s);
-      @include midShadow;
       &::-webkit-scrollbar {
         width: 5px;
       }
@@ -333,6 +332,7 @@ header {
       opacity: 1;
       & + .cart_menu {
         right: 0;
+        @include midShadow;
       }
     }
   }
