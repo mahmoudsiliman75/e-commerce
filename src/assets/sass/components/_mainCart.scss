@@ -1,0 +1,162 @@
+.main_cart_wraper {
+  padding-block: $sectionPadding;
+
+  .empty_cart_message {
+    @include flexCenterAlignment;
+    flex-direction: column;
+    color: $midGrey;
+    h5 {
+      font-family: $bold_font;
+    }
+  }
+
+  .wraper {
+    .cart_table {
+      table {
+        tbody {
+          td {
+            padding-block: 8px;
+            .product {
+              @include flexStartAlignment;
+              height: 115px;
+              img {
+                min-width: 100px;
+                max-width: 100px;
+                min-height: 115px;
+                max-height: 115px;
+              }
+
+              p {
+                margin-bottom: 0;
+                padding-inline-start: 10px;
+                word-break: break-word;
+              }
+            }
+
+            .price,
+            .subtotal {
+              font-family: $bold_font;
+            }
+
+            .quantity_btns {
+              @include flexSpaceBetweenAlignment;
+              border: 1px solid $lighterGrey;
+              button {
+                &:focus {
+                  box-shadow: none;
+                }
+                &:nth-child(2) {
+                  @include borderRadius(0);
+                  padding-inline: 10px;
+                  border-left: 1px solid $lighterGrey;
+                  border-right: 1px solid $lighterGrey;
+                }
+              }
+            }
+
+            .remove_btn {
+              &:focus {
+                box-shadow: none;
+              }
+              svg {
+                @include transitioning(0.3s);
+                &:hover {
+                  color: $midRed;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .coupon_wraper {
+      h5 {
+        padding-top: 20px;
+        font-family: $bold_font;
+      }
+
+      form {
+        margin-top: 20px;
+        input[type="text"] {
+          @include borderRadius(0);
+          border: none;
+          border-bottom: 1px solid $lighterGrey;
+          @include transitioning(0.4s);
+          &:focus {
+            box-shadow: none;
+            border-bottom: 1px solid $mainColor;
+          }
+        }
+        button {
+          @include btnWithBackground;
+        }
+      }
+    }
+
+    .cart_totals {
+      padding: 10px 30px;
+      border: 1px solid $lighterGrey;
+      .cart_totals_header,
+      .cart_subtotal,
+      .shipping_fees,
+      .cart_totals_footer {
+        padding-block: 30px;
+        border-bottom: 1px solid $lighterGrey;
+        h6 {
+          color: $midGrey;
+          margin-bottom: 0;
+          font-family: $bold_font;
+        }
+      }
+      .cart_subtotal {
+        @include flexSpaceBetweenAlignment;
+        h6 {
+          font-size: 0.9rem;
+        }
+      }
+      .shipping_fees {
+        .v-input__control {
+          .v-text-field__details {
+            min-height: 0 !important;
+            display: none;
+          }
+          .v-select__slot {
+            .v-select__selections {
+              .theme--light {
+                &.v-chip {
+                  &:not(.v-chip--active) {
+                    background-color: $secondaryColor;
+                    color: $white;
+                  }
+                }
+              }
+            }
+
+            .v-input__append-inner {
+              .v-input__icon {
+                .v-icon {
+                  opacity: 0.6;
+                  color: $secondaryColor !important;
+                  caret-color: $secondaryColor !important;
+                }
+              }
+            }
+          }
+        }
+        .fees {
+          @include flexSpaceBetweenAlignment;
+          h6 {
+            font-size: 0.9rem;
+            font-family: $bold_font;
+          }
+        }
+      }
+
+      .cart_totals_footer {
+        @include flexSpaceBetweenAlignment;
+        border-bottom: none;
+      }
+    }
+  }
+}

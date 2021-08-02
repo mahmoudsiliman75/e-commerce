@@ -163,7 +163,7 @@
           <div class="row">
             <div class="col-3">
               <div class="img_wraper">
-                <img :src="item.img_1" alt="Product Image" />
+                <img :src="item.images[0].img" alt="Product Image" />
               </div>
             </div>
 
@@ -187,7 +187,7 @@
                 </button>
               </div>
               <h5>
-                <span class="count"> 1 X </span>
+                <span class="count"> {{ item.quantity }} X </span>
                 <span class="price" v-if="item.discount.length == 0">
                   {{ item.price }} EGP
                 </span>

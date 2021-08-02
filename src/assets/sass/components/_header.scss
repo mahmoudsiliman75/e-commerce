@@ -4,7 +4,7 @@ header {
   position: relative;
 
   &.sticky {
-    z-index: 10;
+    z-index: 20;
     animation: fixedAnimation 0.5s forwards;
 
     .upper_bar,

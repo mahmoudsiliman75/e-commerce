@@ -134,7 +134,8 @@
       font-size: 1rem;
       font-weight: 600;
       .previous_price {
-        margin-inline-end: 6px;
+        font-size: 0.9rem;
+        margin-inline-start: 8px;
         text-decoration: line-through;
         color: $lightRed;
       }
