@@ -26,7 +26,13 @@
 @import "components/slider.scss";
 
 // ==== FOOTER STYLES
+@import "components/productCard";
+
+// ==== FOOTER STYLES
 @import "components/_footer";
+
+// ==== FOOTER STYLES
+@import "components/filterStyle";
 
 // ==== Global Style
 * {
@@ -73,7 +79,9 @@ li {
   margin: 0;
   list-style: none;
 }
-
+.All-Content{
+  padding-block: $sectionPadding;
+}
 .slick-dots {
   li {
     button {
