@@ -330,7 +330,8 @@ export default {
           discount: "250",
           rate: 4,
           reviews: 2,
-          quantity: 0
+          quantity: 0,
+          quantityPrice: 0,
         },
         {
           id: 2,
@@ -345,7 +346,8 @@ export default {
           discount: "",
           rate: 2.5,
           reviews: 4,
-          quantity: 0
+          quantity: 0,
+          quantityPrice: 0,
         },
         {
           id: 3,
@@ -360,7 +362,8 @@ export default {
           discount: "400",
           rate: 3.5,
           reviews: 10,
-          quantity: 0
+          quantity: 0,
+          quantityPrice: 0,
         },
         {
           id: 4,
@@ -375,7 +378,8 @@ export default {
           discount: "",
           rate: 0,
           reviews: 0,
-          quantity: 0
+          quantity: 0,
+          quantityPrice: 0,
         },
         {
           id: 5,
@@ -390,7 +394,8 @@ export default {
           discount: "",
           rate: 4.5,
           reviews: 23,
-          quantity: 0
+          quantity: 0,
+          quantityPrice: 0,
         },
       ],
       // END:: BEST SELLERS DATA
@@ -410,7 +415,8 @@ export default {
           discount: "250",
           rate: 4,
           reviews: 2,
-          quantity: 0
+          quantity: 0,
+          quantityPrice: 0,
         },
         {
           id: 2,
@@ -425,7 +431,8 @@ export default {
           discount: "",
           rate: 2.5,
           reviews: 4,
-          quantity: 0
+          quantity: 0,
+          quantityPrice: 0,
         },
         {
           id: 3,
@@ -440,7 +447,8 @@ export default {
           discount: "400",
           rate: 3.5,
           reviews: 10,
-          quantity: 0
+          quantity: 0,
+          quantityPrice: 0,
         },
         {
           id: 4,
@@ -455,7 +463,8 @@ export default {
           discount: "",
           rate: 0,
           reviews: 0,
-          quantity: 0
+          quantity: 0,
+          quantityPrice: 0,
         },
       ],
       // END:: FEATURED ITEMS DATA

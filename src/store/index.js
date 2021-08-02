@@ -8,21 +8,22 @@ export default new Vuex.Store({
     return {
       // START:: SHOPPING CART
       shoppingCart: [
-        // {
-        //   id: 1,
-        //   img_1:
-        //     "https://d-themes.com/vue/riode/server/uploads/demo_1_product_7_1_98644502e2.jpg",
-        //   img_2:
-        //     "https://d-themes.com/vue/riode/server/uploads/demo_1_product_7_2_49cc0be0ad.jpg",
-        //   badges: ["TOP", "SALE"],
-        //   categoryName: "For Men's",
-        //   productName: "Beyond Riode Original T-Shirt",
-        //   price: "500",
-        //   discount: "250",
-        //   rate: 4,
-        //   reviews: 2,
-        //   quantity: 0
-        // },
+        {
+          id: 1,
+          img_1:
+            "https://d-themes.com/vue/riode/server/uploads/demo_1_product_7_1_98644502e2.jpg",
+          img_2:
+            "https://d-themes.com/vue/riode/server/uploads/demo_1_product_7_2_49cc0be0ad.jpg",
+          badges: ["TOP", "SALE"],
+          categoryName: "For Men's",
+          productName: "Beyond Riode Original T-Shirt",
+          price: "500",
+          discount: "250",
+          rate: 4,
+          reviews: 2,
+          quantity: 0,
+          quantityPrice: 0,
+        },
       ],
 
       cartSubtotal: "",
@@ -67,7 +68,7 @@ export default new Vuex.Store({
     incrementQuantity(_, payload) {
       payload.item.quantity++
 
-      // payload.item.price *= payload.item.quantity;
+      payload.item.quantityPrice += parseInt(payload.item.price);
     },
     // END:: INCREMENT QUANTITY
 

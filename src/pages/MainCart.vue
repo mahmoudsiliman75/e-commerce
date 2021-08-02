@@ -17,8 +17,8 @@
         v-else
       >
         <div class="row">
-          <div class="col-9">
-            <div class="cart_table">
+          <div class="col-8">
+            <div class="cart_table mb-5">
               <v-simple-table>
                 <template v-slot:default>
                   <thead>
@@ -75,7 +75,7 @@
 
                       <td>
                         <div class="subtotal">
-                          250 EGP
+                          {{ item.quantityPrice }}
                         </div>
                       </td>
 
@@ -88,6 +88,55 @@
                   </tbody>
                 </template>
               </v-simple-table>
+            </div>
+
+            <div class="coupon_wraper">
+              <h5> Discount Coupon </h5>
+
+              <form>
+                <input class="form-control" type="text" placeholder="Enter Coupon Code.....">
+
+                <button class="btn mt-5">
+                  Apply Coupon
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-4 px-0">
+            <div class="cart_totals">
+              <div class="cart_totals_header">
+                <h6> Cart Toals </h6>
+              </div>
+
+              <div class="cart_subtotal">
+                <h6> Cart Subtotals </h6>
+                <h6> 250 EGP </h6>
+              </div>
+
+              <div class="shipping_fees">
+                <h6> Shipping Fees </h6>
+                <v-autocomplete
+                  chips
+                  deletable-chips
+                  dense
+                  small-chips
+                  solo
+                  v-model="shippingCitiesValues"
+                  :items="shippingCities"
+                  label="Select Your City"
+                  class="my-5"
+                ></v-autocomplete>
+                <div class="fees">
+                  <h6> Shipping subtotal </h6>
+                  <h6> 100 EGP </h6>
+                </div>
+              </div>
+
+              <div class="cart_totals_footer">
+                <h6> Total </h6>
+                <h6> 350 EGP </h6>
+              </div>
             </div>
           </div>
         </div>
@@ -108,6 +157,13 @@ export default {
     PlusIcon,
     MinusIcon,
     XCircleIcon
+  },
+
+  data() {
+    return {
+      shippingCities: ["City1", "City2", "City3"],
+      shippingCitiesValues: ["City1", "City2", "City3"],
+    }
   },
 
   methods: {

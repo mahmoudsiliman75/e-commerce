@@ -81,6 +81,24 @@
   }
 }
 
+@mixin btnWithBackground {
+  padding: 0.7em 1.5em;
+  margin-right: 2rem;
+  font-weight: bolder;
+  line-height: 1.2;
+  color: $white;
+  background-color: $mainColor;
+  border: 1px solid $mainColor;
+  width: auto;
+  border-radius: 5px;
+  margin: 0;
+  @include transitioning(0.4s);
+  &:hover{
+    background-color: $white;
+    color: $mainColor;
+  }
+}
+
 @mixin mainHeaderStyle {
   @include flexCenterAlignment;
   position: relative;
