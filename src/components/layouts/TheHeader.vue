@@ -187,7 +187,7 @@
                 </button>
               </div>
               <h5>
-                <span class="count"> 1 X </span>
+                <span class="count"> {{ item.quantity }} X </span>
                 <span class="price" v-if="item.discount.length == 0">
                   {{ item.price }} EGP
                 </span>

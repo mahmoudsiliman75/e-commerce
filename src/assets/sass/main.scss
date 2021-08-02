@@ -25,10 +25,13 @@
 // ==== SLIDER STYLES
 @import "components/slider.scss";
 
+// ==== MAIN CART STYLES
+@import "components/mainCart.scss";
+
 // ==== FOOTER STYLES
 @import "components/_footer";
 
-// ==== Global Style
+// ==== GLOBAL STYLE
 * {
   @include boxSizing;
   font-family: $regular_font;
