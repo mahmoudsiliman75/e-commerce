@@ -1,0 +1,97 @@
+.filterSection {
+  margin-bottom: 15px;
+  .mainBTN {
+    @include btnWithOutBackground;
+  }
+}
+.bodyFilter {
+  .v-expansion-panel::before {
+    box-shadow: none;
+  }
+  button.v-expansion-panel-header {
+    border-radius: 0;
+    color: $darkGrey !important;
+    font-family: $bold_font;
+    min-height: auto;
+    font-size: 1.08rem;
+    padding-inline: 0;
+    margin: 0;
+    padding-block: 1.5rem;
+  }
+  .v-icon.v-icon {
+    color: $darkGrey !important;
+  }
+  .v-expansion-panel:not(:first-child)::after {
+    @include borderRadius(0);
+  }
+  .v-expansion-panel {
+    border-top: 2px solid $lighterGrey;
+    margin: 0 !important;
+  }
+  .v-expansion-panel-content__wrap {
+    padding: 0;
+    .list-categories {
+      padding: 0;
+      ul {
+        padding: 0;
+        li {
+          border-bottom: 1px solid #eee;
+          padding-block: 0.8rem;
+          transition: all 0.5s ease-out;
+          &:last-child {
+            border: 0;
+          }
+          &:hover {
+            background-color: $mainColor;
+            padding-inline: 5px;
+            a {
+              color: #fff;
+            }
+          }
+          a {
+            color: #000;
+            font-size: 0.9rem;
+            display: block;
+
+            span {
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .priceFilter {
+      .filterBtn{
+        @include btnWithBackground;
+      }
+    .v-slider__thumb {
+      width: 12px;
+      height: 18px;
+      @include borderRadius(3px);
+      &.primary {
+        background-color: $darkGrey !important;
+        border-color: $darkGrey !important;
+      }
+    }
+    .v-slider__track-fill {
+      &.primary {
+        background-color: $lightGrey !important;
+        border-color: $lightGrey !important;
+      }
+    }
+    .v-application {
+      .primary {
+        &.lighten-3 {
+          background-color: $secondaryColor !important;
+          border-color: $secondaryColor !important;
+        }
+      }
+    }
+    h6 {
+      font-size: 0.9rem;
+      margin-block: 15px;
+    }
+  }
+  
+}
