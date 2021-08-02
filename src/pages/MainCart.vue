@@ -45,7 +45,7 @@
                     >
                       <td> 
                         <div class="product">
-                          <img :src="item.img_1">
+                          <img :src="item.images[0].img">
                           <p> {{ item.productName }} </p>
                         </div>
                       </td>
@@ -162,7 +162,7 @@ export default {
   data() {
     return {
       shippingCities: ["City1", "City2", "City3"],
-      shippingCitiesValues: ["City1", "City2", "City3"],
+      shippingCitiesValues: [100, 200, 150],
     }
   },
 

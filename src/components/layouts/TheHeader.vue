@@ -163,7 +163,7 @@
           <div class="row">
             <div class="col-3">
               <div class="img_wraper">
-                <img :src="item.img_1" alt="Product Image" />
+                <img :src="item.images[0].img" alt="Product Image" />
               </div>
             </div>
 
