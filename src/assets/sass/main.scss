@@ -34,14 +34,10 @@
 // ==== FOOTER STYLES
 @import "components/_footer";
 
-<<<<<<< HEAD
-// ==== GLOBAL STYLE
-=======
 // ==== FOOTER STYLES
 @import "components/filterStyle";
 
 // ==== Global Style
->>>>>>> 7dd1841fa9c6910edf4c8921da4a8a1d53620f08
 * {
   @include boxSizing;
   font-family: $regular_font;

@@ -89,7 +89,6 @@
   }
 }
 
-<<<<<<< HEAD
 @mixin btnWithBackground {
   padding: 0.5em 1.5em;
   margin-right: 2rem;
@@ -106,8 +105,6 @@
     color: $mainColor;
   }
 }
-=======
->>>>>>> 7dd1841fa9c6910edf4c8921da4a8a1d53620f08
 
 @mixin mainHeaderStyle {
   @include flexCenterAlignment;
