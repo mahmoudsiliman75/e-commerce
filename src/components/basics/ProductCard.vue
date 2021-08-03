@@ -13,7 +13,7 @@
           <div class="actions_btns_wraper">
             <router-link :to="{name: 'ProductDetails', params: { product_id: productData.id } }" v-b-tooltip.hover title="Details">
               <ArrowRightIcon size="1.2x" class="arrow_icon" />
-            </router-link>
+            </router-link>  
 
             <button
               class="add_to_wish"
