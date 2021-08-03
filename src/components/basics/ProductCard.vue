@@ -11,7 +11,7 @@
 
         <div class="overlay">
           <div class="actions_btns_wraper">
-            <router-link to="/" v-b-tooltip.hover title="Details">
+            <router-link :to="{name: 'ProductDetails', params: { product_id: productData.id } }" v-b-tooltip.hover title="Details">
               <ArrowRightIcon size="1.2x" class="arrow_icon" />
             </router-link>
 
