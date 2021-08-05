@@ -123,8 +123,8 @@ footer {
           text-decoration: 0;
           color: $lighterGrey;
           opacity: 0.6;
-          width: 30px;
-          height: 30px;
+          width: 35px;
+          height: 35px;
           border: 2px solid $lighterGrey;
           @include borderRadius(50%);
           @include transitioning(0.4s);

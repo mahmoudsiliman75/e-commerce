@@ -70,39 +70,23 @@
 }
 
 @mixin btnWithBackground {
-  button {
-    padding: 0.7em 1.5em;
-    margin-right: 2rem;
-    font-weight: bolder;
-    line-height: 1.2;
-    color: $white;
-    background-color: $mainColor;
-    border: 2px solid $mainColor;
-    width: auto;
-    border-radius: 5px;
-    margin: 0;
-    transition: all .5s ease-out;
-    &:hover{
-      background-color: $darkGrey;
-      color: $white;
-    }
-  }
-}
-
-@mixin btnWithBackground {
-  padding: 0.5em 1.5em;
+  padding: 0.5em 1em;
   margin-right: 2rem;
   line-height: 1.2;
+  font-size: 16px;
   color: $white;
   background-color: $mainColor;
   border: 1px solid $mainColor;
   width: auto;
-  @include borderRadius(5px);
   margin: 0;
+  @include borderRadius(5px);
   @include transitioning(0.4s);
   &:hover{
     background-color: $white;
     color: $mainColor;
+  }
+  &:focus {
+    box-shadow: none;
   }
 }
 
