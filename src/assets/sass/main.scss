@@ -1,26 +1,26 @@
 // ==== VARIABLES
-@import "varibles/_variables.scss";
+@import "varibles/variables.scss";
 
 // ==== MIXINS
-@import "mixins/_mixins.scss";
+@import "mixins/mixins.scss";
 
 // ==== FONTS
-@import "fonts/_fonts.scss";
+@import "fonts/fonts.scss";
 
 // ==== LOADER
-@import "components/_loader";
+@import "components/loader";
 
 // ==== ANIMATION
-@import "components/_animation.scss";
+@import "components/animation.scss";
 
 // ==== HEADER
-@import "components/_header.scss";
+@import "components/header.scss";
 
 // ==== BREADCRUMB
-@import "components/_breadcrumb";
+@import "components/breadcrumb";
 
 // ==== HOME STYLES
-@import "components/_home.scss";
+@import "components/home.scss";
 
 // ==== SLIDER STYLES
 @import "components/slider.scss";
@@ -28,14 +28,17 @@
 // ==== MAIN CART STYLES
 @import "components/mainCart.scss";
 
-// ==== FOOTER STYLES
-@import "components/productCard";
+// ==== PRODUCT CARD STYLES
+@import "components/productCard.scss";
+
+// ==== PRODUCT DETAILS STYLES
+@import "components/productMainDetails.scss";
+
+// ==== FILTER STYLES
+@import "components/filterStyle.scss";
 
 // ==== FOOTER STYLES
-@import "components/_footer";
-
-// ==== FOOTER STYLES
-@import "components/filterStyle";
+@import "components/footer.scss";
 
 // ==== Global Style
 * {
@@ -232,7 +235,7 @@ li {
             .product_options {
               .wraper {
                 @include flexStartAlignment;
-                label {
+                & > label {
                   width: 15%;
                   padding-inline-end: 10px;
                 }
@@ -277,8 +280,18 @@ li {
                   }
                 }
               }
-              .add_to_cat {
+              .add_to_cat,
+              .add_to_wishlist {
                 @include btnWithBackground;
+              }
+        
+              .add_to_wishlist {
+                background-color: $secondaryColor;
+                border: 1px solid $secondaryColor;
+                &:hover{
+                  background-color: $white;
+                  color: $secondaryColor;
+                }
               }
             }
           }

@@ -41,6 +41,7 @@ export default new Vuex.Store({
       state.shoppingCart = finalCart;
 
       payload.item.quantity++;
+      document.getElementById("notification").play();
     },
     // END:: ADD ITEM TO CART
 

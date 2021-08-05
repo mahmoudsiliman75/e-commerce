@@ -156,9 +156,9 @@
                       <v-autocomplete
                         chips
                         deletable-chips
-                        dense
                         small-chips
-                        solo
+                        filled
+                        dense
                         v-model="colorValues"
                         :items="colors"
                         label="Select Color"
@@ -171,9 +171,9 @@
                       <v-autocomplete
                         chips
                         deletable-chips
+                        filled
                         dense
                         small-chips
-                        solo
                         v-model="sizeValues"
                         :items="sizes"
                         label="Select Size"
@@ -195,9 +195,14 @@
                     </button>
                   </div>
 
-                  <button class="btn add_to_cat" @click="addToCart(productData)">
+                  <button class="btn add_to_cat mx-1" @click="addToCart(productData)">
                     <span> <ShoppingCartIcon/> </span>
                     <span> Add To Cart </span>
+                  </button>
+
+                  <button class="btn add_to_wishlist">
+                    <span> <HeartIcon/> </span>
+                    <span> Add To Wishlist </span>
                   </button>
                 </div>
               </div>
@@ -208,6 +213,10 @@
       </div>
     </b-modal>
     <!-- END:: PRODUCT MODAL -->
+
+    <audio id="notification">
+      <source src="../../assets/media/sounds/done.mp3"/>
+    </audio>
   </div>
 </template>
 
@@ -272,6 +281,8 @@ export default {
     // START:: ADD TO CART
     addToCart(item) {
       this.$store.dispatch("addItemToCart", { item });
+
+      document.getElementById("notification").play();
     },
     // END:: ADD TO CART
 
