@@ -16,12 +16,22 @@
               </li>
 
               <li class="d-flex justify-center align-items-center">
-                <router-link to="/" v-b-tooltip.hover title="Sign In" class="mx-1">
+                <router-link
+                  to="/"
+                  v-b-tooltip.hover
+                  title="Sign In"
+                  class="mx-1"
+                >
                   <UserIcon size="1.3x" class="user_icon" />
                   <span> Sign In </span>
                 </router-link>
 
-                <router-link to="/dashboard" v-b-tooltip.hover title="Profile" class="mx-1">
+                <router-link
+                  to="/dashboard"
+                  v-b-tooltip.hover
+                  title="Profile"
+                  class="mx-1"
+                >
                   <UserIcon size="1.3x" class="user_icon" />
                   <span> Profile </span>
                 </router-link>
@@ -104,7 +114,11 @@
                 </li>
 
                 <li>
-                  <router-link to="/wishlist" v-b-tooltip.hover title="Wishlist">
+                  <router-link
+                    to="/wishlist"
+                    v-b-tooltip.hover
+                    title="Wishlist"
+                  >
                     <HeartIcon size="2.3x" class="heart_icon" />
                   </router-link>
                 </li>
@@ -291,7 +305,7 @@ export default {
       // END:: CART MENU HANDLING DATA
 
       // START:: LANGUAGE DATA
-      lang: localStorage.getItem("dashboard_lang"),
+      lang: localStorage.getItem("ecommerce_lang"),
       // END:: LANGUAGE DATA
     };
   },
@@ -300,14 +314,14 @@ export default {
     // START:: HANDLING APPLICATION LANGUAGE
     setAppLang(selected_lang) {
       if (selected_lang == "en") {
-        localStorage.setItem("dashboard_lang", "en");
-        this.$i18n.locale = localStorage.getItem("dashboard_lang");
-        this.lang = localStorage.getItem("dashboard_lang");
+        localStorage.setItem("ecommerce_lang", "en");
+        this.$i18n.locale = localStorage.getItem("ecommerce_lang");
+        this.lang = localStorage.getItem("ecommerce_lang");
         location.reload();
       } else if (selected_lang == "ar") {
-        localStorage.setItem("dashboard_lang", "ar");
-        this.$i18n.locale = localStorage.getItem("dashboard_lang");
-        this.lang = localStorage.getItem("dashboard_lang");
+        localStorage.setItem("ecommerce_lang", "ar");
+        this.$i18n.locale = localStorage.getItem("ecommerce_lang");
+        this.lang = localStorage.getItem("ecommerce_lang");
         location.reload();
       }
     },

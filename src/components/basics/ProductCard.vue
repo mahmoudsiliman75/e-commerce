@@ -11,9 +11,16 @@
 
         <div class="overlay">
           <div class="actions_btns_wraper">
-            <router-link :to="{name: 'ProductDetails', params: { product_id: productData.id } }" v-b-tooltip.hover title="Details">
+            <router-link
+              :to="{
+                name: 'ProductDetails',
+                params: { product_id: productData.id },
+              }"
+              v-b-tooltip.hover
+              title="Details"
+            >
               <ArrowRightIcon size="1.2x" class="arrow_icon" />
-            </router-link>  
+            </router-link>
 
             <button
               class="add_to_wish"
@@ -90,7 +97,7 @@
         class="mt-3 close_btn"
         block
         @click="$bvModal.hide('modal-' + type + '-' + productData.id)"
-        ><XIcon/>
+        ><XIcon />
       </b-button>
 
       <div class="product_details_modal">
@@ -100,12 +107,12 @@
             <div class="col-12 col-md-6 p-0">
               <div class="imgs_carousel">
                 <VueSlickCarousel v-bind="imgsSliderSettings">
-                  <div 
+                  <div
                     class="img_wraper"
-                    v-for=" item in productData.images "
-                    :key= " item.id "
+                    v-for="item in productData.images"
+                    :key="item.id"
                   >
-                    <img :src="item.img"> 
+                    <img :src="item.img" />
                   </div>
                 </VueSlickCarousel>
               </div>
@@ -115,14 +122,17 @@
             <!-- START:: PRODUCT DETAILS SECTION -->
             <div class="col-12 col-md-6">
               <div class="product_details">
-                <h3 class="product_name"> {{ productData.productName }} </h3>
+                <h3 class="product_name">{{ productData.productName }}</h3>
 
-                <p class="product_category"> 
-                  <span> CATEGORY: </span> 
-                  <span> {{ productData.categoryName }} </span> 
+                <p class="product_category">
+                  <span> CATEGORY: </span>
+                  <span> {{ productData.categoryName }} </span>
                 </p>
 
-                <h3 class="product_price" v-if="productData.discount.length != 0">
+                <h3
+                  class="product_price"
+                  v-if="productData.discount.length != 0"
+                >
                   <span class="current_price">
                     <span>{{ productData.discount }}</span>
                     <span>EGP</span>
@@ -141,9 +151,11 @@
                   </span>
                 </h3>
 
-                <h6 class="product_rate">  
-                  <RatingStars :rate="productData.rate" class="m-0"/>
-                  <span class="reviews"> ({{ productData.reviews }} Reviews) </span>
+                <h6 class="product_rate">
+                  <RatingStars :rate="productData.rate" class="m-0" />
+                  <span class="reviews">
+                    ({{ productData.reviews }} Reviews)
+                  </span>
                 </h6>
 
                 <div class="product_description">
@@ -153,55 +165,58 @@
                 <div class="product_options">
                   <div class="wraper">
                     <label> Color: </label>
-                      <v-autocomplete
-                        chips
-                        deletable-chips
-                        small-chips
-                        filled
-                        dense
-                        v-model="colorValues"
-                        :items="colors"
-                        label="Select Color"
-                        class="mt-4"
-                      ></v-autocomplete>
+                    <v-autocomplete
+                      chips
+                      deletable-chips
+                      small-chips
+                      filled
+                      dense
+                      v-model="colorValues"
+                      :items="colors"
+                      label="Select Color"
+                      class="mt-4"
+                    ></v-autocomplete>
                   </div>
 
                   <div class="wraper">
                     <label> Size: </label>
-                      <v-autocomplete
-                        chips
-                        deletable-chips
-                        filled
-                        dense
-                        small-chips
-                        v-model="sizeValues"
-                        :items="sizes"
-                        label="Select Size"
-                        class="my-4"
-                      ></v-autocomplete>
+                    <v-autocomplete
+                      chips
+                      deletable-chips
+                      filled
+                      dense
+                      small-chips
+                      v-model="sizeValues"
+                      :items="sizes"
+                      label="Select Size"
+                      class="my-4"
+                    ></v-autocomplete>
                   </div>
                 </div>
 
                 <div class="add_product_to_cart">
                   <div class="quantity_btns">
                     <button class="btn" @click="increaseQuantity(productData)">
-                      <PlusIcon size="1x"/>
+                      <PlusIcon size="1x" />
                     </button>
                     <button class="btn" disabled>
                       {{ productData.quantity }}
                     </button>
                     <button class="btn" @click="decreaseQuantity(productData)">
-                      <MinusIcon size="1x"/>  
+                      <MinusIcon size="1x" />
                     </button>
                   </div>
 
-                  <button class="btn add_to_cat mx-1" @click="addToCart(productData)">
-                    <span> <ShoppingCartIcon/> </span>
+                  <button
+                    class="btn add_to_cat mx-1"
+                    @click="addToCart(productData)"
+                  >
+                    <span> <ShoppingCartIcon /> </span>
                     <span> Add To Cart </span>
                   </button>
 
                   <button class="btn add_to_wishlist">
-                    <span> <HeartIcon/> </span>
+                    <span> <HeartIcon /> </span>
                     <span> Add To Wishlist </span>
                   </button>
                 </div>
@@ -249,7 +264,7 @@ export default {
   props: ["productData", "type"],
 
   data() {
-    return{
+    return {
       // START:: COLOR SELECT BOX DATA
       colors: ["Black", "Red", "Blue"],
       colorValues: ["Black", "Red", "Blue"],
@@ -270,7 +285,7 @@ export default {
         slidesToShow: 1,
         slidesToScroll: 1,
       },
-    }
+    };
   },
 
   methods: {
@@ -282,14 +297,14 @@ export default {
 
     // START:: INCREMENT QUANTITY
     increaseQuantity(item) {
-      this.$store.dispatch("incrementQuantity", {item});
+      this.$store.dispatch("incrementQuantity", { item });
     },
     // END:: INCREMENT QUANTITY
 
     // START:: DECREMENT QUANTITY
     decreaseQuantity(item) {
-      this.$store.dispatch("decrementQuantity", {item});
-    }
+      this.$store.dispatch("decrementQuantity", { item });
+    },
     // END:: DECREMENT QUANTITY
   },
 };

@@ -19,7 +19,7 @@
               <router-link to="/address">Address</router-link>
               <router-link to="/account-details">Account Details</router-link>
               <router-link to="/change-password">Change Password</router-link>
-              <button> Logout </button>
+              <button>Logout</button>
             </div>
           </div>
           <!-- END:: TABS -->
@@ -27,7 +27,7 @@
           <!-- START:: TAB CONTENT -->
           <div class="col-12 col-md-9">
             <transition mode="out-in" name="fade">
-              <router-view/>
+              <router-view />
             </transition>
           </div>
           <!-- END:: TAB CONTENT -->
@@ -41,5 +41,5 @@
 <script>
 export default {
   name: "Profile",
-}
+};
 </script>

@@ -46,6 +46,12 @@
 // ==== FOOTER STYLES
 @import "components/footer.scss";
 
+// ==== AUTH
+@import "components/_auth";
+
+// ==== AUTH
+@import "components/staticPages";
+
 // ==== Global Style
 * {
   @include boxSizing;

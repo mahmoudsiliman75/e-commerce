@@ -1,0 +1,249 @@
+.auth-section {
+  padding-block: $sectionPadding;
+  .tabs-auth {
+    ul {
+      @include flexCenterAlignment;
+      height: 100px;
+      padding: 0;
+      li {
+        margin-inline: 5px;
+        color: $lightGrey;
+        a {
+          font-family: $bold_font;
+          font-size: 1.2rem;
+          color: $lightGrey;
+          transition: all 0.2s ease-out;
+          &.router-link-exact-active.router-link-active {
+            color: $darkGrey;
+            font-size: 1.8rem;
+          }
+        }
+      }
+    }
+  }
+  .auth-container {
+    @include flexCenterAlignment;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 auto;
+  }
+  .form-style {
+    width: 100%;
+    .form-input {
+      margin-bottom: 20px;
+      position: relative;
+      input {
+        height: 45px;
+        line-height: 45px;
+        border-color: $lighterGrey;
+        padding-right: 35px;
+        font-family: $medium_font;
+        font-size: 0.9rem;
+        &::-webkit-input-placeholder {
+          color: $lightGrey;
+        }
+
+        &:-ms-input-placeholder {
+          color: $lightGrey;
+        }
+
+        &::placeholder {
+          color: $lightGrey;
+        }
+        &:focus {
+          border-color: $lighterGrey !important;
+          outline: 0;
+          box-shadow: 0 0 0 0.25rem transparent;
+          border-radius: 3px !important;
+        }
+      }
+      button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 35px;
+        height: 100%;
+      }
+    }
+    .form-check {
+      margin-bottom: 20px;
+      padding: 0;
+      label {
+        font-size: 0.8rem;
+        margin-inline: 5px;
+        font-family: $medium_font;
+        color: $mainColor;
+      }
+      @include flexSpaceBetweenAlignment;
+      .form-check-input:checked {
+        background-color: $secondaryColor;
+        border-color: $secondaryColor;
+      }
+      .input-check {
+        @include flexCenterAlignment;
+      }
+      .form-check-input {
+        margin: 0;
+        width: 1.2em;
+        height: 1.2em;
+        border-radius: 0;
+        border-color: $lighterGrey;
+        &:focus {
+          border-color: #ffaa4c;
+          outline: 0;
+          box-shadow: 0 0 0 0.25rem rgb(255 170 76 / 48%);
+          border-radius: 3px !important;
+        }
+      }
+      .reset-password {
+      }
+      .reset-password a {
+        font-size: 0.8rem;
+        font-family: $medium_font;
+        color: $mainColor;
+      }
+    }
+    .btn-auth {
+      position: relative;
+      button {
+        @include btnWithBackground;
+        width: 100%;
+        height: 45px;
+        line-height: 45px;
+        padding: 0;
+        @include flexCenterAlignment;
+        .sppinerAnimation {
+          width: 22px;
+          height: 22px;
+          border: 2px solid $white;
+          border-radius: 50%;
+          display: inline-block;
+          position: relative;
+          -webkit-animation: rotation 1s linear infinite;
+          animation: rotation 1s linear infinite;
+          margin: 0 5px;
+          &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: $secondaryColor;
+            width: 8px;
+            height: 8px;
+            transform: translate(-50%, 50%);
+            border-radius: 50%;
+          }
+        }
+        &:hover {
+          .sppinerAnimation {
+            border-color: $mainColor;
+          }
+        }
+      }
+    }
+  }
+  .auth-social {
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    .head-social {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h5 {
+        font-family: $medium_font;
+        font-size: 0.8rem;
+        text-align: center;
+        background-color: #fff;
+        width: 40%;
+        margin: 0 auto;
+        z-index: 9;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        right: 0;
+        width: 30%;
+        height: 1px;
+        background-color: $lighterGrey;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 0;
+        width: 30%;
+        height: 1px;
+        background-color: $lighterGrey;
+      }
+    }
+    ul {
+      @include flexCenterAlignment;
+      padding: 0;
+      padding-block: 20px;
+      li {
+        margin-inline: 5px;
+
+        button {
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
+          color: $white;
+          @include borderRadius(5px);
+          &.facebook {
+            background-color: #3b5998;
+          }
+          &.twitter {
+            background-color: #1ab2e8;
+          }
+          &.google {
+            background-color: #db402c;
+          }
+          span {
+            i {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// START:: KEYFRAMES
+@-webkit-keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+// END:: KEYFRAMES

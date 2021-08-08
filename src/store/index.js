@@ -37,12 +37,12 @@ export default new Vuex.Store({
       state.shoppingCart.push(payload.item);
 
       let cart = state.shoppingCart;
-      let finalCart = [ ...new Set(cart) ]
+      let finalCart = [...new Set(cart)];
       state.shoppingCart = finalCart;
 
       payload.item.quantity++;
-      
-      new Audio( require( "../assets/media/sounds/done.mp3" ) ).play();
+
+      new Audio(require("../assets/media/sounds/done.mp3")).play();
     },
     // END:: ADD ITEM TO CART
 
@@ -74,13 +74,13 @@ export default new Vuex.Store({
 
     // START:: INCREMENT QUANTITY
     incrementQuantity(_, payload) {
-      payload.item.quantity++
+      payload.item.quantity++;
 
-      if ( payload.item.discount.length == 0  ) {
+      if (payload.item.discount.length == 0) {
         payload.item.quantityPrice += parseInt(payload.item.price);
       }
 
-      if ( payload.item.discount.length != 0 ) {
+      if (payload.item.discount.length != 0) {
         payload.item.quantityPrice += parseInt(payload.item.discount);
       }
     },
@@ -88,13 +88,13 @@ export default new Vuex.Store({
 
     // START:: DECREMENT QUANTITY
     decrementQuantity(_, payload) {
-      payload.item.quantity--
-      if ( payload.item.quantity < 1 ) {
+      payload.item.quantity--;
+      if (payload.item.quantity < 1) {
         payload.item.quantity = 1;
       }
 
       // payload.item.price /= payload.item.quantity;
-    }
+    },
     // END:: DECREMENT QUANTITY
   },
 
@@ -115,13 +115,13 @@ export default new Vuex.Store({
 
     // START:: INCREMENT QUANTITY
     incrementQuantity(context, payload) {
-      context.commit("incrementQuantity", payload)
+      context.commit("incrementQuantity", payload);
     },
     // END:: INCREMENT QUANTITY
 
     // START:: DECREMENT QUANTITY
     decrementQuantity(context, payload) {
-      context.commit("decrementQuantity", payload)
+      context.commit("decrementQuantity", payload);
     },
     // end:: DECREMENT QUANTITY
   },

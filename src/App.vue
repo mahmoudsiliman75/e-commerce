@@ -40,12 +40,12 @@ export default {
 
   // START:: MOUNTED LIFE HOOK
   mounted() {
-    let dashboard_lang = localStorage.getItem("dashboard_lang");
+    let dashboard_lang = localStorage.getItem("ecommerce_lang");
     if (!dashboard_lang) {
-      localStorage.setItem("dashboard_lang", "en");
+      localStorage.setItem("ecommerce_lang", "en");
       this.$i18n.locale = "en";
     } else {
-      this.$i18n.locale = localStorage.getItem("dashboard_lang");
+      this.$i18n.locale = localStorage.getItem("ecommerce_lang");
     }
   },
   // END:: MOUNTED LIFE HOOK

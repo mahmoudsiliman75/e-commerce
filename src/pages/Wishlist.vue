@@ -4,47 +4,32 @@
       <v-simple-table>
         <thead>
           <tr>
-            <th class="text-left">
-              PRODUCT
-            </th>
-            <th class="text-left">
-              PRICE
-            </th>
-            <th class="text-left">
-              STOCK STATUS
-            </th>
+            <th class="text-left">PRODUCT</th>
+            <th class="text-left">PRICE</th>
+            <th class="text-left">STOCK STATUS</th>
             <th class="text-left"></th>
           </tr>
         </thead>
         <tbody>
-          <tr
-            v-for=" item in wishlistData "
-            :key=" item.id "
-          >
-            <td> 
+          <tr v-for="item in wishlistData" :key="item.id">
+            <td>
               <div class="product">
-                <img :src="item.images[0].img">
-                <p> {{ item.productName }} </p>
+                <img :src="item.images[0].img" />
+                <p>{{ item.productName }}</p>
               </div>
             </td>
 
             <td>
-              <div class="price">
-                500 EGP
-              </div>
+              <div class="price">500 EGP</div>
             </td>
 
             <td>
-              <div class="status">
-                IN Stock
-              </div>
+              <div class="status">IN Stock</div>
             </td>
 
             <td>
               <div class="action">
-                <button class="btn">
-                  Add To Cart
-                </button>
+                <button class="btn">Add To Cart</button>
               </div>
             </td>
           </tr>
@@ -59,7 +44,7 @@ export default {
   name: "Wishlist",
 
   data() {
-    return{
+    return {
       wishlistData: [
         {
           id: 1,
@@ -84,7 +69,8 @@ export default {
           badges: ["TOP", "SALE"],
           categoryName: "For Men's",
           productName: "Beyond Riode Original T-Shirt",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod posuere pulvinar. Vivamus vestibulum arcu nisi, non sollicitudin ex vestibulum eu. Nulla euismod sapien nisl. Proin metus mauris, ultrices ac pulvinar a, vehicula vel nisi. Aenean finibus mollis sodales. Suspendisse dapibus purus ut bibendum suscipit.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod posuere pulvinar. Vivamus vestibulum arcu nisi, non sollicitudin ex vestibulum eu. Nulla euismod sapien nisl. Proin metus mauris, ultrices ac pulvinar a, vehicula vel nisi. Aenean finibus mollis sodales. Suspendisse dapibus purus ut bibendum suscipit.",
           price: "500",
           discount: "250",
           rate: 4,
@@ -116,7 +102,8 @@ export default {
           badges: ["NEW"],
           categoryName: "Accessories",
           productName: " Mackintosh Poket backpack ",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod posuere pulvinar. Vivamus vestibulum arcu nisi, non sollicitudin ex vestibulum eu. Nulla euismod sapien nisl. Proin metus mauris, ultrices ac pulvinar a, vehicula vel nisi. Aenean finibus mollis sodales. Suspendisse dapibus purus ut bibendum suscipit.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod posuere pulvinar. Vivamus vestibulum arcu nisi, non sollicitudin ex vestibulum eu. Nulla euismod sapien nisl. Proin metus mauris, ultrices ac pulvinar a, vehicula vel nisi. Aenean finibus mollis sodales. Suspendisse dapibus purus ut bibendum suscipit.",
           price: "500",
           discount: "",
           rate: 2.5,
@@ -148,7 +135,8 @@ export default {
           badges: ["SALE"],
           categoryName: "Fashionable Women's",
           productName: " Solid pattern in fashion summer dress ",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod posuere pulvinar. Vivamus vestibulum arcu nisi, non sollicitudin ex vestibulum eu. Nulla euismod sapien nisl. Proin metus mauris, ultrices ac pulvinar a, vehicula vel nisi. Aenean finibus mollis sodales. Suspendisse dapibus purus ut bibendum suscipit.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod posuere pulvinar. Vivamus vestibulum arcu nisi, non sollicitudin ex vestibulum eu. Nulla euismod sapien nisl. Proin metus mauris, ultrices ac pulvinar a, vehicula vel nisi. Aenean finibus mollis sodales. Suspendisse dapibus purus ut bibendum suscipit.",
           price: "700",
           discount: "400",
           rate: 3.5,
@@ -176,7 +164,8 @@ export default {
           badges: ["NEW"],
           categoryName: "For Men's",
           productName: " Converse blue training shoes ",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod posuere pulvinar. Vivamus vestibulum arcu nisi, non sollicitudin ex vestibulum eu. Nulla euismod sapien nisl. Proin metus mauris, ultrices ac pulvinar a, vehicula vel nisi. Aenean finibus mollis sodales. Suspendisse dapibus purus ut bibendum suscipit.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod posuere pulvinar. Vivamus vestibulum arcu nisi, non sollicitudin ex vestibulum eu. Nulla euismod sapien nisl. Proin metus mauris, ultrices ac pulvinar a, vehicula vel nisi. Aenean finibus mollis sodales. Suspendisse dapibus purus ut bibendum suscipit.",
           price: "600",
           discount: "",
           rate: 0,
@@ -186,7 +175,7 @@ export default {
           status: "Out Of Stock",
         },
       ],
-    }
-  }
-}
+    };
+  },
+};
 </script>

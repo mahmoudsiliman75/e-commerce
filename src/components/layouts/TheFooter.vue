@@ -79,7 +79,7 @@
 
             <ul>
               <li>
-                <router-link to="/"> Link Sample </router-link>
+                <router-link to="/faqs"> FAQS </router-link>
               </li>
               <li>
                 <router-link to="/"> Link Sample </router-link>

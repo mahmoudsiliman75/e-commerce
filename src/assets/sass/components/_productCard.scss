@@ -1,5 +1,5 @@
 .product_card_wraper {
-  width: 250px;
+  width: 100%;
   @include transitioning(0.4s);
   .product_image_wraper {
     position: relative;
@@ -19,8 +19,8 @@
     }
 
     .overlay {
-      min-width: 250px;
-      max-width: 250px;
+      min-width: 100%;
+      max-width: 100%;
       padding: 10px;
       position: absolute;
       inset: 0;
@@ -81,8 +81,8 @@
     }
 
     img {
-      min-width: 250px;
-      max-width: 250px;
+      min-width: 100%;
+      max-width: 100%;
       min-height: 315px;
       max-height: 315px;
       // width: 100%;
@@ -117,7 +117,7 @@
   }
 
   .product_card_body {
-    width: 250px;
+    width: 100%;
     padding-top: 10px;
     text-align: center;
     .category {
@@ -148,5 +148,12 @@
         font-size: 0.7rem;
       }
     }
+  }
+}
+
+.padding-slider{
+  .slick-slide{
+    padding-right: .75rem;
+    padding-left: .75rem;
   }
 }

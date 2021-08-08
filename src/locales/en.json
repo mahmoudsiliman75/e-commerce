@@ -1,5 +1,6 @@
 {
   "message":                          "hello i18n !!",
+  "alertPositions":                   "bottomLeft",
 
   "home":                             "Home",
   "about_app":                        "About App",

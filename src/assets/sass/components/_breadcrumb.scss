@@ -17,12 +17,19 @@
     z-index: 2;
   }
   .head-breadcrumb {
-      h1 {
+    @include flexCenterAlignment;
+    flex-direction: column;
+    text-align: center;
+    h1 {
       font-family: $bold_font;
       text-align: center;
       color: $white;
       font-size: 2rem;
       margin-bottom: 25px;
+    }
+    p{
+      color: $white;
+      width: 40%;
     }
   }
   ul {

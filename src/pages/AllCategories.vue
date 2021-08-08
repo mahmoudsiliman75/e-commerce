@@ -1,30 +1,110 @@
 <template>
   <div class="all-categories">
     <!-- START:: BREADCRUMB -->
-    <BreadCrumb :title="data.CategoryNme" :image="data.CategoryImage" />
+    <BreadCrumb
+      :title="data.CategoryNme"
+      :image="data.CategoryImage"
+      :description="data.shortDesc"
+    />
     <!-- END:: BREADCRUMB -->
     <section class="All-Content">
       <div class="container">
-        <div class="row">
+        <div class="row row-overflow">
           <!-- START:: ALL FILTER -->
-          <div class="col-md-3">
+          <div
+            :class="
+              colHideen == false
+                ? 'col-md-3 col-filter hideFilter'
+                : 'col-md-3 col-filter showFilter'
+            "
+          >
             <FilterSideBar />
           </div>
           <!-- END:: ALL FILTER -->
 
           <!-- START:: ALL PRODUCTS -->
-          <div class="col-md-9">
-            <!-- START:: ROW PRODUCTS -->
-            <div class="row">
-              <div
-                class="col-4 my-5"
-                v-for="product in allProducts"
-                :key="product.id"
-              >
-                <ProductCard :productData="product" />
-              </div>
-            </div>
-            <!-- END:: ROW PRODUCTS -->
+          <div
+            :class="
+              colHideen == false
+                ? 'col-md-12 content-prodcuts'
+                : 'col-md-9 content-prodcuts'
+            "
+          >
+            <ProductsWrapper>
+              <!-- START:: HEADER BAR -->
+              <template #HeaderBar>
+                <div class="header-filter">
+                  <div class="left-part">
+                    <button type="button" @click="hideFilter">
+                      Filter
+                      <ArrowRightIcon v-if="colHideen == false" size="1x" />
+                      <ArrowLeftIcon v-if="colHideen == true" size="1x" />
+                    </button>
+                  </div>
+                  <div class="right-part">
+                    <label>SHOW <span>:</span> </label>
+                    <select class="form-select">
+                      <option selected>5</option>
+                      <option value="10">10</option>
+                      <option value="20">20</option>
+                      <option value="40">40</option>
+                    </select>
+                  </div>
+                </div>
+              </template>
+
+              <!-- START:: MAIN CONTANT -->
+              <template #mainContant>
+                <!-- START:: ROW PRODUCTS -->
+                <div class="row">
+                  <div
+                    :class="
+                      colHideen == false
+                        ? 'col-3 my-5 content-prodcuts'
+                        : 'col-4 my-5 content-prodcuts'
+                    "
+                    v-for="product in allProducts"
+                    :key="product.id"
+                  >
+                    <ProductCard :productData="product" />
+                  </div>
+                </div>
+                <!-- END:: ROW PRODUCTS -->
+              </template>
+
+              <!-- START:: FOOTER -->
+              <template #FooterBar>
+                <div class="pagination">
+                  <div class="left-part">
+                    <h6>Showing</h6>
+                    <h6>1 of {{ allProducts.length }}</h6>
+                    <h6>Products</h6>
+                  </div>
+                  <div class="right-part">
+                    <ul>
+                      <li>
+                        <router-link to="#">
+                          <ArrowLeftIcon size="1x" />
+                          Prev
+                        </router-link>
+                      </li>
+                      <li>
+                        <router-link to="#"> 1 </router-link>
+                      </li>
+                      <li>
+                        <router-link to="#"> 2 </router-link>
+                      </li>
+                      <li>
+                        <router-link to="#">
+                          Next
+                          <ArrowRightIcon size="1x" />
+                        </router-link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </template>
+            </ProductsWrapper>
           </div>
           <!-- END:: ALL PRODUCTS -->
         </div>
@@ -37,6 +117,8 @@
 import FilterSideBar from "@/components/basics/FilterSideBar";
 import BreadCrumb from "@/components/basics/BreadCrumb";
 import ProductCard from "@/components/basics/ProductCard";
+import ProductsWrapper from "@/pages/ProductsWrapper";
+import { ArrowRightIcon, ArrowLeftIcon } from "vue-feather-icons";
 export default {
   name: "AllCategories",
   // START:: COMPONENTS
@@ -44,14 +126,19 @@ export default {
     BreadCrumb,
     ProductCard,
     FilterSideBar,
+    ProductsWrapper,
+    ArrowRightIcon,
+    ArrowLeftIcon,
   },
   // END:: COMPONENTS
   data() {
     return {
+      colHideen: true,
       data: {
         CategoryImage:
           "https://d-themes.com/vue/riode/demo-1/images/page-header-back.jpg",
         CategoryNme: "All Categories",
+        shortDesc: "",
       },
       // START:: ALL PRODUCTS
       allProducts: [
@@ -78,7 +165,8 @@ export default {
           badges: ["TOP", "SALE"],
           categoryName: "For Men's",
           productName: "Beyond Riode Original T-Shirt",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod posuere pulvinar. Vivamus vestibulum arcu nisi, non sollicitudin ex vestibulum eu. Nulla euismod sapien nisl. Proin metus mauris, ultrices ac pulvinar a, vehicula vel nisi. Aenean finibus mollis sodales. Suspendisse dapibus purus ut bibendum suscipit.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod posuere pulvinar. Vivamus vestibulum arcu nisi, non sollicitudin ex vestibulum eu. Nulla euismod sapien nisl. Proin metus mauris, ultrices ac pulvinar a, vehicula vel nisi. Aenean finibus mollis sodales. Suspendisse dapibus purus ut bibendum suscipit.",
           price: "500",
           discount: "250",
           rate: 4,
@@ -109,7 +197,8 @@ export default {
           badges: ["NEW"],
           categoryName: "Accessories",
           productName: " Mackintosh Poket backpack ",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod posuere pulvinar. Vivamus vestibulum arcu nisi, non sollicitudin ex vestibulum eu. Nulla euismod sapien nisl. Proin metus mauris, ultrices ac pulvinar a, vehicula vel nisi. Aenean finibus mollis sodales. Suspendisse dapibus purus ut bibendum suscipit.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod posuere pulvinar. Vivamus vestibulum arcu nisi, non sollicitudin ex vestibulum eu. Nulla euismod sapien nisl. Proin metus mauris, ultrices ac pulvinar a, vehicula vel nisi. Aenean finibus mollis sodales. Suspendisse dapibus purus ut bibendum suscipit.",
           price: "500",
           discount: "",
           rate: 2.5,
@@ -140,7 +229,8 @@ export default {
           badges: ["SALE"],
           categoryName: "Fashionable Women's",
           productName: " Solid pattern in fashion summer dress ",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod posuere pulvinar. Vivamus vestibulum arcu nisi, non sollicitudin ex vestibulum eu. Nulla euismod sapien nisl. Proin metus mauris, ultrices ac pulvinar a, vehicula vel nisi. Aenean finibus mollis sodales. Suspendisse dapibus purus ut bibendum suscipit.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod posuere pulvinar. Vivamus vestibulum arcu nisi, non sollicitudin ex vestibulum eu. Nulla euismod sapien nisl. Proin metus mauris, ultrices ac pulvinar a, vehicula vel nisi. Aenean finibus mollis sodales. Suspendisse dapibus purus ut bibendum suscipit.",
           price: "700",
           discount: "400",
           rate: 3.5,
@@ -167,7 +257,8 @@ export default {
           badges: ["NEW"],
           categoryName: "For Men's",
           productName: " Converse blue training shoes ",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod posuere pulvinar. Vivamus vestibulum arcu nisi, non sollicitudin ex vestibulum eu. Nulla euismod sapien nisl. Proin metus mauris, ultrices ac pulvinar a, vehicula vel nisi. Aenean finibus mollis sodales. Suspendisse dapibus purus ut bibendum suscipit.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod posuere pulvinar. Vivamus vestibulum arcu nisi, non sollicitudin ex vestibulum eu. Nulla euismod sapien nisl. Proin metus mauris, ultrices ac pulvinar a, vehicula vel nisi. Aenean finibus mollis sodales. Suspendisse dapibus purus ut bibendum suscipit.",
           price: "600",
           discount: "",
           rate: 0,
@@ -194,7 +285,8 @@ export default {
           badges: ["TOP", "NEW"],
           categoryName: "Accessories",
           productName: " Fashionable Overnight Bag ",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod posuere pulvinar. Vivamus vestibulum arcu nisi, non sollicitudin ex vestibulum eu. Nulla euismod sapien nisl. Proin metus mauris, ultrices ac pulvinar a, vehicula vel nisi. Aenean finibus mollis sodales. Suspendisse dapibus purus ut bibendum suscipit.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod posuere pulvinar. Vivamus vestibulum arcu nisi, non sollicitudin ex vestibulum eu. Nulla euismod sapien nisl. Proin metus mauris, ultrices ac pulvinar a, vehicula vel nisi. Aenean finibus mollis sodales. Suspendisse dapibus purus ut bibendum suscipit.",
           price: "1100",
           discount: "",
           rate: 4.5,
@@ -206,5 +298,19 @@ export default {
       // END:: ALL PRODUCTS
     };
   },
+
+  // START:: METHODS
+  methods: {
+    // START:: HIDE AND SHOW FILTER
+    hideFilter() {
+      if (this.colHideen) {
+        this.colHideen = false;
+      } else {
+        this.colHideen = true;
+      }
+    },
+    // END:: HIDE AND SHOW FILTER
+  },
+  // END:: METHODS
 };
 </script>

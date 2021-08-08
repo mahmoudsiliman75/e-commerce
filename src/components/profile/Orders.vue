@@ -12,37 +12,34 @@
         </thead>
 
         <tbody>
-          <tr 
-            v-for=" order in orders "
-            :key=" order.id "
-          >
-            <td> #{{ order.id }} </td>
-            <td>	{{ order.date }} </td>
+          <tr v-for="order in orders" :key="order.id">
+            <td>#{{ order.id }}</td>
+            <td>{{ order.date }}</td>
             <td>
-              <span 
+              <span
                 class="badge bg-success p-2"
-                v-if=" order.status == 'delivered' "
+                v-if="order.status == 'delivered'"
               >
                 {{ order.status }}
               </span>
 
-              <span 
+              <span
                 class="badge bg-warning p-2"
-                v-if=" order.status == 'on hold' "
+                v-if="order.status == 'on hold'"
               >
                 {{ order.status }}
               </span>
 
-              <span 
+              <span
                 class="badge bg-danger p-2"
-                v-if=" order.status == 'cancled' "
+                v-if="order.status == 'cancled'"
               >
                 {{ order.status }}
               </span>
             </td>
             <td>
               <span> {{ order.fees }} EGP </span>
-              for 
+              for
               <span> {{ order.items_count }} items </span>
             </td>
           </tr>
@@ -81,7 +78,7 @@ export default {
           items_count: 4,
         },
       ],
-    }
+    };
   },
-}
+};
 </script>
