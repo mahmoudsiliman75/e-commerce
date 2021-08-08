@@ -15,10 +15,15 @@
                 </router-link>
               </li>
 
-              <li>
-                <router-link to="/" v-b-tooltip.hover title="Sign In">
+              <li class="d-flex justify-center align-items-center">
+                <router-link to="/" v-b-tooltip.hover title="Sign In" class="mx-1">
                   <UserIcon size="1.3x" class="user_icon" />
                   <span> Sign In </span>
+                </router-link>
+
+                <router-link to="/dashboard" v-b-tooltip.hover title="Profile" class="mx-1">
+                  <UserIcon size="1.3x" class="user_icon" />
+                  <span> Profile </span>
                 </router-link>
               </li>
 
