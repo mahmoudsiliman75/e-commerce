@@ -1,0 +1,238 @@
+.user_profile {
+  padding-block: $sectionPadding;
+
+  // START:: HEADER STYLE
+  .header_wraper {
+    @include mainHeaderStyle;
+  }
+  // END:: HEADER STYLE
+
+  // START:: PROFILE TABS STYLES
+  .profile_tabs_wraper {
+    margin-top: 50px;
+
+    .taps {
+      @include verticalFlexStartAlignment;
+      a,
+      button {
+        width: 100%;
+        color: $mainColor;
+        padding: 15px;
+        text-align: start;
+        border-bottom: 1px solid $lighterGrey;
+        @include transitioning(0.6s);
+        @include borderRadius(0);
+        &.router-link-exact-active,
+        &:hover {
+          color: $white;
+          background-color: $mainColor;
+        }
+      }
+    }
+
+    .tab_content {
+      min-height: 50vh;
+      padding-inline: 15px;
+
+      .dashboard_wraper {
+        @include textWraper;
+        color: $midGrey;
+        p {
+          span {
+            color: $secondaryColor;
+            font-family: $bold_font;
+          }
+        }
+
+        a {
+          text-decoration: underline;
+          @include transitioning(0.4s);
+
+          &:hover {
+            color: $secondaryColor;
+          }
+        }
+      }
+
+      .btn_wraper {
+        margin-top: 25px;
+        a {
+          @include btnWithBackground;
+        }
+      }
+
+      .orders_wraper {
+        table {
+          thead {
+            tr {
+              th {
+                border-bottom: 1px solid $lighterGrey;
+              }
+            }
+          }
+
+          tbody {
+            tr {
+              td {
+                padding-block: 25px;
+
+                .badge {
+                  text-transform: uppercase;
+                }
+
+                span {
+                  font-family: $medium_font;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .address_wraper {
+        p {
+          color: $lightGrey;
+        }
+
+        .wraper {
+          h3 {
+            color: $midGrey;
+            font-family: $medium_font;
+            margin-bottom: 20px;
+          }
+
+          .client_addresses {
+            margin-block: 30px;
+            padding: 20px;
+            @include borderRadius(6px);
+            @include midShadow;
+            p {
+              margin-top: 15px;
+              text-align: center;
+              color: $lightGrey;
+            }
+
+            .addresses_list {
+              li {
+                padding-inline-start: 10px;
+                font-size: 18px;
+                margin-block: 10px;
+                &::marker {
+                  content: "\f3c5";
+                  font-family: "Font Awesome 5 Free";
+                  font-weight: 900;
+                  color: $lightOrange;
+                }
+              }
+            }
+          }
+
+          .inputs_wraper {
+            .address_input {
+              padding-block: 6px;
+              @include flexSpaceBetweenAlignment;
+              border: 1px solid $lighterGrey;
+              @include borderRadius(5px);
+
+              input[type="text"] {
+                border: none;
+                &::placeholder {
+                  color: $lighterGrey;
+                }
+                &:focus {
+                  box-shadow: none;
+                }
+              }
+
+              button {
+                svg {
+                  color: $mainColor;
+                  @include transitioning(0.4s);
+                }
+                &:hover {
+                  svg {
+                    color: $midRed;
+                  }
+                }
+                &:focus {
+                  box-shadow: none;
+                }
+              }
+            }
+
+            .btn_wraper {
+              button {
+                @include btnWithBackground;
+                background-color: $secondaryColor;
+                border-color: $secondaryColor;
+                &:hover {
+                  color: $secondaryColor;
+                }
+
+                &.save_btn {
+                  margin-inline-end: 15px;
+                  background-color: $midGreen;
+                  border-color: $midGreen;
+                  &:hover {
+                    background-color: $white;
+                    color: $midGreen;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .account_details_form_wraper {
+        .wraper {
+          label {
+            margin-bottom: 10px;
+            color: $lightGrey;
+          }
+
+          input {
+            padding-block: 10px;
+            @include transitioning(0.3s);
+            &:focus {
+              box-shadow: none;
+              border-color: $mainColor;
+            }
+          }
+        }
+
+        .btn_wraper {
+          button {
+
+            @include btnWithBackground;
+          }
+        }
+      }
+
+      .change_password_form_wraper {
+        .wraper {
+          label {
+            margin-bottom: 10px;
+            color: $lightGrey;
+          }
+
+          input {
+            padding-block: 10px;
+            @include transitioning(0.3s);
+            &:focus {
+              box-shadow: none;
+              border-color: $mainColor;
+            }
+          }
+        }
+
+        .btn_wraper {
+          button {
+            @include btnWithBackground;
+          }
+        }
+      }
+    }
+  }
+  // END:: PROFILE TABS STYLES
+}

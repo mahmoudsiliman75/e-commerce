@@ -14,6 +14,13 @@ import About from "../components/basics/staticPages/About.vue";
 import Contact from "../components/basics/staticPages/Contact.vue";
 import Faqs from "../components/basics/staticPages/Faqs.vue";
 // END:: STATIC PAGES
+import Wishlist from "../pages/Wishlist.vue";
+import Profile from "../pages/UserProfile.vue";
+import Dashboard from "../components/profile/Dashboard.vue";
+import Orders from "../components/profile/Orders.vue";
+import Address from "../components/profile/Address.vue";
+import AccountDetails from "../components/profile/AccountDetails.vue";
+import ChangePassword from "../components/profile/ChangeAccountPassword.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -72,6 +79,43 @@ const routes = [
     component: Faqs,
   },
   // END:: STATIC PAGES
+  {
+    path: "/wishlist",
+    name: "Wishlist",
+    component: Wishlist,
+  },
+  {
+    path: "/dashboard",
+    name: "Profile",
+    component: Profile,
+    children: [
+      {
+        path: "/dashboard",
+        name: "Dashboard",
+        component: Dashboard,
+      },
+      {
+        path: "/orders",
+        name: "Orders",
+        component: Orders,
+      },
+      {
+        path: "/address",
+        name: "Address",
+        component: Address,
+      },
+      {
+        path: "/account-details",
+        name: "AccountDetails",
+        component: AccountDetails,
+      },
+      {
+        path: "/change-password",
+        name: "ChangePassword",
+        component: ChangePassword,
+      },
+    ],
+  },
 ];
 
 const router = new VueRouter({
