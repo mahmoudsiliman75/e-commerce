@@ -37,6 +37,12 @@
 // ==== FOOTER STYLES
 @import "components/filterStyle";
 
+// ==== AUTH
+@import "components/_auth";
+
+// ==== AUTH
+@import "components/staticPages";
+
 // ==== Global Style
 * {
   @include boxSizing;

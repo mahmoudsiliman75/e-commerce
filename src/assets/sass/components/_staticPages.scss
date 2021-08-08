@@ -1,0 +1,388 @@
+// START:: ABOUT PAGE
+.about-page {
+  padding-block: $sectionPadding;
+  .whatWeDo-section {
+    padding-block: $sectionPadding;
+  }
+  .whatWeDo {
+    .title-section {
+      h6 {
+        font-family: $medium_font;
+      }
+    }
+    .text-section {
+      h3 {
+        font-family: $bold_font;
+      }
+      p {
+        color: $lightGrey;
+        font-size: 14px;
+        font-family: $medium_font;
+        margin: 15px 0;
+      }
+    }
+  }
+
+  .card-whatWeDo {
+    transition: all 0.3s ease-out;
+    padding: 3.5rem 1rem 3.2rem;
+    box-shadow: 0 5px 40px 0 rgb(0 0 0 / 5%);
+    .head-card-whatWeDo {
+      text-align: center;
+      h4 {
+        font-family: $extra_bold_font;
+        color: $lightGrey;
+      }
+      h3 {
+        font-family: $extra_bold_font;
+        font-size: 2.5rem;
+        color: $darkGrey;
+        span {
+          font-family: $extra_bold_font;
+        }
+      }
+    }
+    .body-card-whatWeDo {
+      text-align: center;
+      p {
+        color: $lightGrey;
+        font-size: 14px;
+        font-family: $medium_font;
+        margin: 15px 0;
+      }
+    }
+    &:hover {
+      background-color: $mainColor;
+      .body-card-whatWeDo p {
+        color: $white;
+      }
+      .head-card-whatWeDo {
+        h3 {
+          color: $secondaryColor;
+        }
+        h4 {
+          color: $white;
+        }
+      }
+    }
+  }
+  .row-flex-align {
+    align-items: center;
+  }
+  .about-content {
+    background-color: #f6f7f9;
+    padding-block: $sectionPadding;
+    .image-about-content {
+      img {
+        @include borderRadius(10px);
+      }
+    }
+    .text-about-content {
+      .title-section {
+        h6 {
+          font-family: $medium_font;
+        }
+      }
+      .text-section {
+        h3 {
+          font-family: $bold_font;
+        }
+        p {
+          color: $lightGrey;
+          font-size: 14px;
+          font-family: $medium_font;
+          margin: 15px 0;
+        }
+      }
+    }
+  }
+}
+// END:: ABOUT PAGE
+
+// START:: CONTACT PAGE
+.contact-page {
+  padding-block: $sectionPadding;
+  .title-page-content {
+    h4 {
+      font-family: $bold_font;
+      font-size: 1.3rem;
+    }
+    p {
+      font-size: 0.8rem;
+      color: $lightGrey;
+      font-family: $medium_font;
+    }
+  }
+  // START:: FORM
+  .form-style {
+    width: 100%;
+    textarea {
+      height: 12rem;
+      line-height: 45px;
+      border-color: $lighterGrey;
+      padding-right: 35px;
+      font-family: $medium_font;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      &::-webkit-input-placeholder {
+        color: $lightGrey;
+      }
+
+      &:-ms-input-placeholder {
+        color: $lightGrey;
+      }
+
+      &::placeholder {
+        color: $lightGrey;
+      }
+      &:focus {
+        border-color: $lighterGrey !important;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem transparent;
+        border-radius: 3px !important;
+      }
+    }
+    .form-input {
+      margin-bottom: 20px;
+      position: relative;
+
+      input {
+        height: 45px;
+        line-height: 45px;
+        border-color: $lighterGrey;
+        padding-right: 35px;
+        font-family: $medium_font;
+        font-size: 0.9rem;
+        &::-webkit-input-placeholder {
+          color: $lightGrey;
+        }
+
+        &:-ms-input-placeholder {
+          color: $lightGrey;
+        }
+
+        &::placeholder {
+          color: $lightGrey;
+        }
+        &:focus {
+          border-color: $lighterGrey !important;
+          outline: 0;
+          box-shadow: 0 0 0 0.25rem transparent;
+          border-radius: 3px !important;
+        }
+      }
+      button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 35px;
+        height: 100%;
+      }
+    }
+    .form-check {
+      margin-bottom: 20px;
+      padding: 0;
+      label {
+        font-size: 0.8rem;
+        margin-inline: 5px;
+        font-family: $medium_font;
+        color: $mainColor;
+      }
+      @include flexSpaceBetweenAlignment;
+      .form-check-input:checked {
+        background-color: $secondaryColor;
+        border-color: $secondaryColor;
+      }
+      .input-check {
+        @include flexCenterAlignment;
+      }
+      .form-check-input {
+        margin: 0;
+        width: 1.2em;
+        height: 1.2em;
+        border-radius: 0;
+        border-color: $lighterGrey;
+        &:focus {
+          border-color: #ffaa4c;
+          outline: 0;
+          box-shadow: 0 0 0 0.25rem rgb(255 170 76 / 48%);
+          border-radius: 3px !important;
+        }
+      }
+      .reset-password {
+      }
+      .reset-password a {
+        font-size: 0.8rem;
+        font-family: $medium_font;
+        color: $mainColor;
+      }
+    }
+    .btn-auth {
+      position: relative;
+      button {
+        @include btnWithBackground;
+        width: 150px;
+        height: 45px;
+        line-height: 45px;
+        padding: 0;
+        @include flexCenterAlignment;
+        .sppinerAnimation {
+          width: 22px;
+          height: 22px;
+          border: 2px solid $white;
+          border-radius: 50%;
+          display: inline-block;
+          position: relative;
+          -webkit-animation: rotation 1s linear infinite;
+          animation: rotation 1s linear infinite;
+          margin: 0 5px;
+          &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: $secondaryColor;
+            width: 8px;
+            height: 8px;
+            transform: translate(-50%, 50%);
+            border-radius: 50%;
+          }
+        }
+        &:hover {
+          .sppinerAnimation {
+            border-color: $mainColor;
+          }
+        }
+      }
+    }
+  }
+  // END:: FORM
+  .contact-info {
+    padding: 25px 15px;
+    background-color: #f7f7f9;
+    @include borderRadius(5px);
+    .single-info {
+      margin-bottom: 25px;
+      .title-section {
+        margin-bottom: 15px;
+        h3 {
+          font-family: $bold_font;
+          font-size: 1.2rem;
+        }
+      }
+      .content-section {
+        p {
+          color: $lightGrey;
+        }
+        ul {
+          padding: 0;
+          li {
+            line-height: 1.8rem;
+            a {
+              color: $lightGrey;
+              &:hover {
+                color: $mainColor;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.branches-section {
+  padding-block: $sectionPadding;
+  .title-branches {
+    text-align: center;
+    h4 {
+      font-family: $extra_bold_font;
+      font-size: 2rem;
+      color: $darkGrey;
+    }
+  }
+  .all-branches {
+    .single-branch {
+      position: relative;
+      margin-block: $sectionPadding;
+      .image-branch {
+        img {
+          @include borderRadius(10px);
+          width: 100%;
+        }
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0 15px;
+        padding-top: 50%;
+        background-color: transparent;
+        transition: all 0.3s ease-out;
+        @include borderRadius(10px);
+
+        h5 {
+          font-family: $extra_bold_font;
+          font-size: 1.2rem;
+          text-align: center;
+          color: $white;
+        }
+        .hidden-part {
+          opacity: 0;
+          transition: all 0.4s ease-out;
+          p {
+            margin-bottom: 5px;
+            text-align: center;
+            a {
+              font-size: 0.8rem;
+              color: $white;
+              font-family: $medium_font;
+            }
+          }
+          ul {
+            padding: 0;
+            @include flexCenterAlignment;
+            li {
+              margin: 0 8px;
+              a {
+                color: $white;
+                font-size: 18px;
+                i {
+                }
+              }
+            }
+          }
+        }
+        &:hover{
+          background-color: rgb(3 83 151 / 80%);
+          padding-top: 30%;
+          .hidden-part{
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+// END:: CONTACT PAGE
+
+// START:: MAP
+.map-section{
+  padding: 50px 25px;
+  background-color: #f6f7f9;
+}
+// END:: MAP
+
+
+// START:: FAQS
+.faqs-page{
+  padding-block: $sectionPadding;
+  h3{
+    font-family: $extra_bold_font;
+    font-size: 1.5rem;
+  }
+  .single-faq{
+   
+  }
+}
+// END:: FAQS

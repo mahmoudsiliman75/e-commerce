@@ -1,5 +1,6 @@
 {
-  "message": "أهلا فى نابت",
+  "message":                          "أهلا فى نابت",
+  "alertPositions":                   "bottomRight",
 
   "home":                             "الرئيسية",
   "about_app":                        "عن التطبيق",

@@ -287,7 +287,7 @@ export default {
       // END:: CART MENU HANDLING DATA
 
       // START:: LANGUAGE DATA
-      lang: localStorage.getItem("dashboard_lang"),
+      lang: localStorage.getItem("ecommerce_lang"),
       // END:: LANGUAGE DATA
     };
   },
@@ -296,14 +296,14 @@ export default {
     // START:: HANDLING APPLICATION LANGUAGE
     setAppLang(selected_lang) {
       if (selected_lang == "en") {
-        localStorage.setItem("dashboard_lang", "en");
-        this.$i18n.locale = localStorage.getItem("dashboard_lang");
-        this.lang = localStorage.getItem("dashboard_lang");
+        localStorage.setItem("ecommerce_lang", "en");
+        this.$i18n.locale = localStorage.getItem("ecommerce_lang");
+        this.lang = localStorage.getItem("ecommerce_lang");
         location.reload();
       } else if (selected_lang == "ar") {
-        localStorage.setItem("dashboard_lang", "ar");
-        this.$i18n.locale = localStorage.getItem("dashboard_lang");
-        this.lang = localStorage.getItem("dashboard_lang");
+        localStorage.setItem("ecommerce_lang", "ar");
+        this.$i18n.locale = localStorage.getItem("ecommerce_lang");
+        this.lang = localStorage.getItem("ecommerce_lang");
         location.reload();
       }
     },

@@ -3,6 +3,7 @@
     <div class="container">
       <div class="head-breadcrumb">
         <h1>{{ title }}</h1>
+        <p v-if="description.length != 0">{{ description }}</p>
       </div>
       <!-- START:: SINGLE BREADCRUMB -->
       <SingleBreadcrumb :title="title" />
@@ -18,6 +19,6 @@ export default {
   components: {
     SingleBreadcrumb,
   },
-  props: ["title", "image"],
+  props: ["title", "image", "description"],
 };
 </script>

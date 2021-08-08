@@ -44,15 +44,24 @@ import VueMeta from "vue-meta";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-
 // START:: HANDLING SITE DIRECTION
-let dashboard_lang = localStorage.getItem("dashboard_lang");
-if (dashboard_lang == "ar") {
+let ecommerce_lang = localStorage.getItem("ecommerce_lang");
+if (ecommerce_lang == "ar") {
   document.querySelector("body").setAttribute("dir", "rtl");
 } else {
   document.querySelector("body").setAttribute("dir", "ltr");
 }
 // END:: HANDLING SITE DIRECTION
+
+// START:: GOOGLE MAP
+import * as VueGoogleMaps from "vue2-google-maps";
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: "AIzaSyDRymdCLWxCwLHFnwv36iieKAMjiwk8sdc",
+    libraries: "places",
+  },
+});
+// END:: GOOGLE MAP
 
 AOS.init();
 Vue.use(iziToast);
