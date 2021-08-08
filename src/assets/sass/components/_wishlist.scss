@@ -1,0 +1,33 @@
+.wishlist_wraper {
+  padding-block: $sectionPadding;
+
+  table {
+    tbody {
+      tr {
+        td {
+          padding-block: 8px !important;
+          .product {
+            @include flexStartAlignment;
+            height: 115px;
+            img {
+              min-width: 100px;
+              max-width: 100px;
+              min-height: 115px;
+              max-height: 115px;
+            }
+  
+            p {
+              margin-bottom: 0;
+              padding-inline-start: 10px;
+              word-break: break-word;
+            }
+          }
+  
+          .price {
+            font-family: $bold_font;
+          }
+        }
+      }
+    }
+  }
+}

@@ -15,10 +15,15 @@
                 </router-link>
               </li>
 
-              <li>
-                <router-link to="/" v-b-tooltip.hover title="Sign In">
+              <li class="d-flex justify-center align-items-center">
+                <router-link to="/" v-b-tooltip.hover title="Sign In" class="mx-1">
                   <UserIcon size="1.3x" class="user_icon" />
                   <span> Sign In </span>
+                </router-link>
+
+                <router-link to="/dashboard" v-b-tooltip.hover title="Profile" class="mx-1">
+                  <UserIcon size="1.3x" class="user_icon" />
+                  <span> Profile </span>
                 </router-link>
               </li>
 
@@ -73,7 +78,6 @@
                     placeholder="Search...."
                   />
                   <button class="btn">
-                    <!-- <img src="../../assets/media/icons/header/search.png" /> -->
                     <SearchIcon size="1.6x" class="search_icon" />
                   </button>
                 </div>
@@ -100,7 +104,7 @@
                 </li>
 
                 <li>
-                  <router-link to="/" v-b-tooltip.hover title="Wishlist">
+                  <router-link to="/wishlist" v-b-tooltip.hover title="Wishlist">
                     <HeartIcon size="2.3x" class="heart_icon" />
                   </router-link>
                 </li>
