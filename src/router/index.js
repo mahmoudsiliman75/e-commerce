@@ -4,6 +4,7 @@ import Home from "../pages/HomePage.vue";
 import AllCategories from "../pages/AllCategories.vue";
 import ProductDetails from "../pages/ProductDetails.vue";
 import MainCart from "../pages/MainCart.vue";
+import Wishlist from "../pages/Wishlist.vue";
 import Profile from "../pages/UserProfile.vue";
 import Dashboard from "../components/profile/Dashboard.vue";
 import Orders from "../components/profile/Orders.vue";
@@ -32,6 +33,11 @@ const routes = [
     path: "/main-cart",
     name: "MainCart",
     component: MainCart,
+  },
+  {
+    path: "/wishlist",
+    name: "Wishlist",
+    component: Wishlist,
   },
   {
     path: "/dashboard",

@@ -78,7 +78,6 @@
                     placeholder="Search...."
                   />
                   <button class="btn">
-                    <!-- <img src="../../assets/media/icons/header/search.png" /> -->
                     <SearchIcon size="1.6x" class="search_icon" />
                   </button>
                 </div>
@@ -105,7 +104,7 @@
                 </li>
 
                 <li>
-                  <router-link to="/" v-b-tooltip.hover title="Wishlist">
+                  <router-link to="/wishlist" v-b-tooltip.hover title="Wishlist">
                     <HeartIcon size="2.3x" class="heart_icon" />
                   </router-link>
                 </li>

@@ -41,7 +41,8 @@ export default new Vuex.Store({
       state.shoppingCart = finalCart;
 
       payload.item.quantity++;
-      document.getElementById("notification").play();
+      
+      new Audio( require( "../assets/media/sounds/done.mp3" ) ).play();
     },
     // END:: ADD ITEM TO CART
 

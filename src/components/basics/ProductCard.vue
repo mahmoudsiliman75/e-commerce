@@ -213,10 +213,6 @@
       </div>
     </b-modal>
     <!-- END:: PRODUCT MODAL -->
-
-    <audio id="notification">
-      <source src="../../assets/media/sounds/done.mp3"/>
-    </audio>
   </div>
 </template>
 
@@ -281,8 +277,6 @@ export default {
     // START:: ADD TO CART
     addToCart(item) {
       this.$store.dispatch("addItemToCart", { item });
-
-      document.getElementById("notification").play();
     },
     // END:: ADD TO CART
 
