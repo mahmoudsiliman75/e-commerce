@@ -5,6 +5,7 @@
       <div class="container">
         <div class="wraper">
           <div class="header_message_wraper">Welcome To Our E-commerce</div>
+          <!-- <marquee> Welcome To Our E-commerce </marquee> -->
 
           <div class="action_btns_wraper">
             <ul>
@@ -17,7 +18,7 @@
 
               <li class="d-flex justify-center align-items-center">
                 <router-link
-                  to="/"
+                  to="/login"
                   v-b-tooltip.hover
                   title="Sign In"
                   class="mx-1"

@@ -348,7 +348,7 @@ export default {
           reviews: 2,
           quantity: 0,
           quantityPrice: 0,
-          status: "In Stock",
+          status: "in stock",
         },
         {
           id: 2,
@@ -381,7 +381,7 @@ export default {
           reviews: 4,
           quantity: 0,
           quantityPrice: 0,
-          status: "Out Of Stock",
+          status: "in stock",
         },
         {
           id: 3,
@@ -414,7 +414,7 @@ export default {
           reviews: 10,
           quantity: 0,
           quantityPrice: 0,
-          status: "Out Of Stock",
+          status: "out of stock",
         },
         {
           id: 4,
@@ -443,7 +443,7 @@ export default {
           reviews: 0,
           quantity: 0,
           quantityPrice: 0,
-          status: "Out Of Stock",
+          status: "out of stock",
         },
         {
           id: 5,
@@ -472,7 +472,7 @@ export default {
           reviews: 23,
           quantity: 0,
           quantityPrice: 0,
-          status: "In Stock",
+          status: "in stock",
         },
       ],
       // END:: BEST SELLERS DATA
@@ -510,7 +510,7 @@ export default {
           reviews: 2,
           quantity: 0,
           quantityPrice: 0,
-          status: "In Stock",
+          status: "in stock",
         },
         {
           id: 2,
@@ -543,7 +543,7 @@ export default {
           reviews: 4,
           quantity: 0,
           quantityPrice: 0,
-          status: "Out Of Stock",
+          status: "in stock",
         },
         {
           id: 3,
@@ -576,7 +576,7 @@ export default {
           reviews: 10,
           quantity: 0,
           quantityPrice: 0,
-          status: "Out Of Stock",
+          status: "out of stock",
         },
         {
           id: 4,
@@ -605,7 +605,7 @@ export default {
           reviews: 0,
           quantity: 0,
           quantityPrice: 0,
-          status: "Out Of Stock",
+          status: "out of stock",
         },
       ],
       // END:: FEATURED ITEMS DATA

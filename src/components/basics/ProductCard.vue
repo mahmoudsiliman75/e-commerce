@@ -7,6 +7,9 @@
           <span class="badge" v-for="badge in productData.badges" :key="badge">
             {{ badge }}
           </span>
+          <span class="badge bg-danger" v-if=" productData.status == 'out of stock' ">
+            Out Of Stock
+          </span>
         </div>
 
         <div class="overlay">
@@ -26,15 +29,16 @@
               class="add_to_wish"
               v-b-tooltip.hover
               title="Add To Wishlist"
+              @click="addToWishlist(productData)"
             >
               <HeartIcon size="1.2x" class="heart_icon" />
             </button>
 
             <button
-              class="add_to_wish"
               v-b-tooltip.hover
               title="Add To Cart"
               @click="addToCart(productData)"
+              v-if=" productData.status != 'out of stock' "
             >
               <ShoppingCartIcon size="1.2x" class="cart_icon" />
             </button>
@@ -210,12 +214,16 @@
                   <button
                     class="btn add_to_cat mx-1"
                     @click="addToCart(productData)"
+                    v-if=" productData.status != 'out of stock' "
                   >
                     <span> <ShoppingCartIcon /> </span>
                     <span> Add To Cart </span>
                   </button>
 
-                  <button class="btn add_to_wishlist">
+                  <button 
+                    class="btn add_to_wishlist"
+                    @click="addToWishlist(productData)"
+                  >
                     <span> <HeartIcon /> </span>
                     <span> Add To Wishlist </span>
                   </button>
@@ -306,6 +314,12 @@ export default {
       this.$store.dispatch("decrementQuantity", { item });
     },
     // END:: DECREMENT QUANTITY
+
+    // START:: ADD TO WISHLIST
+    addToWishlist(item) {
+      this.$store.dispatch("addItemToWishlist", { item });
+    }
+    // END:: ADD TO WISHLIST
   },
 };
 </script>

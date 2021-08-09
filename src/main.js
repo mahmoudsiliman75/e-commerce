@@ -40,6 +40,9 @@ import vuetify from "./plugins/vuetify";
 // ======== Vue Meta
 import VueMeta from "vue-meta";
 
+// ======== VUE SOCIAL SHARING
+import VueSocialSharing from 'vue-social-sharing';
+
 // ======== AOS
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -69,6 +72,7 @@ Vue.use(VueResource);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(VueMeta);
+Vue.use(VueSocialSharing);
 Vue.prototype.$iziToast = iziToast;
 Vue.config.productionTip = false;
 
