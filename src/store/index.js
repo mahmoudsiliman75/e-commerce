@@ -26,8 +26,46 @@ export default new Vuex.Store({
         // },
       ],
 
-      cartSubtotal: "",
+      cartSubtotal: 0,
       // END:: SHOPPING CART
+
+      // START:: WISHLIST
+      wishlist: [
+        // {
+        //   id: 1,
+        //   images: [
+        //     {
+        //       id: 1,
+        //       img: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_7_1_98644502e2.jpg",
+        //     },
+        //     {
+        //       id: 2,
+        //       img: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_7_2_49cc0be0ad.jpg",
+        //     },
+        //     {
+        //       id: 3,
+        //       img: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_7_3_3fab9f444a.jpg",
+        //     },
+        //     {
+        //       id: 4,
+        //       img: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_7_4_2e92b20b8b.jpg",
+        //     },
+        //   ],
+        //   badges: ["TOP", "SALE"],
+        //   categoryName: "For Men's",
+        //   productName: "Beyond Riode Original T-Shirt",
+        //   description:
+        //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod posuere pulvinar. Vivamus vestibulum arcu nisi, non sollicitudin ex vestibulum eu. Nulla euismod sapien nisl. Proin metus mauris, ultrices ac pulvinar a, vehicula vel nisi. Aenean finibus mollis sodales. Suspendisse dapibus purus ut bibendum suscipit.",
+        //   price: "500",
+        //   discount: "250",
+        //   rate: 4,
+        //   reviews: 2,
+        //   quantity: 1,
+        //   quantityPrice: 0,
+        //   status: "in stock",
+        // },
+      ],
+      // END:: WISHLIST
     };
   },
 
@@ -40,7 +78,13 @@ export default new Vuex.Store({
       let finalCart = [...new Set(cart)];
       state.shoppingCart = finalCart;
 
-      payload.item.quantity++;
+      if ( !payload.item.discount ) {
+        payload.item.quantityPrice = payload.item.quantity * payload.item.price;
+      } else {
+        payload.item.quantityPrice = payload.item.quantity * parseInt(payload.item.discount);
+      }
+
+      // payload.item.quantity++;
 
       new Audio(require("../assets/media/sounds/done.mp3")).play();
     },
@@ -59,43 +103,74 @@ export default new Vuex.Store({
       let subtotal = null;
       let discountSubtotal = null;
 
-      state.shoppingCart.forEach((element) => {
+      state.shoppingCart.forEach( (element) => {
         if (element.price.length != 0 && element.discount.length == 0) {
-          subtotal += parseInt(element.price);
+          subtotal += parseInt(element.quantityPrice);
         }
 
         if (element.discount.length != 0) {
-          discountSubtotal += parseInt(element.discount);
+          discountSubtotal += parseInt(element.quantityPrice);
         }
       });
-      state.subtotal = subtotal + discountSubtotal;
+
+      state.cartSubtotal = subtotal + discountSubtotal;
     },
     // END:: CALCULATE CART SUBTOTAL
 
     // START:: INCREMENT QUANTITY
-    incrementQuantity(_, payload) {
+    incrementQuantity(state, payload) {
       payload.item.quantity++;
 
       if (payload.item.discount.length == 0) {
         payload.item.quantityPrice += parseInt(payload.item.price);
+
+        state.cartSubtotal += parseInt(payload.item.price);
       }
 
       if (payload.item.discount.length != 0) {
         payload.item.quantityPrice += parseInt(payload.item.discount);
+
+        state.cartSubtotal += parseInt(payload.item.discount);
       }
     },
     // END:: INCREMENT QUANTITY
 
     // START:: DECREMENT QUANTITY
-    decrementQuantity(_, payload) {
+    decrementQuantity(state, payload) {
       payload.item.quantity--;
+
       if (payload.item.quantity < 1) {
         payload.item.quantity = 1;
+        return;
       }
 
-      // payload.item.price /= payload.item.quantity;
+      if (payload.item.discount.length == 0) {
+        payload.item.quantityPrice -= parseInt(payload.item.price);
+
+        state.cartSubtotal -= parseInt(payload.item.price);
+      }
+
+      if (payload.item.discount.length != 0) {
+        payload.item.quantityPrice -= parseInt(payload.item.discount);
+
+        state.cartSubtotal -= parseInt(payload.item.discount);
+      }
     },
     // END:: DECREMENT QUANTITY
+
+    // START:: ADD ITEM TO WISHLIST
+    addItemToWishlist(state, payload) {
+      state.wishlist.push(payload.item);
+      new Audio(require("../assets/media/sounds/done.mp3")).play();
+    },
+    // END:: ADD ITEM TO WISHLIST
+
+    // START:: REMOVE ITEM FROM WISHLIST
+    removeItemToWishlist(state, payload) {
+      let index = state.wishlist.indexOf(payload.item);
+      state.wishlist.splice(index, 1);
+    }
+    // END:: REMOVE ITEM FROM WISHLIST
   },
 
   actions: {
@@ -124,5 +199,17 @@ export default new Vuex.Store({
       context.commit("decrementQuantity", payload);
     },
     // end:: DECREMENT QUANTITY
+
+    // START:: ADD ITEM TO WISHLIST
+    addItemToWishlist(context, payload) {
+      context.commit("addItemToWishlist", payload)
+    },
+    // END:: ADD ITEM TO WISHLIST
+
+    // START:: REMOVE ITEM FROM WISHLIST
+    removeItemToWishlist(context, payload) {
+      context.commit("removeItemToWishlist", payload);
+    },
+    // END:: REMOVE ITEM FROM WISHLIST
   },
 });

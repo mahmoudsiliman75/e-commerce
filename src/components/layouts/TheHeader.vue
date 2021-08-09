@@ -5,6 +5,7 @@
       <div class="container">
         <div class="wraper">
           <div class="header_message_wraper">Welcome To Our E-commerce</div>
+          <!-- <marquee> Welcome To Our E-commerce </marquee> -->
 
           <div class="action_btns_wraper">
             <ul>
@@ -17,7 +18,7 @@
 
               <li class="d-flex justify-center align-items-center">
                 <router-link
-                  to="/"
+                  to="/login"
                   v-b-tooltip.hover
                   title="Sign In"
                   class="mx-1"
@@ -132,7 +133,7 @@
                   >
                     <div class="text pe-1">
                       <span> Shopping Cart: </span>
-                      <span> {{ this.$store.state.subtotal }} EGP </span>
+                      <span> {{ this.$store.state.cartSubtotal }} EGP </span>
                     </div>
 
                     <ShoppingCartIcon size="2.3x" class="cart_icon" />
@@ -219,7 +220,7 @@
         <!-- START:: SUBTOTAL -->
         <div class="subtotal_wraper">
           <h5>Subtotal:</h5>
-          <h5>{{ this.$store.state.subtotal }} EGP</h5>
+          <h5>{{ this.$store.state.cartSubtotal }} EGP</h5>
         </div>
         <!-- END:: SUBTOTAL -->
 
