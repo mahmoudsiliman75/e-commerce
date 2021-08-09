@@ -139,6 +139,11 @@
             border-color: $mainColor;
           }
         }
+        &[disabled] {
+          background-color: $lighterGrey !important;
+          color: $darkGrey;
+          border-color: $lighterGrey;
+        }
       }
     }
   }

@@ -26,7 +26,7 @@
             />
           </div>
         </div>
-        <div class="col-12">
+        <div class="col-6">
           <div class="form-input">
             <input
               type="email"
@@ -34,6 +34,17 @@
               name="email"
               placeholder="Email address"
               v-model="register.email"
+            />
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-input">
+            <input
+              type="tel"
+              class="form-control"
+              name="mobile"
+              placeholder="Mobile Number"
+              v-model="register.mobile"
             />
           </div>
         </div>
@@ -103,6 +114,7 @@
                 type="checkbox"
                 class="form-check-input"
                 id="exampleCheck1"
+                v-model="register.checkPolicy"
               />
               <label class="form-check-label" for="exampleCheck1"
                 >I agree to the privacy policy</label
@@ -113,7 +125,11 @@
       </div>
 
       <div class="btn-auth">
-        <button type="button" @click="AuthForm">
+        <button
+          type="button"
+          @click="AuthForm"
+          :disabled="register.checkPolicy == false"
+        >
           <span class="sppinerAnimation" v-if="isWaiting == true"></span>
           <span v-if="isWaiting == false">Register</span>
         </button>
@@ -165,8 +181,10 @@ export default {
         name: "",
         username: "",
         email: "",
+        mobile: "",
         password: "",
         confirmPassword: "",
+        checkPolicy: "",
       },
     };
   },

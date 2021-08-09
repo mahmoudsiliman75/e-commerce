@@ -46,7 +46,11 @@
                   @click="setAppLang('ar')"
                   v-if="lang == 'en'"
                 >
-                  <img src="../../assets/media/icons/langs/en.png" />
+                  <img
+                    src="../../assets/media/icons/langs/en.png"
+                    width="27"
+                    height="27"
+                  />
                 </button>
 
                 <button
@@ -56,7 +60,11 @@
                   @click="setAppLang('en')"
                   v-if="lang == 'ar'"
                 >
-                  <img src="../../assets/media/icons/langs/ar.png" />
+                  <img
+                    src="../../assets/media/icons/langs/ar.png"
+                    width="27"
+                    height="27"
+                  />
                 </button>
               </li>
             </ul>
