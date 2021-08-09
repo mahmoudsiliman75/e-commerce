@@ -119,7 +119,7 @@
   .product_card_body {
     width: 100%;
     padding-top: 10px;
-    text-align: center;
+    text-align: start;
     .category {
       margin-bottom: 5px;
       color: $lightGrey;
@@ -141,7 +141,8 @@
       }
     }
     .rating {
-      @include flexCenterAlignment;
+      @include flexStartAlignment;
+      margin: 0;
       .reviews {
         margin-inline-start: 5px;
         color: $lightGrey;

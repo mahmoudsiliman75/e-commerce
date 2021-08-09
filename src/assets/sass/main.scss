@@ -52,6 +52,9 @@
 // ==== AUTH
 @import "components/staticPages";
 
+// ==== AUTH
+@import "components/Loaders.scss";
+
 // ==== Global Style
 * {
   @include boxSizing;

@@ -1,7 +1,11 @@
 <template>
   <div class="wraper d-flex justify-content-center align-items-center">
+    <!-- START:: LOADER -->
+    <LoaderProductCard v-if="loader" />
+    <!-- END:: LOADER -->
+
     <!-- START:: PRODUCT CARD -->
-    <div class="product_card_wraper">
+    <div class="product_card_wraper" v-else>
       <div class="product_image_wraper">
         <div class="badges_wraper">
           <span class="badge" v-for="badge in productData.badges" :key="badge">
@@ -237,7 +241,7 @@ import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 // END:: IMPORTING SLICK CAOUSIL
-
+import LoaderProductCard from "../Loaders/LoaderProductCard.vue";
 import RatingStars from "../ui/RatingStars.vue";
 
 import {
@@ -259,6 +263,7 @@ export default {
     XIcon,
     PlusIcon,
     MinusIcon,
+    LoaderProductCard,
   },
 
   props: ["productData", "type"],
@@ -274,7 +279,7 @@ export default {
       sizes: ["S", "M", "L", "XL", "XXl"],
       sizeValues: ["S", "M", "L", "XL", "XXl"],
       // END:: SIZE SELECT BOX DATA
-
+      loader: false,
       imgsSliderSettings: {
         dots: false,
         arrows: true,

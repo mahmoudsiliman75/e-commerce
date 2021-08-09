@@ -353,10 +353,10 @@
             }
           }
         }
-        &:hover{
+        &:hover {
           background-color: rgb(3 83 151 / 80%);
           padding-top: 30%;
-          .hidden-part{
+          .hidden-part {
             opacity: 1;
           }
         }
@@ -367,22 +367,39 @@
 // END:: CONTACT PAGE
 
 // START:: MAP
-.map-section{
+.map-section {
   padding: 50px 25px;
   background-color: #f6f7f9;
 }
 // END:: MAP
 
-
 // START:: FAQS
-.faqs-page{
+.faqs-page {
   padding-block: $sectionPadding;
-  h3{
+  h3 {
     font-family: $extra_bold_font;
     font-size: 1.5rem;
+    border-bottom: 1px solid $lighterGrey;
+    padding-bottom: 15px;
+    margin-bottom: 0;
   }
-  .single-faq{
-   
+  .single-faq {
+    .v-expansion-panel::before {
+      box-shadow: none;
+    }
+    .v-expansion-panel-header {
+      padding-inline: 0;
+      font-family: $bold_font;
+      border-bottom: 1px solid $lighterGrey;
+      &.v-expansion-panel-header--active {
+        color: $mainColor;
+      }
+    }
+    .v-expansion-panel-content__wrap{
+      padding: 15px 0;
+      font-size: 0.9rem;
+      line-height: 28px;
+    }
   }
 }
 // END:: FAQS
