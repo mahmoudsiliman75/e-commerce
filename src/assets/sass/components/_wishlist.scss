@@ -6,6 +6,12 @@
       tr {
         td {
           padding-block: 8px !important;
+          button {
+            &:focus {
+              box-shadow: none;
+            }
+          }
+
           .product {
             @include flexStartAlignment;
             height: 115px;
@@ -22,10 +28,44 @@
               word-break: break-word;
             }
           }
-  
+
           .price {
             font-family: $bold_font;
           }
+
+          .action {
+            button {
+              @include btnWithBackground;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .social_sharing_wraper {
+    margin-top: 20px;
+    @include flexStartAlignment;
+    span {
+      font-family: $semi_bold_font;
+      margin-inline-end: 10px;
+    }
+
+    a {
+      margin-inline: 15px;
+      font-size: 19px;
+      svg {
+        &.fa-facebook-f {
+          color: $facebookColor;
+        }
+        &.fa-twitter {
+          color: $twitterColor;
+        }
+        &.fa-whatsapp {
+          color: $whatsAppColor;
+        }
+        &.fa-telegram-plane {
+          color: $telegramColor;
         }
       }
     }

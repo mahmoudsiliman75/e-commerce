@@ -75,7 +75,15 @@
 
                       <td>
                         <div class="subtotal">
-                          {{ item.quantityPrice }}
+                          <!-- <span v-if=" item.discount.length != 0 || item.discount != 0 "> 
+                            {{ item.quantity * item.discount }}
+                          </span>
+
+                          <span v-else> 
+                            {{ item.quantity * item.price }}
+                          </span> -->
+
+                          {{item.quantityPrice}}
                         </div>
                       </td>
 
@@ -103,6 +111,7 @@
             </div>
           </div>
 
+          <!-- START:: MAIN CART TOTALS -->
           <div class="col-4 px-0">
             <div class="cart_totals">
               <div class="cart_totals_header">
@@ -111,7 +120,7 @@
 
               <div class="cart_subtotal">
                 <h6> Cart Subtotals </h6>
-                <h6> 250 EGP </h6>
+                <h6> {{ this.$store.state.cartSubtotal }} EGP </h6>
               </div>
 
               <div class="shipping_fees">
@@ -126,6 +135,7 @@
                   :items="shippingCities"
                   label="Select Your City"
                   class="my-5"
+                  @input="getShippingFees()"
                 ></v-autocomplete>
                 <div class="fees">
                   <h6> Shipping subtotal </h6>
@@ -139,6 +149,7 @@
               </div>
             </div>
           </div>
+          <!-- END:: MAIN CART TOTALS -->
         </div>
       </div>
       <!-- END:: MAIN CART CONTENT -->
@@ -161,6 +172,23 @@ export default {
 
   data() {
     return {
+      // shippingCities: [
+      //   {
+      //     id: 1,
+      //     city: "City1",
+      //     shippingValue: 100,
+      //   },
+      //   {
+      //     id: 2,
+      //     city: "City2",
+      //     shippingValue: 200,
+      //   },
+      //   {
+      //     id: 3,
+      //     city: "City3",
+      //     shippingValue: 150,
+      //   },
+      // ],
       shippingCities: ["City1", "City2", "City3"],
       shippingCitiesValues: [100, 200, 150],
     }
@@ -182,8 +210,12 @@ export default {
     // START:: DECREMENT QUANTITY
     decreaseQuantity(item) {
       this.$store.dispatch("decrementQuantity", {item});
-    }
+    },
     // END:: DECREMENT QUANTITY
-  },
+
+    getShippingFees(e) {
+      console.log(e);
+    },
+  },  
 }
 </script>
