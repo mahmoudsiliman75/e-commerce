@@ -133,7 +133,7 @@
                   >
                     <div class="text pe-1">
                       <span> Shopping Cart: </span>
-                      <span> {{ this.$store.state.subtotal }} EGP </span>
+                      <span> {{ this.$store.state.cartSubtotal }} EGP </span>
                     </div>
 
                     <ShoppingCartIcon size="2.3x" class="cart_icon" />
@@ -220,7 +220,7 @@
         <!-- START:: SUBTOTAL -->
         <div class="subtotal_wraper">
           <h5>Subtotal:</h5>
-          <h5>{{ this.$store.state.subtotal }} EGP</h5>
+          <h5>{{ this.$store.state.cartSubtotal }} EGP</h5>
         </div>
         <!-- END:: SUBTOTAL -->
 

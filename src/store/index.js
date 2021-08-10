@@ -26,7 +26,7 @@ export default new Vuex.Store({
         // },
       ],
 
-      cartSubtotal: "",
+      cartSubtotal: 0,
       // END:: SHOPPING CART
 
       // START:: WISHLIST
@@ -60,7 +60,7 @@ export default new Vuex.Store({
         //   discount: "250",
         //   rate: 4,
         //   reviews: 2,
-        //   quantity: 0,
+        //   quantity: 1,
         //   quantityPrice: 0,
         //   status: "in stock",
         // },
@@ -78,7 +78,13 @@ export default new Vuex.Store({
       let finalCart = [...new Set(cart)];
       state.shoppingCart = finalCart;
 
-      payload.item.quantity++;
+      if ( !payload.item.discount ) {
+        payload.item.quantityPrice = payload.item.quantity * payload.item.price;
+      } else {
+        payload.item.quantityPrice = payload.item.quantity * parseInt(payload.item.discount);
+      }
+
+      // payload.item.quantity++;
 
       new Audio(require("../assets/media/sounds/done.mp3")).play();
     },
@@ -97,41 +103,58 @@ export default new Vuex.Store({
       let subtotal = null;
       let discountSubtotal = null;
 
-      state.shoppingCart.forEach((element) => {
+      state.shoppingCart.forEach( (element) => {
         if (element.price.length != 0 && element.discount.length == 0) {
-          subtotal += parseInt(element.price);
+          subtotal += parseInt(element.quantityPrice);
         }
 
         if (element.discount.length != 0) {
-          discountSubtotal += parseInt(element.discount);
+          discountSubtotal += parseInt(element.quantityPrice);
         }
       });
-      state.subtotal = subtotal + discountSubtotal;
+
+      state.cartSubtotal = subtotal + discountSubtotal;
     },
     // END:: CALCULATE CART SUBTOTAL
 
     // START:: INCREMENT QUANTITY
-    incrementQuantity(_, payload) {
+    incrementQuantity(state, payload) {
       payload.item.quantity++;
 
       if (payload.item.discount.length == 0) {
         payload.item.quantityPrice += parseInt(payload.item.price);
+
+        state.cartSubtotal += parseInt(payload.item.price);
       }
 
       if (payload.item.discount.length != 0) {
         payload.item.quantityPrice += parseInt(payload.item.discount);
+
+        state.cartSubtotal += parseInt(payload.item.discount);
       }
     },
     // END:: INCREMENT QUANTITY
 
     // START:: DECREMENT QUANTITY
-    decrementQuantity(_, payload) {
+    decrementQuantity(state, payload) {
       payload.item.quantity--;
+
       if (payload.item.quantity < 1) {
         payload.item.quantity = 1;
+        return;
       }
 
-      // payload.item.price /= payload.item.quantity;
+      if (payload.item.discount.length == 0) {
+        payload.item.quantityPrice -= parseInt(payload.item.price);
+
+        state.cartSubtotal -= parseInt(payload.item.price);
+      }
+
+      if (payload.item.discount.length != 0) {
+        payload.item.quantityPrice -= parseInt(payload.item.discount);
+
+        state.cartSubtotal -= parseInt(payload.item.discount);
+      }
     },
     // END:: DECREMENT QUANTITY
 
