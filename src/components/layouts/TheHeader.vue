@@ -258,11 +258,97 @@
           </li>
 
           <li>
-            <button>Mega Menu</button>
+            <a href="javascript:;" class="dropdown">Mega Menu</a>
+            <div class="dropdown_menu_wraper mega_menu">
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <h6> Items Title 1 </h6>
+                  <ul>
+                    <li>  
+                      <router-link to="/test"> Link Sample 1 </router-link>
+                    </li>
+
+                    <li>  
+                      <router-link to="/test"> Link Sample  2 </router-link>
+                    </li>
+
+                    <li>  
+                      <router-link to="/test"> Link Sample  3 </router-link>
+                    </li>
+
+                    <li>  
+                      <router-link to="/test"> Link Sample  4 </router-link>
+                    </li>
+
+                    <li>  
+                      <router-link to="/test"> Link Sample  5 </router-link>
+                    </li>
+                  </ul>   
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <h6> Items Title 2 </h6>
+                  <ul>
+                    <li>  
+                      <router-link to="/test"> Link Sample  1 </router-link>
+                    </li>
+
+                    <li>  
+                      <router-link to="/test"> Link Sample  2 </router-link>
+                    </li>
+
+                    <li>  
+                      <router-link to="/test"> Link Sample  3 </router-link>
+                    </li>
+
+                    <li>  
+                      <router-link to="/test"> Link Sample  4 </router-link>
+                    </li>
+
+                    <li>  
+                      <router-link to="/test"> Link Sample  5 </router-link>
+                    </li>
+                  </ul>  
+                </div>
+
+                <div class="col-12 col-md-4 p-0">
+                  <div class="img_wraper">
+                    <div class="overlay">
+                      <h2>Sale.</h2>
+                      <h2>70% Off</h2>
+                    </div>
+                    <img src="https://d-themes.com/vue/riode/demo-1/images/menu/banner-1.jpg">
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
 
           <li>
-            <router-link to="/sample"> Link Sample </router-link>
+            <router-link to="/sample"> Dropdown Menu </router-link>
+            <div class="dropdown_menu_wraper">
+              <ul>
+                <li>  
+                  <router-link to="/test"> Link Sample 1 </router-link>
+                </li>
+
+                <li>  
+                  <router-link to="/test"> Link Sample  2 </router-link>
+                </li>
+
+                <li>  
+                  <router-link to="/test"> Link Sample  3 </router-link>
+                </li>
+
+                <li>  
+                  <router-link to="/test"> Link Sample  4 </router-link>
+                </li>
+
+                <li>  
+                  <router-link to="/test"> Link Sample  5 </router-link>
+                </li>
+              </ul>  
+            </div>
           </li>
 
           <li>

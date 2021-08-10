@@ -338,7 +338,6 @@ header {
   }
 
   .navbar_wraper {
-    padding: 20px 0 25px 0;
     @include flexStartAlignment;
 
     ul {
@@ -346,7 +345,86 @@ header {
       margin: 0;
       @include flexCenterAlignment;
       li {
+        padding: 20px 0 25px 0;
         @include menuHoverEffect;
+        overflow: visible;
+        position: relative;
+
+        &:hover {
+          .dropdown_menu_wraper {
+            transform: translateX(-50%) scale(1);
+            opacity: 1;
+          }
+        }
+
+        .dropdown_menu_wraper {
+          padding: 15px 25px;
+          position: absolute;
+          top: 80%;
+          left: 50%;
+          width: 200px;
+          transform: translateX(-50%) scale(0);
+          background-color: $white;
+          @include midShadow;
+          @include borderRadius(6px);
+          @include transitioning(0.5s);
+          transform-origin: top;
+          opacity: 0;
+          z-index: 10;
+          &.mega_menu {
+            width: 600px;
+          }
+
+          h6 {
+            font-family: $semi_bold_font;
+          }
+  
+          ul {
+            padding: 0;
+            @include verticalFlexStartAlignment;
+            li {
+              padding-block: 6px;
+              margin: 0;
+              a {
+                font-family: $medium_font;
+                color: $lightGrey;
+                @include transitioning(0.3s);
+  
+                &:hover {
+                  color: $secondaryColor;
+                }
+              }
+            }
+          }
+  
+          .img_wraper {
+            position: relative;
+            .overlay {
+              background-color: rgba(0, 0, 0, 0.3);
+              position: absolute;
+              inset: 0;
+              @include flexCenterAlignment;
+              flex-direction: column;
+              @include borderRadius(6px);
+  
+              h2 {
+                font-family: $extra_bold_font;
+                color: $white;
+                &:first-child {
+                  color: $mainColor;
+                }
+              }
+            }
+  
+            img {
+              min-width: 192px;
+              max-width: 192px;
+              min-height: 272px;
+              max-height: 272px;
+              @include borderRadius(6px);
+            }
+          }
+        }
       }
     }
   }
