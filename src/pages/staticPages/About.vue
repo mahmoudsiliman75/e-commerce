@@ -133,7 +133,7 @@
 </template>
 
 <script>
-import BreadCrumb from "../BreadCrumb.vue";
+import BreadCrumb from "../../components/basics/BreadCrumb.vue";
 
 import ICountUp from "vue-countup-v2";
 

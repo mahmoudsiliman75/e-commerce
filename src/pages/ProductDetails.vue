@@ -39,7 +39,7 @@
                   v-for="item in product.images"
                   :key="item.id"
                 >
-                  <img :src="item.img" alt="Thumbnail" />
+                  <zoom-on-hover :img-normal="item.img"></zoom-on-hover>
                 </div>
               </VueSlickCarousel>
             </div>
@@ -87,34 +87,24 @@
             </div>
 
             <div class="product_options">
-              <div class="wraper">
+              <div class="wraper mt-4">
                 <label> Color: </label>
-                <v-autocomplete
-                  chips
-                  deletable-chips
-                  small-chips
-                  filled
-                  dense
-                  v-model="colorValues"
-                  :items="colors"
-                  label="Select Color"
-                  class="mt-4"
-                ></v-autocomplete>
+                <select class="form-select">
+                  <option selected disabled>Select Colors</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
               </div>
 
-              <div class="wraper">
+              <div class="wraper mt-4">
                 <label> Size: </label>
-                <v-autocomplete
-                  chips
-                  deletable-chips
-                  small-chips
-                  filled
-                  dense
-                  v-model="sizeValues"
-                  :items="sizes"
-                  label="Select Size"
-                  class="my-4"
-                ></v-autocomplete>
+                <select class="form-select">
+                  <option selected disabled>Select Sizes</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
               </div>
             </div>
 
@@ -453,7 +443,7 @@
 
       <!-- START:: RELATED PRODUCTS -->
       <div class="col-12">
-        <div class="related_products">
+        <div class="related_products padding-slider">
           <!-- START:: TITLE -->
           <div class="header_wraper">
             <h2>Related Items</h2>
@@ -542,6 +532,10 @@ export default {
           {
             id: 4,
             img: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_7_4_2e92b20b8b.jpg",
+          },
+          {
+            id: 5,
+            img: "https://cdn.wallpapersafari.com/55/73/ghY4rc.jpg",
           },
         ],
         badges: ["TOP", "SALE"],

@@ -10,13 +10,19 @@
           <div class="action_btns_wraper">
             <ul class="actions">
               <li>
-                <button class="notifications_btn" @click="toggleNoificationMenu">
+                <button
+                  class="notifications_btn"
+                  @click="toggleNoificationMenu"
+                >
                   <span class="badge notification_count"> 5 </span>
-                  <BellIcon size="1.5x"/> 
+                  <BellIcon size="1.5x" />
                 </button>
 
                 <transition mode="out-in" name="fade">
-                  <div class="notifications_menu_wrapper" v-if="notificationsIsOpen">
+                  <div
+                    class="notifications_menu_wrapper"
+                    v-if="notificationsIsOpen"
+                  >
                     <ul>
                       <li>TestTestTestTestTestTestTestTestTestTest</li>
                       <li>TestTestTestTestTestTestTestTestTestTest</li>
@@ -105,13 +111,14 @@
 
           <div class="col-6">
             <div class="search_bar">
-              <form>
+              <form @submit.prevent="searchForm(searchInput)">
                 <div class="group">
                   <input
                     type="text"
                     class="form-control"
                     id="search_value"
                     placeholder="Search...."
+                    v-model="searchInput"
                   />
                   <button class="btn">
                     <SearchIcon size="1.6x" class="search_icon" />
@@ -287,53 +294,53 @@
             <div class="dropdown_menu_wraper mega_menu">
               <div class="row">
                 <div class="col-12 col-md-4">
-                  <h6> Items Title 1 </h6>
+                  <h6>Items Title 1</h6>
                   <ul>
-                    <li>  
+                    <li>
                       <router-link to="/test"> Link Sample 1 </router-link>
                     </li>
 
-                    <li>  
-                      <router-link to="/test"> Link Sample  2 </router-link>
+                    <li>
+                      <router-link to="/test"> Link Sample 2 </router-link>
                     </li>
 
-                    <li>  
-                      <router-link to="/test"> Link Sample  3 </router-link>
+                    <li>
+                      <router-link to="/test"> Link Sample 3 </router-link>
                     </li>
 
-                    <li>  
-                      <router-link to="/test"> Link Sample  4 </router-link>
+                    <li>
+                      <router-link to="/test"> Link Sample 4 </router-link>
                     </li>
 
-                    <li>  
-                      <router-link to="/test"> Link Sample  5 </router-link>
+                    <li>
+                      <router-link to="/test"> Link Sample 5 </router-link>
                     </li>
-                  </ul>   
+                  </ul>
                 </div>
 
                 <div class="col-12 col-md-4">
-                  <h6> Items Title 2 </h6>
+                  <h6>Items Title 2</h6>
                   <ul>
-                    <li>  
-                      <router-link to="/test"> Link Sample  1 </router-link>
+                    <li>
+                      <router-link to="/test"> Link Sample 1 </router-link>
                     </li>
 
-                    <li>  
-                      <router-link to="/test"> Link Sample  2 </router-link>
+                    <li>
+                      <router-link to="/test"> Link Sample 2 </router-link>
                     </li>
 
-                    <li>  
-                      <router-link to="/test"> Link Sample  3 </router-link>
+                    <li>
+                      <router-link to="/test"> Link Sample 3 </router-link>
                     </li>
 
-                    <li>  
-                      <router-link to="/test"> Link Sample  4 </router-link>
+                    <li>
+                      <router-link to="/test"> Link Sample 4 </router-link>
                     </li>
 
-                    <li>  
-                      <router-link to="/test"> Link Sample  5 </router-link>
+                    <li>
+                      <router-link to="/test"> Link Sample 5 </router-link>
                     </li>
-                  </ul>  
+                  </ul>
                 </div>
 
                 <div class="col-12 col-md-4 p-0">
@@ -342,7 +349,9 @@
                       <h2>Sale.</h2>
                       <h2>70% Off</h2>
                     </div>
-                    <img src="https://d-themes.com/vue/riode/demo-1/images/menu/banner-1.jpg">
+                    <img
+                      src="https://d-themes.com/vue/riode/demo-1/images/menu/banner-1.jpg"
+                    />
                   </div>
                 </div>
               </div>
@@ -353,26 +362,26 @@
             <router-link to="/sample"> Dropdown Menu </router-link>
             <div class="dropdown_menu_wraper">
               <ul>
-                <li>  
+                <li>
                   <router-link to="/test"> Link Sample 1 </router-link>
                 </li>
 
-                <li>  
-                  <router-link to="/test"> Link Sample  2 </router-link>
+                <li>
+                  <router-link to="/test"> Link Sample 2 </router-link>
                 </li>
 
-                <li>  
-                  <router-link to="/test"> Link Sample  3 </router-link>
+                <li>
+                  <router-link to="/test"> Link Sample 3 </router-link>
                 </li>
 
-                <li>  
-                  <router-link to="/test"> Link Sample  4 </router-link>
+                <li>
+                  <router-link to="/test"> Link Sample 4 </router-link>
                 </li>
 
-                <li>  
-                  <router-link to="/test"> Link Sample  5 </router-link>
+                <li>
+                  <router-link to="/test"> Link Sample 5 </router-link>
                 </li>
-              </ul>  
+              </ul>
             </div>
           </li>
 
@@ -414,6 +423,9 @@ export default {
 
   data() {
     return {
+      // START:: SEARCH INPUT DATA
+      searchInput: "",
+      // END:: SEARCH INPUT DATA
       // START:: CONTROL NOTIFICATION MENU DATA
       notificationsIsOpen: false,
       // END:: CONTROL NOTIFICATION MENU DATA
@@ -466,6 +478,12 @@ export default {
       });
     },
     // END:: HANDILLING STICKY HEADER
+
+    // START:: SEARCH
+    searchForm(text) {
+      this.$store.commit("searchResult", { text });
+    },
+    // END:: SEARCH
 
     // START:: OPEN CART MENU
     openCartMenu() {

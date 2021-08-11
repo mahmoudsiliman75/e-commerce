@@ -41,11 +41,16 @@ import vuetify from "./plugins/vuetify";
 import VueMeta from "vue-meta";
 
 // ======== VUE SOCIAL SHARING
-import VueSocialSharing from 'vue-social-sharing';
+import VueSocialSharing from "vue-social-sharing";
 
 // ======== AOS
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+// ======== Zoom Images
+
+import ZoomOnHover from "vue-zoom-on-hover";
+Vue.use(ZoomOnHover);
 
 // START:: HANDLING SITE DIRECTION
 let ecommerce_lang = localStorage.getItem("ecommerce_lang");
