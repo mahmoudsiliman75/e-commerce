@@ -26,12 +26,15 @@ header {
 
       .action_btns_wraper {
         @include flexCenterAlignment;
-        ul {
+        .actions {
           @include flexCenterAlignment;
           list-style: none;
           margin: 0;
           padding: 0;
           li {
+            position: relative;
+            padding-inline: 8px;
+            border-right: 1px solid $lighterGrey;
             img {
               width: 20px;
             }
@@ -52,6 +55,57 @@ header {
               }
             }
 
+            .notifications_btn {
+              position: relative;
+              .notification_count {
+                padding: 0;
+                position: absolute;
+                top: -8px;
+                right: 0;
+                background-color: $secondaryColor;
+                width: 17px;
+                height: 17px;
+                font-size: 10px;
+                @include borderRadius(50%);
+                @include flexCenterAlignment;
+              }
+            }
+
+            .notifications_menu_wrapper {
+              padding: 8px;
+              position: absolute;
+              top: 100%;
+              left: 50%;
+              transform: translateX(-50%);
+              background-color: $white;
+              width: 200px;
+              @include midShadow;
+              @include borderRadius(6px);
+              z-index: 9;
+
+              ul {
+                @include verticalFlexStartAlignment;
+                padding-inline-start: 15px;
+                li {
+                  color: $midGrey;
+                  font-size: 15px;
+                  word-break: break-word;
+                  padding-block: 10px;
+                  border: none;
+                  &:last-child {
+                    margin-bottom: 0;
+                  }
+                  &::marker {
+                    content: "\f621";
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    font-size: 12px;
+                    color: $mainColor;
+                  }
+                }
+              }
+            }
+
             &.language_wraper {
               button {
                 img {
@@ -60,11 +114,8 @@ header {
               }
             }
 
-            &:nth-child(2) {
-              padding-inline: 8px;
-              margin-inline: 8px;
-              border-left: 1px solid $lighterGrey;
-              border-right: 1px solid $lighterGrey;
+            &:last-child {
+              border-right: none
             }
           }
         }
@@ -162,7 +213,6 @@ header {
                 width: 20px;
                 height: 20px;
                 font-size: 10px;
-                border: 1px solid $mainColor;
                 @include borderRadius(50%);
                 @include flexCenterAlignment;
               }
@@ -338,7 +388,6 @@ header {
   }
 
   .navbar_wraper {
-    padding: 20px 0 25px 0;
     @include flexStartAlignment;
 
     ul {
@@ -346,7 +395,86 @@ header {
       margin: 0;
       @include flexCenterAlignment;
       li {
+        padding: 20px 0 25px 0;
         @include menuHoverEffect;
+        overflow: visible;
+        position: relative;
+
+        &:hover {
+          .dropdown_menu_wraper {
+            transform: translateX(-50%) scale(1);
+            opacity: 1;
+          }
+        }
+
+        .dropdown_menu_wraper {
+          padding: 15px 25px;
+          position: absolute;
+          top: 80%;
+          left: 50%;
+          width: 200px;
+          transform: translateX(-50%) scale(0);
+          background-color: $white;
+          @include midShadow;
+          @include borderRadius(6px);
+          @include transitioning(0.5s);
+          transform-origin: top;
+          opacity: 0;
+          z-index: 10;
+          &.mega_menu {
+            width: 600px;
+          }
+
+          h6 {
+            font-family: $semi_bold_font;
+          }
+  
+          ul {
+            padding: 0;
+            @include verticalFlexStartAlignment;
+            li {
+              padding-block: 6px;
+              margin: 0;
+              a {
+                font-family: $medium_font;
+                color: $lightGrey;
+                @include transitioning(0.3s);
+  
+                &:hover {
+                  color: $secondaryColor;
+                }
+              }
+            }
+          }
+  
+          .img_wraper {
+            position: relative;
+            .overlay {
+              background-color: rgba(0, 0, 0, 0.3);
+              position: absolute;
+              inset: 0;
+              @include flexCenterAlignment;
+              flex-direction: column;
+              @include borderRadius(6px);
+  
+              h2 {
+                font-family: $extra_bold_font;
+                color: $white;
+                &:first-child {
+                  color: $mainColor;
+                }
+              }
+            }
+  
+            img {
+              min-width: 192px;
+              max-width: 192px;
+              min-height: 272px;
+              max-height: 272px;
+              @include borderRadius(6px);
+            }
+          }
+        }
       }
     }
   }
