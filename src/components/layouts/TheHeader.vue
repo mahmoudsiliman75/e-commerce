@@ -8,7 +8,30 @@
           <!-- <marquee> Welcome To Our E-commerce </marquee> -->
 
           <div class="action_btns_wraper">
-            <ul>
+            <ul class="actions">
+              <li>
+                <button
+                  class="notifications_btn"
+                  @click="toggleNoificationMenu"
+                >
+                  <span class="badge notification_count"> 5 </span>
+                  <BellIcon size="1.5x" />
+                </button>
+
+                <transition mode="out-in" name="fade">
+                  <div
+                    class="notifications_menu_wrapper"
+                    v-if="notificationsIsOpen"
+                  >
+                    <ul>
+                      <li>TestTestTestTestTestTestTestTestTestTest</li>
+                      <li>TestTestTestTestTestTestTestTestTestTest</li>
+                      <li>TestTestTestTestTestTestTestTestTestTest</li>
+                    </ul>
+                  </div>
+                </transition>
+              </li>
+
               <li>
                 <router-link to="/" v-b-tooltip.hover title="Contact Us">
                   <MapPinIcon size="1.3x" class="map_pin_icon" />
@@ -267,11 +290,99 @@
           </li>
 
           <li>
-            <button>Mega Menu</button>
+            <a href="javascript:;" class="dropdown">Mega Menu</a>
+            <div class="dropdown_menu_wraper mega_menu">
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <h6>Items Title 1</h6>
+                  <ul>
+                    <li>
+                      <router-link to="/test"> Link Sample 1 </router-link>
+                    </li>
+
+                    <li>
+                      <router-link to="/test"> Link Sample 2 </router-link>
+                    </li>
+
+                    <li>
+                      <router-link to="/test"> Link Sample 3 </router-link>
+                    </li>
+
+                    <li>
+                      <router-link to="/test"> Link Sample 4 </router-link>
+                    </li>
+
+                    <li>
+                      <router-link to="/test"> Link Sample 5 </router-link>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <h6>Items Title 2</h6>
+                  <ul>
+                    <li>
+                      <router-link to="/test"> Link Sample 1 </router-link>
+                    </li>
+
+                    <li>
+                      <router-link to="/test"> Link Sample 2 </router-link>
+                    </li>
+
+                    <li>
+                      <router-link to="/test"> Link Sample 3 </router-link>
+                    </li>
+
+                    <li>
+                      <router-link to="/test"> Link Sample 4 </router-link>
+                    </li>
+
+                    <li>
+                      <router-link to="/test"> Link Sample 5 </router-link>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="col-12 col-md-4 p-0">
+                  <div class="img_wraper">
+                    <div class="overlay">
+                      <h2>Sale.</h2>
+                      <h2>70% Off</h2>
+                    </div>
+                    <img
+                      src="https://d-themes.com/vue/riode/demo-1/images/menu/banner-1.jpg"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
 
           <li>
-            <router-link to="/sample"> Link Sample </router-link>
+            <router-link to="/sample"> Dropdown Menu </router-link>
+            <div class="dropdown_menu_wraper">
+              <ul>
+                <li>
+                  <router-link to="/test"> Link Sample 1 </router-link>
+                </li>
+
+                <li>
+                  <router-link to="/test"> Link Sample 2 </router-link>
+                </li>
+
+                <li>
+                  <router-link to="/test"> Link Sample 3 </router-link>
+                </li>
+
+                <li>
+                  <router-link to="/test"> Link Sample 4 </router-link>
+                </li>
+
+                <li>
+                  <router-link to="/test"> Link Sample 5 </router-link>
+                </li>
+              </ul>
+            </div>
           </li>
 
           <li>
@@ -293,6 +404,7 @@ import {
   HeartIcon,
   ShoppingCartIcon,
   SearchIcon,
+  BellIcon,
 } from "vue-feather-icons";
 
 export default {
@@ -306,6 +418,7 @@ export default {
     HeartIcon,
     ShoppingCartIcon,
     SearchIcon,
+    BellIcon,
   },
 
   data() {
@@ -313,6 +426,9 @@ export default {
       // START:: SEARCH INPUT DATA
       searchInput: "",
       // END:: SEARCH INPUT DATA
+      // START:: CONTROL NOTIFICATION MENU DATA
+      notificationsIsOpen: false,
+      // END:: CONTROL NOTIFICATION MENU DATA
 
       // START:: CART MENU HANDLING DATA
       cartMenuIsOpen: false,
@@ -325,6 +441,12 @@ export default {
   },
 
   methods: {
+    // START:: CONTROL NOTIFICATIONS MENU
+    toggleNoificationMenu() {
+      this.notificationsIsOpen = !this.notificationsIsOpen;
+    },
+    // END:: CONTROL NOTIFICATIONS MENU
+
     // START:: HANDLING APPLICATION LANGUAGE
     setAppLang(selected_lang) {
       if (selected_lang == "en") {
