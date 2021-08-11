@@ -8,7 +8,24 @@
           <!-- <marquee> Welcome To Our E-commerce </marquee> -->
 
           <div class="action_btns_wraper">
-            <ul>
+            <ul class="actions">
+              <li>
+                <button class="notifications_btn" @click="toggleNoificationMenu">
+                  <span class="badge notification_count"> 5 </span>
+                  <BellIcon size="1.5x"/> 
+                </button>
+
+                <transition mode="out-in" name="fade">
+                  <div class="notifications_menu_wrapper" v-if="notificationsIsOpen">
+                    <ul>
+                      <li>TestTestTestTestTestTestTestTestTestTest</li>
+                      <li>TestTestTestTestTestTestTestTestTestTest</li>
+                      <li>TestTestTestTestTestTestTestTestTestTest</li>
+                    </ul>
+                  </div>
+                </transition>
+              </li>
+
               <li>
                 <router-link to="/" v-b-tooltip.hover title="Contact Us">
                   <MapPinIcon size="1.3x" class="map_pin_icon" />
@@ -370,6 +387,7 @@ import {
   HeartIcon,
   ShoppingCartIcon,
   SearchIcon,
+  BellIcon,
 } from "vue-feather-icons";
 
 export default {
@@ -383,10 +401,15 @@ export default {
     HeartIcon,
     ShoppingCartIcon,
     SearchIcon,
+    BellIcon,
   },
 
   data() {
     return {
+      // START:: CONTROL NOTIFICATION MENU DATA
+      notificationsIsOpen: false,
+      // END:: CONTROL NOTIFICATION MENU DATA
+
       // START:: CART MENU HANDLING DATA
       cartMenuIsOpen: false,
       // END:: CART MENU HANDLING DATA
@@ -398,6 +421,12 @@ export default {
   },
 
   methods: {
+    // START:: CONTROL NOTIFICATIONS MENU
+    toggleNoificationMenu() {
+      this.notificationsIsOpen = !this.notificationsIsOpen;
+    },
+    // END:: CONTROL NOTIFICATIONS MENU
+
     // START:: HANDLING APPLICATION LANGUAGE
     setAppLang(selected_lang) {
       if (selected_lang == "en") {
