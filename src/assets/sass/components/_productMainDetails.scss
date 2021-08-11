@@ -19,7 +19,7 @@
       opacity: 0;
       @include transitioning(0.4s);
       &.slick-arrow {
-        &.slick-prev, 
+        &.slick-prev,
         &.slick-next {
           &::before {
             font-size: 35px;
@@ -74,11 +74,11 @@
     &::-webkit-scrollbar {
       width: 5px;
     }
-  
+
     &::-webkit-scrollbar-track {
       background: $lighterGrey;
     }
-  
+
     &::-webkit-scrollbar-thumb {
       background: $mainColor;
       border-radius: 0px;
@@ -136,21 +136,14 @@
           width: 15%;
           padding-inline-end: 10px;
         }
-        .v-input__control {
-          .v-text-field__details {
-            min-height: 0 !important;
-            display: none;
-          }
-          .v-select__slot {
-            .v-input__append-inner {
-              .v-input__icon {
-                .v-icon {
-                  opacity: 0.6;
-                  color: $secondaryColor !important;
-                  caret-color: $secondaryColor !important;
-                }
-              }
-            }
+        select {
+          padding: 0.6em 2.25rem 0.6em 0.75rem;
+          outline: none !important;
+          box-shadow: none !important;
+          border: 1px solid $lighterGrey;
+          width: 200px;
+          &:focus{
+            box-shadow: none;
           }
         }
       }
@@ -158,6 +151,7 @@
 
     .add_product_to_cart {
       padding-block: 15px;
+      margin-top: 15px;
       border-top: 1px solid $lighterGrey;
       border-bottom: 1px solid $lighterGrey;
       @include flexStartAlignment;
@@ -185,7 +179,7 @@
       .add_to_wishlist {
         background-color: $secondaryColor;
         border: 1px solid $secondaryColor;
-        &:hover{
+        &:hover {
           background-color: $white;
           color: $secondaryColor;
         }
@@ -214,7 +208,7 @@
               border: none;
               border-bottom: 2px solid $mainColor;
             }
-          } 
+          }
         }
       }
 
@@ -336,7 +330,7 @@
 
         .reviews_form {
           .wraper {
-            textarea, 
+            textarea,
             input {
               @include transitioning(0.5s);
               &::placeholder {

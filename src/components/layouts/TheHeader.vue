@@ -88,13 +88,14 @@
 
           <div class="col-6">
             <div class="search_bar">
-              <form>
+              <form @submit.prevent="searchForm(searchInput)">
                 <div class="group">
                   <input
                     type="text"
                     class="form-control"
                     id="search_value"
                     placeholder="Search...."
+                    v-model="searchInput"
                   />
                   <button class="btn">
                     <SearchIcon size="1.6x" class="search_icon" />
@@ -309,6 +310,10 @@ export default {
 
   data() {
     return {
+      // START:: SEARCH INPUT DATA
+      searchInput: "",
+      // END:: SEARCH INPUT DATA
+
       // START:: CART MENU HANDLING DATA
       cartMenuIsOpen: false,
       // END:: CART MENU HANDLING DATA
@@ -351,6 +356,12 @@ export default {
       });
     },
     // END:: HANDILLING STICKY HEADER
+
+    // START:: SEARCH
+    searchForm(text) {
+      this.$store.commit("searchResult", { text });
+    },
+    // END:: SEARCH
 
     // START:: OPEN CART MENU
     openCartMenu() {

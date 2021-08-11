@@ -1,7 +1,7 @@
 <template>
   <div class="wraper d-flex justify-content-center align-items-center">
     <!-- START:: LOADER -->
-    <LoaderProductCard v-if="loader" />
+    <LoaderProductCard v-if="isLoading" />
     <!-- END:: LOADER -->
 
     <!-- START:: PRODUCT CARD -->
@@ -11,7 +11,10 @@
           <span class="badge" v-for="badge in productData.badges" :key="badge">
             {{ badge }}
           </span>
-          <span class="badge bg-danger" v-if=" productData.status == 'out of stock' ">
+          <span
+            class="badge bg-danger"
+            v-if="productData.status == 'out of stock'"
+          >
             Out Of Stock
           </span>
         </div>
@@ -42,7 +45,7 @@
               v-b-tooltip.hover
               title="Add To Cart"
               @click="addToCart(productData)"
-              v-if=" productData.status != 'out of stock' "
+              v-if="productData.status != 'out of stock'"
             >
               <ShoppingCartIcon size="1.2x" class="cart_icon" />
             </button>
@@ -218,13 +221,13 @@
                   <button
                     class="btn add_to_cat mx-1"
                     @click="addToCart(productData)"
-                    v-if=" productData.status != 'out of stock' "
+                    v-if="productData.status != 'out of stock'"
                   >
                     <span> <ShoppingCartIcon /> </span>
                     <span> Add To Cart </span>
                   </button>
 
-                  <button 
+                  <button
                     class="btn add_to_wishlist"
                     @click="addToWishlist(productData)"
                   >
@@ -249,7 +252,7 @@ import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 // END:: IMPORTING SLICK CAOUSIL
-import LoaderProductCard from "../Loaders/LoaderProductCard.vue";
+import LoaderProductCard from "../ui/Loaders/LoaderProductCard.vue";
 import RatingStars from "../ui/RatingStars.vue";
 
 import {
@@ -287,7 +290,7 @@ export default {
       sizes: ["S", "M", "L", "XL", "XXl"],
       sizeValues: ["S", "M", "L", "XL", "XXl"],
       // END:: SIZE SELECT BOX DATA
-      loader: false,
+      isLoading: false,
       imgsSliderSettings: {
         dots: false,
         arrows: true,
@@ -323,7 +326,7 @@ export default {
     // START:: ADD TO WISHLIST
     addToWishlist(item) {
       this.$store.dispatch("addItemToWishlist", { item });
-    }
+    },
     // END:: ADD TO WISHLIST
   },
 };

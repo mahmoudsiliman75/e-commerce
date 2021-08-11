@@ -10,9 +10,9 @@ import Login from "../components/auth/Login.vue";
 import Register from "../components/auth/Register.vue";
 // END:: Auth
 // START:: STATIC PAGES
-import About from "../components/basics/staticPages/About.vue";
-import Contact from "../components/basics/staticPages/Contact.vue";
-import Faqs from "../components/basics/staticPages/Faqs.vue";
+import About from "../pages/staticPages/About.vue";
+import Contact from "../pages/staticPages/Contact.vue";
+import Faqs from "../pages/staticPages/Faqs.vue";
 // END:: STATIC PAGES
 import Wishlist from "../pages/Wishlist.vue";
 import Profile from "../pages/UserProfile.vue";
@@ -21,6 +21,7 @@ import Orders from "../components/profile/Orders.vue";
 import Address from "../components/profile/Address.vue";
 import AccountDetails from "../components/profile/AccountDetails.vue";
 import ChangePassword from "../components/profile/ChangeAccountPassword.vue";
+import SearchResult from "../pages/SearchResult.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -44,6 +45,12 @@ const routes = [
     name: "MainCart",
     component: MainCart,
   },
+  {
+    path: "/search-result",
+    name: "SearchResult",
+    component: SearchResult,
+  },
+
   // START:: AUTH
   {
     path: "/login",

@@ -99,7 +99,7 @@
 </template>
 
 <script>
-import BreadCrumb from "../BreadCrumb.vue";
+import BreadCrumb from "../../components/basics/BreadCrumb.vue";
 
 export default {
   name: "Faqs",

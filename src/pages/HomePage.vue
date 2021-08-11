@@ -5,23 +5,30 @@
     <!-- END:: SLIDER -->
 
     <!-- START:: FEATURES -->
+
     <div class="features">
       <div class="cards_wraper">
         <div class="container">
           <VueSlickCarousel v-bind="featuresSliderSettings">
-            <div class="featured_card">
-              <div class="icon_wraper">
-                <ZapIcon size="2.5x" />
-              </div>
+            <!-- START:: SINGLE -->
+            <LoaderFeatureCard v-if="isLoading" />
+            <div class="featured_card" v-else>
+              <div class="wrapper">
+                <div class="icon_wraper">
+                  <ZapIcon size="2.5x" />
+                </div>
 
-              <div class="title">
-                <h4>Free Shipping & Return</h4>
-              </div>
+                <div class="title">
+                  <h4>Free Shipping & Return</h4>
+                </div>
 
-              <div class="text">Free shipping on orders over 99 EGP</div>
+                <div class="text">Free shipping on orders over 99 EGP</div>
+              </div>
             </div>
 
-            <div class="featured_card">
+            <!-- START:: SINGLE -->
+            <LoaderFeatureCard v-if="isLoading" />
+            <div class="featured_card" v-else>
               <div class="icon_wraper">
                 <ClockIcon size="2.5x" />
               </div>
@@ -33,7 +40,9 @@
               <div class="text">Instant access to perfect support</div>
             </div>
 
-            <div class="featured_card">
+            <!-- START:: SINGLE -->
+            <LoaderFeatureCard v-if="isLoading" />
+            <div class="featured_card" v-else>
               <div class="icon_wraper">
                 <LockIcon size="2.5x" />
               </div>
@@ -109,7 +118,8 @@
         <div class="row justify-content-center">
           <!-- START:: FEATURED CATEGORY CARD -->
           <div class="col-11 col-md-4 my-4 my-md-0">
-            <div class="featured_category_card_wrap">
+            <LoaderOfferCard v-if="isLoading" />
+            <div class="featured_category_card_wrap" v-else>
               <div class="overlay">
                 <div class="wraper">
                   <h2>For Men's</h2>
@@ -129,7 +139,8 @@
 
           <!-- START:: FEATURED CATEGORY CARD -->
           <div class="col-11 col-md-4 my-4 my-md-0">
-            <div class="featured_category_card_wrap middle">
+            <LoaderOfferCard v-if="isLoading" />
+            <div class="featured_category_card_wrap middle" v-else>
               <div class="overlay">
                 <div class="wraper">
                   <p>Up To 20% Off</p>
@@ -150,7 +161,8 @@
 
           <!-- START:: FEATURED CATEGORY CARD -->
           <div class="col-11 col-md-4 my-4 my-md-0">
-            <div class="featured_category_card_wrap">
+            <LoaderOfferCard v-if="isLoading" />
+            <div class="featured_category_card_wrap" v-else>
               <div class="overlay">
                 <div class="wraper">
                   <h2>Fashions</h2>
@@ -238,6 +250,11 @@ import ProductCard from "../components/basics/ProductCard.vue";
 import AdvertisingPanel from "../components/basics/AdvertisingPanel.vue";
 // END:: IMPORTING HOME COMPS
 
+// START:: LOADER
+import LoaderFeatureCard from "../components/ui/Loaders/LoaderFeatureCard";
+import LoaderOfferCard from "../components/ui/Loaders/LoaderOfferCard";
+// END:: LOADER
+
 // START:: IMPORTING FEATHER ICONS
 import {
   ZapIcon,
@@ -259,6 +276,8 @@ export default {
     CategoryCard,
     ProductCard,
     AdvertisingPanel,
+    LoaderFeatureCard,
+    LoaderOfferCard,
 
     // FEATHER ICONS
     ZapIcon,
@@ -269,6 +288,7 @@ export default {
 
   data() {
     return {
+      isLoading: false,
       // START:: SLIDER DATA
       sliderItems: [
         {
