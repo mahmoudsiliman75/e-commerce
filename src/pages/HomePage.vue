@@ -218,7 +218,7 @@
 
     <!-- START:: PARTNERS -->
     <div class="partners">
-      <div class="container">
+      <div class="container-fluid">
         <div class="wraper">
           <VueSlickCarousel v-bind="partnersSliderSettings">
             <div

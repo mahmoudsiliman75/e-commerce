@@ -101,6 +101,127 @@
     <div class="main_bar">
       <div class="container">
         <div class="row justify-content-between align-items-center">
+          <div class="col-1 navBar_menu_btn_wraper">
+            <div class="navBar_menu_btn">
+              <button class="btn" @click="openNavbarMenu">
+                <AlignLeftIcon size="2.2x"/>
+              </button>
+            </div>
+          </div>
+          <div
+            class="navbar_sticky_menu_wraper"
+            :class="{ show: navbarMenuIsOpen }"
+            @click="closeNavbarMenu"
+          ></div>
+          <div class="navbar_menu">
+            <div class="menu_header">
+              <button class="btn close_btn" @click="closeNavbarMenu">
+                <XIcon size="1.8x" />
+              </button>
+            </div>
+
+            <ul class="navbar_menu_list">
+              <li>
+                <router-link to="/" class="side_navbar_menu_list_link"> Home </router-link>
+              </li>
+
+              <li>
+                <router-link to="/all-categories" class="side_navbar_menu_list_link"> All Categories </router-link>
+              </li>
+
+              <li>
+                <router-link to="/about" class="side_navbar_menu_list_link"> About Us </router-link>
+              </li>
+
+              <li>
+                <router-link to="/contact" class="side_navbar_menu_list_link"> Contact Us </router-link>
+              </li>
+
+              <li>
+                <!-- START:: MEGA MENU ACCORDION -->
+                <div class="accordion dropdown_menu_accordion mega_menu" id="mega_menu_accordion">
+                  <div class="accordion-item">
+                    <h5 class="accordion-header" id="mega_menu_heading">
+                      <button class="accordion-button dropdown_menu_accordion_btn" type="button" data-bs-toggle="collapse" data-bs-target="#mega_menu_collapse" aria-expanded="true" aria-controls="mega_menu_collapse">
+                        Mega Menu
+                      </button>
+                    </h5>
+                    <div id="mega_menu_collapse" class="accordion-collapse collapse" aria-labelledby="mega_menu_heading" data-bs-parent="#mega_menu_accordion">
+                      <div class="accordion-body">
+                        <!-- START:: MEGA MENU ITEM -->
+                        <div class="accordion dropdown_menu_item_accordion mb-5" id="mega_menu_item_1">
+                          <div class="accordion-item">
+                            <h6 class="accordion-header" id="mega_menu_item_header_1">
+                              <button class="accordion-button dropdown_menu_item_item_button" type="button" data-bs-toggle="collapse" data-bs-target="#mega_menu_item_collapse_1" aria-expanded="true" aria-controls="mega_menu_item_collapse_1">
+                                Items Title 1
+                              </button>
+                            </h6>
+                            <div id="mega_menu_item_collapse_1" class="accordion-collapse collapse" aria-labelledby="mega_menu_item_header_1" data-bs-parent="#mega_menu_item_1">
+                              <div class="accordion-body">
+                                <router-link to="/test"> Link Sample 1 </router-link>
+                                <router-link to="/test"> Link Sample 2 </router-link>
+                                <router-link to="/test"> Link Sample 3 </router-link>
+                                <router-link to="/test"> Link Sample 4 </router-link>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- END:: MEGA MENU ITEM -->
+
+                        <!-- START:: MEGA MENU ITEM -->
+                        <div class="accordion dropdown_menu_item_accordion mb-5" id="mega_menu_item_2">
+                          <div class="accordion-item">
+                            <h6 class="accordion-header" id="mega_menu_item_header_2">
+                              <button class="accordion-button dropdown_menu_item_item_button" type="button" data-bs-toggle="collapse" data-bs-target="#mega_menu_item_collapse_2" aria-expanded="true" aria-controls="mega_menu_item_collapse_2">
+                                Items Title 2
+                              </button>
+                            </h6>
+                            <div id="mega_menu_item_collapse_2" class="accordion-collapse collapse" aria-labelledby="mega_menu_item_header_2" data-bs-parent="#mega_menu_item_2">
+                              <div class="accordion-body">
+                                <router-link to="/test"> Link Sample 1 </router-link>
+                                <router-link to="/test"> Link Sample 2 </router-link>
+                                <router-link to="/test"> Link Sample 3 </router-link>
+                                <router-link to="/test"> Link Sample 4 </router-link>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- END:: MEGA MENU ITEM -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- END:: MEGA MENU ACCORDION -->
+              </li>
+
+              <li>
+                <!-- START:: DROPDOWN MENU ACCORDION -->
+                <div class="accordion dropdown_menu_accordion" id="dropdown_menu_accordion_1">
+                  <div class="accordion-item">
+                    <h5 class="accordion-header" id="dropdown_menu_heading_1">
+                      <button class="accordion-button dropdown_menu_accordion_btn" type="button" data-bs-toggle="collapse" data-bs-target="#dropdown_menu_collapse_1" aria-expanded="true" aria-controls="dropdown_menu_collapse_1">
+                        Dropdown Menu
+                      </button>
+                    </h5>
+                    <div id="dropdown_menu_collapse_1" class="accordion-collapse collapse" aria-labelledby="dropdown_menu_heading_1" data-bs-parent="#dropdown_menu_accordion_1">
+                      <div class="accordion-body">
+                        <router-link to="/test"> Link Sample 1 </router-link>
+                        <router-link to="/test"> Link Sample 2 </router-link>
+                        <router-link to="/test"> Link Sample 3 </router-link>
+                        <router-link to="/test"> Link Sample 4 </router-link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- END:: DROPDOWN MENU ACCORDION -->
+              </li>
+
+              <li>
+                <router-link to="/sample" class="side_navbar_menu_list_link"> Link Sample </router-link>
+              </li>
+            </ul>
+          </div>
+
           <div class="col-2 d-flex justify-content-center">
             <div class="logo_wraper">
               <router-link to="/">
@@ -109,7 +230,7 @@
             </div>
           </div>
 
-          <div class="col-6">
+          <div class="col-5">
             <div class="search_bar">
               <form @submit.prevent="searchForm(searchInput)">
                 <div class="group">
@@ -405,6 +526,7 @@ import {
   ShoppingCartIcon,
   SearchIcon,
   BellIcon,
+  AlignLeftIcon,
 } from "vue-feather-icons";
 
 export default {
@@ -419,6 +541,7 @@ export default {
     ShoppingCartIcon,
     SearchIcon,
     BellIcon,
+    AlignLeftIcon,
   },
 
   data() {
@@ -433,6 +556,10 @@ export default {
       // START:: CART MENU HANDLING DATA
       cartMenuIsOpen: false,
       // END:: CART MENU HANDLING DATA
+
+      // START:: NAVBAR MENU HANDLING DATA
+      navbarMenuIsOpen: false,
+      // END:: NAVBAR MENU HANDLING DATA
 
       // START:: LANGUAGE DATA
       lang: localStorage.getItem("ecommerce_lang"),
@@ -484,6 +611,18 @@ export default {
       this.$store.commit("searchResult", { text });
     },
     // END:: SEARCH
+
+    // START:: OPEN NAVBAR MENU
+    openNavbarMenu() {
+      this.navbarMenuIsOpen = true;
+    },
+    // END:: OPEN NAVBAR MENU
+
+    // START:: CLOSE NAVBAR MENU
+    closeNavbarMenu() {
+      this.navbarMenuIsOpen = false;
+    },
+    // END:: CLOSE NAVBAR MENU
 
     // START:: OPEN CART MENU
     openCartMenu() {
