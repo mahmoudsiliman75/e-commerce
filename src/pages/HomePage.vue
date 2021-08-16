@@ -194,15 +194,16 @@
         </div>
         <!-- START:: TITLE -->
 
-        <div class="row justify-content-center">
-          <div
-            class="col-11 col-md-3 my-4 my-md-0"
+        <VueSlickCarousel v-bind="productsSliderSettings">
+          <!-- START:: PRODUCT CARD -->
+          <ProductCard
             v-for="item in featuredItems"
             :key="item.id"
-          >
-            <ProductCard :productData="item" :type="'featured'" />
-          </div>
-        </div>
+            :productData="item"
+            :type="item"
+          />
+          <!-- END:: PRODUCT CARD -->
+        </VueSlickCarousel>
       </div>
     </div>
     <!-- END:: FEATURED PRODUCTS -->
@@ -218,7 +219,7 @@
 
     <!-- START:: PARTNERS -->
     <div class="partners">
-      <div class="container">
+      <div class="container-fluid">
         <div class="wraper">
           <VueSlickCarousel v-bind="partnersSliderSettings">
             <div
@@ -392,6 +393,7 @@ export default {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
+        autoplay: true,
         responsive: [
           {
             breakpoint: 1024,
