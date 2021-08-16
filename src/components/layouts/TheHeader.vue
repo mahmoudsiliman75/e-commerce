@@ -50,7 +50,7 @@
                   <span> Sign In </span>
                 </router-link>
 
-                <!-- <router-link
+                <router-link
                   to="/dashboard"
                   v-b-tooltip.hover
                   title="Profile"
@@ -58,7 +58,7 @@
                 >
                   <UserIcon size="1.3x" class="user_icon" />
                   <span> Profile </span>
-                </router-link> -->
+                </router-link>
               </li>
 
               <li class="language_wraper">
@@ -105,7 +105,7 @@
           <div class="col-1 navBar_menu_btn_wraper">
             <div class="navBar_menu_btn">
               <button class="btn" @click="openNavbarMenu">
-                <AlignLeftIcon size="2.2x"/>
+                <AlignLeftIcon size="1.9x"/>
               </button>
             </div>
           </div>
@@ -125,19 +125,19 @@
             </div>
 
             <ul class="navbar_menu_list">
-              <li>
+              <li @click="closeNavbarMenu">
                 <router-link to="/" class="side_navbar_menu_list_link"> Home </router-link>
               </li>
 
-              <li>
+              <li @click="closeNavbarMenu">
                 <router-link to="/all-categories" class="side_navbar_menu_list_link"> All Categories </router-link>
               </li>
 
-              <li>
+              <li @click="closeNavbarMenu">
                 <router-link to="/about" class="side_navbar_menu_list_link"> About Us </router-link>
               </li>
 
-              <li>
+              <li @click="closeNavbarMenu">
                 <router-link to="/contact" class="side_navbar_menu_list_link"> Contact Us </router-link>
               </li>
 
@@ -162,10 +162,18 @@
                             </h6>
                             <div id="mega_menu_item_collapse_1" class="accordion-collapse collapse" aria-labelledby="mega_menu_item_header_1" data-bs-parent="#mega_menu_item_1">
                               <div class="accordion-body">
-                                <router-link to="/test"> Link Sample 1 </router-link>
-                                <router-link to="/test"> Link Sample 2 </router-link>
-                                <router-link to="/test"> Link Sample 3 </router-link>
-                                <router-link to="/test"> Link Sample 4 </router-link>
+                                <button class="btn" @click="closeNavbarMenu">
+                                  <router-link to="/test"> Link Sample 1 </router-link>
+                                </button>
+                                <button class="btn" @click="closeNavbarMenu">
+                                  <router-link to="/test"> Link Sample 2 </router-link>
+                                </button>
+                                <button class="btn" @click="closeNavbarMenu">
+                                  <router-link to="/test"> Link Sample 3 </router-link>
+                                </button>
+                                <button class="btn" @click="closeNavbarMenu">
+                                  <router-link to="/test"> Link Sample 4 </router-link>
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -182,10 +190,18 @@
                             </h6>
                             <div id="mega_menu_item_collapse_2" class="accordion-collapse collapse" aria-labelledby="mega_menu_item_header_2" data-bs-parent="#mega_menu_item_2">
                               <div class="accordion-body">
-                                <router-link to="/test"> Link Sample 1 </router-link>
-                                <router-link to="/test"> Link Sample 2 </router-link>
-                                <router-link to="/test"> Link Sample 3 </router-link>
-                                <router-link to="/test"> Link Sample 4 </router-link>
+                                <button class="btn" @click="closeNavbarMenu">
+                                  <router-link to="/test"> Link Sample 1 </router-link>
+                                </button>
+                                <button class="btn" @click="closeNavbarMenu">
+                                  <router-link to="/test"> Link Sample 2 </router-link>
+                                </button>
+                                <button class="btn" @click="closeNavbarMenu">
+                                  <router-link to="/test"> Link Sample 3 </router-link>
+                                </button>
+                                <button class="btn" @click="closeNavbarMenu">
+                                  <router-link to="/test"> Link Sample 4 </router-link>
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -209,10 +225,21 @@
                     </h5>
                     <div id="dropdown_menu_collapse_1" class="accordion-collapse collapse" aria-labelledby="dropdown_menu_heading_1" data-bs-parent="#dropdown_menu_accordion_1">
                       <div class="accordion-body">
-                        <router-link to="/test"> Link Sample 1 </router-link>
-                        <router-link to="/test"> Link Sample 2 </router-link>
-                        <router-link to="/test"> Link Sample 3 </router-link>
-                        <router-link to="/test"> Link Sample 4 </router-link>
+                        <button class="btn" @click="closeNavbarMenu">
+                          <router-link to="/test"> Link Sample 1 </router-link>
+                        </button>
+
+                        <button class="btn" @click="closeNavbarMenu">
+                          <router-link to="/test"> Link Sample 2 </router-link>
+                        </button>
+
+                        <button class="btn" @click="closeNavbarMenu">
+                          <router-link to="/test"> Link Sample 3 </router-link>
+                        </button>
+
+                        <button class="btn" @click="closeNavbarMenu">
+                          <router-link to="/test"> Link Sample 4 </router-link>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -220,7 +247,7 @@
                 <!-- END:: DROPDOWN MENU ACCORDION -->
               </li>
 
-              <li>
+              <li @click="closeNavbarMenu">
                 <router-link to="/sample" class="side_navbar_menu_list_link"> Link Sample </router-link>
               </li>
             </ul>

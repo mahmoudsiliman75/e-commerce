@@ -12,17 +12,22 @@
     left: 0;
     right: 0;
     z-index: 10;
-    @media ( max-width: 700px ) {
-      top: -30%;
-    }
+
     .slick-list {
       padding-inline: 15px !important;
+    }
+
+    @media ( max-width: 700px ) {
+      top: 0;
+
+      .slick-list {
+        padding-inline: 8px !important;
+      }
     }
     .featured_card {
       width: 95% !important;
       padding: 30px;
       margin-block: 20px;
-      // margin-inline: 5%;
       background-color: $white;
       @include flexCenterAlignment;
       @include borderRadius(6px);
@@ -40,6 +45,21 @@
       } 
       .text {
         color: $lightGrey;
+      }
+
+      @media ( max-width: 767px ) {
+        padding: 15px;
+        margin-block: 25px;
+
+        .title {
+          h4 {
+            font-size: 1.2rem;
+          }
+        }
+
+        .text {
+          font-size: 0.9rem;
+        }
       }
     }
   }
@@ -70,7 +90,7 @@
 
 // START:: FEATURED CATEGORIES STYLES
 .featured_categories {
-  padding-block: $sectionPadding * 1.5;
+  padding-block: $sectionPadding ;
   .row {
     & > div {
       .featured_category_card_wrap {
@@ -251,6 +271,17 @@
           }
         }
       }
+
+      @media ( max-width: 767px ) {
+        .featured_category_card_wrap {
+          min-height: 180px;
+          max-height: 180px;
+          img {
+            min-height: 180px;
+            max-height: 180px;
+          }
+        }
+      }
     }
   }
 }
@@ -297,16 +328,3 @@
   }
 }
 // END:: PARTNERS STYLES
-
-// .slick-track{
-//   display: flex !important;
-//   justify-content: space-between !important;
-// }
-// .slick-list{
-//   margin: 0 -5%;
-// }
-// .slick-slide{
-//   width: 33% !important;
-//   display: flex;
-//   justify-content: center;
-// }

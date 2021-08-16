@@ -150,6 +150,14 @@
       }
     }
   }
+
+  @media ( max-width: 767px ) {
+    .product_image_wraper {
+      .overlay {
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .padding-slider{
