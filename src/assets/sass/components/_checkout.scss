@@ -1,0 +1,393 @@
+.checkout-section {
+  padding-block: $sectionPadding;
+  .order_totals {
+    padding: 10px 30px;
+    border: 1px solid $lighterGrey;
+    .order_totals_header,
+    .order_subtotal,
+    .shipping_fees,
+    .order_totals_footer {
+      padding-block: 30px;
+      border-bottom: 1px solid $lighterGrey;
+      h6 {
+        color: $midGrey;
+        margin-bottom: 0;
+        font-family: $bold_font;
+      }
+    }
+    .order_subtotal {
+      @include flexSpaceBetweenAlignment;
+      h6 {
+        font-size: 0.9rem;
+      }
+    }
+    .shipping_fees {
+      .v-input__control {
+        .v-text-field__details {
+          min-height: 0 !important;
+          display: none;
+        }
+        .v-select__slot {
+          .v-select__selections {
+            .theme--light {
+              &.v-chip {
+                &:not(.v-chip--active) {
+                  background-color: $secondaryColor;
+                  color: $white;
+                }
+              }
+            }
+          }
+        }
+      }
+      .fees {
+        @include flexSpaceBetweenAlignment;
+        h6 {
+          font-size: 0.9rem;
+          font-family: $bold_font;
+        }
+      }
+    }
+
+    .order_totals_footer {
+      @include flexSpaceBetweenAlignment;
+      border-bottom: none;
+    }
+  }
+
+  .order_body {
+    .item {
+      .img_wraper {
+        img {
+          min-width: 60px;
+          max-width: 60px;
+          min-height: 70px;
+          max-height: 70px;
+        }
+      }
+
+      .title {
+        @include flexSpaceBetweenAlignment;
+        align-items: flex-start;
+        h5 {
+          a {
+            color: $midGrey;
+            @include transitioning(0.3s);
+            &:hover {
+              color: $mainColor;
+            }
+          }
+        }
+      }
+
+      h5 {
+        font-size: 1rem !important;
+        span {
+          &.price {
+            margin-inline-start: 8px;
+            font-family: $medium_font;
+            color: $darkGrey;
+          }
+        }
+      }
+    }
+
+    .subtotal_wraper {
+      margin-block: 25px;
+      padding-block: 15px;
+      border-top: 1px solid $lighterGrey;
+      border-bottom: 1px solid $lighterGrey;
+      @include flexSpaceBetweenAlignment;
+      h5 {
+        margin: 0;
+        &:first-child {
+          color: $lightGrey;
+        }
+        &:last-child {
+          color: $midGrey;
+          font-family: $medium_font;
+        }
+      }
+    }
+
+    .wraper {
+      margin-bottom: 20px;
+      @include flexCenterAlignment;
+      a {
+        color: $midGrey;
+        font-family: $bold_font;
+        border-bottom: 2px solid $mainColor;
+        @include transitioning(0.3s);
+        &:hover {
+          color: $mainColor;
+        }
+      }
+    }
+
+    a {
+      &.checkout {
+        @include flexCenterAlignment;
+        color: $white;
+        background-color: $midGrey;
+        padding: 15px;
+        @include borderRadius(6px);
+        @include transitioning(0.3s);
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+
+  .alert-login {
+    @include flexStartAlignment;
+    width: 100%;
+    border: 1.5px dashed $lighterGrey;
+    padding: 12px;
+    margin-bottom: 15px;
+    .text {
+      @include flexStartAlignment;
+      h4 {
+        font-size: 0.9rem;
+        margin: 0;
+        color: $darkGrey;
+      }
+      span {
+        margin-inline: 15px;
+        color: $secondaryColor;
+      }
+    }
+    a {
+      font-size: 0.9rem;
+      color: $mainColor;
+      margin-inline: 5px;
+    }
+  }
+
+  .billing_details_token {
+    .title_part {
+      margin-bottom: 30px;
+      h3 {
+        font-size: 1.1rem;
+        font-family: $extra_bold_font;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .address_user {
+    .single_aadress {
+      margin-bottom: 1.5rem;
+      label {
+        position: relative;
+        padding: 15px;
+        @include borderRadius(5px);
+        box-shadow: 0 0 10px 2px rgb(225 225 225 / 60%);
+        @include transitioning(0.3s);
+        border: 1px solid $lighterGrey;
+        cursor: pointer;
+        ul {
+          padding: 0;
+          padding-block: 15px;
+          li {
+            line-height: 35px;
+            font-size: 0.9rem;
+            span {
+              color: $mainColor;
+            }
+          }
+        }
+        h3 {
+          margin-bottom: 0;
+          margin-inline: 25px;
+          font-family: $bold_font;
+          font-size: 1.1rem;
+          border-bottom: 1px dashed $lighterGrey;
+          padding-bottom: 15px;
+        }
+        h4 {
+          font-family: $bold_font;
+          font-size: 1.1rem;
+          margin-top: 15px;
+          margin-bottom: 0;
+          svg {
+            color: $mainColor;
+          }
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          left: 15px;
+          top: 15px;
+          width: 20px;
+          height: 20px;
+          background-color: $lighterGrey;
+          @include borderRadius(50%);
+          @include transitioning(0.3s);
+        }
+      }
+      input {
+        display: none;
+        &:checked + label {
+          border-color: $mainColor;
+          &::before {
+            background-color: $mainColor;
+          }
+        }
+      }
+    }
+  }
+
+  .form-input {
+    margin-bottom: 20px;
+    position: relative;
+    textarea {
+      height: 150px;
+      resize: none;
+      line-height: 45px;
+      border-color: $lighterGrey;
+      padding-right: 35px;
+      font-size: 0.9rem;
+      &:focus {
+        border-color: $lighterGrey !important;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem transparent;
+        border-radius: 3px !important;
+      }
+    }
+    input {
+      height: 45px;
+      line-height: 45px;
+      border-color: $lighterGrey;
+      padding-right: 35px;
+      font-size: 0.9rem;
+      &::-webkit-input-placeholder {
+        color: $lightGrey;
+      }
+
+      &:-ms-input-placeholder {
+        color: $lightGrey;
+      }
+
+      &::placeholder {
+        color: $lightGrey;
+      }
+      &:focus {
+        border-color: $lighterGrey !important;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem transparent;
+        border-radius: 3px !important;
+      }
+    }
+    select {
+      height: 45px;
+      line-height: 45px;
+      border-color: $lighterGrey;
+      padding: 0;
+      padding-inline: 15px;
+      font-size: 0.9rem;
+      color: $lightGrey;
+      &:focus {
+        border-color: $lighterGrey !important;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem transparent;
+        border-radius: 3px !important;
+      }
+    }
+    label {
+      font-size: 0.9rem;
+      color: $darkGrey;
+      margin-bottom: 5px;
+      small {
+        color: red;
+        font-size: 110%;
+      }
+    }
+    button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 35px;
+      height: 100%;
+    }
+  }
+  .btn-auth {
+    position: relative;
+    button {
+      @include btnWithBackground;
+      width: max-content;
+      height: 45px;
+      line-height: 45px;
+      padding: 0 15px;
+      @include flexCenterAlignment;
+      .sppinerAnimation {
+        width: 22px;
+        height: 22px;
+        border: 2px solid $white;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        -webkit-animation: rotation 1s linear infinite;
+        animation: rotation 1s linear infinite;
+        margin: 0 5px;
+        &:after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          background: $secondaryColor;
+          width: 8px;
+          height: 8px;
+          transform: translate(-50%, 50%);
+          border-radius: 50%;
+        }
+      }
+      &:hover {
+        .sppinerAnimation {
+          border-color: $mainColor;
+        }
+      }
+      &[disabled] {
+        background-color: $lighterGrey !important;
+        color: $darkGrey;
+        border-color: $lighterGrey;
+      }
+    }
+  }
+  .single_payment {
+    input {
+      display: none;
+      &:checked + label {
+        border-color: $secondaryColor;
+        &::before {
+          background-color: $secondaryColor;
+        }
+      }
+    }
+    label {
+      position: relative;
+      @include borderRadius(5px);
+      box-shadow: 0 0 10px 2px rgb(225 225 225 / 60%);
+      @include transitioning(0.3s);
+      border: 1px solid $lighterGrey;
+      cursor: pointer;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        width: 10px;
+        height: 10px;
+        background-color: $mainColor;
+        @include borderRadius(50%);
+        @include transitioning(0.3s);
+      }
+    }
+  }
+}

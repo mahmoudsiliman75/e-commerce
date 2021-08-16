@@ -71,6 +71,19 @@
     }
 
     .coupon_wraper {
+      .checkout {
+        width: max-content;
+        @include flexCenterAlignment;
+        color: $white;
+        background-color: $midGrey;
+        padding: 15px;
+        @include borderRadius(6px);
+        @include transitioning(0.3s);
+        margin: 15px auto;
+        &:hover {
+          opacity: 0.9;
+        }
+      }
       h5 {
         padding-top: 20px;
         font-family: $bold_font;
@@ -132,16 +145,7 @@
                 }
               }
             }
-
-            .v-input__append-inner {
-              .v-input__icon {
-                .v-icon {
-                  opacity: 0.6;
-                  color: $secondaryColor !important;
-                  caret-color: $secondaryColor !important;
-                }
-              }
-            }
+            
           }
         }
         .fees {
@@ -160,3 +164,4 @@
     }
   }
 }
+

@@ -275,6 +275,14 @@ export default {
         setTimeout(() => {
           this.isWaiting = false;
         }, 500);
+      } else {
+        this.$iziToast.success({
+          message: "Your Registery is Successfuly",
+          position: this.$t("alertPositions"),
+          rtl: false,
+        });
+        this.isWaiting = false;
+        this.$router.push("/login");
       }
     },
     // END:: SHOW & HIDDEN PASSWORD

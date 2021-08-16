@@ -48,7 +48,12 @@
           &:focus {
             box-shadow: none;
           }
-          &:hover {
+          // &:hover {
+          //   color: $white;
+          //   background-color: $secondaryColor;
+          //   border-color: $secondaryColor;
+          // }
+          &.added{
             color: $white;
             background-color: $secondaryColor;
             border-color: $secondaryColor;

@@ -115,7 +115,7 @@ header {
             }
 
             &:last-child {
-              border-right: none
+              border-right: none;
             }
           }
         }
@@ -217,8 +217,27 @@ header {
                 @include flexCenterAlignment;
               }
             }
+            
+            
           }
-
+          a{
+            
+            &.wishlist_btn{
+              position: relative;
+              .wishlist_counter {
+                padding: 0;
+                position: absolute;
+                top: -15px;
+                right: -8px;
+                background-color: $secondaryColor;
+                width: 20px;
+                height: 20px;
+                font-size: 10px;
+                @include borderRadius(50%);
+                @include flexCenterAlignment;
+              }
+            }
+          }
           &:nth-child(2) {
             padding-inline: 12px;
             margin-inline: 6px;
@@ -255,11 +274,11 @@ header {
       &::-webkit-scrollbar {
         width: 5px;
       }
-    
+
       &::-webkit-scrollbar-track {
         background: $lighterGrey;
       }
-    
+
       &::-webkit-scrollbar-thumb {
         background: $mainColor;
         border-radius: 0px;
@@ -402,8 +421,9 @@ header {
 
         &:hover {
           .dropdown_menu_wraper {
-            transform: translateX(-50%) scale(1);
+            transform: translateX(-50%) translateY(10px);
             opacity: 1;
+            z-index: 10;
           }
         }
 
@@ -413,14 +433,14 @@ header {
           top: 80%;
           left: 50%;
           width: 200px;
-          transform: translateX(-50%) scale(0);
+          transform: translateX(-50%) translateY(40px);
           background-color: $white;
           @include midShadow;
           @include borderRadius(6px);
           @include transitioning(0.5s);
           transform-origin: top;
+          z-index: -1;
           opacity: 0;
-          z-index: 10;
           &.mega_menu {
             width: 600px;
           }
@@ -428,7 +448,7 @@ header {
           h6 {
             font-family: $semi_bold_font;
           }
-  
+
           ul {
             padding: 0;
             @include verticalFlexStartAlignment;
@@ -439,14 +459,14 @@ header {
                 font-family: $medium_font;
                 color: $lightGrey;
                 @include transitioning(0.3s);
-  
+
                 &:hover {
                   color: $secondaryColor;
                 }
               }
             }
           }
-  
+
           .img_wraper {
             position: relative;
             .overlay {
@@ -456,7 +476,7 @@ header {
               @include flexCenterAlignment;
               flex-direction: column;
               @include borderRadius(6px);
-  
+
               h2 {
                 font-family: $extra_bold_font;
                 color: $white;
@@ -465,7 +485,7 @@ header {
                 }
               }
             }
-  
+
             img {
               min-width: 192px;
               max-width: 192px;
@@ -500,3 +520,4 @@ header {
   }
 }
 // END:: ANIMATIONS KEYFRAMES
+

@@ -19,7 +19,7 @@
               <router-link to="/address">Address</router-link>
               <router-link to="/account-details">Account Details</router-link>
               <router-link to="/change-password">Change Password</router-link>
-              <button>Logout</button>
+              <button @click="logout">Logout</button>
             </div>
           </div>
           <!-- END:: TABS -->
@@ -41,5 +41,11 @@
 <script>
 export default {
   name: "Profile",
+  methods: {
+    logout() {
+      this.$store.dispatch("remove_token");
+      this.$router.replace("/");
+    },
+  },
 };
 </script>

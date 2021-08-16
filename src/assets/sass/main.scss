@@ -52,8 +52,11 @@
 // ==== AUTH
 @import "components/staticPages";
 
-// ==== AUTH
+// ==== Loaders
 @import "components/Loaders.scss";
+
+// ==== CheckOut
+@import "components/checkout.scss";
 
 // ==== Global Style
 * {
@@ -254,21 +257,14 @@ li {
                   width: 15%;
                   padding-inline-end: 10px;
                 }
-                .v-input__control {
-                  .v-text-field__details {
-                    min-height: 0 !important;
-                    display: none;
-                  }
-                  .v-select__slot {
-                    .v-input__append-inner {
-                      .v-input__icon {
-                        .v-icon {
-                          opacity: 0.6;
-                          color: $secondaryColor !important;
-                          caret-color: $secondaryColor !important;
-                        }
-                      }
-                    }
+                select {
+                  padding: 0.6em 2.25rem 0.6em 0.75rem;
+                  outline: none !important;
+                  box-shadow: none !important;
+                  border: 1px solid $lighterGrey;
+                  width: 200px;
+                  &:focus{
+                    box-shadow: none;
                   }
                 }
               }
@@ -278,6 +274,7 @@ li {
               padding-block: 15px;
               border-top: 1px solid $lighterGrey;
               border-bottom: 1px solid $lighterGrey;
+              margin-top: 15px;
               @include flexStartAlignment;
               .quantity_btns {
                 @include flexSpaceBetweenAlignment;
@@ -298,6 +295,7 @@ li {
               .add_to_cat,
               .add_to_wishlist {
                 @include btnWithBackground;
+                padding: 0.5em 1em;
               }
         
               .add_to_wishlist {

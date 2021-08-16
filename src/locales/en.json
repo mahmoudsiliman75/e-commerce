@@ -1,5 +1,6 @@
 {
   "message":                          "hello i18n !!",
+  "repeatedItem":                     "This Item Is Already Exist",
   "alertPositions":                   "bottomLeft",
 
   "home":                             "Home",

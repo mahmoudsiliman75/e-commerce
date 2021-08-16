@@ -90,6 +90,84 @@
             </div>
             <!-- END:: SINGLE FAQ -->
           </div>
+          <div class="col-md-6">
+            <h3>Customer Management</h3>
+            <!-- START:: SINGLE FAQ -->
+            <div class="single-faq">
+              <v-expansion-panels>
+                <v-expansion-panel>
+                  <v-expansion-panel-header
+                    >How can add vendor role to the
+                    customer?</v-expansion-panel-header
+                  >
+                  <v-expansion-panel-content>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </v-expansion-panel-content>
+                </v-expansion-panel>
+              </v-expansion-panels>
+            </div>
+            <!-- END:: SINGLE FAQ -->
+
+            <!-- START:: SINGLE FAQ -->
+            <div class="single-faq">
+              <v-expansion-panels>
+                <v-expansion-panel>
+                  <v-expansion-panel-header
+                    >How can add vendor role to the
+                    customer?</v-expansion-panel-header
+                  >
+                  <v-expansion-panel-content>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </v-expansion-panel-content>
+                </v-expansion-panel>
+              </v-expansion-panels>
+            </div>
+            <!-- END:: SINGLE FAQ -->
+
+            <!-- START:: SINGLE FAQ -->
+            <div class="single-faq">
+              <v-expansion-panels>
+                <v-expansion-panel>
+                  <v-expansion-panel-header
+                    >How can add vendor role to the
+                    customer?</v-expansion-panel-header
+                  >
+                  <v-expansion-panel-content>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </v-expansion-panel-content>
+                </v-expansion-panel>
+              </v-expansion-panels>
+            </div>
+            <!-- END:: SINGLE FAQ -->
+
+            <!-- START:: SINGLE FAQ -->
+            <div class="single-faq">
+              <v-expansion-panels>
+                <v-expansion-panel>
+                  <v-expansion-panel-header
+                    >How can add vendor role to the
+                    customer?</v-expansion-panel-header
+                  >
+                  <v-expansion-panel-content>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </v-expansion-panel-content>
+                </v-expansion-panel>
+              </v-expansion-panels>
+            </div>
+            <!-- END:: SINGLE FAQ -->
+          </div>
         </div>
       </div>
     </div>

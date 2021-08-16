@@ -39,9 +39,9 @@ export default {
   // END:: VUE-META
 
   // START:: MOUNTED LIFE HOOK
-  mounted() {
-    let dashboard_lang = localStorage.getItem("ecommerce_lang");
-    if (!dashboard_lang) {
+  created() {
+    let ecommerce_lang = localStorage.getItem("ecommerce_lang");
+    if (!ecommerce_lang) {
       localStorage.setItem("ecommerce_lang", "en");
       this.$i18n.locale = "en";
     } else {
