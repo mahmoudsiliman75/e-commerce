@@ -943,9 +943,11 @@ header {
           .actions {
             li {
               padding-inline: 3px;
+              border: none;
             }
-            .contact_list_item {
-              display: none;
+            .contact_list_item,
+            .auth_link {
+              display: none !important;
             }
           }
         }

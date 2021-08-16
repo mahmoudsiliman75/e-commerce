@@ -162,4 +162,55 @@ footer {
       }
     }
   }
+
+  .floating_footer {
+    background-color: $white;
+    z-index: 999;
+    .items_list {
+      padding: 5px 0;
+      margin: 0;
+      @include flexSpaceAroundAlignment;
+
+      li {
+        a,
+        button {
+          @include flexCenterAlignment;
+          flex-direction: column;
+          color: $midGrey;
+          span {
+            font-size: 0.8rem;
+            font-family: $semi_bold_font;
+          }
+        }
+      }
+    }
+
+    &.sticky {
+      z-index: 999 !important;
+      animation: fixedFooterAnimation 0.5s forwards;
+      animation-delay: 0.5s;
+      position: absolute;
+    }
+  }
 }
+
+// START:: ANIMATIONS KEYFRAMES
+@keyframes fixedFooterAnimation {
+  0% {
+    position: fixed;
+    bottom: -100%;
+    right: 0;
+    left: 0;
+  }
+
+  100% {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: $white;
+    @include midShadow;
+    border-bottom: none;
+  }
+}
+// END:: ANIMATIONS KEYFRAMES

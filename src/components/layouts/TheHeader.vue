@@ -39,7 +39,7 @@
                 </router-link>
               </li>
 
-              <li class="d-flex justify-center align-items-center">
+              <li class="d-flex justify-center align-items-center auth_link">
                 <router-link
                   to="/login"
                   v-b-tooltip.hover
@@ -141,6 +141,23 @@
 
               <li @click="closeNavbarMenu">
                 <router-link to="/contact" class="side_navbar_menu_list_link"> Contact Us </router-link>
+              </li>
+
+              <li @click="closeNavbarMenu">
+                <router-link 
+                  to="/login" 
+                  class="side_navbar_menu_list_link" 
+                  v-if="!this.$store.getters.token"
+                > 
+                  Sign In 
+                </router-link>
+                <router-link 
+                  to="/dashboard" 
+                  class="side_navbar_menu_list_link"
+                  v-else
+                > 
+                  Profile 
+                </router-link>
               </li>
 
               <li>
