@@ -1,7 +1,7 @@
 <template>
   <div class="auth-container login-section">
     <!-- START:: LOGIN FORM -->
-    <form class="form-style">
+    <form class="form-style" @submit.prevent="AuthForm">
       <div class="form-input">
         <input
           type="email"
@@ -150,6 +150,10 @@ export default {
           position: this.$t("alertPositions"),
           rtl: false,
         });
+      } else {
+        this.$store.dispatch("set_token", "123456789");
+        this.isWaiting = false;
+        this.$router.replace("/");
       }
     },
     // END:: LOGIN METHODS

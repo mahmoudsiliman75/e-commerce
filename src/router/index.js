@@ -4,6 +4,7 @@ import Home from "../pages/HomePage.vue";
 import AllCategories from "../pages/AllCategories.vue";
 import ProductDetails from "../pages/ProductDetails.vue";
 import MainCart from "../pages/MainCart.vue";
+import CheckOut from "../pages/CheckOut.vue";
 // START:: Auth
 import Auth from "../pages/Auth.vue";
 import Login from "../components/auth/Login.vue";
@@ -44,6 +45,11 @@ const routes = [
     path: "/main-cart",
     name: "MainCart",
     component: MainCart,
+  },
+  {
+    path: "/checkout",
+    name: "CheckOut",
+    component: CheckOut,
   },
   {
     path: "/search-result",

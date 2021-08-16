@@ -45,6 +45,7 @@
                   v-b-tooltip.hover
                   title="Sign In"
                   class="mx-1"
+                  v-if="!this.$store.getters.token"
                 >
                   <UserIcon size="1.3x" class="user_icon" />
                   <span> Sign In </span>
@@ -55,6 +56,7 @@
                   v-b-tooltip.hover
                   title="Profile"
                   class="mx-1"
+                  v-else
                 >
                   <UserIcon size="1.3x" class="user_icon" />
                   <span> Profile </span>
@@ -151,7 +153,13 @@
                     to="/wishlist"
                     v-b-tooltip.hover
                     title="Wishlist"
+                    class="wishlist_btn"
                   >
+                    <span
+                      v-if="$store.state.wishlist.length > 0"
+                      class="badge wishlist_counter"
+                      >{{ $store.state.wishlist.length }}</span
+                    >
                     <HeartIcon size="2.3x" class="heart_icon" />
                   </router-link>
                 </li>
@@ -169,7 +177,10 @@
                     </div>
 
                     <ShoppingCartIcon size="2.3x" class="cart_icon" />
-                    <span class="badge">
+                    <span
+                      class="badge"
+                      v-if="this.$store.state.shoppingCart.length > 0"
+                    >
                       {{ this.$store.state.shoppingCart.length }}
                     </span>
                   </button>
@@ -258,12 +269,18 @@
 
         <!-- START:: GO TO MAIN CART ROUTE -->
         <div class="wraper">
-          <router-link to="/main-cart"> View Cart </router-link>
+          <button type="button" class="btn" @click="closeCartMenu">
+            <router-link to="/main-cart"> View Cart </router-link>
+          </button>
         </div>
         <!-- END:: GO TO MAIN CART ROUTE -->
 
         <!-- START:: CHECKOUT ROUTE -->
-        <router-link to="/" class="checkout"> GO TO CHECKOUT </router-link>
+        <span @click="closeCartMenu" class="d-block">
+          <router-link to="/checkout" class="checkout">
+            GO TO CHECKOUT
+          </router-link>
+        </span>
         <!-- END:: CHECKOUT ROUTE -->
       </div>
     </div>
@@ -436,7 +453,7 @@ export default {
 
       // START:: LANGUAGE DATA
       lang: localStorage.getItem("ecommerce_lang"),
-      // END:: LANGUAGE DATA
+      // END:: LANGUAGE
     };
   },
 

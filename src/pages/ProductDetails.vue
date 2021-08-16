@@ -126,7 +126,10 @@
                 <span> Add To Cart </span>
               </button>
 
-              <button class="btn add_to_wishlist">
+              <button
+                class="btn add_to_wishlist"
+                @click="addToWishlist(product)"
+              >
                 <span> <HeartIcon /> </span>
                 <span> Add To Wishlist </span>
               </button>
@@ -552,15 +555,12 @@ export default {
       },
       // END:: PRODUCT DATA
 
-      // START:: COLOR SELECT BOX DATA
-      colors: ["Black", "Red", "Blue"],
-      colorValues: ["Black", "Red", "Blue"],
-      // END:: COLOR SELECT BOX DATA
-
-      // START:: SIZE SELECT BOX DATA
-      sizes: ["S", "M", "L", "XL", "XXl"],
-      sizeValues: ["S", "M", "L", "XL", "XXl"],
-      // END:: SIZE SELECT BOX DATA
+      // START:: PRODUCT COLOR & SIZE
+      ProductColorAndSize: {
+        productColor: "",
+        productSize: "",
+      },
+      // END:: PRODUCT COLOR & SIZE
 
       // START:: REVIEW DATA
       reviewData: {
@@ -774,6 +774,12 @@ export default {
       this.$store.dispatch("addItemToCart", { item });
     },
     // END:: ADD TO CART
+
+    // START:: ADD TO WISHLIST
+    addToWishlist(item) {
+      this.$store.dispatch("addItemToWishlist", { item });
+    },
+    // END:: ADD TO WISHLIST
 
     // START:: INCREMENT QUANTITY
     increaseQuantity(item) {

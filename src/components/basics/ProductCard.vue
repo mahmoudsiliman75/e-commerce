@@ -33,9 +33,20 @@
             </router-link>
 
             <button
+              class="add_to_wish added"
+              v-b-tooltip.hover
+              title="Remove From Wishlist"
+              v-if="productData.inWishlist"
+              @click="removeFromWishlist(productData)"
+            >
+              <HeartIcon size="1.2x" class="heart_icon" />
+            </button>
+
+            <button
               class="add_to_wish"
               v-b-tooltip.hover
               title="Add To Wishlist"
+              v-else
               @click="addToWishlist(productData)"
             >
               <HeartIcon size="1.2x" class="heart_icon" />
@@ -174,34 +185,24 @@
                 </div>
 
                 <div class="product_options">
-                  <div class="wraper">
+                  <div class="wraper mt-4">
                     <label> Color: </label>
-                    <v-autocomplete
-                      chips
-                      deletable-chips
-                      small-chips
-                      filled
-                      dense
-                      v-model="colorValues"
-                      :items="colors"
-                      label="Select Color"
-                      class="mt-4"
-                    ></v-autocomplete>
+                    <select class="form-select">
+                      <option selected disabled>Select Colors</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
                   </div>
 
-                  <div class="wraper">
+                  <div class="wraper mt-4">
                     <label> Size: </label>
-                    <v-autocomplete
-                      chips
-                      deletable-chips
-                      filled
-                      dense
-                      small-chips
-                      v-model="sizeValues"
-                      :items="sizes"
-                      label="Select Size"
-                      class="my-4"
-                    ></v-autocomplete>
+                    <select class="form-select">
+                      <option selected disabled>Select Sizes</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
                   </div>
                 </div>
 
@@ -281,15 +282,12 @@ export default {
 
   data() {
     return {
-      // START:: COLOR SELECT BOX DATA
-      colors: ["Black", "Red", "Blue"],
-      colorValues: ["Black", "Red", "Blue"],
-      // END:: COLOR SELECT BOX DATA
-
-      // START:: SIZE SELECT BOX DATA
-      sizes: ["S", "M", "L", "XL", "XXl"],
-      sizeValues: ["S", "M", "L", "XL", "XXl"],
-      // END:: SIZE SELECT BOX DATA
+      // START:: PRODUCT COLOR & SIZE
+      ProductColorAndSize: {
+        productColor: "",
+        productSize: "",
+      },
+      // END:: PRODUCT COLOR & SIZE
       isLoading: false,
       imgsSliderSettings: {
         dots: false,
@@ -328,6 +326,12 @@ export default {
       this.$store.dispatch("addItemToWishlist", { item });
     },
     // END:: ADD TO WISHLIST
+
+    // START:: REMOVE TO WISHLIST
+    removeFromWishlist(item) {
+      this.$store.dispatch("removeItemToWishlist", { item });
+    },
+    // END:: REMOVE TO WISHLIST
   },
 };
 </script>
