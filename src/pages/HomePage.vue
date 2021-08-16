@@ -185,7 +185,7 @@
     <!-- END:: FEATURED CATEGORIES -->
 
     <!-- START:: FEATURED PRODUCTS -->
-    <div class="featured_products">
+    <div class="featured_products padding-slider">
       <div class="container">
         <!-- START:: TITLE -->
         <div class="header_wraper">
