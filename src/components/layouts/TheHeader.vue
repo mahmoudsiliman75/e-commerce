@@ -5,7 +5,7 @@
       <div class="container">
         <div class="wraper">
           <div class="header_message_wraper">Welcome To Our E-commerce</div>
-          <!-- <marquee> Welcome To Our E-commerce </marquee> -->
+          <marquee scrollamount="5"> Welcome To Our E-commerce </marquee>
 
           <div class="action_btns_wraper">
             <ul class="actions">
@@ -32,7 +32,7 @@
                 </transition>
               </li>
 
-              <li>
+              <li class="contact_list_item">
                 <router-link to="/" v-b-tooltip.hover title="Contact Us">
                   <MapPinIcon size="1.3x" class="map_pin_icon" />
                   <span> Contact </span>
@@ -50,7 +50,7 @@
                   <span> Sign In </span>
                 </router-link>
 
-                <router-link
+                <!-- <router-link
                   to="/dashboard"
                   v-b-tooltip.hover
                   title="Profile"
@@ -58,7 +58,7 @@
                 >
                   <UserIcon size="1.3x" class="user_icon" />
                   <span> Profile </span>
-                </router-link>
+                </router-link> -->
               </li>
 
               <li class="language_wraper">
@@ -101,6 +101,7 @@
     <div class="main_bar">
       <div class="container">
         <div class="row justify-content-between align-items-center">
+          <!-- START:: NAVBAR SIDE MENU BUTTON -->
           <div class="col-1 navBar_menu_btn_wraper">
             <div class="navBar_menu_btn">
               <button class="btn" @click="openNavbarMenu">
@@ -108,6 +109,9 @@
               </button>
             </div>
           </div>
+          <!-- START:: NAVBAR SIDE MENU BUTTON -->
+
+          <!-- START:: SIDE NAVBAR MENU -->
           <div
             class="navbar_sticky_menu_wraper"
             :class="{ show: navbarMenuIsOpen }"
@@ -221,6 +225,7 @@
               </li>
             </ul>
           </div>
+          <!-- END:: SIDE NAVBAR MENU -->
 
           <div class="col-2 d-flex justify-content-center">
             <div class="logo_wraper">
@@ -230,7 +235,7 @@
             </div>
           </div>
 
-          <div class="col-5">
+          <div class="col-5 search_bar_col">
             <div class="search_bar">
               <form @submit.prevent="searchForm(searchInput)">
                 <div class="group">
@@ -252,7 +257,7 @@
           <div class="col-4">
             <div class="action_btns_wraper">
               <ul>
-                <li>
+                <li class="contact_list_item">
                   <a
                     href="tel:01001010101010"
                     class="btn d-flex align-items-center"
@@ -284,7 +289,7 @@
                     title="Cart"
                     @click="openCartMenu"
                   >
-                    <div class="text pe-1">
+                    <div class="text cart_details_text pe-1">
                       <span> Shopping Cart: </span>
                       <span> {{ this.$store.state.cartSubtotal }} EGP </span>
                     </div>
