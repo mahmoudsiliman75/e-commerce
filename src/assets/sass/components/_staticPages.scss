@@ -321,12 +321,7 @@
 .branches-section {
   padding-block: $sectionPadding;
   .title-branches {
-    text-align: center;
-    h4 {
-      font-family: $extra_bold_font;
-      font-size: 2rem;
-      color: $darkGrey;
-    }
+    @include mainHeaderStyle;
   }
   .all-branches {
     .single-branch {

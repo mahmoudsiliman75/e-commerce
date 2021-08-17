@@ -981,6 +981,19 @@ header {
       }
     }
 
+    .cart_menu_wraper {
+      & + .cart_menu {
+        .cart_body {
+          .item {
+            .title,
+            h5 {
+              padding-inline-start: 10px;
+            }
+          }
+        }
+      }
+    }
+
     .navbar_wraper {
       display: none;
     }
