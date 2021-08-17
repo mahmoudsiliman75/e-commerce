@@ -9,14 +9,16 @@
 
   .slick-slider {
     position: relative;
+    
     &:hover {
       button {
         opacity: 1;
       }
     }
+
     button {
       z-index: 3;
-      opacity: 0;
+      opacity: 1;
       @include transitioning(0.4s);
       &.slick-arrow {
         &.slick-prev,
@@ -360,6 +362,98 @@
     padding-block: $sectionPadding;
     .header_wraper {
       @include mainHeaderStyle;
+    }
+  }
+
+  @media ( max-width: 800px ) {
+    padding-block: 15px;
+    .container {
+      & > .row {
+        height: auto;
+      }
+    }
+
+    .slick-slider {  
+      .slick-list {
+        height: 100% !important;
+      }
+    }
+
+    .thumbnail_wraper {
+      padding-inline: 5px;
+      height: 110px;
+      img {
+        height: 110px;
+      }
+    }
+
+    .main_img_wraper {
+      height: 350px;
+      img {
+        height: 350px;
+      }
+    }
+
+    .product_details { 
+      margin-top: 10px; 
+      .product_options {
+        .wraper {
+          @include verticalFlexStartAlignment;
+          & > label {
+            width: 100%;
+            padding-inline-end: 10px;
+          }
+          select {
+            width: 100%;
+          }
+        }
+      }
+  
+      .add_product_to_cart {
+        .add_to_cat,
+        .add_to_wishlist {
+          span {
+            &:last-child {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .tabs_wraper {
+      .tabs {
+        .tab-content {
+          .size_guide_img_wraper {
+            text-align: center;
+            margin-bottom: 15px;
+            img {
+              min-width: 200px;
+              max-width: 200px;
+              min-height: 300px;
+              max-height: 300px;
+            }
+          }
+  
+          .testimonial_card {
+            padding: 25px 15px;
+            @include flexCenterAlignment;
+            flex-direction: column;
+  
+            .testimonial_body {
+              margin-top: 15px;
+              width: 100%;
+              .text {
+                font-size: 14px;
+              }
+            }
+          }
+  
+          .review_subtitle {
+            font-size: 0.8rem;
+          }
+        }
+      }
     }
   }
 }
