@@ -193,7 +193,26 @@
           </li>
 
           <li>
-            <button class="btn">
+            <transition mode="out-in" name="fade">
+              <div class="search_bar_wraper" v-if="footerSearchBarIsOPen">
+                <form>
+                  <div class="group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="search_value"
+                      placeholder="Search...."
+                      v-model="footerSearchInput"
+                    />
+                    <button class="btn">
+                      <SearchIcon size="1.6x" class="search_icon" />
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </transition>
+
+            <button class="btn" @click="toggleFooterSearchBar">
               <SearchIcon/>
               <span> Search </span>
             </button>
@@ -217,6 +236,14 @@ export default {
     UserIcon
   },
 
+  data() {
+    return {
+      footerSearchBarIsOPen: false,
+
+      footerSearchInput: "",
+    }
+  },
+
   methods: {
     // START:: HANDILLING STICKY FOOTER
     stickyFooter() {
@@ -235,6 +262,12 @@ export default {
       });
     },
     // END:: HANDILLING STICKY FOOTER
+
+    // START:: TOGGLE FOOTER SEARCH BAR
+    toggleFooterSearchBar() {
+      this.footerSearchBarIsOPen = !this.footerSearchBarIsOPen;
+    },
+    // END:: TOGGLE FOOTER SEARCH BAR
   },
 
   mounted() {
