@@ -229,7 +229,7 @@ footer {
       }
   
       &.sticky {
-        z-index: 999 !important;
+        z-index: 9 !important;
         animation: fixedFooterAnimation 0.5s forwards;
         animation-delay: 0.5s;
         position: absolute;

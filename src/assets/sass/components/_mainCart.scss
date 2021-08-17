@@ -1,11 +1,16 @@
 .main_cart_wraper {
   padding-block: $sectionPadding;
 
+  @media ( max-width: 767px) {
+    padding-block: 15px;
+  }
+
   .empty_cart_message {
     @include flexCenterAlignment;
     flex-direction: column;
-    color: $midGrey;
+    color: $lightGrey;
     h5 {
+      text-align: center;
       font-family: $bold_font;
     }
   }
@@ -13,6 +18,7 @@
   .wraper {
     .cart_table {
       table {
+        display: table;
         tbody {
           td {
             padding-block: 8px;
@@ -68,6 +74,85 @@
           }
         }
       }
+
+      .cart_cards_wraper {
+        display: none;
+        padding: 10px;
+        .cart_item_card {
+          position: relative;
+          padding: 10px;
+          margin-block: 10px;
+          border: 1px solid $lighterGrey;
+          @include borderRadius(8px);
+    
+          .btn_wraper {
+            text-align: end;
+            button {
+              &:focus {
+                box-shadow: none;
+              }
+              svg {
+                color: $lightGrey;
+              }
+            }
+          }
+    
+          .item_img_wraper {
+            @include flexCenterAlignment;
+            img {
+              width: 115px;
+              height: 130px;
+            }
+          }
+    
+          .item_details_wraper {
+            margin-block: 15px;
+            h6 {
+              margin-block: 10px;
+              text-align: center;
+              word-break: break-word;
+              font-family: $medium_font;
+            }
+
+            .wraper {
+              @include flexCenterAlignment;
+              .quantity_btns {
+                @include flexCenterAlignment;
+                border: 1px solid $lighterGrey;
+                @include borderRadius(6px);
+                button {
+                  &:focus {
+                    box-shadow: none;
+                  }
+                  &:nth-child(2) {
+                    @include borderRadius(0);
+                    padding-inline: 10px;
+                    border-left: 1px solid $lighterGrey;
+                    border-right: 1px solid $lighterGrey;
+                  }
+                }
+              }
+            }
+          }
+    
+          .action_btns_wraper {
+            text-align: center;
+            button {
+              @include btnWithBackground;
+            }
+          }
+        } 
+      }
+
+      @media ( max-width: 767px ) {
+        table {
+          display: none;
+        }
+
+        .cart_cards_wraper {
+          display: block;
+        }
+      } 
     }
 
     .coupon_wraper {
@@ -160,6 +245,16 @@
       .cart_totals_footer {
         @include flexSpaceBetweenAlignment;
         border-bottom: none;
+      }
+
+      a {
+        @include btnWithBackground;
+        display: inline-block;
+        margin-bottom: 15px;
+      }
+
+      @media ( max-width: 767px ) {
+        @include borderRadius(6px);
       }
     }
   }
