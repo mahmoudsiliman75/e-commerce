@@ -116,7 +116,8 @@
     <div class="branches-section">
       <div class="container">
         <div class="title-branches">
-          <h4>Our Branches</h4>
+          <h2>Our Branches</h2>
+          <span class="title_backdrop"> Our Branches </span>
         </div>
         <div class="all-branches">
           <div class="row">

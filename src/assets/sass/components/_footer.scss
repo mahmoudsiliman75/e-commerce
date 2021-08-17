@@ -162,4 +162,99 @@ footer {
       }
     }
   }
+
+  .floating_footer {
+    display: none;
+  }
+
+  @media ( max-width: 767px ) {
+    .floating_footer {
+      display: block;
+      background-color: $white;
+      z-index: 999;
+      .items_list {
+        position: relative;
+        padding: 5px 0;
+        margin: 0;
+        @include flexSpaceAroundAlignment;
+  
+        li {
+          .search_bar_wraper {
+            position: absolute;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 6px;
+            width: 95vw;
+            background-color: $white;
+            @include midShadow;
+            @include borderRadius(8px);
+
+            form {
+              .group {
+                border: 1px solid $lighterGrey;
+                @include borderRadius(8px);
+                @include flexCenterAlignment;
+
+                input {
+                  border: none;
+                  &:focus {
+                    box-shadow: none;
+                  }
+                }
+
+                button {
+                  &:focus {
+                    box-shadow: none;
+                  }
+                }
+              }
+            }
+          }
+
+          a,
+          button {
+            @include flexCenterAlignment;
+            flex-direction: column;
+            color: $midGrey;
+            span {
+              font-size: 0.8rem;
+              font-family: $semi_bold_font;
+            }
+            &:focus {
+              box-shadow: none;
+            }
+          }
+        }
+      }
+  
+      &.sticky {
+        z-index: 9 !important;
+        animation: fixedFooterAnimation 0.5s forwards;
+        animation-delay: 0.5s;
+        position: absolute;
+      }
+    }
+  }
 }
+
+// START:: ANIMATIONS KEYFRAMES
+@keyframes fixedFooterAnimation {
+  0% {
+    position: fixed;
+    bottom: -100%;
+    right: 0;
+    left: 0;
+  }
+
+  100% {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: $white;
+    @include midShadow;
+    border-bottom: none;
+  }
+}
+// END:: ANIMATIONS KEYFRAMES

@@ -3,7 +3,7 @@
     <div class="container">
       <!-- START:: EMPTY CART MESSAGE -->
       <div 
-        class="empty_wishlist_message p-5 text-center"
+        class="empty_wishlist_message p-3 p-md-5 text-center"
         v-if=" this.$store.state.wishlist.length == 0 "
       >
         <span> <HeartIcon size="5x"/> </span>
@@ -13,6 +13,7 @@
 
       <!-- START:: WISHLIST TABLE -->
       <div class="wraper" v-else>
+        <!-- START:: LARGE SCREENS WISHLIST TABLE -->
         <v-simple-table>
           <thead>
             <tr>
@@ -31,7 +32,11 @@
             >
               <td>
                 <div class="product">
-                  <img :src="item.images[0].img" />
+                  <img 
+                    :src="item.images[0].img" 
+                    width="100" 
+                    height="100"
+                  />
                   <p>{{ item.productName }}</p>
                 </div>
               </td>
@@ -69,6 +74,59 @@
             </tr>
           </tbody>
         </v-simple-table>
+        <!-- END:: LARGE SCREENS WISHLIST TABLE -->
+
+        <!-- START:: SMALL SCREENS WISHLIST CARDS -->
+        <div class="wishlist_cards_wraper">
+          <transition-group mode="out-in" name="fade">
+            <div 
+              class="wishlist_item_card"
+              v-for="item in this.$store.state.wishlist" 
+              :key="item.id"
+            >
+              <div class="btn_wraper">
+                <button 
+                  class="btn"
+                  @click="removeFromWishlist(item)"
+                >
+                  <XIcon size="1.3x"/>
+                </button>
+              </div>
+
+              <div class="item_img_wraper">
+                <img 
+                  :src="item.images[0].img"
+                  alt="Product Image" 
+                  width="100" 
+                  height="100"
+                >
+              </div>
+
+              <div class="item_details_wraper">
+                <h6 class="name">
+                  {{ item.productName }}
+                </h6>
+
+                <h6 class="price" v-if=" item.discount.length != 0 || item.discount != 0 "> {{ item.discount }} EGP </h6>
+                <h6 class="price" v-else> {{ item.price }} EGP </h6>
+
+                <h6 class="status text-success text-capitalize" v-if="item.status == 'in stock'"> {{ item.status }} </h6>
+                <h6 class="status text-danger text-capitalize" v-if="item.status == 'out of stock'"> {{ item.status }} </h6>
+              </div>
+
+              <div class="action_btns_wraper">
+                <button 
+                  class="btn"
+                  :class=" item.status == 'out of stock' ? 'disabled' : '' " 
+                  @click="addToCart(item)"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+          </transition-group>
+        </div>
+        <!-- END:: SMALL SCREENS WISHLIST CARDS -->
 
         <!-- START:: SOCIAL MEDIA SHARING -->
         <div class="social_sharing_wraper">

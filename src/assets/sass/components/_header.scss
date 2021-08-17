@@ -936,16 +936,18 @@ header {
           font-size: 0.9rem;
           font-family: $light_font;
           color: $darkGrey;
-          width: 100px;
+          width: 150px;
         }
 
         .action_btns_wraper {
           .actions {
             li {
               padding-inline: 3px;
+              border: none;
             }
-            .contact_list_item {
-              display: none;
+            .contact_list_item,
+            .auth_link {
+              display: none !important;
             }
           }
         }
@@ -974,6 +976,19 @@ header {
           li {
             padding-inline: 0 !important;
             border: none !important;
+          }
+        }
+      }
+    }
+
+    .cart_menu_wraper {
+      & + .cart_menu {
+        .cart_body {
+          .item {
+            .title,
+            h5 {
+              padding-inline-start: 10px;
+            }
           }
         }
       }
