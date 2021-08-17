@@ -88,9 +88,6 @@
     .v-input__slot {
       margin: 0;
     }
-    .v-input--selection-controls__ripple {
-      // margin: 0;
-    }
     .v-messages {
       display: none;
     }
@@ -137,8 +134,15 @@
   @include flexSpaceBetweenAlignment;
   align-items: center;
   .left-part {
-    button {
+    .control_width_btn {
       @include btnWithOutBackground;
+    }
+    .control_filter_menu_btn {
+      display: none;
+      color: $mainColor;
+      &:focus {
+        box-shadow: none;
+      }
     }
   }
   .right-part {
@@ -161,8 +165,96 @@
       }
     }
   }
+
+  .filter_side_menu_wraper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 21;
+    transform: scale(0);
+    opacity: 0;
+    transition-delay: 0.3s;
+    & + .filter_menu {
+      overflow: auto;
+      padding: 25px 20px;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      height: 100vh;
+      width: 400px;
+      background-color: $white;
+      z-index: 21;
+      @include transitioning(0.4s);
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: $lighterGrey;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $mainColor;
+        border-radius: 0px;
+        transition: 0.5s;
+      }
+
+      .menu_header {
+        padding-bottom: 6px;
+        @include flexSpaceBetweenAlignment;
+        border-bottom: 1px solid $lighterGrey;
+        h4,
+        button {
+          font-family: $medium_font;
+        }
+
+        button {
+          color: $lightGrey;
+          &:focus {
+            box-shadow: none;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 600px) {
+      & + .filter_menu {
+        width: 100%;
+      }
+    }
+
+    &.show {
+      transform: scale(1);
+      opacity: 1;
+      & + .filter_menu {
+        left: 0;
+        @include midShadow;
+      }
+    }
+  }
+
+  @media ( max-width: 767px) {
+    .left-part {
+      .control_width_btn {
+        display: none;
+      }
+      .control_filter_menu_btn {
+        display: block;
+      }
+    }
+
+    .right-part {
+      select {
+        padding: 0.2em 2.25rem 0.2em 0.75rem;
+      }
+    }
+  }
 }
 // END:: HEADER FILTER
+
 
 // START:: PAGINATION
 .pagination {
@@ -195,6 +287,15 @@
       }
     }
   }
+
+  @media ( max-width: 767px ) {
+    @include flexCenterAlignment;
+    flex-wrap: wrap;
+
+    .left-part {
+      margin-bottom: 10px;
+    }
+  }
 }
 // END:: PAGINATION
 
@@ -205,6 +306,10 @@
 .col-filter {
   transition: all 0.5s ease-out;
   position: relative;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 }
 .hideFilter {
   width: 0;
