@@ -95,8 +95,7 @@
           border-radius: 3px !important;
         }
       }
-      .reset-password {
-      }
+
       .reset-password a {
         font-size: 0.8rem;
         font-family: $medium_font;
@@ -216,7 +215,14 @@
       }
     }
   }
+
+  @media ( max-width: 767px ) {
+    .auth-container {
+      width: 100%;
+    }
+  }
 }
+
 
 // START:: KEYFRAMES
 @-webkit-keyframes rotation {

@@ -3,7 +3,7 @@
     <!-- START:: REGISTER FORM -->
     <form class="form-style">
       <div class="row">
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="form-input">
             <input
               type="text"
@@ -15,7 +15,7 @@
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="form-input">
             <input
               type="text"
@@ -26,7 +26,7 @@
             />
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="form-input">
             <input
               type="email"
@@ -37,7 +37,7 @@
             />
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="form-input">
             <input
               type="tel"
@@ -49,7 +49,7 @@
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="form-input">
             <input
               :type="inputType"
@@ -78,7 +78,7 @@
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="form-input">
             <input
               :type="inputTypeConfirm"
