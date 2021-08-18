@@ -104,6 +104,10 @@ li {
 }
 .All-Content{
   padding-block: $sectionPadding;
+  @media ( max-width: 767px ) {
+    padding-block: 15px;
+    
+  }
 }
 .slick-dots {
   li {
@@ -385,7 +389,3 @@ li {
 .resluts-conteiner{
   padding-block: $sectionPadding;
 }
-
-// .main_content_wraper {
-//   min-height: calc(100vh - (202px + 238px));
-// }

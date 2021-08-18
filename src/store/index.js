@@ -849,6 +849,12 @@ export default new Vuex.Store({
       }
       state.wishlist.push(payload.item);
 
+      state.allProducts.forEach((prouct) => {
+        if (prouct.id == payload.item.id) {
+          prouct.inWishlist = true;
+        }
+      });
+
       state.bestSellers.forEach((prouct) => {
         if (prouct.id == payload.item.id) {
           prouct.inWishlist = true;
@@ -890,6 +896,12 @@ export default new Vuex.Store({
       }
 
       // state.wishlist.filter((element) => element.id != payload.item.id);
+      state.allProducts.forEach((prouct) => {
+        if (prouct.id == payload.item.id) {
+          prouct.inWishlist = false;
+        }
+      });
+
       state.bestSellers.forEach((prouct) => {
         if (prouct.id == payload.item.id) {
           prouct.inWishlist = false;
