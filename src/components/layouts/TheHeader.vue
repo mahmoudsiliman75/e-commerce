@@ -104,7 +104,7 @@
       <div class="container">
         <div class="row justify-content-between align-items-center">
           <!-- START:: NAVBAR SIDE MENU BUTTON -->
-          <div class="col-1 navBar_menu_btn_wraper">
+          <div class="col-3 col-md-1 navBar_menu_btn_wraper">
             <div class="navBar_menu_btn">
               <button class="btn" @click="openNavbarMenu">
                 <AlignLeftIcon size="1.9x"/>
@@ -310,9 +310,9 @@
                     v-b-tooltip.hover
                     title="Call Us"
                   >
-                    <PhoneCallIcon size="2.3x" class="phone_icon me-3" />
+                    <PhoneCallIcon size="2.3x" class="phone_icon" />
                     <div class="text">
-                      <span> Call Us Now: </span>
+                      <span> Call Us Now </span>
                       <span> 01001010101 </span>
                     </div>
                   </a>
@@ -341,8 +341,8 @@
                     title="Cart"
                     @click="openCartMenu"
                   >
-                    <div class="text cart_details_text pe-1">
-                      <span> Shopping Cart: </span>
+                    <div class="text cart_details_text">
+                      <span> Shopping Cart </span>
                       <span> {{ this.$store.state.cartSubtotal }} EGP </span>
                     </div>
 

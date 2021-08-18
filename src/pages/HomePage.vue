@@ -5,7 +5,6 @@
     <!-- END:: SLIDER -->
 
     <!-- START:: FEATURES -->
-
     <div class="features">
       <div class="cards_wraper">
         <div class="container">
@@ -200,7 +199,7 @@
             v-for="item in featuredItems"
             :key="item.id"
             :productData="item"
-            :type="item"
+            :type="'featured'"
           />
           <!-- END:: PRODUCT CARD -->
         </VueSlickCarousel>
@@ -466,6 +465,7 @@ export default {
         speed: 500,
         slidesToShow: 6,
         slidesToScroll: 1,
+        autoplay: true,
         responsive: [
           {
             breakpoint: 1024,

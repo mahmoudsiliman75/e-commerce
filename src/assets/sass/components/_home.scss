@@ -83,8 +83,6 @@
   .header_wraper {
     @include mainHeaderStyle;
   }
-
-  @import "../components/productCard.scss";
 }
 // END:: BEST SELLERS STYLES
 
@@ -206,6 +204,7 @@
               color: $secondaryColor;
               border: 2px solid $secondaryColor;
               padding: 15px;
+              @include borderRadius(6px);
               @include transitioning(0.4s);
               &::after {
                 display: none;
@@ -293,8 +292,6 @@
   .header_wraper {
     @include mainHeaderStyle;
   }
-
-  @import "../components/productCard.scss";
 }
 // END:: FEATURED PRODUCTS STYLES
 
