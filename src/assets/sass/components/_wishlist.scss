@@ -1,7 +1,12 @@
 .wishlist_wraper {
   padding-block: $sectionPadding;
 
+  .empty_wishlist_message {
+    color: $lightGrey;
+  }
+
   table {
+    display: table;
     tbody {
       tr {
         td {
@@ -43,6 +48,54 @@
     }
   }
 
+  .wishlist_cards_wraper {
+    display: none;
+    padding: 10px;
+    .wishlist_item_card {
+      position: relative;
+      padding: 10px;
+      margin-block: 10px;
+      border: 1px solid $lighterGrey;
+      @include borderRadius(8px);
+
+      .btn_wraper {
+        text-align: end;
+        button {
+          &:focus {
+            box-shadow: none;
+          }
+          svg {
+            color: $lightGrey;
+          }
+        }
+      }
+
+      .item_img_wraper {
+        @include flexCenterAlignment;
+        img {
+          width: 115px;
+          height: 130px;
+        }
+      }
+
+      .item_details_wraper {
+        margin-block: 15px;
+        h6 {
+          text-align: center;
+          word-break: break-word;
+          font-family: $medium_font;
+        }
+      }
+
+      .action_btns_wraper {
+        text-align: center;
+        button {
+          @include btnWithBackground;
+        }
+      }
+    } 
+  }
+
   .social_sharing_wraper {
     margin-top: 20px;
     @include flexStartAlignment;
@@ -68,6 +121,18 @@
           color: $telegramColor;
         }
       }
+    }
+  }
+
+  @media ( max-width: 767px ) {
+    padding-block: 10px;
+
+    table {
+      display: none;
+    }
+
+    .wishlist_cards_wraper  {
+      display: block;
     }
   }
 }

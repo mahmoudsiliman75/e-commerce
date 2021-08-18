@@ -27,6 +27,7 @@
     transition: all 0.3s ease-out;
     padding: 3.5rem 1rem 3.2rem;
     box-shadow: 0 5px 40px 0 rgb(0 0 0 / 5%);
+    @include borderRadius(10px);
     .head-card-whatWeDo {
       text-align: center;
       h4 {
@@ -92,6 +93,35 @@
           font-size: 14px;
           font-family: $medium_font;
           margin: 15px 0;
+        }
+      }
+    }
+  }
+
+  @media ( max-width: 767px ) {
+    .whatWeDo-section {
+      padding: 0;
+    }
+    .card-whatWeDo {
+      margin-bottom: 15px;
+      .head-card-whatWeDo {
+        h3 {
+          font-size: 2.1rem;
+        }
+        h4 {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .about-content {
+      .image-about-content {
+        img {
+          width: 100%;
+        }
+      }
+      .text-about-content {
+        h6 {
+          margin-top: 10px;
         }
       }
     }
@@ -209,8 +239,6 @@
           border-radius: 3px !important;
         }
       }
-      .reset-password {
-      }
       .reset-password a {
         font-size: 0.8rem;
         font-family: $medium_font;
@@ -293,12 +321,7 @@
 .branches-section {
   padding-block: $sectionPadding;
   .title-branches {
-    text-align: center;
-    h4 {
-      font-family: $extra_bold_font;
-      font-size: 2rem;
-      color: $darkGrey;
-    }
+    @include mainHeaderStyle;
   }
   .all-branches {
     .single-branch {
@@ -347,8 +370,6 @@
               a {
                 color: $white;
                 font-size: 18px;
-                i {
-                }
               }
             }
           }

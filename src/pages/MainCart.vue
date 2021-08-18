@@ -3,7 +3,7 @@
     <div class="container">
       <!-- START:: EMPTY CART MESSAGE -->
       <div
-        class="empty_cart_message p-5"
+        class="empty_cart_message p-1 p-md-5"
         v-if="this.$store.state.shoppingCart.length == 0"
       >
         <span> <ShoppingCartIcon size="5x" /> </span>
@@ -14,8 +14,9 @@
       <!-- START:: MAIN CART CONTENT -->
       <div class="wraper" v-else>
         <div class="row">
-          <div class="col-8">
+          <div class="col-md-8">
             <div class="cart_table mb-5">
+              <!-- START:: LARGE SCREENS CART TABLE -->
               <v-simple-table>
                 <template v-slot:default>
                   <thead>
@@ -41,10 +42,10 @@
 
                       <td>
                         <div class="price" v-if="item.discount.length == 0">
-                          {{ item.price }}
+                          {{ item.price }} EGP
                         </div>
                         <div class="price" v-else>
-                          {{ item.discount }}
+                          {{ item.discount }} EGP
                         </div>
                       </td>
 
@@ -64,15 +65,7 @@
 
                       <td>
                         <div class="subtotal">
-                          <!-- <span v-if=" item.discount.length != 0 || item.discount != 0 "> 
-                            {{ item.quantity * item.discount }}
-                          </span>
-
-                          <span v-else> 
-                            {{ item.quantity * item.price }}
-                          </span> -->
-
-                          {{ item.quantityPrice }}
+                          {{ item.quantityPrice }} EGP
                         </div>
                       </td>
 
@@ -88,6 +81,63 @@
                   </tbody>
                 </template>
               </v-simple-table>
+              <!-- END:: LARGE SCREENS CART TABLE -->
+
+              <!-- START:: SMALL SCREENS CART TABLE -->
+              <div class="cart_cards_wraper">
+                <transition-group mode="out-in" name="fade">
+                  <div 
+                    class="cart_item_card"
+                    v-for="item in $store.state.shoppingCart"
+                    :key="item.id"
+                  >
+                    <div class="btn_wraper">
+                      <button 
+                        class="btn"
+                        @click="removeFromCart(item)"
+                      >
+                        <XIcon size="1.3x"/>
+                      </button>
+                    </div>
+
+                    <div class="item_img_wraper">
+                      <img 
+                        :src="item.images[0].img"
+                        alt="Product Image" 
+                        width="100" 
+                        height="100"
+                      >
+                    </div>
+
+                    <div class="item_details_wraper">
+                      <h6 class="name">
+                        {{ item.productName }}
+                      </h6>
+
+                      <h6 class="price" v-if=" item.discount.length != 0 || item.discount != 0 "> {{ item.discount }} EGP </h6>
+                      <h6 class="price" v-else> {{ item.price }} EGP </h6>
+
+                      <div class="wraper">
+                        <div class="quantity_btns">
+                          <button class="btn" @click="increaseQuantity(item)">
+                            <PlusIcon size="1x" />
+                          </button>
+                          <button class="btn" disabled>
+                            {{ item.quantity }}
+                          </button>
+                          <button class="btn" @click="decreaseQuantity(item)">
+                            <MinusIcon size="1x" />
+                          </button>
+                        </div>
+                      </div>
+
+                      <h6 class="quantity_price"> {{ item.quantityPrice }} EGP </h6>
+                    </div>
+
+                  </div>
+                </transition-group>
+              </div>
+              <!-- END:: SMALL SCREENS CART TABLE -->
             </div>
 
             <div class="coupon_wraper">
@@ -102,16 +152,11 @@
 
                 <button class="btn mt-5">Apply Coupon</button>
               </form>
-              <!-- START:: CHECKOUT ROUTE -->
-              <router-link to="/checkout" class="checkout">
-                GO TO CHECKOUT
-              </router-link>
-              <!-- END:: CHECKOUT ROUTE -->
             </div>
           </div>
 
           <!-- START:: MAIN CART TOTALS -->
-          <div class="col-4 px-0">
+          <div class="col-md-4 px-2 px-md-0 mt-5 mt-md-0">
             <div class="cart_totals">
               <div class="cart_totals_header">
                 <h6>Cart Toals</h6>
@@ -146,6 +191,12 @@
                 <h6>Total</h6>
                 <h6>350 EGP</h6>
               </div>
+
+              <!-- START:: CHECKOUT ROUTE -->
+              <router-link to="/checkout" class="checkout">
+                GO TO CHECKOUT
+              </router-link>
+              <!-- END:: CHECKOUT ROUTE -->
             </div>
           </div>
           <!-- END:: MAIN CART TOTALS -->
@@ -162,6 +213,7 @@ import {
   PlusIcon,
   MinusIcon,
   XCircleIcon,
+  XIcon,
 } from "vue-feather-icons";
 
 export default {
@@ -172,6 +224,7 @@ export default {
     PlusIcon,
     MinusIcon,
     XCircleIcon,
+    XIcon,
   },
 
   data() {

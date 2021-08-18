@@ -1,20 +1,16 @@
 <template>
   <div class="product_main_details">
     <div class="container">
-      <div class="row" style="height: 550px; overflow: hidden">
+      <div class="row">
         <!-- START:: PRODUCT CAROUSEL -->
         <div class="col-12 col-md-6">
           <div class="row">
             <!-- START:: PRODUCT THUMBNAILS -->
-            <div class="col-3">
+            <div class="order-2 order-md-1 col-md-3">
               <VueSlickCarousel
                 ref="c2"
                 :asNavFor="$refs.c1"
-                :slidesToShow="4"
-                :focusOnSelect="true"
-                :vertical="true"
-                :verticalSwiping="true"
-                :arrows="false"
+                v-bind="thumbnailSliderSettings"
               >
                 <div
                   class="thumbnail_wraper"
@@ -28,7 +24,7 @@
             <!-- END:: PRODUCT THUMBNAILS -->
 
             <!-- START:: PRODUCT IMAGE VIEW -->
-            <div class="col-9">
+            <div class="order-1 order-md-2 col-md-9">
               <VueSlickCarousel
                 ref="c1"
                 :asNavFor="$refs.c2"
@@ -567,6 +563,41 @@ export default {
       },
       // END:: PRODUCT DATA
 
+      thumbnailSliderSettings: {
+      slidesToShow: 4 ,
+      focusOnSelect: true ,
+      vertical: true ,
+      verticalSwiping: true ,
+      arrows: false ,
+      slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              vertical: false ,
+              slidesToShow: 3,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              vertical: false ,
+              dots: false,
+              slidesToShow: 3,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+      },
+
       // START:: PRODUCT COLOR & SIZE
       ProductColorAndSize: {
         productColor: "",
@@ -614,8 +645,11 @@ export default {
           discount: "250",
           rate: 4,
           reviews: 2,
-          quantity: 0,
+          quantity: 1,
           quantityPrice: 0,
+          status: "in stock",
+          inCart: false,
+          inWishlist: null,
         },
         {
           id: 2,
@@ -646,8 +680,11 @@ export default {
           discount: "",
           rate: 2.5,
           reviews: 4,
-          quantity: 0,
+          quantity: 1,
           quantityPrice: 0,
+          status: "in stock",
+          inCart: false,
+          inWishlist: null,
         },
         {
           id: 3,
@@ -678,8 +715,11 @@ export default {
           discount: "400",
           rate: 3.5,
           reviews: 10,
-          quantity: 0,
+          quantity: 1,
           quantityPrice: 0,
+          status: "in stock",
+          inCart: false,
+          inWishlist: null,
         },
         {
           id: 4,
@@ -706,36 +746,42 @@ export default {
           discount: "",
           rate: 0,
           reviews: 0,
-          quantity: 0,
+          quantity: 1,
           quantityPrice: 0,
+          status: "out of stock",
+          inCart: false,
+          inWishlist: null,
         },
         {
           id: 5,
           images: [
             {
               id: 1,
-              img: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_12_1_8812a927b7.jpg",
+              img: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_17_1_7d420d81e9.jpg",
             },
             {
               id: 2,
-              img: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_12_2_b8a6d64d23.jpg",
+              img: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_17_2_829e54f8cc.jpg",
             },
             {
               id: 3,
-              img: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_12_3_077c0929b1.jpg",
+              img: "https://d-themes.com/vue/riode/server/uploads/demo_1_product_17_4_a955c3327f.jpg",
             },
           ],
-          badges: ["NEW"],
-          categoryName: "For Men's",
-          productName: " Converse blue training shoes ",
+          badges: ["TOP", "NEW"],
+          categoryName: "Accessories",
+          productName: " Fashionable Overnight Bag ",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod posuere pulvinar. Vivamus vestibulum arcu nisi, non sollicitudin ex vestibulum eu. Nulla euismod sapien nisl. Proin metus mauris, ultrices ac pulvinar a, vehicula vel nisi. Aenean finibus mollis sodales. Suspendisse dapibus purus ut bibendum suscipit.",
-          price: "600",
+          price: "1100",
           discount: "",
-          rate: 0,
-          reviews: 0,
-          quantity: 0,
+          rate: 4.5,
+          reviews: 23,
+          quantity: 1,
           quantityPrice: 0,
+          status: "in stock",
+          inCart: false,
+          inWishlist: null,
         },
       ],
       // START:: RELATED ITEMS DATA
@@ -769,7 +815,6 @@ export default {
             breakpoint: 480,
             settings: {
               dots: false,
-              arrows: true,
               slidesToShow: 1,
               slidesToScroll: 1,
             },

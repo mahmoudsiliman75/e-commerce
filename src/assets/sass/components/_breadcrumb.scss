@@ -55,4 +55,22 @@
       }
     }
   }
+
+  @media ( max-width: 767px ) {
+    padding: 5px;
+    height: 190px;
+    .head-breadcrumb { 
+      h1 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+      p {
+        width: 100%;
+        font-size: 0.9rem;
+      }
+    }
+    ul {
+      padding-left: 0 !important;
+    }
+  }
 }
