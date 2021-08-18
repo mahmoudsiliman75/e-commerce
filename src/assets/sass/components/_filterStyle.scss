@@ -255,7 +255,6 @@
 }
 // END:: HEADER FILTER
 
-
 // START:: PAGINATION
 .pagination {
   @include flexSpaceBetweenAlignment;
@@ -311,6 +310,7 @@
     display: none;
   }
 }
+
 .hideFilter {
   width: 0;
   opacity: 0;
@@ -320,6 +320,7 @@
 .showFilter {
   margin-left: 0%;
 }
+
 .row-overflow {
   overflow: hidden;
 }

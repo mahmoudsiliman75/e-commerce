@@ -104,7 +104,7 @@
       <div class="container">
         <div class="row justify-content-between align-items-center">
           <!-- START:: NAVBAR SIDE MENU BUTTON -->
-          <div class="col-1 navBar_menu_btn_wraper">
+          <div class="col-3 col-md-1 navBar_menu_btn_wraper">
             <div class="navBar_menu_btn">
               <button class="btn" @click="openNavbarMenu">
                 <AlignLeftIcon size="1.9x"/>
@@ -165,7 +165,7 @@
                 <div class="accordion dropdown_menu_accordion mega_menu" id="mega_menu_accordion">
                   <div class="accordion-item">
                     <h5 class="accordion-header" id="mega_menu_heading">
-                      <button class="accordion-button dropdown_menu_accordion_btn" type="button" data-bs-toggle="collapse" data-bs-target="#mega_menu_collapse" aria-expanded="true" aria-controls="mega_menu_collapse">
+                      <button class="accordion-button collapsed dropdown_menu_accordion_btn" type="button" data-bs-toggle="collapse" data-bs-target="#mega_menu_collapse" aria-expanded="true" aria-controls="mega_menu_collapse">
                         Mega Menu
                       </button>
                     </h5>
@@ -175,7 +175,7 @@
                         <div class="accordion dropdown_menu_item_accordion mb-5" id="mega_menu_item_1">
                           <div class="accordion-item">
                             <h6 class="accordion-header" id="mega_menu_item_header_1">
-                              <button class="accordion-button dropdown_menu_item_item_button" type="button" data-bs-toggle="collapse" data-bs-target="#mega_menu_item_collapse_1" aria-expanded="true" aria-controls="mega_menu_item_collapse_1">
+                              <button class="accordion-button collapsed dropdown_menu_item_item_button" type="button" data-bs-toggle="collapse" data-bs-target="#mega_menu_item_collapse_1" aria-expanded="true" aria-controls="mega_menu_item_collapse_1">
                                 Items Title 1
                               </button>
                             </h6>
@@ -203,7 +203,7 @@
                         <div class="accordion dropdown_menu_item_accordion mb-5" id="mega_menu_item_2">
                           <div class="accordion-item">
                             <h6 class="accordion-header" id="mega_menu_item_header_2">
-                              <button class="accordion-button dropdown_menu_item_item_button" type="button" data-bs-toggle="collapse" data-bs-target="#mega_menu_item_collapse_2" aria-expanded="true" aria-controls="mega_menu_item_collapse_2">
+                              <button class="accordion-button collapsed dropdown_menu_item_item_button" type="button" data-bs-toggle="collapse" data-bs-target="#mega_menu_item_collapse_2" aria-expanded="true" aria-controls="mega_menu_item_collapse_2">
                                 Items Title 2
                               </button>
                             </h6>
@@ -238,7 +238,7 @@
                 <div class="accordion dropdown_menu_accordion" id="dropdown_menu_accordion_1">
                   <div class="accordion-item">
                     <h5 class="accordion-header" id="dropdown_menu_heading_1">
-                      <button class="accordion-button dropdown_menu_accordion_btn" type="button" data-bs-toggle="collapse" data-bs-target="#dropdown_menu_collapse_1" aria-expanded="true" aria-controls="dropdown_menu_collapse_1">
+                      <button class="accordion-button collapsed dropdown_menu_accordion_btn" type="button" data-bs-toggle="collapse" data-bs-target="#dropdown_menu_collapse_1" aria-expanded="true" aria-controls="dropdown_menu_collapse_1">
                         Dropdown Menu
                       </button>
                     </h5>
@@ -310,9 +310,9 @@
                     v-b-tooltip.hover
                     title="Call Us"
                   >
-                    <PhoneCallIcon size="2.3x" class="phone_icon me-3" />
+                    <PhoneCallIcon size="2.3x" class="phone_icon" />
                     <div class="text">
-                      <span> Call Us Now: </span>
+                      <span> Call Us Now </span>
                       <span> 01001010101 </span>
                     </div>
                   </a>
@@ -341,8 +341,8 @@
                     title="Cart"
                     @click="openCartMenu"
                   >
-                    <div class="text cart_details_text pe-1">
-                      <span> Shopping Cart: </span>
+                    <div class="text cart_details_text">
+                      <span> Shopping Cart </span>
                       <span> {{ this.$store.state.cartSubtotal }} EGP </span>
                     </div>
 

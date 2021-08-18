@@ -17,11 +17,11 @@
         <v-simple-table>
           <thead>
             <tr>
-              <th class="text-left">PRODUCT</th>
-              <th class="text-left">PRICE</th>
-              <th class="text-left">STOCK STATUS</th>
-              <th class="text-left"></th>
-              <th class="text-left"></th>
+              <th class="text-start">PRODUCT</th>
+              <th class="text-start">PRICE</th>
+              <th class="text-start">STOCK STATUS</th>
+              <th class="text-start"></th>
+              <th class="text-start"></th>
             </tr>
           </thead>
 

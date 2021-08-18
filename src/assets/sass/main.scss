@@ -102,6 +102,7 @@ li {
   margin: 0;
   list-style: none;
 }
+
 .All-Content{
   padding-block: $sectionPadding;
   @media ( max-width: 767px ) {
@@ -109,20 +110,24 @@ li {
     
   }
 }
-.slick-dots {
-  li {
-    button {
-      &::before {
-        font-size: 12px !important;
-        @include transitioning(0.3s);
-        color: $mainColor !important;
-      }
-    }
-    &.slick-active {
+
+.slick-slider {
+  direction: ltr;
+  .slick-dots {
+    li {
       button {
         &::before {
-          color: $mainColor !important;
           font-size: 12px !important;
+          @include transitioning(0.3s);
+          color: $mainColor !important;
+        }
+      }
+      &.slick-active {
+        button {
+          &::before {
+            color: $mainColor !important;
+            font-size: 12px !important;
+          }
         }
       }
     }
@@ -389,3 +394,6 @@ li {
 .resluts-conteiner{
   padding-block: $sectionPadding;
 }
+
+// ==== RTL STYLES
+@import "components/rtl.scss";

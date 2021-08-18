@@ -1,0 +1,273 @@
+body {
+  &[dir="rtl"] {
+    // START:: HEADER RTL STYLES
+    header {
+      &.sticky {
+        .main_bar {
+          .navbar_sticky_menu_wraper {
+            right: auto;
+            left: 0;
+            & + .navbar_menu {
+              left: auto;
+              right: -100%;
+              @include transitioning(0.4s);
+            }
+            &.show {
+              & + .navbar_menu {
+                left: auto;
+                right: 0;
+              }
+            }
+          }
+        }
+      }
+
+      .main_bar {
+        .action_btns_wraper {
+          ul {
+            li {
+              button {
+                &.cart {
+                  position: relative;
+                  .badge {
+                    right: auto;
+                    left: 27px;
+                  }
+                }
+              }
+
+              &:first-child {
+                a {
+                  .text {
+                    margin-inline-start: 8px;
+                  }
+                }
+              }
+
+              &:last-child {
+                button {
+                  .text {
+                    margin-inline-end: 8px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .cart_menu_wraper {
+        right: auto;
+        left: 0;
+        & + .cart_menu {
+          right: auto;
+          left: -100%;
+
+          .cart_body {
+            .title {
+              & + h5 {
+                direction: ltr;
+              }
+            }
+          }
+        }
+    
+        &.show {
+          & + .cart_menu {
+            right: auto;
+            left: 0;
+          }
+        }
+      }
+    }
+    // END:: HEADER RTL STYLES
+
+    // START:: PRODUCT CARD RTL STYLE
+    .product_card_wraper {
+      direction: rtl;
+      .product_image_wraper {
+        .badges_wraper {
+          left: auto;
+          right: 20px;
+        }
+      }
+
+      .product_card_body {
+        text-align: start;
+
+        .product_price {
+          .previous_price {
+            margin-inline-start: 0; 
+            margin-inline-end: 8px; 
+          }
+        }
+
+        .rating {
+          @include flexStartAlignment;
+          .rating {
+            direction: ltr;
+          }
+        }
+      }
+    }
+    // END:: PRODUCT CARD RTL STYLE
+
+    // START:: FEATURED CATEGORIES RTL STYLES
+    .featured_categories {
+      .row {
+        & > div {
+          .featured_category_card_wrap {
+            .overlay {        
+              p {
+                &::after {
+                  left: auto;
+                  right: 0;
+                }
+              }
+
+              a {
+                span {
+                  &:last-child {
+                    svg {
+                      transform: rotate(180deg);
+                    }
+                  }
+                }
+              }
+            }
+
+            &.middle {
+              .overlay {
+                padding: 20px;
+                position: absolute;
+                inset: 0;
+                color: $white;
+                background-color: transparent;
+                z-index: 5;
+                @include flexSpaceAroundAlignment;
+                flex-direction: row;
+    
+                .wraper {
+                  h2 {
+                    margin-top: 15px;
+                    font-size: 3rem;
+                    font-weight: 900;
+                    color: $secondaryColor;
+                  }
+    
+                  p {
+                    font-size: 1rem;
+                    position: relative;
+                    margin-bottom: 6px;
+                    padding-bottom: 0;
+                    &::after {
+                      display: none;
+                    }
+                  }
+                }
+    
+                a {
+                  @include flexCenterAlignment;
+                  font-size: 0.8rem;
+                  text-decoration: none;
+                  color: $secondaryColor;
+                  border: 2px solid $secondaryColor;
+                  padding: 15px;
+                  @include transitioning(0.4s);
+                  &::after {
+                    display: none;
+                  }
+                  &:hover {
+                    color: $white;
+                    background-color: $secondaryColor;
+                  }
+                }
+              }
+    
+              &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -100%;
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-image: linear-gradient(
+                  to right,
+                  rgba(225, 225, 225, 0.02),
+                  rgba(225, 225, 225, 0.2)
+                );
+                z-index: 5;
+                @include transitioning(0.8s);
+              }
+    
+              &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: -100%;
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-image: linear-gradient(
+                  to left,
+                  rgba(225, 225, 225, 0.02),
+                  rgba(225, 225, 225, 0.2)
+                );
+                z-index: 5;
+                @include transitioning(0.8s);
+              }
+    
+              &:hover {
+                &::before {
+                  left: 100%;
+                  opacity: 0;
+                }
+                &::after {
+                  right: 100%;
+                  opacity: 0;
+                }
+              }
+            }
+          }
+    
+          &:first-of-type {
+            .featured_category_card_wrap {
+              .overlay {
+                align-items: flex-end;
+              }
+            }
+          }
+          &:last-of-type {
+            .featured_category_card_wrap {
+              .overlay {
+                align-items: flex-start;
+              }
+            }
+          }
+        }
+      }
+    }
+    // END:: FEATURED CATEGORIES RTL STYLES
+
+    // START:: ALL CATEGORIES PAGE RTL STYLES 
+    .hideFilter {
+      transform: translateX(500px);
+    }
+
+    .pagination {
+      .right-part {
+        ul {
+          li{
+            a{
+              svg {
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+      }
+    }
+    // END:: ALL CATEGORIES PAGE RTL STYLES 
+  }
+}

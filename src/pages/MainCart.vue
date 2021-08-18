@@ -21,10 +21,10 @@
                 <template v-slot:default>
                   <thead>
                     <tr>
-                      <th class="text-left fw-bold">PRODUCT</th>
-                      <th class="text-left">PRICE</th>
-                      <th class="text-left">QUANTITY</th>
-                      <th class="text-left">SUBTOTAL</th>
+                      <th class="text-start fw-bold">PRODUCT</th>
+                      <th class="text-start" >PRICE</th>
+                      <th class="text-start" >QUANTITY</th>
+                      <th class="text-start" >SUBTOTAL</th>
                       <th></th>
                     </tr>
                   </thead>
@@ -42,10 +42,10 @@
 
                       <td>
                         <div class="price" v-if="item.discount.length == 0">
-                          {{ item.price }} EGP
+                          {{ item.price }}
                         </div>
                         <div class="price" v-else>
-                          {{ item.discount }} EGP
+                          {{ item.discount }}
                         </div>
                       </td>
 
@@ -65,7 +65,7 @@
 
                       <td>
                         <div class="subtotal">
-                          {{ item.quantityPrice }} EGP
+                          {{ item.quantityPrice }}
                         </div>
                       </td>
 
