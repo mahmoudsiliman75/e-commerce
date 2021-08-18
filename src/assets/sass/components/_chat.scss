@@ -1,0 +1,408 @@
+.chat_content {
+  position: relative;
+  button {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  .chat-header {
+    @include flexSpaceBetweenAlignment;
+    background-color: #2a2f32;
+    padding: 8px 15px;
+    overflow: hidden;
+    z-index: 9;
+    .admin-logo {
+      width: 50px;
+      height: 50px;
+      position: relative;
+      @include flexStartAlignment;
+      img {
+        background-color: $lighterGrey;
+        width: 100%;
+        height: 100%;
+        @include borderRadius(50%);
+      }
+      .status_dot {
+        width: 14px;
+        height: 14px;
+        background-color: green;
+        @include borderRadius(50%);
+        position: absolute;
+        right: 5px;
+        bottom: 0px;
+        border: 2px solid $white;
+      }
+      h4 {
+        font-size: 0.9rem;
+        margin-bottom: 0;
+        margin-inline: 10px;
+        color: $white;
+        font-family: $bold_font;
+      }
+    }
+    .chat-search {
+      @include flexEndAlignment;
+      width: 50%;
+      button {
+        svg {
+          color: $lighterGrey;
+        }
+        outline: none !important;
+        box-shadow: none !important;
+      }
+      input {
+        width: 0%;
+        color: $white;
+        padding: 10px;
+        opacity: 0;
+        background-color: #33383b;
+        @include borderRadius(5px);
+        transition: all 0.5s ease-out;
+        &.SearchActive {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .chat-body {
+    background: url(../media/icons/chat.png);
+    background-color: #0d1418;
+    height: 30rem;
+    overflow-y: scroll;
+    position: relative;
+    background-attachment: fixed;
+    padding: $sectionPadding;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $lighterGrey;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $mainColor;
+      border-radius: 0px;
+      transition: 0.5s;
+    }
+    .messageflex {
+      @include flexStartAlignment;
+
+      .singleMessage {
+        position: relative;
+        background-color: #262d31;
+        word-wrap: break-word;
+        max-width: 50%;
+        padding: 10px;
+        @include borderRadius(10px);
+        width: max-content;
+        color: $white;
+        margin-bottom: 25px;
+
+        p {
+          margin: 0;
+          color: $white;
+        }
+        &::before {
+          position: absolute;
+          content: "";
+          width: 20px;
+          height: 20px;
+          border-bottom: solid 10px transparent;
+          border-left: solid 10px transparent;
+          border-right: solid 10px #262d31;
+          border-top: solid 10px #262d31;
+          left: -12px;
+          top: 0;
+          z-index: 1;
+          border-top-left-radius: 8px;
+        }
+        .lastseen {
+          margin-top: 15px;
+          display: block;
+          color: $lightGrey;
+          margin-bottom: 0;
+          font-size: 0.9rem;
+          width: max-content;
+          @include flexSpaceBetweenAlignment;
+          svg {
+            margin-inline-end: 5px;
+          }
+        }
+      }
+      &.sender {
+        @include flexEndAlignment;
+        .singleMessage {
+          background-color: $mainColor;
+          &::before {
+            position: absolute;
+            content: "";
+            border-bottom: solid 10px transparent;
+            border-left: solid 10px $mainColor;
+            border-right: solid 10px transparent;
+            border-top: solid 10px $mainColor;
+            right: -12px;
+            left: inherit;
+            top: 0;
+            border-top-right-radius: 8px;
+            border-top-left-radius: 0;
+          }
+        }
+      }
+    }
+  }
+  .chat-footer {
+    background-color: #2a2f32;
+    @include flexCenterAlignment;
+    padding: 8px 15px;
+    .voice-chat {
+      width: 10%;
+      @include flexEndAlignment;
+      svg {
+        color: $lighterGrey;
+        font-size: 1.5rem;
+      }
+    }
+    .message-area {
+      width: 80%;
+      textarea {
+        width: 100%;
+        background-color: #33383b;
+        @include borderRadius(10px);
+        resize: none;
+        color: $white;
+        padding: 10px;
+        height: auto;
+        &::-webkit-scrollbar {
+          width: 5px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: $lighterGrey;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: $mainColor;
+          border-radius: 0px;
+          transition: 0.5s;
+        }
+      }
+    }
+    .files-and-emoji {
+      position: relative;
+      width: 10%;
+      @include flexCenterAlignment;
+      svg {
+        color: $lighterGrey;
+        font-size: 1.45rem;
+      }
+      button {
+        .microphone {
+          span {
+            &::before {
+              content: "\f1d8";
+              font-family: "Font Awesome 5 Free";
+            }
+          }
+        }
+        &:last-child {
+          position: relative;
+        }
+      }
+      .properties {
+        position: absolute;
+        bottom: 70px;
+        left: 0;
+        opacity: 0;
+        z-index: -1;
+        transition: all 0.3s ease-out;
+        &.show {
+          opacity: 1;
+          z-index: 2;
+
+          li {
+            &:first-child {
+              transition: all 0.4s ease-out;
+              transform: scale(1);
+              background-color: $secondaryColor;
+            }
+            &:last-child {
+              transition: all 0.2s ease-out;
+              transform: scale(1);
+              background-color: $twitterColor;
+            }
+            &:nth-child(2) {
+              transition: all 0.3s ease-out;
+              transform: scale(1);
+            }
+          }
+        }
+        ul {
+          padding: 0;
+          li {
+            width: 55px;
+            height: 55px;
+            @include flexCenterAlignment;
+            background-color: $mainColor;
+            margin-block: 10px;
+            @include borderRadius(50%);
+            transform: scale(0.5);
+            svg {
+              font-size: 1.5rem;
+            }
+            &:first-child {
+              transition: all 0.3s ease-out;
+              background-color: $secondaryColor;
+            }
+            &:last-child {
+              transition: all 0.2s ease-out;
+              background-color: $twitterColor;
+            }
+            &:nth-child(2) {
+              transition: all 0.4s ease-out;
+            }
+            input{
+              width: 100%;
+              opacity: 0;
+              position: absolute;
+              height: 100%;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+  .chat-emoji {
+    .wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .regular-input {
+      padding: 0.5rem 1rem;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      width: 20rem;
+      height: 12rem;
+      outline: none;
+    }
+
+    .regular-input:focus {
+      box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+    }
+
+    .emoji-picker {
+      position: absolute;
+      top: inherit !important;
+      bottom: 70px;
+      left: 0 !important;
+      z-index: 1;
+      font-family: $bold_font;
+      width: auto;
+      height: 20rem;
+      overflow-y: scroll;
+      padding: 15px;
+      box-sizing: border-box;
+      @include borderRadius(10px);
+      background: #2a2f32;
+      transition: all 0.5s ease-out;
+      box-shadow: 0px 0px 10px 1px rgb(204 204 204 / 33%);
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: $lighterGrey;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $mainColor;
+        border-radius: 0px;
+        transition: 0.5s;
+      }
+    }
+    .emoji-picker__search {
+      display: flex;
+    }
+    .emoji-picker__search > input {
+      flex: 1;
+      border-radius: 10rem;
+      background-color: #33383b;
+      padding: 0.5rem 1rem;
+      outline: none;
+      margin-bottom: 15px;
+      color: $lighterGrey;
+    }
+    .emoji-picker h5 {
+      margin-bottom: 0;
+      color: $lighterGrey;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      cursor: default;
+      padding: 10px 0;
+      font-family: $medium_font;
+      text-align: start;
+    }
+    .emoji-picker .emojis {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .emoji-picker .emojis:after {
+      content: "";
+      flex: auto;
+    }
+    .emoji-picker .emojis span {
+      padding: 0.2rem;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1.5rem;
+    }
+    .emoji-picker .emojis span:hover {
+      background: $lightGrey;
+      cursor: pointer;
+    }
+  }
+  .chat-box-upload {
+    background-color: #2a2f32;
+    @include flexStartAlignment;
+    padding: 15px;
+    border-bottom: 1px solid #33383b;
+    .single-item {
+      width: 100px;
+      height: 100px;
+      margin-inline: 15px;
+      position: relative;
+      background-color: #33383b;
+      padding: 5px;
+      @include borderRadius(10px);
+      span {
+        cursor: pointer;
+        color: $white;
+        position: absolute;
+        inset: 0;
+        color: $lightRed;
+        width: max-content;
+        height: max-content;
+        z-index: 2;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        @include borderRadius(10px);
+      }
+      video{
+        width: 100%;
+        height: 100%;
+        @include borderRadius(10px);
+      }
+      h3{
+        font-size: .7rem;
+        color: $white;
+        text-align: center;
+        margin: 5px 0;
+      }
+    }
+  }
+}

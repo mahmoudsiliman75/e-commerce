@@ -18,6 +18,7 @@
               <router-link to="/orders">Orders</router-link>
               <router-link to="/address">Address</router-link>
               <router-link to="/account-details">Account Details</router-link>
+              <router-link to="/chat">Chat</router-link>
               <router-link to="/change-password">Change Password</router-link>
               <button @click="logout">Logout</button>
             </div>

@@ -125,7 +125,9 @@
               <div class="single-branch">
                 <div class="image-branch">
                   <img
-                    src="https://d-themes.com/vue/riode/demo-1/images/subpages/store-1.jpg"
+                    v-lazy="
+                      'https://d-themes.com/vue/riode/demo-1/images/subpages/store-1.jpg'
+                    "
                     alt="Branch"
                   />
                 </div>
@@ -162,7 +164,9 @@
               <div class="single-branch">
                 <div class="image-branch">
                   <img
-                    src="https://d-themes.com/vue/riode/demo-1/images/subpages/store-1.jpg"
+                    v-lazy="
+                      'https://d-themes.com/vue/riode/demo-1/images/subpages/store-1.jpg'
+                    "
                     alt="Branch"
                   />
                 </div>
@@ -199,7 +203,9 @@
               <div class="single-branch">
                 <div class="image-branch">
                   <img
-                    src="https://d-themes.com/vue/riode/demo-1/images/subpages/store-1.jpg"
+                    v-lazy="
+                      'https://d-themes.com/vue/riode/demo-1/images/subpages/store-1.jpg'
+                    "
                     alt="Branch"
                   />
                 </div>
@@ -236,7 +242,9 @@
               <div class="single-branch">
                 <div class="image-branch">
                   <img
-                    src="https://d-themes.com/vue/riode/demo-1/images/subpages/store-1.jpg"
+                    v-lazy="
+                      'https://d-themes.com/vue/riode/demo-1/images/subpages/store-1.jpg'
+                    "
                     alt="Branch"
                   />
                 </div>

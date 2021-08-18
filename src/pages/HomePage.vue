@@ -131,7 +131,11 @@
                 </div>
               </div>
               <img
-                src="https://d-themes.com/vue/riode/demo-1/images/home/banners/banner1.jpg"
+                v-lazy="
+                  'https://d-themes.com/vue/riode/demo-1/images/home/banners/banner1.jpg'
+                "
+                width="100"
+                height="100"
               />
             </div>
           </div>
@@ -153,7 +157,11 @@
                 </router-link>
               </div>
               <img
-                src="https://d-themes.com/vue/riode/demo-1/images/home/banners/banner2.jpg"
+                v-lazy="
+                  'https://d-themes.com/vue/riode/demo-1/images/home/banners/banner2.jpg'
+                "
+                width="100"
+                height="100"
               />
             </div>
           </div>
@@ -174,7 +182,11 @@
                 </div>
               </div>
               <img
-                src="https://d-themes.com/vue/riode/demo-1/images/home/banners/banner3.jpg"
+                v-lazy="
+                  'https://d-themes.com/vue/riode/demo-1/images/home/banners/banner3.jpg'
+                "
+                width="100"
+                height="100"
               />
             </div>
           </div>
@@ -185,7 +197,7 @@
     <!-- END:: FEATURED CATEGORIES -->
 
     <!-- START:: FEATURED PRODUCTS -->
-    <div class="featured_products">
+    <div class="featured_products padding-slider">
       <div class="container">
         <!-- START:: TITLE -->
         <div class="header_wraper">
@@ -227,7 +239,7 @@
               v-for="item in partnersData"
               :key="item.id"
             >
-              <img :src="item.logo" alt="Logo" />
+              <img v-lazy="item.logo" alt="Logo" />
             </div>
           </VueSlickCarousel>
         </div>

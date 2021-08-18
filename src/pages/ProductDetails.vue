@@ -21,7 +21,7 @@
                   v-for="item in product.images"
                   :key="item.id"
                 >
-                  <img :src="item.img" alt="Thumbnail" />
+                  <img v-lazy="item.img" alt="Thumbnail" />
                 </div>
               </VueSlickCarousel>
             </div>
@@ -257,7 +257,11 @@
               <div class="col-12 col-md-3">
                 <div class="size_guide_img_wraper">
                   <img
-                    src="https://d-themes.com/vue/riode/demo-1/images/product-size.png"
+                    v-lazy="
+                      'https://d-themes.com/vue/riode/demo-1/images/product-size.png'
+                    "
+                    width="100"
+                    height="100"
                   />
                 </div>
               </div>
@@ -329,7 +333,11 @@
                 <div class="testimonial_card my-3">
                   <div class="img_wraper">
                     <img
-                      src="https://d-themes.com/vue/riode/demo-1/images/blog/comments/1.jpg"
+                      v-lazy="
+                        'https://d-themes.com/vue/riode/demo-1/images/blog/comments/1.jpg'
+                      "
+                      width="100"
+                      height="100"
                     />
                   </div>
 
@@ -354,7 +362,11 @@
                 <div class="testimonial_card my-3">
                   <div class="img_wraper">
                     <img
-                      src="https://d-themes.com/vue/riode/demo-1/images/blog/comments/1.jpg"
+                      v-lazy="
+                        'https://d-themes.com/vue/riode/demo-1/images/blog/comments/1.jpg'
+                      "
+                      width="100"
+                      height="100"
                     />
                   </div>
 
