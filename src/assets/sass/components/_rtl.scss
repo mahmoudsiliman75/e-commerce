@@ -142,6 +142,21 @@ body {
                   }
                 }
               }
+
+              .product_details {
+                .product_price {
+                  .current_price {
+                    margin-inline-start: 10px;
+                  }
+                }
+
+                .add_product_to_cart {
+                  .add_to_cat,
+                  .add_to_wishlist {
+                    padding: 0.5em;
+                  }
+                }
+              }
             } 
             // END:: PRODUCT DETAILS MODAL
           }

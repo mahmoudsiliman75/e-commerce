@@ -34,6 +34,21 @@
 
 
 
+  "out_of_stock":                     "غير متاح حاليا",
+  "details":                          "التفاصيل",
+  "add_to_wishlist":                  "إضافة الى المفضلات",
+  "remove_from_wishlist":             "حذف من المفضلات",
+  "add_to_cart":                      "إضافة الى السلة",
+  "remove_from_cart":                 "حذف من السلة",
+  "quick_view":                       "نظرة سريعة",
+  "reviews":                          "تقييمات",
+  "color":                            "اللون",
+  "select_color":                     "حدد اللون",
+  "size":                             "المقاس",
+  "select_size":                      "حدد المقاس",
+
+
+
 
 
 
