@@ -263,16 +263,16 @@
                   <template>
                     <thead>
                       <tr>
-                        <th class="text-left">
+                        <th class="text-start">
                           <strong> SIZE </strong>
                         </th>
-                        <th class="text-left">
+                        <th class="text-start">
                           <strong> CHEST(Cm) </strong>
                         </th>
-                        <th class="text-left">
+                        <th class="text-start">
                           <strong> WEIST(Cm) </strong>
                         </th>
-                        <th class="text-left">
+                        <th class="text-start">
                           <strong> HIPS(Cm) </strong>
                         </th>
                       </tr>
