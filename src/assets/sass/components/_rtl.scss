@@ -82,7 +82,7 @@ body {
     }
     // END:: HEADER RTL STYLES
 
-    // START:: PRODUCT CARD RTL STYLE
+    // START:: PRODUCT CARD RTL STYLES
     .product_card_wraper {
       direction: rtl;
       .product_image_wraper {
@@ -110,7 +110,69 @@ body {
         }
       }
     }
-    // END:: PRODUCT CARD RTL STYLE
+    // END:: PRODUCT CARD RTL STYLES
+
+    // START:: PRODUCT MODAL RTL STYLE
+    .modal {
+      .modal-dialog {
+        .modal-content {
+          .modal-body {
+            // START:: PRODUCT DETAILS MODAL
+            .product_details_modal {
+              .imgs_carousel {
+                direction: ltr;
+                .slick-slider {
+                  button {
+                    &.slick-arrow {
+                      &.slick-prev {
+                        left: auto;
+                        right: 5%;
+                      }
+                      &.slick-next {
+                        right: auto;
+                        left: 8%;
+                      }
+                    }
+                  }
+                }
+              }
+            } 
+            // END:: PRODUCT DETAILS MODAL
+          }
+        }
+      }
+  
+    } 
+    // END:: PRODUCT MODAL RTL STYLE
+
+    // START:: PRODUCT MAIN DETAILS TL STYLES
+    .product_main_details {
+      padding-block: $sectionPadding;
+    
+      .slick-slider {
+        button {
+          &.slick-arrow {
+            &.slick-prev {
+              left: auto;
+              right: 5%;
+            }
+            &.slick-next {
+              right: auto;
+              left: 8%;
+            }
+          }
+        }
+      }
+    
+      .product_details {
+        .product_price {
+          .current_price {
+            margin-inline-start: 10px;
+          }
+        }
+      }
+    }
+    // END:: PRODUCT MAIN DETAILS TL STYLES
 
     // START:: FEATURED CATEGORIES RTL STYLES
     .featured_categories {
