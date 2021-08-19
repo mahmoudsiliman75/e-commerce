@@ -84,11 +84,29 @@ body {
 
     // START:: PRODUCT CARD RTL STYLE
     .product_card_wraper {
+      direction: rtl;
+      .product_image_wraper {
+        .badges_wraper {
+          left: auto;
+          right: 20px;
+        }
+      }
+
       .product_card_body {
-        text-align: end;
+        text-align: start;
+
+        .product_price {
+          .previous_price {
+            margin-inline-start: 0; 
+            margin-inline-end: 8px; 
+          }
+        }
 
         .rating {
-          @include flexEndAlignment;
+          @include flexStartAlignment;
+          .rating {
+            direction: ltr;
+          }
         }
       }
     }
@@ -231,5 +249,25 @@ body {
       }
     }
     // END:: FEATURED CATEGORIES RTL STYLES
+
+    // START:: ALL CATEGORIES PAGE RTL STYLES 
+    .hideFilter {
+      transform: translateX(500px);
+    }
+
+    .pagination {
+      .right-part {
+        ul {
+          li{
+            a{
+              svg {
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+      }
+    }
+    // END:: ALL CATEGORIES PAGE RTL STYLES 
   }
 }

@@ -104,9 +104,9 @@
               <template #FooterBar>
                 <div class="pagination">
                   <div class="left-part">
-                    <h6>Showing</h6>
-                    <h6>1 of {{ $store.state.allProducts.length }}</h6>
-                    <h6>Products</h6>
+                    <h6>
+                      Showing 1 of {{ $store.state.allProducts.length }} Products
+                    </h6>
                   </div>
                   <div class="right-part">
                     <ul>

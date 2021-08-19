@@ -431,6 +431,10 @@ header {
                 @include borderRadius(50%);
                 @include flexCenterAlignment;
               }
+
+              .text {
+                margin-inline-end: 8px;
+              }
             }
           }
           a{
@@ -450,6 +454,13 @@ header {
               }
             }
           }
+
+          &:first-child {
+            .text {
+              margin-inline-start: 8px;
+            }
+          }
+
           &:nth-child(2) {
             padding-inline: 12px;
             margin-inline: 6px;

@@ -165,7 +165,7 @@
                 <div class="accordion dropdown_menu_accordion mega_menu" id="mega_menu_accordion">
                   <div class="accordion-item">
                     <h5 class="accordion-header" id="mega_menu_heading">
-                      <button class="accordion-button dropdown_menu_accordion_btn" type="button" data-bs-toggle="collapse" data-bs-target="#mega_menu_collapse" aria-expanded="true" aria-controls="mega_menu_collapse">
+                      <button class="accordion-button collapsed dropdown_menu_accordion_btn" type="button" data-bs-toggle="collapse" data-bs-target="#mega_menu_collapse" aria-expanded="true" aria-controls="mega_menu_collapse">
                         Mega Menu
                       </button>
                     </h5>
@@ -175,7 +175,7 @@
                         <div class="accordion dropdown_menu_item_accordion mb-5" id="mega_menu_item_1">
                           <div class="accordion-item">
                             <h6 class="accordion-header" id="mega_menu_item_header_1">
-                              <button class="accordion-button dropdown_menu_item_item_button" type="button" data-bs-toggle="collapse" data-bs-target="#mega_menu_item_collapse_1" aria-expanded="true" aria-controls="mega_menu_item_collapse_1">
+                              <button class="accordion-button collapsed dropdown_menu_item_item_button" type="button" data-bs-toggle="collapse" data-bs-target="#mega_menu_item_collapse_1" aria-expanded="true" aria-controls="mega_menu_item_collapse_1">
                                 Items Title 1
                               </button>
                             </h6>
@@ -203,7 +203,7 @@
                         <div class="accordion dropdown_menu_item_accordion mb-5" id="mega_menu_item_2">
                           <div class="accordion-item">
                             <h6 class="accordion-header" id="mega_menu_item_header_2">
-                              <button class="accordion-button dropdown_menu_item_item_button" type="button" data-bs-toggle="collapse" data-bs-target="#mega_menu_item_collapse_2" aria-expanded="true" aria-controls="mega_menu_item_collapse_2">
+                              <button class="accordion-button collapsed dropdown_menu_item_item_button" type="button" data-bs-toggle="collapse" data-bs-target="#mega_menu_item_collapse_2" aria-expanded="true" aria-controls="mega_menu_item_collapse_2">
                                 Items Title 2
                               </button>
                             </h6>
@@ -238,7 +238,7 @@
                 <div class="accordion dropdown_menu_accordion" id="dropdown_menu_accordion_1">
                   <div class="accordion-item">
                     <h5 class="accordion-header" id="dropdown_menu_heading_1">
-                      <button class="accordion-button dropdown_menu_accordion_btn" type="button" data-bs-toggle="collapse" data-bs-target="#dropdown_menu_collapse_1" aria-expanded="true" aria-controls="dropdown_menu_collapse_1">
+                      <button class="accordion-button collapsed dropdown_menu_accordion_btn" type="button" data-bs-toggle="collapse" data-bs-target="#dropdown_menu_collapse_1" aria-expanded="true" aria-controls="dropdown_menu_collapse_1">
                         Dropdown Menu
                       </button>
                     </h5>
