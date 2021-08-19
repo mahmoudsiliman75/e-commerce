@@ -1,3 +1,4 @@
+// START:: EN FONT
 @font-face {
   font-family: $extra_light_font;
   src: url("../fonts/Montserrat-ExtraLight.ttf");
@@ -47,3 +48,21 @@
   font-family: $extra_bold_font;
   src: url("../fonts/Montserrat-ExtraBold.ttf");
 }
+// END:: EN FONT
+
+// START:: AR FONT
+@font-face {
+  font-family: $light_ar_font;
+  src: url("../fonts/ar/Tajawal-Light.ttf");
+}
+
+@font-face {
+  font-family: $regular_ar_font;
+  src: url("../fonts/ar/Tajawal-Regular.ttf");
+}
+
+@font-face {
+  font-family: $medium_ar_font;
+  src: url("../fonts/ar/Tajawal-Medium.ttf");
+}
+// END:: AR FONT

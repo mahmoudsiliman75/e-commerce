@@ -1,22 +1,42 @@
 {
-  "message":                          "أهلا فى نابت",
   "repeatedItem":                     "هذا العنصر موجود بالفعل",
   "alertPositions":                   "bottomRight",
 
+
+  "close":                            "إغلاق",
+  "empty_cart_message":               "السلة فارغة! اضف بعض العناصر",
+  "empty_wishlist_message":           "قائمة المفضلات فارغة! اضف بعض العناصر",
+
+
+
+  "sign_in":                          "تسجيل دخول",
+  "sign_up":                          "إنشاء حساب",
+  "profile":                          "الملف الشخصي",
+
+
+
+  "search":                           "إبحث هنا......",
+  "call_us":                          "إتصل بنا لان",
+  "cart" :                            "سلة التسوق",
+
+
   "home":                             "الرئيسية",
+  "all_categories":                   "كل المنتجات",
+  "about_us":                         "من نحن",
+  "contact_us":                       "تواصل معنا",
+
+
+
+
   "about_app":                        "عن التطبيق",
   "terms_&_conditions":               "الشروط و الأحكام",
-  "contact_us":                       "تواصل معنا",
   "reach_out_to_us":                  "تواصل معنا",
   "your_Message":                     "رسالتك",
   "send":                             "إرسال",
   "dashboard":                        "لوحة التحكم",
-  "sign_in":                          "تسجيل دخول",
-  "sign_up":                          "إنشاء حساب",
   "continue":                         "متابعة",
 
   "branches":                         "الفروع",
-  "about_us":                         "نبذة عنا",
   "terms":                            "الشروط",
 
   "mobile_number":                    "رقم الجوال",
@@ -32,11 +52,10 @@
 
   "logo":                             "الشعار",
   "business_name":                    "الإسم",
-  "business_profile":                 "الملف الشخصي",
   "full_name":                        "الإسم",
   "email":                            "البريد الإلكترونى",
   "business_type":                    "نوع النشاط",
-  "upload_business_license":          "ارفق ترخيص النشاط",
+  "upload_business_license":          "ارفق ترخيص النشاط", 
   "upload_national_identity":         "ارفق الهوية الوطنية",
   "business_location":                "العنوان",
   "city":                             "المدينة",

@@ -1,5 +1,11 @@
 body {
   &[dir="rtl"] {
+    // START:: GLOBAL RTL STYLES
+    * {
+      font-family: $medium_ar_font !important;
+    }
+    // END:: GLOBAL RTL STYLES
+
     // START:: HEADER RTL STYLES
     header {
       &.sticky {
