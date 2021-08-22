@@ -72,7 +72,7 @@
                   v-if="lang == 'en'"
                 >
                   <img
-                    v-lazy="'../../assets/media/icons/langs/en.png'"
+                    src="../../assets/media/icons/langs/en.png"
                     width="27"
                     height="27"
                   />
@@ -86,7 +86,7 @@
                   v-if="lang == 'ar'"
                 >
                   <img
-                    v-lazy="'../../assets/media/icons/langs/ar.png'"
+                    src="../../assets/media/icons/langs/ar.png"
                     width="27"
                     height="27"
                   />
@@ -155,19 +155,19 @@
               </li>
 
               <li @click="closeNavbarMenu">
-                <router-link 
-                  to="/login" 
-                  class="side_navbar_menu_list_link" 
+                <router-link
+                  to="/login"
+                  class="side_navbar_menu_list_link"
                   v-if="!this.$store.getters.token"
-                > 
-                  Sign In 
+                >
+                  Sign In
                 </router-link>
-                <router-link 
-                  to="/dashboard" 
+                <router-link
+                  to="/dashboard"
                   class="side_navbar_menu_list_link"
                   v-else
-                > 
-                  Profile 
+                >
+                  Profile
                 </router-link>
               </li>
 

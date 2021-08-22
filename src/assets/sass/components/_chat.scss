@@ -103,6 +103,9 @@
           margin: 0;
           color: $white;
         }
+        audio{
+          margin-top: 10px;
+        }
         &::before {
           position: absolute;
           content: "";
@@ -161,6 +164,49 @@
       svg {
         color: $lighterGrey;
         font-size: 1.5rem;
+      }
+      .ar{
+        width: auto;
+        background-color: transparent;
+      }
+      
+      .ar-records, .ar-player, .ar-recorder__duration, .ar-icon--rec , .ar-icon__sm{
+        display: none;
+      }
+      .ar-content{
+        padding: 0;
+        position: relative;
+        
+      }
+      .ar-recorder__duration{
+        display: block;
+        font-size: .9rem;
+        margin: 0;
+      }
+      .ar-icon--rec + .ar-recorder__stop{
+        display: block;
+      }
+      .ar-recorder__stop {
+          position: initial;
+          animation: mymove 3s infinite;
+          fill: $lightRed;
+      }
+      .ar-icon{
+        background-color: transparent !important;
+        fill:  $white;
+        border: 0;
+        box-shadow: none;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        svg{
+          color:  $white;
+
+        }
+      }
+      @keyframes mymove {
+        from {fill: $lightRed;}
+        to {fill: $white;}
       }
     }
     .message-area {

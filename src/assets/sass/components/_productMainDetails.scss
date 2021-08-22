@@ -174,7 +174,7 @@
         }
       }
       .add_to_cat,
-      .add_to_wishlist {
+      .add_to_wishlist, .remove_to_wishlist {
         @include btnWithBackground;
       }
 
@@ -183,6 +183,15 @@
         border: 1px solid $secondaryColor;
         &:hover {
           background-color: $white;
+          color: $secondaryColor;
+        }
+      }
+      .remove_to_wishlist{
+        background-color: transparent;
+        border: 1px solid $secondaryColor;
+        color: $secondaryColor;
+        &:hover {
+          background-color: transparent;
           color: $secondaryColor;
         }
       }

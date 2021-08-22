@@ -29,12 +29,17 @@
           :key="message.id"
         >
           <div class="singleMessage">
-            <p>
-              {{ message.content }}
-            </p>
+            <p
+              v-if="message.content != null"
+              v-html="message.content.replace(/(\n|\n|\r)/gm, '<br />')"
+            ></p>
+            <audio controls v-if="message.audioSrc != ''">
+              <source :src="message.audioSrc" type="audio/ogg" />
+            </audio>
+
             <span class="lastseen">
               <CheckIcon size="1.3x" />
-              10:45 Am
+              {{ message.time }}
             </span>
           </div>
         </div>
@@ -193,7 +198,8 @@
         <div class="message-area">
           <textarea
             v-model.trim="messageText"
-            v-on:keyup.enter="addMessage"
+            @keydown.enter.exact.prevent
+            @keyup.enter.exact="addMessage"
           ></textarea>
         </div>
 
@@ -203,7 +209,11 @@
             class="btn microphone"
             v-if="this.messageText.length == 0"
           >
-            <MicIcon />
+            <audio-recorder
+              upload-url="YOUR_API_URL"
+              :after-recording="afterRecording"
+              :pause-recording="pauseRecording"
+            />
           </button>
 
           <button
@@ -216,6 +226,7 @@
           </button>
         </div>
       </div>
+
       <!-- END:: FOOTER CHAT -->
     </div>
   </div>
@@ -226,7 +237,6 @@ import {
   SearchIcon,
   CheckIcon,
   NavigationIcon,
-  MicIcon,
   XIcon,
 } from "vue-feather-icons";
 import EmojiPicker from "vue-emoji-picker";
@@ -237,7 +247,6 @@ export default {
     SearchIcon,
     CheckIcon,
     NavigationIcon,
-    MicIcon,
     XIcon,
     EmojiPicker,
   },
@@ -251,20 +260,25 @@ export default {
       filesArray: [],
       filePreview: [],
       // END:: UPLOAD PART
-
       messageArea: [
         {
-          id: 1,
+          id: 100000000000000,
           content: "It is a long established fact that a reader ",
+          time: new Date().toLocaleTimeString(),
+          audioSrc: "",
         },
       ],
+      recordArray: "",
       messageText: "",
-      // Genral
+      // START:: AUDIO RECORDER
+      uniqueID: 1,
+      // START:: GENRAL
       SearchActive: false,
       searchEmoji: "",
       properties: false,
     };
   },
+
   methods: {
     toggleClassActive() {
       if (this.SearchActive) {
@@ -335,15 +349,42 @@ export default {
 
     addMessage() {
       if (!this.messageText) {
+        if (this.recordArray.length > 0) {
+          this.messageArea.push({
+            id: this.uniqueID++,
+            time: new Date().toLocaleTimeString(),
+            audioSrc: this.recordArray,
+          });
+          this.recordArray = "";
+        }
         return;
       } else {
-        this.messageArea.push({ id: 1, content: this.messageText });
+        this.messageArea.push({
+          id: this.uniqueID++,
+          content: this.messageText,
+          time: new Date().toLocaleTimeString(),
+          audioSrc: this.recordArray,
+        });
         this.messageText = "";
+        this.recordArray = "";
       }
+      // Create message Object
     },
 
     // END:: ADD MESSAGE
+
+    // START:: CHAT RECORDER
+
+    pauseRecording() {},
+    afterRecording(record) {
+      this.pauseRecording = false;
+      this.recordArray = record.url;
+      this.addMessage();
+    },
+
+    // END:: CHAT RECORDER
   },
+
   directives: {
     focus: {
       inserted(el) {
@@ -351,5 +392,6 @@ export default {
       },
     },
   },
+  mounted() {},
 };
 </script>

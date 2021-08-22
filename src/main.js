@@ -56,6 +56,10 @@ Vue.use(VueLazyload);
 import VueChatScroll from "vue-chat-scroll";
 Vue.use(VueChatScroll);
 
+// ======== VueChatScroll
+import AudioRecorder from "vue-audio-recorder";
+Vue.use(AudioRecorder);
+
 // ============
 
 // or with options
