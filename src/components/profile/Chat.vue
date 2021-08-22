@@ -23,10 +23,20 @@
 
       <!-- START:: BODY CHAT -->
       <div class="chat-body" v-chat-scroll>
+        <div class="messageflex">
+          <div class="singleMessage">
+            <p>It is a long established fact that a reader</p>
+            <span class="lastseen">
+              <CheckIcon size="1.3x" />
+              10:45 Am
+            </span>
+          </div>
+        </div>
         <div
           class="messageflex sender"
           v-for="message in messageArea"
           :key="message.id"
+          v-animate-css="'fadeIn'"
         >
           <div class="singleMessage">
             <p
@@ -43,24 +53,6 @@
             </span>
           </div>
         </div>
-        <!-- <div class="messageflex sender">
-          <div class="singleMessage">
-            <p>It is a long established fact that a reader</p>
-            <span class="lastseen">
-              <CheckIcon size="1.3x" />
-              10:45 Am
-            </span>
-          </div>
-        </div>
-        <div class="messageflex">
-          <div class="singleMessage">
-            <p>It is a long established fact that a reader</p>
-            <span class="lastseen">
-              <CheckIcon size="1.3x" />
-              10:45 Am
-            </span>
-          </div>
-        </div> -->
       </div>
       <!-- END:: BODY CHAT -->
 
@@ -212,7 +204,6 @@
             <audio-recorder
               upload-url="YOUR_API_URL"
               :after-recording="afterRecording"
-              :pause-recording="pauseRecording"
             />
           </button>
 
@@ -374,10 +365,7 @@ export default {
     // END:: ADD MESSAGE
 
     // START:: CHAT RECORDER
-
-    pauseRecording() {},
     afterRecording(record) {
-      this.pauseRecording = false;
       this.recordArray = record.url;
       this.addMessage();
     },

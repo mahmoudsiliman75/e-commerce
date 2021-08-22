@@ -87,7 +87,7 @@
     }
     .messageflex {
       @include flexStartAlignment;
-
+      transition: all 0.5s ease-out;
       .singleMessage {
         position: relative;
         background-color: #262d31;
@@ -103,8 +103,9 @@
           margin: 0;
           color: $white;
         }
-        audio{
+        audio {
           margin-top: 10px;
+          height: 40px;
         }
         &::before {
           position: absolute;
@@ -165,48 +166,56 @@
         color: $lighterGrey;
         font-size: 1.5rem;
       }
-      .ar{
+      .ar {
         width: auto;
         background-color: transparent;
       }
-      
-      .ar-records, .ar-player, .ar-recorder__duration, .ar-icon--rec , .ar-icon__sm{
+
+      .ar-records,
+      .ar-player,
+      .ar-recorder__duration,
+      .ar-icon--rec,
+      .ar-icon__sm {
         display: none;
       }
-      .ar-content{
+      .ar-content {
         padding: 0;
         position: relative;
-        
       }
-      .ar-recorder__duration{
+      .ar-recorder__duration {
         display: block;
-        font-size: .9rem;
+        font-size: 0.7rem;
         margin: 0;
+        position: absolute;
+        top: 85%;
       }
-      .ar-icon--rec + .ar-recorder__stop{
+      .ar-icon--rec + .ar-recorder__stop {
         display: block;
       }
       .ar-recorder__stop {
-          position: initial;
-          animation: mymove 3s infinite;
-          fill: $lightRed;
+        position: initial;
+        animation: mymove 3s infinite;
+        fill: $lightRed;
       }
-      .ar-icon{
+      .ar-icon {
         background-color: transparent !important;
-        fill:  $white;
+        fill: $white;
         border: 0;
         box-shadow: none;
         width: 35px;
         height: 35px;
         line-height: 35px;
-        svg{
-          color:  $white;
-
+        svg {
+          color: $white;
         }
       }
       @keyframes mymove {
-        from {fill: $lightRed;}
-        to {fill: $white;}
+        from {
+          fill: $lightRed;
+        }
+        to {
+          fill: $white;
+        }
       }
     }
     .message-area {
@@ -307,7 +316,7 @@
             &:nth-child(2) {
               transition: all 0.4s ease-out;
             }
-            input{
+            input {
               width: 100%;
               opacity: 0;
               position: absolute;
@@ -438,13 +447,13 @@
         height: 100%;
         @include borderRadius(10px);
       }
-      video{
+      video {
         width: 100%;
         height: 100%;
         @include borderRadius(10px);
       }
-      h3{
-        font-size: .7rem;
+      h3 {
+        font-size: 0.7rem;
         color: $white;
         text-align: center;
         margin: 5px 0;

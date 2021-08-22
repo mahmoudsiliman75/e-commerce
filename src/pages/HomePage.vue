@@ -5,7 +5,6 @@
     <!-- END:: SLIDER -->
 
     <!-- START:: FEATURES -->
-
     <div class="features">
       <div class="cards_wraper">
         <div class="container">
@@ -15,7 +14,7 @@
             <div class="featured_card" v-else>
               <div class="wrapper">
                 <div class="icon_wraper">
-                  <ZapIcon size="2.5x" />
+                  <DollarSignIcon size="2.5x" />
                 </div>
 
                 <div class="title">
@@ -212,7 +211,7 @@
             v-for="item in featuredItems"
             :key="item.id"
             :productData="item"
-            :type="item"
+            :type="'featured'"
           />
           <!-- END:: PRODUCT CARD -->
         </VueSlickCarousel>
@@ -270,7 +269,7 @@ import LoaderOfferCard from "../components/ui/Loaders/LoaderOfferCard";
 
 // START:: IMPORTING FEATHER ICONS
 import {
-  ZapIcon,
+  DollarSignIcon,
   ClockIcon,
   LockIcon,
   ArrowRightIcon,
@@ -293,7 +292,7 @@ export default {
     LoaderOfferCard,
 
     // FEATHER ICONS
-    ZapIcon,
+    DollarSignIcon,
     ClockIcon,
     LockIcon,
     ArrowRightIcon,
@@ -478,6 +477,7 @@ export default {
         speed: 500,
         slidesToShow: 6,
         slidesToScroll: 1,
+        autoplay: true,
         responsive: [
           {
             breakpoint: 1024,

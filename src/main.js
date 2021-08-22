@@ -60,6 +60,11 @@ Vue.use(VueChatScroll);
 import AudioRecorder from "vue-audio-recorder";
 Vue.use(AudioRecorder);
 
+// ======== VueChatAnimation
+import VAnimateCss from "v-animate-css";
+
+Vue.use(VAnimateCss);
+
 // ============
 
 // or with options

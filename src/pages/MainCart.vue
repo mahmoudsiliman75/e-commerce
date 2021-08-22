@@ -21,10 +21,10 @@
                 <template v-slot:default>
                   <thead>
                     <tr>
-                      <th class="text-left fw-bold">PRODUCT</th>
-                      <th class="text-left">PRICE</th>
-                      <th class="text-left">QUANTITY</th>
-                      <th class="text-left">SUBTOTAL</th>
+                      <th class="text-start fw-bold">PRODUCT</th>
+                      <th class="text-start">PRICE</th>
+                      <th class="text-start">QUANTITY</th>
+                      <th class="text-start">SUBTOTAL</th>
                       <th></th>
                     </tr>
                   </thead>
@@ -42,10 +42,10 @@
 
                       <td>
                         <div class="price" v-if="item.discount.length == 0">
-                          {{ item.price }} EGP
+                          {{ item.price }}
                         </div>
                         <div class="price" v-else>
-                          {{ item.discount }} EGP
+                          {{ item.discount }}
                         </div>
                       </td>
 
@@ -65,7 +65,7 @@
 
                       <td>
                         <div class="subtotal">
-                          {{ item.quantityPrice }} EGP
+                          {{ item.quantityPrice }}
                         </div>
                       </td>
 
@@ -86,27 +86,24 @@
               <!-- START:: SMALL SCREENS CART TABLE -->
               <div class="cart_cards_wraper">
                 <transition-group mode="out-in" name="fade">
-                  <div 
+                  <div
                     class="cart_item_card"
                     v-for="item in $store.state.shoppingCart"
                     :key="item.id"
                   >
                     <div class="btn_wraper">
-                      <button 
-                        class="btn"
-                        @click="removeFromCart(item)"
-                      >
-                        <XIcon size="1.3x"/>
+                      <button class="btn" @click="removeFromCart(item)">
+                        <XIcon size="1.3x" />
                       </button>
                     </div>
 
                     <div class="item_img_wraper">
-                      <img 
+                      <img
                         :src="item.images[0].img"
-                        alt="Product Image" 
-                        width="100" 
+                        alt="Product Image"
+                        width="100"
                         height="100"
-                      >
+                      />
                     </div>
 
                     <div class="item_details_wraper">
@@ -114,8 +111,13 @@
                         {{ item.productName }}
                       </h6>
 
-                      <h6 class="price" v-if=" item.discount.length != 0 || item.discount != 0 "> {{ item.discount }} EGP </h6>
-                      <h6 class="price" v-else> {{ item.price }} EGP </h6>
+                      <h6
+                        class="price"
+                        v-if="item.discount.length != 0 || item.discount != 0"
+                      >
+                        {{ item.discount }} EGP
+                      </h6>
+                      <h6 class="price" v-else>{{ item.price }} EGP</h6>
 
                       <div class="wraper">
                         <div class="quantity_btns">
@@ -131,9 +133,10 @@
                         </div>
                       </div>
 
-                      <h6 class="quantity_price"> {{ item.quantityPrice }} EGP </h6>
+                      <h6 class="quantity_price">
+                        {{ item.quantityPrice }} EGP
+                      </h6>
                     </div>
-
                   </div>
                 </transition-group>
               </div>
