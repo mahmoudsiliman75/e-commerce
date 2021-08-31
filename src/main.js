@@ -47,6 +47,33 @@ import VueSocialSharing from "vue-social-sharing";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+// ======== VueLazyload
+import VueLazyload from "vue-lazyload";
+Vue.use(VueLazyload);
+
+// ======== VueChatScroll
+
+import VueChatScroll from "vue-chat-scroll";
+Vue.use(VueChatScroll);
+
+// ======== VueChatScroll
+import AudioRecorder from "vue-audio-recorder";
+Vue.use(AudioRecorder);
+
+// ======== VueChatAnimation
+import VAnimateCss from "v-animate-css";
+
+Vue.use(VAnimateCss);
+
+// ============
+
+// or with options
+// Vue.use(VueLazyload, {
+//   preLoad: 1.3,
+//   error: 'dist/error.png',
+//   loading: 'dist/loading.gif',
+//   attempt: 1
+// })
 // ======== Zoom Images
 
 import ZoomOnHover from "vue-zoom-on-hover";

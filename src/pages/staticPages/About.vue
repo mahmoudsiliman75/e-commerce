@@ -102,8 +102,12 @@
             <div class="col-md-7">
               <div class="image-about-content">
                 <img
-                  src="https://d-themes.com/vue/riode/demo-1/images/subpages/customer.jpg"
+                  v-lazy="
+                    'https://d-themes.com/vue/riode/demo-1/images/subpages/customer.jpg'
+                  "
                   alt="About"
+                  width="100"
+                  height="100"
                 />
               </div>
             </div>

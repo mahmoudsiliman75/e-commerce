@@ -68,8 +68,18 @@
             >
           </div>
         </div>
-        <img :src="productData.images[0].img" alt="Product Image" />
-        <img :src="productData.images[1].img" alt="Product Image" />
+        <img
+          v-lazy="productData.images[0].img"
+          alt="Product Image"
+          width="100"
+          height="100"
+        />
+        <img
+          v-lazy="productData.images[1].img"
+          alt="Product Image"
+          width="100"
+          height="100"
+        />
       </div>
 
       <div class="product_card_body">
@@ -134,7 +144,7 @@
                     v-for="item in productData.images"
                     :key="item.id"
                   >
-                    <img :src="item.img" />
+                    <img v-lazy="item.img" width="100" height="100" />
                   </div>
                 </VueSlickCarousel>
               </div>
