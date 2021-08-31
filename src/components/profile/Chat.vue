@@ -43,10 +43,31 @@
               v-if="message.content != null"
               v-html="message.content.replace(/(\n|\n|\r)/gm, '<br />')"
             ></p>
+
             <audio controls v-if="message.audioSrc != ''">
               <source :src="message.audioSrc" type="audio/ogg" />
             </audio>
 
+            <div class="imagesArea row" v-if="message.image != 0">
+              <div
+                v-for="(image, imageIndex) in message.images"
+                :key="imageIndex"
+                class="col-3 image"
+                @click="setIndex(imageIndex)"
+              >
+                <img :src="image.src" />
+              </div>
+            </div>
+
+            <div class="CoolLightBox">
+              <CoolLightBox
+                :items="message.images"
+                :index="index"
+                loop
+                @close="index = null"
+              >
+              </CoolLightBox>
+            </div>
             <span class="lastseen">
               <CheckIcon size="1.3x" />
               {{ message.time }}
@@ -192,6 +213,7 @@
             v-model.trim="messageText"
             @keydown.enter.exact.prevent
             @keyup.enter.exact="addMessage"
+            :disabled="isRecording"
           ></textarea>
         </div>
 
@@ -204,6 +226,7 @@
             <audio-recorder
               upload-url="YOUR_API_URL"
               :after-recording="afterRecording"
+              :before-recording="beforeRecording"
             />
           </button>
 
@@ -217,7 +240,6 @@
           </button>
         </div>
       </div>
-
       <!-- END:: FOOTER CHAT -->
     </div>
   </div>
@@ -231,6 +253,8 @@ import {
   XIcon,
 } from "vue-feather-icons";
 import EmojiPicker from "vue-emoji-picker";
+import CoolLightBox from "vue-cool-lightbox";
+import "vue-cool-lightbox/dist/vue-cool-lightbox.min.css";
 export default {
   name: "Chat",
 
@@ -240,16 +264,21 @@ export default {
     NavigationIcon,
     XIcon,
     EmojiPicker,
+    CoolLightBox,
   },
   data() {
     return {
       // START:: UPLOAD PART
       imagesArray: [],
       imagesPreview: [],
+
       videosArray: [],
       videosPreview: [],
+
       filesArray: [],
       filePreview: [],
+
+      isRecording: false,
       // END:: UPLOAD PART
       messageArea: [
         {
@@ -257,6 +286,7 @@ export default {
           content: "It is a long established fact that a reader ",
           time: new Date().toLocaleTimeString(),
           audioSrc: "",
+          images: null,
         },
       ],
       recordArray: "",
@@ -267,6 +297,8 @@ export default {
       SearchActive: false,
       searchEmoji: "",
       properties: false,
+
+      index: null,
     };
   },
 
@@ -337,7 +369,6 @@ export default {
     // END:: UPLOAD IMAGES & VIDEOS & FILES
 
     // START:: ADD MESSAGE
-
     addMessage() {
       if (!this.messageText) {
         if (this.recordArray.length > 0) {
@@ -355,22 +386,32 @@ export default {
           content: this.messageText,
           time: new Date().toLocaleTimeString(),
           audioSrc: this.recordArray,
+          images: this.imagesArray,
         });
         this.messageText = "";
         this.recordArray = "";
+        // this.imagesPreview = "";
+        this.imagesArray = [];
       }
       // Create message Object
     },
-
     // END:: ADD MESSAGE
 
     // START:: CHAT RECORDER
     afterRecording(record) {
       this.recordArray = record.url;
       this.addMessage();
+      this.isRecording = false;
     },
 
+    beforeRecording() {
+      this.isRecording = true;
+    },
     // END:: CHAT RECORDER
+
+    setIndex(index) {
+      this.index = index;
+    },
   },
 
   directives: {
