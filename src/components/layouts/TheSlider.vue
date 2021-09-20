@@ -3,7 +3,7 @@
     <LoaderMainSlider v-if="isLoading" />
     <v-carousel hide-delimiters cycle v-else>
       <v-carousel-item v-for="(item, i) in sliderItems" :key="i">
-        <img :src="item.src" />
+        <img v-lazy="item.src" />
       </v-carousel-item>
       <Wave />
     </v-carousel>

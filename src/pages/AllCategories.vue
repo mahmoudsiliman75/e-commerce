@@ -36,14 +36,21 @@
               <template #HeaderBar>
                 <div class="header-filter">
                   <div class="left-part">
-                    <button type="button" class="control_width_btn" @click="hideFilter">
+                    <button
+                      type="button"
+                      class="control_width_btn"
+                      @click="hideFilter"
+                    >
                       Filter
                       <ArrowRightIcon v-if="colHideen == false" size="1x" />
                       <ArrowLeftIcon v-if="colHideen == true" size="1x" />
                     </button>
 
-                    <button class="btn control_filter_menu_btn" @click="openFilterSideMenu">
-                      <span> <SlidersIcon size="1.4x"/> </span>                    
+                    <button
+                      class="btn control_filter_menu_btn"
+                      @click="openFilterSideMenu"
+                    >
+                      <span> <SlidersIcon size="1.4x" /> </span>
                     </button>
                   </div>
 
@@ -105,7 +112,8 @@
                 <div class="pagination">
                   <div class="left-part">
                     <h6>
-                      Showing 1 of {{ $store.state.allProducts.length }} Products
+                      Showing 1 of
+                      {{ $store.state.allProducts.length }} Products
                     </h6>
                   </div>
                   <div class="right-part">
@@ -146,7 +154,12 @@ import FilterSideBar from "@/components/basics/FilterSideBar";
 import BreadCrumb from "@/components/basics/BreadCrumb";
 import ProductCard from "@/components/basics/ProductCard";
 import ProductsWrapper from "@/pages/ProductsWrapper";
-import { ArrowRightIcon, ArrowLeftIcon, SlidersIcon, XIcon } from "vue-feather-icons";
+import {
+  ArrowRightIcon,
+  ArrowLeftIcon,
+  SlidersIcon,
+  XIcon,
+} from "vue-feather-icons";
 export default {
   name: "AllCategories",
   // START:: COMPONENTS

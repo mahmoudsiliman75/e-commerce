@@ -107,7 +107,7 @@
           <div class="col-3 col-md-1 navBar_menu_btn_wraper">
             <div class="navBar_menu_btn">
               <button class="btn" @click="openNavbarMenu">
-                <AlignLeftIcon size="1.9x"/>
+                <AlignLeftIcon size="1.9x" />
               </button>
             </div>
           </div>
@@ -128,70 +128,130 @@
 
             <ul class="navbar_menu_list">
               <li @click="closeNavbarMenu">
-                <router-link to="/" class="side_navbar_menu_list_link"> {{ $t("home") }} </router-link>
+                <router-link to="/" class="side_navbar_menu_list_link">
+                  {{ $t("home") }}
+                </router-link>
               </li>
 
               <li @click="closeNavbarMenu">
-                <router-link to="/all-categories" class="side_navbar_menu_list_link"> {{ $t("all_categories") }} </router-link>
+                <router-link
+                  to="/all-categories"
+                  class="side_navbar_menu_list_link"
+                >
+                  {{ $t("all_categories") }}
+                </router-link>
               </li>
 
               <li @click="closeNavbarMenu">
-                <router-link to="/about" class="side_navbar_menu_list_link"> {{ $t("about_us") }} </router-link>
+                <router-link to="/about" class="side_navbar_menu_list_link">
+                  {{ $t("about_us") }}
+                </router-link>
               </li>
 
               <li @click="closeNavbarMenu">
-                <router-link to="/contact" class="side_navbar_menu_list_link"> {{ $t("contact_us") }} </router-link>
+                <router-link to="/contact" class="side_navbar_menu_list_link">
+                  {{ $t("contact_us") }}
+                </router-link>
               </li>
 
               <li @click="closeNavbarMenu">
-                <router-link 
-                  to="/login" 
-                  class="side_navbar_menu_list_link" 
+                <router-link
+                  to="/login"
+                  class="side_navbar_menu_list_link"
                   v-if="!this.$store.getters.token"
-                > 
+                >
                   {{ $t("sign_in") }}
                 </router-link>
-                <router-link 
-                  to="/dashboard" 
+                <router-link
+                  to="/dashboard"
                   class="side_navbar_menu_list_link"
                   v-else
-                > 
+                >
                   {{ $t("profile") }}
                 </router-link>
               </li>
 
               <li>
                 <!-- START:: MEGA MENU ACCORDION -->
-                <div class="accordion dropdown_menu_accordion mega_menu" id="mega_menu_accordion">
+                <div
+                  class="accordion dropdown_menu_accordion mega_menu"
+                  id="mega_menu_accordion"
+                >
                   <div class="accordion-item">
                     <h5 class="accordion-header" id="mega_menu_heading">
-                      <button class="accordion-button collapsed dropdown_menu_accordion_btn" type="button" data-bs-toggle="collapse" data-bs-target="#mega_menu_collapse" aria-expanded="true" aria-controls="mega_menu_collapse">
+                      <button
+                        class="
+                          accordion-button
+                          collapsed
+                          dropdown_menu_accordion_btn
+                        "
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mega_menu_collapse"
+                        aria-expanded="true"
+                        aria-controls="mega_menu_collapse"
+                      >
                         Mega Menu
                       </button>
                     </h5>
-                    <div id="mega_menu_collapse" class="accordion-collapse collapse" aria-labelledby="mega_menu_heading" data-bs-parent="#mega_menu_accordion">
+                    <div
+                      id="mega_menu_collapse"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="mega_menu_heading"
+                      data-bs-parent="#mega_menu_accordion"
+                    >
                       <div class="accordion-body">
                         <!-- START:: MEGA MENU ITEM -->
-                        <div class="accordion dropdown_menu_item_accordion mb-5" id="mega_menu_item_1">
+                        <div
+                          class="accordion dropdown_menu_item_accordion mb-5"
+                          id="mega_menu_item_1"
+                        >
                           <div class="accordion-item">
-                            <h6 class="accordion-header" id="mega_menu_item_header_1">
-                              <button class="accordion-button collapsed dropdown_menu_item_item_button" type="button" data-bs-toggle="collapse" data-bs-target="#mega_menu_item_collapse_1" aria-expanded="true" aria-controls="mega_menu_item_collapse_1">
+                            <h6
+                              class="accordion-header"
+                              id="mega_menu_item_header_1"
+                            >
+                              <button
+                                class="
+                                  accordion-button
+                                  collapsed
+                                  dropdown_menu_item_item_button
+                                "
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#mega_menu_item_collapse_1"
+                                aria-expanded="true"
+                                aria-controls="mega_menu_item_collapse_1"
+                              >
                                 Items Title 1
                               </button>
                             </h6>
-                            <div id="mega_menu_item_collapse_1" class="accordion-collapse collapse" aria-labelledby="mega_menu_item_header_1" data-bs-parent="#mega_menu_item_1">
+                            <div
+                              id="mega_menu_item_collapse_1"
+                              class="accordion-collapse collapse"
+                              aria-labelledby="mega_menu_item_header_1"
+                              data-bs-parent="#mega_menu_item_1"
+                            >
                               <div class="accordion-body">
                                 <button class="btn" @click="closeNavbarMenu">
-                                  <router-link to="/test"> Link Sample 1 </router-link>
+                                  <router-link to="/test">
+                                    Link Sample 1
+                                  </router-link>
                                 </button>
                                 <button class="btn" @click="closeNavbarMenu">
-                                  <router-link to="/test"> Link Sample 2 </router-link>
+                                  <router-link to="/test">
+                                    Link Sample 2
+                                  </router-link>
                                 </button>
                                 <button class="btn" @click="closeNavbarMenu">
-                                  <router-link to="/test"> Link Sample 3 </router-link>
+                                  <router-link to="/test">
+                                    Link Sample 3
+                                  </router-link>
                                 </button>
                                 <button class="btn" @click="closeNavbarMenu">
-                                  <router-link to="/test"> Link Sample 4 </router-link>
+                                  <router-link to="/test">
+                                    Link Sample 4
+                                  </router-link>
                                 </button>
                               </div>
                             </div>
@@ -200,26 +260,56 @@
                         <!-- END:: MEGA MENU ITEM -->
 
                         <!-- START:: MEGA MENU ITEM -->
-                        <div class="accordion dropdown_menu_item_accordion mb-5" id="mega_menu_item_2">
+                        <div
+                          class="accordion dropdown_menu_item_accordion mb-5"
+                          id="mega_menu_item_2"
+                        >
                           <div class="accordion-item">
-                            <h6 class="accordion-header" id="mega_menu_item_header_2">
-                              <button class="accordion-button collapsed dropdown_menu_item_item_button" type="button" data-bs-toggle="collapse" data-bs-target="#mega_menu_item_collapse_2" aria-expanded="true" aria-controls="mega_menu_item_collapse_2">
+                            <h6
+                              class="accordion-header"
+                              id="mega_menu_item_header_2"
+                            >
+                              <button
+                                class="
+                                  accordion-button
+                                  collapsed
+                                  dropdown_menu_item_item_button
+                                "
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#mega_menu_item_collapse_2"
+                                aria-expanded="true"
+                                aria-controls="mega_menu_item_collapse_2"
+                              >
                                 Items Title 2
                               </button>
                             </h6>
-                            <div id="mega_menu_item_collapse_2" class="accordion-collapse collapse" aria-labelledby="mega_menu_item_header_2" data-bs-parent="#mega_menu_item_2">
+                            <div
+                              id="mega_menu_item_collapse_2"
+                              class="accordion-collapse collapse"
+                              aria-labelledby="mega_menu_item_header_2"
+                              data-bs-parent="#mega_menu_item_2"
+                            >
                               <div class="accordion-body">
                                 <button class="btn" @click="closeNavbarMenu">
-                                  <router-link to="/test"> Link Sample 1 </router-link>
+                                  <router-link to="/test">
+                                    Link Sample 1
+                                  </router-link>
                                 </button>
                                 <button class="btn" @click="closeNavbarMenu">
-                                  <router-link to="/test"> Link Sample 2 </router-link>
+                                  <router-link to="/test">
+                                    Link Sample 2
+                                  </router-link>
                                 </button>
                                 <button class="btn" @click="closeNavbarMenu">
-                                  <router-link to="/test"> Link Sample 3 </router-link>
+                                  <router-link to="/test">
+                                    Link Sample 3
+                                  </router-link>
                                 </button>
                                 <button class="btn" @click="closeNavbarMenu">
-                                  <router-link to="/test"> Link Sample 4 </router-link>
+                                  <router-link to="/test">
+                                    Link Sample 4
+                                  </router-link>
                                 </button>
                               </div>
                             </div>
@@ -235,14 +325,33 @@
 
               <li>
                 <!-- START:: DROPDOWN MENU ACCORDION -->
-                <div class="accordion dropdown_menu_accordion" id="dropdown_menu_accordion_1">
+                <div
+                  class="accordion dropdown_menu_accordion"
+                  id="dropdown_menu_accordion_1"
+                >
                   <div class="accordion-item">
                     <h5 class="accordion-header" id="dropdown_menu_heading_1">
-                      <button class="accordion-button collapsed dropdown_menu_accordion_btn" type="button" data-bs-toggle="collapse" data-bs-target="#dropdown_menu_collapse_1" aria-expanded="true" aria-controls="dropdown_menu_collapse_1">
+                      <button
+                        class="
+                          accordion-button
+                          collapsed
+                          dropdown_menu_accordion_btn
+                        "
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#dropdown_menu_collapse_1"
+                        aria-expanded="true"
+                        aria-controls="dropdown_menu_collapse_1"
+                      >
                         Dropdown Menu
                       </button>
                     </h5>
-                    <div id="dropdown_menu_collapse_1" class="accordion-collapse collapse" aria-labelledby="dropdown_menu_heading_1" data-bs-parent="#dropdown_menu_accordion_1">
+                    <div
+                      id="dropdown_menu_collapse_1"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="dropdown_menu_heading_1"
+                      data-bs-parent="#dropdown_menu_accordion_1"
+                    >
                       <div class="accordion-body">
                         <button class="btn" @click="closeNavbarMenu">
                           <router-link to="/test"> Link Sample 1 </router-link>
@@ -267,7 +376,9 @@
               </li>
 
               <li @click="closeNavbarMenu">
-                <router-link to="/sample" class="side_navbar_menu_list_link"> Link Sample </router-link>
+                <router-link to="/sample" class="side_navbar_menu_list_link">
+                  Link Sample
+                </router-link>
               </li>
             </ul>
           </div>
@@ -276,7 +387,12 @@
           <div class="col-2 d-flex justify-content-center">
             <div class="logo_wraper">
               <router-link to="/">
-                <img src="../../assets/media/logo/logo.png" alt="Site Logo" />
+                <img
+                  src="../../assets/media/logo/logo.png"
+                  alt="Site Logo"
+                  width="100"
+                  height="100"
+                />
               </router-link>
             </div>
           </div>
@@ -371,7 +487,7 @@
     ></div>
     <div class="cart_menu">
       <div class="menu_header mb-3">
-        <h6 class="m-0"> {{ $t("cart") }} </h6>
+        <h6 class="m-0">{{ $t("cart") }}</h6>
         <button class="btn" @click="closeCartMenu">
           <XIcon size="1.3x" />
           {{ $t("close") }}
@@ -395,7 +511,12 @@
           <div class="row">
             <div class="col-3">
               <div class="img_wraper">
-                <img :src="item.images[0].img" alt="Product Image" />
+                <img
+                  :v-lazy="item.images[0].img"
+                  alt="Product Image"
+                  width="100"
+                  height="100"
+                />
               </div>
             </div>
 
@@ -465,7 +586,9 @@
           </li>
 
           <li>
-            <router-link to="/all-categories"> {{ $t("all_categories") }} </router-link>
+            <router-link to="/all-categories">
+              {{ $t("all_categories") }}
+            </router-link>
           </li>
 
           <li>
@@ -537,7 +660,11 @@
                       <h2>70% Off</h2>
                     </div>
                     <img
-                      src="https://d-themes.com/vue/riode/demo-1/images/menu/banner-1.jpg"
+                      v-lazy="
+                        'https://d-themes.com/vue/riode/demo-1/images/menu/banner-1.jpg'
+                      "
+                      width="100"
+                      height="100"
                     />
                   </div>
                 </div>

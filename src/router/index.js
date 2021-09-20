@@ -22,6 +22,7 @@ import Orders from "../components/profile/Orders.vue";
 import Address from "../components/profile/Address.vue";
 import AccountDetails from "../components/profile/AccountDetails.vue";
 import ChangePassword from "../components/profile/ChangeAccountPassword.vue";
+import Chat from "../components/profile/Chat.vue";
 import SearchResult from "../pages/SearchResult.vue";
 Vue.use(VueRouter);
 
@@ -126,6 +127,11 @@ const routes = [
         path: "/change-password",
         name: "ChangePassword",
         component: ChangePassword,
+      },
+      {
+        path: "/chat",
+        name: "Chat",
+        component: Chat,
       },
     ],
   },

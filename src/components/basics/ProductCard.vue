@@ -27,7 +27,7 @@
                 params: { product_id: productData.id },
               }"
               v-b-tooltip.hover
-              :title=" $t('details') "
+              :title="$t('details')"
             >
               <ArrowRightIcon size="1.2x" class="arrow_icon" />
             </router-link>
@@ -35,7 +35,7 @@
             <button
               class="add_to_wish added"
               v-b-tooltip.hover
-              :title=" $t('remove_from_wishlist') "
+              :title="$t('remove_from_wishlist')"
               v-if="productData.inWishlist"
               @click="removeFromWishlist(productData)"
             >
@@ -45,7 +45,7 @@
             <button
               class="add_to_wish"
               v-b-tooltip.hover
-              :title=" $t('add_to_wishlist') "
+              :title="$t('add_to_wishlist')"
               v-else
               @click="addToWishlist(productData)"
             >
@@ -54,7 +54,7 @@
 
             <button
               v-b-tooltip.hover
-              :title=" $t('add_to_cart') "
+              :title="$t('add_to_cart')"
               @click="addToCart(productData)"
               v-if="productData.status != 'out of stock'"
             >
@@ -63,13 +63,23 @@
           </div>
 
           <div class="bottom_button">
-            <b-button v-b-modal="'modal-' + type + '-' + productData.id"
-              > {{ $t("quick_view") }} </b-button
-            >
+            <b-button v-b-modal="'modal-' + type + '-' + productData.id">
+              {{ $t("quick_view") }}
+            </b-button>
           </div>
         </div>
-        <img :src="productData.images[0].img" alt="Product Image" />
-        <img :src="productData.images[1].img" alt="Product Image" />
+        <img
+          v-lazy="productData.images[0].img"
+          alt="Product Image"
+          width="100"
+          height="100"
+        />
+        <img
+          v-lazy="productData.images[1].img"
+          alt="Product Image"
+          width="100"
+          height="100"
+        />
       </div>
 
       <div class="product_card_body">
@@ -101,7 +111,9 @@
         </h4>
         <div class="rating">
           <RatingStars :rate="productData.rate" />
-          <div class="reviews">( {{ productData.reviews }} {{ $t("reviews") }} )</div>
+          <div class="reviews">
+            ( {{ productData.reviews }} {{ $t("reviews") }} )
+          </div>
         </div>
       </div>
     </div>
@@ -134,7 +146,7 @@
                     v-for="item in productData.images"
                     :key="item.id"
                   >
-                    <img :src="item.img" />
+                    <img v-lazy="item.img" width="100" height="100" />
                   </div>
                 </VueSlickCarousel>
               </div>
@@ -187,7 +199,9 @@
                   <div class="wraper mt-4">
                     <label> {{ $t("color") }}: </label>
                     <select class="form-select">
-                      <option selected disabled> {{ $t("select_color") }} </option>
+                      <option selected disabled>
+                        {{ $t("select_color") }}
+                      </option>
                       <option value="1">One</option>
                       <option value="2">Two</option>
                       <option value="3">Three</option>
@@ -197,7 +211,7 @@
                   <div class="wraper mt-4">
                     <label> {{ $t("size") }}: </label>
                     <select class="form-select">
-                      <option selected disabled> {{ $t("select_size") }} </option>
+                      <option selected disabled>{{ $t("select_size") }}</option>
                       <option value="1">One</option>
                       <option value="2">Two</option>
                       <option value="3">Three</option>
