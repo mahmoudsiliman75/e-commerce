@@ -1,22 +1,73 @@
 {
-  "message":                          "hello i18n !!",
   "repeatedItem":                     "This Item Is Already Exist",
   "alertPositions":                   "bottomLeft",
 
+  "close":                            "Close",
+  "empty_cart_message":               "No Items Added To The Cart",
+  "empty_wishlist_message":           "No Items Added To Wishlist",
+
+
+
+  "sign_in":                          "Sign In",
+  "sign_up":                          "Sign Up",
+  "profile":                          "Profile",
+
+
+
+  "search":                           "Search......",
+  "call_us":                          "Call Us Now",
+  "cart" :                            "Shopping Cart",
+
+
+
   "home":                             "Home",
-  "about_app":                        "About App",
-  "terms_&_conditions":               "Terms & Conditions",
+  "all_categories":                   "All Categories",
+  "about_us":                         "About Us",
   "contact_us":                       "Contact Us",
+
+
+
+  "categories":                       "Categories",
+  "best_sellers":                     "Best Sellers",
+  "featured_items":                   "Featured Items",
+  "shop_now":                         "Shop Now",
+
+
+
+  "out_of_stock":                     "Out Of Stock",
+  "details":                          "Details",
+  "add_to_wishlist":                  "Add To Wishlist",
+  "remove_from_wishlist":             "Remove From Wishlist",
+  "add_to_cart":                      "Add To Cart",
+  "remove_from_cart":                 "Remove From Cart",
+  "quick_view":                       "QUICK VIEW",
+  "reviews":                          "Reviews",
+  "color":                            "Color",
+  "select_color":                     "Select Color",
+  "size":                             "Size",
+  "select_size":                      "Select Size",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "terms_&_conditions":               "Terms & Conditions",
   "reach_out_to_us":                  "Reach Out To Us",
   "your_Message":                     "Your Message",
   "send":                             "Send",
   "dashboard":                        "Dashboard",
-  "sign_in":                          "Sign In",
-  "sign_up":                          "Sign Up",
   "continue":                         "Continue",
 
-  "branches":                         "Branches",
-  "about_us":                         "About Us",
+  "branches":                         "Branches", 
   "terms":                            "Terms",
 
   "mobile_number":                    "Mobile Number",
@@ -32,7 +83,7 @@
 
   "logo":                             "Business Logo",
   "business_name":                    "Business Name",
-  "business_profile":                 "Business Profile",
+  
   "full_name":                        "Full Name",
   "email":                            "Email",
   "business_type":                    "Business Type",

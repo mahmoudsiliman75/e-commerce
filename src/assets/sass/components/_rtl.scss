@@ -1,5 +1,11 @@
 body {
   &[dir="rtl"] {
+    // START:: GLOBAL RTL STYLES
+    * {
+      font-family: $medium_ar_font !important;
+    }
+    // END:: GLOBAL RTL STYLES
+
     // START:: HEADER RTL STYLES
     header {
       &.sticky {
@@ -136,6 +142,21 @@ body {
                   }
                 }
               }
+
+              .product_details {
+                .product_price {
+                  .current_price {
+                    margin-inline-start: 10px;
+                  }
+                }
+
+                .add_product_to_cart {
+                  .add_to_cat,
+                  .add_to_wishlist {
+                    padding: 0.5em;
+                  }
+                }
+              }
             } 
             // END:: PRODUCT DETAILS MODAL
           }
@@ -192,102 +213,9 @@ body {
                   &:last-child {
                     svg {
                       transform: rotate(180deg);
+                      margin-inline-start: 5px;
                     }
                   }
-                }
-              }
-            }
-
-            &.middle {
-              .overlay {
-                padding: 20px;
-                position: absolute;
-                inset: 0;
-                color: $white;
-                background-color: transparent;
-                z-index: 5;
-                @include flexSpaceAroundAlignment;
-                flex-direction: row;
-    
-                .wraper {
-                  h2 {
-                    margin-top: 15px;
-                    font-size: 3rem;
-                    font-weight: 900;
-                    color: $secondaryColor;
-                  }
-    
-                  p {
-                    font-size: 1rem;
-                    position: relative;
-                    margin-bottom: 6px;
-                    padding-bottom: 0;
-                    &::after {
-                      display: none;
-                    }
-                  }
-                }
-    
-                a {
-                  @include flexCenterAlignment;
-                  font-size: 0.8rem;
-                  text-decoration: none;
-                  color: $secondaryColor;
-                  border: 2px solid $secondaryColor;
-                  padding: 15px;
-                  @include transitioning(0.4s);
-                  &::after {
-                    display: none;
-                  }
-                  &:hover {
-                    color: $white;
-                    background-color: $secondaryColor;
-                  }
-                }
-              }
-    
-              &::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: -100%;
-                display: block;
-                width: 100%;
-                height: 100%;
-                background-image: linear-gradient(
-                  to right,
-                  rgba(225, 225, 225, 0.02),
-                  rgba(225, 225, 225, 0.2)
-                );
-                z-index: 5;
-                @include transitioning(0.8s);
-              }
-    
-              &::after {
-                content: "";
-                position: absolute;
-                top: 0;
-                right: -100%;
-                display: block;
-                width: 100%;
-                height: 100%;
-                background-image: linear-gradient(
-                  to left,
-                  rgba(225, 225, 225, 0.02),
-                  rgba(225, 225, 225, 0.2)
-                );
-                z-index: 5;
-                @include transitioning(0.8s);
-              }
-    
-              &:hover {
-                &::before {
-                  left: 100%;
-                  opacity: 0;
-                }
-                &::after {
-                  right: 100%;
-                  opacity: 0;
                 }
               }
             }

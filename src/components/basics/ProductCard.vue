@@ -15,7 +15,7 @@
             class="badge bg-danger"
             v-if="productData.status == 'out of stock'"
           >
-            Out Of Stock
+            {{ $t("out_of_stock") }}
           </span>
         </div>
 
@@ -27,7 +27,7 @@
                 params: { product_id: productData.id },
               }"
               v-b-tooltip.hover
-              title="Details"
+              :title="$t('details')"
             >
               <ArrowRightIcon size="1.2x" class="arrow_icon" />
             </router-link>
@@ -35,7 +35,7 @@
             <button
               class="add_to_wish added"
               v-b-tooltip.hover
-              title="Remove From Wishlist"
+              :title="$t('remove_from_wishlist')"
               v-if="productData.inWishlist"
               @click="removeFromWishlist(productData)"
             >
@@ -45,7 +45,7 @@
             <button
               class="add_to_wish"
               v-b-tooltip.hover
-              title="Add To Wishlist"
+              :title="$t('add_to_wishlist')"
               v-else
               @click="addToWishlist(productData)"
             >
@@ -54,7 +54,7 @@
 
             <button
               v-b-tooltip.hover
-              title="Add To Cart"
+              :title="$t('add_to_cart')"
               @click="addToCart(productData)"
               v-if="productData.status != 'out of stock'"
             >
@@ -63,9 +63,9 @@
           </div>
 
           <div class="bottom_button">
-            <b-button v-b-modal="'modal-' + type + '-' + productData.id"
-              >QUICK VIEW</b-button
-            >
+            <b-button v-b-modal="'modal-' + type + '-' + productData.id">
+              {{ $t("quick_view") }}
+            </b-button>
           </div>
         </div>
         <img
@@ -111,7 +111,9 @@
         </h4>
         <div class="rating">
           <RatingStars :rate="productData.rate" />
-          <div class="reviews">( {{ productData.reviews }} Reviews )</div>
+          <div class="reviews">
+            ( {{ productData.reviews }} {{ $t("reviews") }} )
+          </div>
         </div>
       </div>
     </div>
@@ -157,7 +159,6 @@
                 <h3 class="product_name">{{ productData.productName }}</h3>
 
                 <p class="product_category">
-                  <span> CATEGORY: </span>
                   <span> {{ productData.categoryName }} </span>
                 </p>
 
@@ -186,7 +187,7 @@
                 <h6 class="product_rate">
                   <RatingStars :rate="productData.rate" class="m-0" />
                   <span class="reviews">
-                    ({{ productData.reviews }} Reviews)
+                    ({{ productData.reviews }} {{ $t("reviews") }})
                   </span>
                 </h6>
 
@@ -196,9 +197,11 @@
 
                 <div class="product_options">
                   <div class="wraper mt-4">
-                    <label> Color: </label>
+                    <label> {{ $t("color") }}: </label>
                     <select class="form-select">
-                      <option selected disabled>Select Colors</option>
+                      <option selected disabled>
+                        {{ $t("select_color") }}
+                      </option>
                       <option value="1">One</option>
                       <option value="2">Two</option>
                       <option value="3">Three</option>
@@ -206,9 +209,9 @@
                   </div>
 
                   <div class="wraper mt-4">
-                    <label> Size: </label>
+                    <label> {{ $t("size") }}: </label>
                     <select class="form-select">
-                      <option selected disabled>Select Sizes</option>
+                      <option selected disabled>{{ $t("select_size") }}</option>
                       <option value="1">One</option>
                       <option value="2">Two</option>
                       <option value="3">Three</option>
@@ -235,7 +238,7 @@
                     v-if="productData.status != 'out of stock'"
                   >
                     <span> <ShoppingCartIcon /> </span>
-                    <span> Add To Cart </span>
+                    <span> {{ $t("add_to_cart") }} </span>
                   </button>
 
                   <button
@@ -243,7 +246,7 @@
                     @click="addToWishlist(productData)"
                   >
                     <span> <HeartIcon /> </span>
-                    <span> Add To Wishlist </span>
+                    <span> {{ $t("add_to_wishlist") }} </span>
                   </button>
                 </div>
               </div>

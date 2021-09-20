@@ -35,7 +35,7 @@
               <li class="contact_list_item">
                 <router-link to="/" v-b-tooltip.hover title="Contact Us">
                   <MapPinIcon size="1.3x" class="map_pin_icon" />
-                  <span> Contact </span>
+                  <span> {{ $t("contact_us") }} </span>
                 </router-link>
               </li>
 
@@ -48,7 +48,7 @@
                   v-if="!this.$store.getters.token"
                 >
                   <UserIcon size="1.3x" class="user_icon" />
-                  <span> Sign In </span>
+                  <span> {{ $t("sign_in") }} </span>
                 </router-link>
 
                 <router-link
@@ -59,7 +59,7 @@
                   v-else
                 >
                   <UserIcon size="1.3x" class="user_icon" />
-                  <span> Profile </span>
+                  <span> {{ $t("profile") }} </span>
                 </router-link>
               </li>
 
@@ -129,7 +129,7 @@
             <ul class="navbar_menu_list">
               <li @click="closeNavbarMenu">
                 <router-link to="/" class="side_navbar_menu_list_link">
-                  Home
+                  {{ $t("home") }}
                 </router-link>
               </li>
 
@@ -138,19 +138,19 @@
                   to="/all-categories"
                   class="side_navbar_menu_list_link"
                 >
-                  All Categories
+                  {{ $t("all_categories") }}
                 </router-link>
               </li>
 
               <li @click="closeNavbarMenu">
                 <router-link to="/about" class="side_navbar_menu_list_link">
-                  About Us
+                  {{ $t("about_us") }}
                 </router-link>
               </li>
 
               <li @click="closeNavbarMenu">
                 <router-link to="/contact" class="side_navbar_menu_list_link">
-                  Contact Us
+                  {{ $t("contact_us") }}
                 </router-link>
               </li>
 
@@ -160,14 +160,14 @@
                   class="side_navbar_menu_list_link"
                   v-if="!this.$store.getters.token"
                 >
-                  Sign In
+                  {{ $t("sign_in") }}
                 </router-link>
                 <router-link
                   to="/dashboard"
                   class="side_navbar_menu_list_link"
                   v-else
                 >
-                  Profile
+                  {{ $t("profile") }}
                 </router-link>
               </li>
 
@@ -405,7 +405,7 @@
                     type="text"
                     class="form-control"
                     id="search_value"
-                    placeholder="Search...."
+                    :placeholder="$t('search')"
                     v-model="searchInput"
                   />
                   <button class="btn">
@@ -428,7 +428,7 @@
                   >
                     <PhoneCallIcon size="2.3x" class="phone_icon" />
                     <div class="text">
-                      <span> Call Us Now </span>
+                      <span> {{ $t("call_us") }} </span>
                       <span> 01001010101 </span>
                     </div>
                   </a>
@@ -458,7 +458,7 @@
                     @click="openCartMenu"
                   >
                     <div class="text cart_details_text">
-                      <span> Shopping Cart </span>
+                      <span> {{ $t("cart") }} </span>
                       <span> {{ this.$store.state.cartSubtotal }} EGP </span>
                     </div>
 
@@ -487,10 +487,10 @@
     ></div>
     <div class="cart_menu">
       <div class="menu_header mb-3">
-        <h6 class="m-0">Shopping Cart</h6>
+        <h6 class="m-0">{{ $t("cart") }}</h6>
         <button class="btn" @click="closeCartMenu">
           <XIcon size="1.3x" />
-          Close
+          {{ $t("close") }}
         </button>
       </div>
 
@@ -498,7 +498,7 @@
         class="my-5 text-center"
         v-if="this.$store.state.shoppingCart.length == 0"
       >
-        No Items Added To The Cart
+        {{ $t("empty_cart_message") }}
       </h5>
 
       <div class="cart_body" v-else>
@@ -582,19 +582,21 @@
       <div class="container">
         <ul>
           <li>
-            <router-link to="/"> Home </router-link>
+            <router-link to="/"> {{ $t("home") }} </router-link>
           </li>
 
           <li>
-            <router-link to="/all-categories"> All Categories </router-link>
+            <router-link to="/all-categories">
+              {{ $t("all_categories") }}
+            </router-link>
           </li>
 
           <li>
-            <router-link to="/about"> About Us </router-link>
+            <router-link to="/about"> {{ $t("about_us") }} </router-link>
           </li>
 
           <li>
-            <router-link to="/contact"> Contact Us </router-link>
+            <router-link to="/contact"> {{ $t("contact_us") }} </router-link>
           </li>
 
           <li>

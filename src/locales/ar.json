@@ -1,22 +1,72 @@
 {
-  "message":                          "أهلا فى نابت",
   "repeatedItem":                     "هذا العنصر موجود بالفعل",
   "alertPositions":                   "bottomRight",
 
+
+  "close":                            "إغلاق",
+  "empty_cart_message":               "السلة فارغة! اضف بعض العناصر",
+  "empty_wishlist_message":           "قائمة المفضلات فارغة! اضف بعض العناصر",
+
+
+
+  "sign_in":                          "تسجيل دخول",
+  "sign_up":                          "إنشاء حساب",
+  "profile":                          "الملف الشخصي",
+
+
+
+  "search":                           "إبحث هنا......",
+  "call_us":                          "إتصل بنا الان",
+  "cart" :                            "سلة التسوق",
+
+
   "home":                             "الرئيسية",
+  "all_categories":                   "كل المنتجات",
+  "about_us":                         "من نحن",
+  "contact_us":                       "تواصل معنا",
+
+
+
+  "categories":                       "الأقسام",
+  "best_sellers":                     "الأفضل مبيعا",
+  "featured_items":                   "المنتجات المميزة",
+  "shop_now":                         "تسوق الان",
+
+
+
+  "out_of_stock":                     "غير متاح حاليا",
+  "details":                          "التفاصيل",
+  "add_to_wishlist":                  "إضافة الى المفضلات",
+  "remove_from_wishlist":             "حذف من المفضلات",
+  "add_to_cart":                      "إضافة الى السلة",
+  "remove_from_cart":                 "حذف من السلة",
+  "quick_view":                       "نظرة سريعة",
+  "reviews":                          "تقييمات",
+  "color":                            "اللون",
+  "select_color":                     "حدد اللون",
+  "size":                             "المقاس",
+  "select_size":                      "حدد المقاس",
+
+
+
+
+
+
+
+
+
+
+
+
   "about_app":                        "عن التطبيق",
   "terms_&_conditions":               "الشروط و الأحكام",
-  "contact_us":                       "تواصل معنا",
   "reach_out_to_us":                  "تواصل معنا",
   "your_Message":                     "رسالتك",
   "send":                             "إرسال",
   "dashboard":                        "لوحة التحكم",
-  "sign_in":                          "تسجيل دخول",
-  "sign_up":                          "إنشاء حساب",
   "continue":                         "متابعة",
 
   "branches":                         "الفروع",
-  "about_us":                         "نبذة عنا",
   "terms":                            "الشروط",
 
   "mobile_number":                    "رقم الجوال",
@@ -32,11 +82,10 @@
 
   "logo":                             "الشعار",
   "business_name":                    "الإسم",
-  "business_profile":                 "الملف الشخصي",
   "full_name":                        "الإسم",
   "email":                            "البريد الإلكترونى",
   "business_type":                    "نوع النشاط",
-  "upload_business_license":          "ارفق ترخيص النشاط",
+  "upload_business_license":          "ارفق ترخيص النشاط", 
   "upload_national_identity":         "ارفق الهوية الوطنية",
   "business_location":                "العنوان",
   "city":                             "المدينة",

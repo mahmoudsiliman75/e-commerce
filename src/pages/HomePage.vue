@@ -63,8 +63,8 @@
       <div class="container">
         <!-- START:: TITLE -->
         <div class="header_wraper">
-          <h2>Categories</h2>
-          <span class="title_backdrop"> Categories </span>
+          <h2>{{ $t("categories") }}</h2>
+          <span class="title_backdrop"> {{ $t("categories") }} </span>
         </div>
         <!-- START:: TITLE -->
 
@@ -92,8 +92,8 @@
       <div class="container">
         <!-- START:: TITLE -->
         <div class="header_wraper">
-          <h2>Best Sellers</h2>
-          <span class="title_backdrop"> Best Sellers </span>
+          <h2>{{ $t("best_sellers") }}</h2>
+          <span class="title_backdrop"> {{ $t("best_sellers") }} </span>
         </div>
         <!-- START:: TITLE -->
 
@@ -124,7 +124,7 @@
                   <h2>For Men's</h2>
                   <p>STARTING AT $29</p>
                   <router-link to="/">
-                    <span>SHOP NOW</span>
+                    <span>{{ $t("shop_now") }}</span>
                     <span> <ArrowRightIcon size="1.2x" /> </span>
                   </router-link>
                 </div>
@@ -151,7 +151,7 @@
                   <h2>Sale</h2>
                 </div>
                 <router-link to="/">
-                  <span>SHOP NOW</span>
+                  <span>{{ $t("shop_now") }}</span>
                   <span> <ArrowRightIcon size="1.2x" /> </span>
                 </router-link>
               </div>
@@ -175,7 +175,7 @@
                   <h2>Fashions</h2>
                   <p>30% OFF</p>
                   <router-link to="/">
-                    <span>SHOP NOW</span>
+                    <span>{{ $t("shop_now") }}</span>
                     <span> <ArrowRightIcon size="1.2x" /> </span>
                   </router-link>
                 </div>
@@ -200,8 +200,8 @@
       <div class="container">
         <!-- START:: TITLE -->
         <div class="header_wraper">
-          <h2>Featured Items</h2>
-          <span class="title_backdrop"> Featured Items </span>
+          <h2>{{ $t("featured_items") }}</h2>
+          <span class="title_backdrop"> {{ $t("featured_items") }} </span>
         </div>
         <!-- START:: TITLE -->
 
